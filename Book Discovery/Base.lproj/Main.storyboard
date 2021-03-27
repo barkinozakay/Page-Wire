@@ -32,6 +32,9 @@
                                     <string>Title</string>
                                     <string>Title</string>
                                 </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="TcZ-31-mRE"/>
+                                </connections>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Book Cover" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qh8-fm-koY" userLabel="Scan Book Cover">
                                 <rect key="frame" x="51" y="438" width="131" height="21"/>
@@ -63,6 +66,10 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" backgroundImage="barcode.viewfinder" catalog="system"/>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="zNU-rF-pGw">
+                                <rect key="frame" x="176.66666666666666" y="388.66666666666669" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -74,10 +81,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GMn-CC-ABO" secondAttribute="trailing" constant="28" id="C24-FR-Gjk"/>
                             <constraint firstItem="NoB-2s-s1j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="78" id="DWd-zR-zYk"/>
                             <constraint firstItem="hiO-vv-wSN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KMT-gB-Sfw"/>
+                            <constraint firstItem="zNU-rF-pGw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-15" id="NjC-KT-yEf"/>
                             <constraint firstItem="GMn-CC-ABO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="Q06-em-b3p"/>
                             <constraint firstItem="qh8-fm-koY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="51" id="Ulh-eZ-FXk"/>
                             <constraint firstItem="qh8-fm-koY" firstAttribute="centerY" secondItem="T38-S9-htY" secondAttribute="centerY" id="YAk-sh-YDy"/>
                             <constraint firstItem="NoB-2s-s1j" firstAttribute="centerX" secondItem="qh8-fm-koY" secondAttribute="centerX" id="ZBX-0M-NX8"/>
+                            <constraint firstItem="zNU-rF-pGw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gze-l6-NF3"/>
                             <constraint firstItem="hiO-vv-wSN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="227" id="hB3-uG-eUp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T38-S9-htY" secondAttribute="trailing" constant="43" id="iQd-si-v4R"/>
                             <constraint firstItem="SbZ-kD-2a0" firstAttribute="top" secondItem="T38-S9-htY" secondAttribute="bottom" constant="17.5" id="nFa-Gx-fmB"/>
@@ -87,6 +96,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="zNU-rF-pGw" id="mFR-x2-PAe"/>
                         <outlet property="barcodeButton" destination="SbZ-kD-2a0" id="qc0-g1-Rhi"/>
                         <outlet property="cameraButton" destination="NoB-2s-s1j" id="xA5-M3-4QQ"/>
                         <outlet property="searchBar" destination="GMn-CC-ABO" id="zWF-sq-68a"/>
