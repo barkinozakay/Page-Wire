@@ -3,18 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		DD273930260E556300266851 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27392F260E556300266851 /* AppDelegate.swift */; };
 		DD273932260E556300266851 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD273931260E556300266851 /* SceneDelegate.swift */; };
-		DD273934260E556300266851 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD273933260E556300266851 /* ViewController.swift */; };
 		DD273937260E556300266851 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD273935260E556300266851 /* Main.storyboard */; };
 		DD273939260E556400266851 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD273938260E556400266851 /* Assets.xcassets */; };
 		DD27393C260E556400266851 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD27393A260E556400266851 /* LaunchScreen.storyboard */; };
 		DD273947260E556400266851 /* Book_DiscoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD273946260E556400266851 /* Book_DiscoveryTests.swift */; };
 		DD273952260E556400266851 /* Book_DiscoveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD273951260E556400266851 /* Book_DiscoveryUITests.swift */; };
+		DDFE7062260FA6EC00138959 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = DDFE7061260FA6EC00138959 /* SwiftSoup */; };
+		DDFE7079260FAEF200138959 /* BookResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFE7078260FAEF200138959 /* BookResultsVC.swift */; };
+		DDFE707E260FAF0100138959 /* BookResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFE707D260FAF0100138959 /* BookResultsModel.swift */; };
+		DDFE7086260FAF1D00138959 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFE7085260FAF1D00138959 /* MainVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,6 @@
 		DD27392C260E556300266851 /* Book Discovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Book Discovery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD27392F260E556300266851 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD273931260E556300266851 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DD273933260E556300266851 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DD273936260E556300266851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD273938260E556400266851 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD27393B260E556400266851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,9 @@
 		DD27394D260E556400266851 /* Book DiscoveryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Book DiscoveryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD273951260E556400266851 /* Book_DiscoveryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book_DiscoveryUITests.swift; sourceTree = "<group>"; };
 		DD273953260E556400266851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDFE7078260FAEF200138959 /* BookResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookResultsVC.swift; sourceTree = "<group>"; };
+		DDFE707D260FAF0100138959 /* BookResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookResultsModel.swift; sourceTree = "<group>"; };
+		DDFE7085260FAF1D00138959 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDFE7062260FA6EC00138959 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,11 +105,13 @@
 		DD27392E260E556300266851 /* Book Discovery */ = {
 			isa = PBXGroup;
 			children = (
+				DDFE7085260FAF1D00138959 /* MainVC.swift */,
+				DD273935260E556300266851 /* Main.storyboard */,
+				DDFE7074260FAEA500138959 /* BookResults */,
+				DDFE7073260FACB400138959 /* BookDetail */,
+				DD273938260E556400266851 /* Assets.xcassets */,
 				DD27392F260E556300266851 /* AppDelegate.swift */,
 				DD273931260E556300266851 /* SceneDelegate.swift */,
-				DD273933260E556300266851 /* ViewController.swift */,
-				DD273935260E556300266851 /* Main.storyboard */,
-				DD273938260E556400266851 /* Assets.xcassets */,
 				DD27393A260E556400266851 /* LaunchScreen.storyboard */,
 				DD27393D260E556400266851 /* Info.plist */,
 			);
@@ -128,6 +136,22 @@
 			path = "Book DiscoveryUITests";
 			sourceTree = "<group>";
 		};
+		DDFE7073260FACB400138959 /* BookDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BookDetail;
+			sourceTree = "<group>";
+		};
+		DDFE7074260FAEA500138959 /* BookResults */ = {
+			isa = PBXGroup;
+			children = (
+				DDFE707D260FAF0100138959 /* BookResultsModel.swift */,
+				DDFE7078260FAEF200138959 /* BookResultsVC.swift */,
+			);
+			path = BookResults;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +168,9 @@
 			dependencies = (
 			);
 			name = "Book Discovery";
+			packageProductDependencies = (
+				DDFE7061260FA6EC00138959 /* SwiftSoup */,
+			);
 			productName = "Book Discovery";
 			productReference = DD27392C260E556300266851 /* Book Discovery.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +242,9 @@
 				Base,
 			);
 			mainGroup = DD273923260E556300266851;
+			packageReferences = (
+				DDFE7060260FA6EC00138959 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
 			productRefGroup = DD27392D260E556300266851 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,9 +288,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD273934260E556300266851 /* ViewController.swift in Sources */,
 				DD273930260E556300266851 /* AppDelegate.swift in Sources */,
+				DDFE7086260FAF1D00138959 /* MainVC.swift in Sources */,
+				DDFE7079260FAEF200138959 /* BookResultsVC.swift in Sources */,
 				DD273932260E556300266851 /* SceneDelegate.swift in Sources */,
+				DDFE707E260FAF0100138959 /* BookResultsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +619,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DDFE7060260FA6EC00138959 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DDFE7061260FA6EC00138959 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDFE7060260FA6EC00138959 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DD273924260E556300266851 /* Project object */;
 }

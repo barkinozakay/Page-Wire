@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -8,22 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MainVC-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MainVC" id="BYZ-38-t0r" customClass="MainVC" customModule="Book_Discovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Book_Discovery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Books" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiO-vv-wSN">
-                                <rect key="frame" x="122" y="271" width="146" height="29"/>
+                                <rect key="frame" x="134" y="271" width="146" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for books" translatesAutoresizingMaskIntoConstraints="NO" id="GMn-CC-ABO">
-                                <rect key="frame" x="28" y="334" width="334" height="44"/>
+                                <rect key="frame" x="28" y="334" width="358" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="AW8-Q0-hkJ"/>
                                 </constraints>
@@ -39,29 +39,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoB-2s-s1j" userLabel="Camera Button">
-                                <rect key="frame" x="78" y="480.00000000000006" width="77" height="67.666666666666629"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="77" id="2Ct-kA-k9U"/>
-                                    <constraint firstAttribute="height" constant="70" id="dgv-Ig-0rH"/>
-                                </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" backgroundImage="camera.fill" catalog="system"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Barcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T38-S9-htY">
-                                <rect key="frame" x="240" y="438" width="107" height="21"/>
+                                <rect key="frame" x="264" y="438" width="107" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbZ-kD-2a0" userLabel="Barcode Button">
-                                <rect key="frame" x="255" y="478" width="77" height="73.000000000000057"/>
+                                <rect key="frame" x="279" y="477" width="77" height="73.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="3Al-DL-KYR"/>
                                     <constraint firstAttribute="width" constant="77" id="gZ2-mH-cs7"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" backgroundImage="barcode.viewfinder" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoB-2s-s1j" userLabel="Camera Button">
+                                <rect key="frame" x="78" y="479.5" width="77" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="2Ct-kA-k9U"/>
+                                    <constraint firstAttribute="height" constant="70" id="dgv-Ig-0rH"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="camera.fill" catalog="system"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -86,11 +86,6 @@
                             <constraint firstItem="NoB-2s-s1j" firstAttribute="top" secondItem="qh8-fm-koY" secondAttribute="bottom" constant="20" id="xbe-Ut-BeP"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="barcodeButton" destination="SbZ-kD-2a0" id="qc0-g1-Rhi"/>
-                        <outlet property="cameraButton" destination="NoB-2s-s1j" id="xA5-M3-4QQ"/>
-                        <outlet property="searchBar" destination="GMn-CC-ABO" id="zWF-sq-68a"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
