@@ -17,6 +17,8 @@ class MainVC: UIViewController {
     @IBOutlet private weak var cameraButton: UIButton!
     @IBOutlet private weak var barcodeButton: UIButton!
     
+    private lazy var books: [BookModel] = []
+    
     private lazy var searchBarText: String = ""
     private lazy var animationView = AnimationView(name: "searching_books_animation")
     private lazy var blurEffectView: UIVisualEffectView = {
@@ -51,7 +53,18 @@ extension MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLottieAnimation()
+        parseBookList()
     }
+    
+    private func parseBookList() {
+        //        DispatchQueue.main.async {
+        //
+        //        }
+        if let response = DecoderHelper.decode(resourcePath: "books", BookList.self) {
+            self.books = response.book
+        }
+    }
+    
 }
 
 // MARK: - IBActions -
