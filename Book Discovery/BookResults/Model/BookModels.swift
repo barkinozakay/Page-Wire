@@ -8,7 +8,7 @@
 import Foundation
 
 struct BookList: Codable, Equatable {
-    let book: [BookModel]
+    let books: [BookModel]
 }
 
 struct BookModel: Codable, Equatable {

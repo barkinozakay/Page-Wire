@@ -57,11 +57,10 @@ extension MainVC {
     }
     
     private func parseBookList() {
-        //        DispatchQueue.main.async {
-        //
-        //        }
-        if let response = DecoderHelper.decode(resourcePath: "books", BookList.self) {
-            self.books = response.book
+        DispatchQueue.main.async {
+            if let response = DecoderHelper.decode(resourcePath: "books", BookList.self) {
+                self.books = response.books
+            }
         }
     }
     
