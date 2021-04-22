@@ -18,4 +18,10 @@ struct BookModel: Codable, Equatable {
     let genre: String
     let pages: Int
     let isbn: Int
+    var isFavorited: Bool?
+}
+
+enum BookSearchType: String {
+    case title = "title"
+    case author = "author"
 }

@@ -14,3 +14,9 @@ extension String {
         return !isEmpty && range(of: "[^a-zA-Z0-9\(turkishCharacters) ]", options: .regularExpression) == nil
     }
 }
+
+extension DefaultStringInterpolation {
+    mutating func appendInterpolation<T>(_ optional: T?) {
+        appendInterpolation(String(describing: optional))
+    }
+}

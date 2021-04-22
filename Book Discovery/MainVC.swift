@@ -18,7 +18,6 @@ class MainVC: UIViewController {
     @IBOutlet private weak var barcodeButton: UIButton!
     
     private lazy var books: [BookModel] = []
-    
     private lazy var searchBarText: String = ""
     private lazy var animationView = AnimationView(name: "searching_books_animation")
     private lazy var blurEffectView: UIVisualEffectView = {
@@ -49,13 +48,26 @@ class MainVC: UIViewController {
 
 // MARK: - LIFECYCLE -
 extension MainVC {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setLottieAnimation()
         parseBookList()
     }
-    
+}
+
+
+// MARK: - IBActions -
+extension MainVC {
+    @IBAction func searchButtonAction(_ sender: Any) {
+        guard !searchBarText.isEmpty else {
+            return showAlert(title: "", message: "Search Text can not be empty!", okTitle: "OK", cancelTitle: nil, okAction: nil, cancelAction: nil)
+        }
+        filterBooks()
+    }
+}
+
+// MARK: - Functions -
+extension MainVC {
     private func parseBookList() {
         DispatchQueue.main.async {
             if let response = DecoderHelper.decode(resourcePath: "books", BookList.self) {
@@ -64,35 +76,43 @@ extension MainVC {
         }
     }
     
-}
-
-// MARK: - IBActions -
-extension MainVC {
+    private func filterBooks() {
+        segmentedControl.selectedSegmentIndex == 0 ? filterBookNames() : filterBookAuthors()
+    }
     
-    @IBAction func searchButtonAction(_ sender: Any) {
-        // Check from csv before the navigation.
-        goToBookResults()
+    private func filterBookNames() {
+        let filteredBookNames = books.filter { $0.name.lowercased().contains(searchBarText.lowercased()) }
+        guard !filteredBookNames.isEmpty else { return showSearchNotFoundError() }
+        goToBookResults(filteredBookNames)
+    }
+    
+    private func filterBookAuthors() {
+        let filteredBookAuthors = books.filter { $0.author.lowercased().contains(searchBarText.lowercased()) }
+        guard !filteredBookAuthors.isEmpty else { return showSearchNotFoundError() }
+        goToBookResults(filteredBookAuthors)
+    }
+    
+    private func showSearchNotFoundError() {
+        showAlert(title: "", message: "Books not found.", okTitle: "OK", cancelTitle: nil, okAction: nil, cancelAction: nil)
     }
 }
 
 // MARK: - Navigation Functions -
 extension MainVC {
-    
-    private func goToBookResults() {
-        guard !searchBarText.isEmpty else {
-            showAlert(title: "", message: "Search Text can not be empty!", okTitle: "OK", cancelTitle: nil, okAction: nil, cancelAction: nil)
-            return
-        }
+    private func goToBookResults(_ books: [BookModel]) {
         showLoadingAnimation = true
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookResultsVC") as! BookResultsVC
         vc.searchText = searchBarText
-        //navigationController?.pushViewController(vc, animated: true)
+        vc.searchType = segmentedControl.selectedSegmentIndex == 0 ? .title : .author
+        vc.books = books
+        showLoadingAnimation = false
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 
 // MARK: - Loading Animation -
 extension MainVC {
-    
     private func setLottieAnimation() {
         let size = view.frame.width + 100
         animationView.frame = CGRect(x: 0, y: 0, width: size, height: size)
@@ -108,7 +128,6 @@ extension MainVC {
 
 // MARK: - Search Bar Delegate -
 extension MainVC: UISearchBarDelegate {
-    
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         guard text.isAlphaNumeric else { return false }
         return true

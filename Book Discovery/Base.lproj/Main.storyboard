@@ -40,6 +40,7 @@
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bI5-Tl-mjl" userLabel="Search Button">
                                 <rect key="frame" x="344.33333333333331" y="215" width="24.666666666666686" height="20"/>
+                                <color key="tintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="magnifyingglass" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="medium"/>
                                 </state>
@@ -48,7 +49,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Meg-cv-Nsd" userLabel="Scan Labels Stack View">
-                                <rect key="frame" x="16" y="614.66666666666663" width="358" height="20.333333333333371"/>
+                                <rect key="frame" x="16" y="619" width="358" height="20.333333333333371"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Book Cover" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qh8-fm-koY" userLabel="Scan Book Cover">
                                         <rect key="frame" x="0.0" y="0.0" width="163" height="20.333333333333332"/>
@@ -65,20 +66,12 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbZ-kD-2a0" userLabel="Barcode Button">
-                                <rect key="frame" x="251.33333333333337" y="652.33333333333337" width="100" height="78"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="SYD-oV-sGT"/>
-                                    <constraint firstAttribute="width" constant="100" id="XPR-GI-1Gb"/>
-                                </constraints>
+                                <rect key="frame" x="251.33333333333334" y="655" width="100.33333333333334" height="77"/>
                                 <color key="tintColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" backgroundImage="barcode.viewfinder" catalog="system"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoB-2s-s1j" userLabel="Camera Button">
-                                <rect key="frame" x="47.333333333333343" y="652" width="100" height="77.666666666666629"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Yxa-dv-7Qo"/>
-                                    <constraint firstAttribute="height" constant="80" id="n0o-sU-eAp"/>
-                                </constraints>
+                                <rect key="frame" x="45.000000000000007" y="656.33333333333337" width="104.66666666666669" height="73.333333333333371"/>
                                 <color key="tintColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" backgroundImage="camera.fill" catalog="system"/>
                             </button>
@@ -92,14 +85,18 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="36c-EW-zjW" secondAttribute="trailing" constant="60" id="8pZ-ko-A7A"/>
                             <constraint firstItem="36c-EW-zjW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="9gU-9P-ZKk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NoB-2s-s1j" secondAttribute="bottom" constant="30" id="EeE-Jo-dLG"/>
+                            <constraint firstItem="NoB-2s-s1j" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.06325" constant="80" id="F5e-Ew-hPa"/>
+                            <constraint firstItem="SbZ-kD-2a0" firstAttribute="width" secondItem="NoB-2s-s1j" secondAttribute="width" multiplier="0.194268" constant="80" id="GBf-91-SK9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bI5-Tl-mjl" secondAttribute="trailing" constant="21" id="JsC-rS-ZlK"/>
                             <constraint firstItem="NoB-2s-s1j" firstAttribute="centerX" secondItem="qh8-fm-koY" secondAttribute="centerX" id="LDO-it-MGg"/>
                             <constraint firstItem="NoB-2s-s1j" firstAttribute="top" secondItem="Meg-cv-Nsd" secondAttribute="bottom" constant="16" id="TV3-dO-h5Z"/>
                             <constraint firstItem="GMn-CC-ABO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UCZ-Zs-c85"/>
                             <constraint firstItem="bI5-Tl-mjl" firstAttribute="height" secondItem="GMn-CC-ABO" secondAttribute="height" multiplier="0.454545" id="Uol-mo-74O"/>
                             <constraint firstItem="bI5-Tl-mjl" firstAttribute="leading" secondItem="GMn-CC-ABO" secondAttribute="trailing" constant="8" id="VNs-2Y-A80"/>
+                            <constraint firstItem="SbZ-kD-2a0" firstAttribute="height" secondItem="NoB-2s-s1j" secondAttribute="height" multiplier="0.253112" constant="60" id="WXF-jr-QaQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Meg-cv-Nsd" secondAttribute="trailing" constant="16" id="fTx-fO-DaU"/>
                             <constraint firstItem="GMn-CC-ABO" firstAttribute="top" secondItem="36c-EW-zjW" secondAttribute="bottom" constant="8" id="fgl-7a-v0f"/>
+                            <constraint firstItem="NoB-2s-s1j" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.025" constant="60" id="hqX-L6-7E4"/>
                             <constraint firstItem="SbZ-kD-2a0" firstAttribute="centerX" secondItem="T38-S9-htY" secondAttribute="centerX" id="uDJ-V9-xXh"/>
                             <constraint firstItem="Meg-cv-Nsd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="uHu-6M-FJn"/>
                             <constraint firstItem="NoB-2s-s1j" firstAttribute="centerY" secondItem="SbZ-kD-2a0" secondAttribute="centerY" id="zVi-aj-4fa"/>
@@ -146,7 +143,7 @@
                                                         <constraint firstAttribute="height" constant="36" id="p7k-JE-Epe"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                                    <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -193,11 +190,12 @@
         <scene sceneID="gMy-p3-bdi">
             <objects>
                 <navigationController title="Book Discovery Navigation" automaticallyAdjustsScrollViewInsets="NO" id="fkB-lf-C1f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="v2r-hs-5B8"/>
+                    <tabBarItem key="tabBarItem" title="Books" image="books.vertical.fill" catalog="system" id="v2r-hs-5B8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="lNf-uu-Sbd">
                         <rect key="frame" x="0.0" y="44" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -211,18 +209,60 @@
         <!--Favorites-->
         <scene sceneID="EJ5-eZ-bbP">
             <objects>
-                <viewController title="Favorites" id="28U-Gc-qi8" sceneMemberID="viewController">
+                <viewController title="Favorites" id="28U-Gc-qi8" customClass="FavoriteBooksVC" customModule="Book_Discovery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="thc-WW-JTt">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nW8-uH-1ae">
+                                <rect key="frame" x="0.0" y="140" width="390" height="621"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="28U-Gc-qi8" id="xcF-8k-Orz"/>
+                                    <outlet property="delegate" destination="28U-Gc-qi8" id="pWv-MN-rrX"/>
+                                </connections>
+                            </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7MJ-S0-njc" userLabel="Empty State View">
+                                <rect key="frame" x="0.0" y="140" width="390" height="621"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.slash.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mYK-cS-fTW">
+                                        <rect key="frame" x="120" y="236.33333333333331" width="150" height="148.33333333333331"/>
+                                        <color key="tintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="9Gn-EH-DAe"/>
+                                            <constraint firstAttribute="width" constant="150" id="QzD-we-KiG"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="mYK-cS-fTW" firstAttribute="centerX" secondItem="7MJ-S0-njc" secondAttribute="centerX" id="N47-GB-BVC"/>
+                                    <constraint firstItem="mYK-cS-fTW" firstAttribute="centerY" secondItem="7MJ-S0-njc" secondAttribute="centerY" id="RjR-1E-A29"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="YCw-pK-A2M"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YCw-pK-A2M" firstAttribute="bottom" secondItem="nW8-uH-1ae" secondAttribute="bottom" id="0pj-0z-64X"/>
+                            <constraint firstItem="7MJ-S0-njc" firstAttribute="top" secondItem="YCw-pK-A2M" secondAttribute="top" id="6k7-Jw-hZy"/>
+                            <constraint firstItem="YCw-pK-A2M" firstAttribute="trailing" secondItem="nW8-uH-1ae" secondAttribute="trailing" id="Idf-U4-16z"/>
+                            <constraint firstItem="7MJ-S0-njc" firstAttribute="leading" secondItem="YCw-pK-A2M" secondAttribute="leading" id="LsF-te-J1r"/>
+                            <constraint firstItem="7MJ-S0-njc" firstAttribute="bottom" secondItem="YCw-pK-A2M" secondAttribute="bottom" id="QGd-AB-Xy5"/>
+                            <constraint firstItem="7MJ-S0-njc" firstAttribute="trailing" secondItem="YCw-pK-A2M" secondAttribute="trailing" id="ZJi-xO-lWf"/>
+                            <constraint firstItem="nW8-uH-1ae" firstAttribute="top" secondItem="YCw-pK-A2M" secondAttribute="top" id="h1E-qT-t1E"/>
+                            <constraint firstItem="nW8-uH-1ae" firstAttribute="leading" secondItem="YCw-pK-A2M" secondAttribute="leading" id="pQ2-E6-3cp"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="A0k-8h-bpe"/>
+                    <connections>
+                        <outlet property="emptyStateView" destination="7MJ-S0-njc" id="hmA-qB-cz6"/>
+                        <outlet property="tableView" destination="nW8-uH-1ae" id="iXl-nd-CMs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cca-AC-0Tf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5672" y="874"/>
+            <point key="canvasLocation" x="5670.7692307692305" y="873.69668246445497"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ExJ-ZC-BAO">
@@ -233,6 +273,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="fkB-lf-C1f" kind="relationship" relationship="viewControllers" id="QDT-0V-Qlh"/>
@@ -247,11 +288,12 @@
         <scene sceneID="Poj-aP-idf">
             <objects>
                 <navigationController title="Favorites Navigation" automaticallyAdjustsScrollViewInsets="NO" id="Qdd-ez-DOj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="EZB-vC-Osc"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="EZB-vC-Osc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ngm-bu-m6p">
                         <rect key="frame" x="0.0" y="44" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -265,7 +307,10 @@
     </scenes>
     <resources>
         <image name="barcode.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="books.vertical.fill" catalog="system" width="128" height="100"/>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="heart.slash.fill" catalog="system" width="128" height="115"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

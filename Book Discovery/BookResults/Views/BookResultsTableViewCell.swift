@@ -7,29 +7,64 @@
 
 import UIKit
 
+protocol FavoriteBook: class {
+    func changeFavoriteState(_ favoriteBook: BookModel?)
+}
+
 class BookResultsTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var artwork: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet private weak var artwork: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var authorLabel: UILabel!
+    @IBOutlet private weak var pagesLabel: UILabel!
+    @IBOutlet private weak var publisherLabel: UILabel!
+    @IBOutlet private weak var favoriteButton: UIButton!
     
+    weak var favoriteDelegate: FavoriteBook?
+    
+    var book: BookModel?
+    var hideFavoriteButton: Bool = false {
+        didSet {
+            favoriteButton.isHidden = hideFavoriteButton
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
+        favoriteButton.addTarget(self, action: #selector(changeFavorite), for: .touchUpInside)
     }
     
-    func setBookArtwork(imageURL: String) {
+    
+    func setBook() {
+        titleLabel.text = book?.name
+        authorLabel.text = book?.author
+        pagesLabel.text = "Pages: \(book?.pages ?? 0)"
+        publisherLabel.text = "Publisher: \(book?.publisher ?? "")"
+    }
+    
+    private func setBookArtwork(imageURL: String) {
         let imageUrl = URL(string: imageURL)!
         let imageData = try! Data(contentsOf: imageUrl)
         let image = UIImage(data: imageData)
         artwork.image = image
     }
     
-    func setBookTitle(text: String) {
-        titleLabel.text = text
+    @objc func changeFavorite() {
+        changeFavoriteButtonState()
+        favoriteDelegate?.changeFavoriteState(book)
     }
     
-    func setBookAuthor(text: String) {
-        authorLabel.text = text
+    private func changeFavoriteButtonState() {
+        let isFavorited = book?.isFavorited ?? false
+        book?.isFavorited = !isFavorited
+        setFavoriteButtonImage()
     }
     
+    func setFavoriteButtonImage() {
+        if let isFavorited = book?.isFavorited, isFavorited {
+            favoriteButton.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
+        } else {
+            favoriteButton.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
+        }
+    }
 }
