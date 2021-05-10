@@ -43,6 +43,12 @@ extension BookResultsVC {
             }
         }
     }
+    
+    private func goToBookDetail(_ book: BookModel) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookDetailVC") as! BookDetailVC
+        vc.book = book
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 // MARK: - Favorite Book Delegate -
@@ -92,5 +98,8 @@ extension BookResultsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-   
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        goToBookDetail(books[indexPath.row])
+    }
 }

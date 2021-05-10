@@ -10,7 +10,6 @@ import Lottie
 
 class MainVC: UIViewController {
 
-    // MARK: - Variables -
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var searchButton: UIButton!
@@ -44,24 +43,18 @@ class MainVC: UIViewController {
             }
         }
     }
-}
-
-// MARK: - LIFECYCLE -
-extension MainVC {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setLottieAnimation()
         parseBookList()
     }
-}
-
-
-// MARK: - IBActions -
-extension MainVC {
+    
     @IBAction func searchButtonAction(_ sender: Any) {
         guard !searchBarText.isEmpty else {
             return showAlert(title: "", message: "Search Text can not be empty!", okTitle: "OK", cancelTitle: nil, okAction: nil, cancelAction: nil)
         }
+        showLoadingAnimation = true
         filterBooks()
     }
 }
@@ -95,19 +88,14 @@ extension MainVC {
     private func showSearchNotFoundError() {
         showAlert(title: "", message: "Books not found.", okTitle: "OK", cancelTitle: nil, okAction: nil, cancelAction: nil)
     }
-}
-
-// MARK: - Navigation Functions -
-extension MainVC {
+    
     private func goToBookResults(_ books: [BookModel]) {
-        showLoadingAnimation = true
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookResultsVC") as! BookResultsVC
         vc.searchText = searchBarText
         vc.searchType = segmentedControl.selectedSegmentIndex == 0 ? .title : .author
         vc.books = books
         showLoadingAnimation = false
         navigationController?.pushViewController(vc, animated: true)
-        
     }
 }
 

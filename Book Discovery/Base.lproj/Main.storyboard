@@ -180,6 +180,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="cG2-R4-UPz" id="ELU-Xw-EAZ"/>
+                        <segue destination="Gdz-b1-xkD" kind="show" id="K9U-yP-eAk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v73-PD-FQ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -304,11 +305,56 @@
             </objects>
             <point key="canvasLocation" x="4745" y="874"/>
         </scene>
+        <!--Book Detail-->
+        <scene sceneID="cQi-n0-tQ0">
+            <objects>
+                <viewController storyboardIdentifier="BookDetailVC" id="Gdz-b1-xkD" customClass="BookDetailVC" customModule="Book_Discovery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZVz-qE-ZH0">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pXe-aR-CYv">
+                                <rect key="frame" x="0.0" y="140" width="390" height="621"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Gdz-b1-xkD" id="MGg-50-0be"/>
+                                    <outlet property="delegate" destination="Gdz-b1-xkD" id="8DI-Bs-yAT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ww2-7d-CMm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pXe-aR-CYv" firstAttribute="leading" secondItem="Ww2-7d-CMm" secondAttribute="leading" id="Gce-TP-IEK"/>
+                            <constraint firstItem="Ww2-7d-CMm" firstAttribute="trailing" secondItem="pXe-aR-CYv" secondAttribute="trailing" id="J2i-EB-Pc8"/>
+                            <constraint firstItem="pXe-aR-CYv" firstAttribute="top" secondItem="Ww2-7d-CMm" secondAttribute="top" id="Xz4-9T-Ih9"/>
+                            <constraint firstItem="Ww2-7d-CMm" firstAttribute="bottom" secondItem="pXe-aR-CYv" secondAttribute="bottom" id="hF4-Xr-gNB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Book Detail" id="Bzg-xN-xDb">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Fwx-KD-1BO"/>
+                        <barButtonItem key="rightBarButtonItem" image="heart" catalog="system" id="2WE-eQ-4xv">
+                            <color key="tintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="favoriteAction:" destination="Gdz-b1-xkD" id="WPK-ky-8CH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="favoriteButton" destination="2WE-eQ-4xv" id="2td-gV-Ozy"/>
+                        <outlet property="tableView" destination="pXe-aR-CYv" id="ZIY-9p-xgX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ruV-WD-rjC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7541.538461538461" y="91.706161137440759"/>
+        </scene>
     </scenes>
     <resources>
         <image name="barcode.viewfinder" catalog="system" width="128" height="115"/>
         <image name="books.vertical.fill" catalog="system" width="128" height="100"/>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="heart.slash.fill" catalog="system" width="128" height="115"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

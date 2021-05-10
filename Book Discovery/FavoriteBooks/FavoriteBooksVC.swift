@@ -71,6 +71,7 @@ extension FavoriteBooksVC: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             tableView.beginUpdates()
             FavoriteBooksCache.removeFromFavorites(favoriteBooks[indexPath.row])
+            NotificationCenter.default.post(name: .removeBookFromFavorites, object: nil, userInfo: ["book": favoriteBooks[indexPath.row]])
             favoriteBooks.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
