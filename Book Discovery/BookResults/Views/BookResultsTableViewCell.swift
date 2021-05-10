@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol FavoriteBook: class {
-    func changeFavoriteState(_ favoriteBook: BookModel?)
-}
-
 class BookResultsTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var artwork: UIImageView!

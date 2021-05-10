@@ -14,17 +14,17 @@ class BookResultsVC: UIViewController {
     var searchText: String = ""
     var searchType: BookSearchType = .title
     var books: [BookModel] = []
-    private var favoriteBooks: [BookModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setFavoritedBooks()
         tableView.register(UINib(nibName: "SerachTextTableViewCell", bundle: nil), forCellReuseIdentifier: "SerachTextTableViewCell")
         tableView.register(UINib(nibName: "BookResultsTableViewCell", bundle: nil), forCellReuseIdentifier: "BookResultsTableViewCell")
+        NotificationCenter.default.addObserver(self, selector: #selector(removeBookFromFavorites(_:)), name: .removeBookFromFavorites, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setFavoritedBooks()
         tableView.reloadData()
     }
 }
@@ -32,7 +32,7 @@ class BookResultsVC: UIViewController {
 // MARK: - Functions -
 extension BookResultsVC {
     private func setFavoritedBooks() {
-        favoriteBooks = FavoriteBooksCache.getFavorites()
+        let favoriteBooks = FavoriteBooksCache.getFavorites()
         for i in 0..<books.count {
             books[i].isFavorited = false
             for j in 0..<favoriteBooks.count {
@@ -44,9 +44,20 @@ extension BookResultsVC {
         }
     }
     
+    @objc func removeBookFromFavorites(_ notification: Notification) {
+        if let removedBook = notification.userInfo!["book"] as? BookModel {
+            for i in 0..<books.count {
+                if removedBook == books[i] {
+                    books[i].isFavorited = false
+                }
+            }
+        }
+    }
+    
     private func goToBookDetail(_ book: BookModel) {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookDetailVC") as! BookDetailVC
         vc.book = book
+        vc.favoriteDelegate = self
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -54,17 +65,17 @@ extension BookResultsVC {
 // MARK: - Favorite Book Delegate -
 extension BookResultsVC: FavoriteBook {
     func changeFavoriteState(_ favoriteBook: BookModel?) {
-        guard let book = favoriteBook else { return }
-        let isFavorited = book.isFavorited ?? false
-        var oldBook = book
+        guard let newBook = favoriteBook else { return }
+        let isFavorited = newBook.isFavorited ?? false
+        var oldBook = newBook
         oldBook.isFavorited = !isFavorited
         guard let index = books.firstIndex(of: oldBook) else { return }
         if isFavorited {
             books[index].isFavorited = true
-            FavoriteBooksCache.addToFavorites(book)
+            FavoriteBooksCache.addToFavorites(newBook)
         } else {
             books[index].isFavorited = false
-            FavoriteBooksCache.removeFromFavorites(book)
+            FavoriteBooksCache.removeFromFavorites(newBook)
         }
         tableView.reloadData()
     }

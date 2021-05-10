@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol FavoriteBook: class {
+    func changeFavoriteState(_ favoriteBook: BookModel?)
+}
+
 class FavoriteBooksVC: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
@@ -42,6 +46,13 @@ extension FavoriteBooksVC {
             tableView.reloadData()
         }
     }
+    
+    private func goToBookDetail(_ book: BookModel) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookDetailVC") as! BookDetailVC
+        vc.book = book
+        vc.isComingFromFavorites = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 // MARK: - Table View Delegate, Datasource -
@@ -57,6 +68,10 @@ extension FavoriteBooksVC: UITableViewDelegate, UITableViewDataSource {
         cell.setBook()
         cell.hideFavoriteButton = true
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        goToBookDetail(favoriteBooks[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

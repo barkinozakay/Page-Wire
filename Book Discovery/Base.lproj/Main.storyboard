@@ -255,7 +255,9 @@
                             <constraint firstItem="nW8-uH-1ae" firstAttribute="leading" secondItem="YCw-pK-A2M" secondAttribute="leading" id="pQ2-E6-3cp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Favorites" id="A0k-8h-bpe"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="A0k-8h-bpe">
+                        <barButtonItem key="backBarButtonItem" title=" " id="nSB-QV-hOw"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="emptyStateView" destination="7MJ-S0-njc" id="hmA-qB-cz6"/>
                         <outlet property="tableView" destination="nW8-uH-1ae" id="iXl-nd-CMs"/>
@@ -308,7 +310,7 @@
         <!--Book Detail-->
         <scene sceneID="cQi-n0-tQ0">
             <objects>
-                <viewController storyboardIdentifier="BookDetailVC" id="Gdz-b1-xkD" customClass="BookDetailVC" customModule="Book_Discovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookDetailVC" title="Book Detail" id="Gdz-b1-xkD" customClass="BookDetailVC" customModule="Book_Discovery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZVz-qE-ZH0">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -333,15 +335,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Book Detail" id="Bzg-xN-xDb">
                         <barButtonItem key="backBarButtonItem" title=" " id="Fwx-KD-1BO"/>
-                        <barButtonItem key="rightBarButtonItem" image="heart" catalog="system" id="2WE-eQ-4xv">
-                            <color key="tintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="favoriteAction:" destination="Gdz-b1-xkD" id="WPK-ky-8CH"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="favoriteButton" destination="2WE-eQ-4xv" id="2td-gV-Ozy"/>
                         <outlet property="tableView" destination="pXe-aR-CYv" id="ZIY-9p-xgX"/>
                     </connections>
                 </viewController>
@@ -354,7 +349,6 @@
         <image name="barcode.viewfinder" catalog="system" width="128" height="115"/>
         <image name="books.vertical.fill" catalog="system" width="128" height="100"/>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="heart.slash.fill" catalog="system" width="128" height="115"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

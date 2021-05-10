@@ -11,24 +11,39 @@ class BookDetailVC: UIViewController {
 
     // MARK: - Outlets -
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var favoriteButton: UIBarButtonItem!
     
     // MARK: - Variables -
     var book: BookModel?
-
+    var favoriteButton: UIBarButtonItem!
+    lazy var isComingFromFavorites: Bool = false
+    weak var favoriteDelegate: FavoriteBook?
+    
     // MARK: - LIFECYCLE -
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "BookDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "BookDetailsTableViewCell")
         NotificationCenter.default.addObserver(self, selector: #selector(removeBookFromFavorites(_:)), name: .removeBookFromFavorites, object: nil)
+        changeFavoriteButtonVisibility()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        checkIfBookIsFavorited()
+        if !isComingFromFavorites {
+            checkIfBookIsFavorited()
+        }
     }
 
-    @IBAction func favoriteAction(_ sender: UIBarButtonItem) {
+    private func changeFavoriteButtonVisibility() {
+        if isComingFromFavorites {
+            navigationItem.rightBarButtonItems = []
+        } else {
+            favoriteButton = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(favoriteAction))
+            favoriteButton.tintColor = #colorLiteral(red: 0.5808190107, green: 0.0884276256, blue: 0.3186392188, alpha: 1)
+            navigationItem.rightBarButtonItems = [favoriteButton]
+        }
+    }
+    
+    @objc private func favoriteAction() {
         checkFavoriteActionForBook()
     }
     
@@ -44,6 +59,7 @@ class BookDetailVC: UIViewController {
             favoriteButton.image = UIImage(systemName: "heart")
             favoriteButton.tag = 0
         }
+        favoriteDelegate?.changeFavoriteState(book)
     }
     
     private func checkIfBookIsFavorited() {
@@ -65,21 +81,6 @@ class BookDetailVC: UIViewController {
         }
     }
     
-}
-
-// MARK: - Favorite Book Delegate -
-extension BookDetailVC: FavoriteBook {
-    func changeFavoriteState(_ favoriteBook: BookModel?) {
-        guard book != nil else { return }
-        guard let favBook = favoriteBook else { return }
-        let isFavorited = favBook.isFavorited ?? false
-        book?.isFavorited = isFavorited
-        if isFavorited {
-            FavoriteBooksCache.addToFavorites(book!)
-        } else {
-            FavoriteBooksCache.removeFromFavorites(book!)
-        }
-    }
 }
 
 // MARK: - Table View Delegate, Datasource -
