@@ -9,7 +9,7 @@ import UIKit
 
 class BookPricesTableViewCell: UITableViewCell {
     
-    @IBOutlet private weak var siteLogo: UIImageView!
+    @IBOutlet private weak var logoImageView: UIImageView!
     @IBOutlet private weak var siteNameLabel: UILabel!
     @IBOutlet private weak var discountLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!

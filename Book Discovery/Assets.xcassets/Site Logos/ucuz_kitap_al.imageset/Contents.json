@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "ucuz_kitap_al.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "compression-type" : "automatic"
+  }
+}

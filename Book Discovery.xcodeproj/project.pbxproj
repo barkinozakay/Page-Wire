@@ -22,6 +22,7 @@
 		DD521CAA2610FE8500493A37 /* SearchingBooksAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD521CA92610FE8500493A37 /* SearchingBooksAnimationVC.swift */; };
 		DD87CD1F260FE9B0002F5C81 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87CD1E260FE9B0002F5C81 /* UIViewController+Extensions.swift */; };
 		DD87CD27260FE9C8002F5C81 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87CD26260FE9C8002F5C81 /* String+Extensions.swift */; };
+		DD8E5695264AB06E00FF1738 /* BookPricingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E5694264AB06E00FF1738 /* BookPricingModels.swift */; };
 		DD914470264A90A5003C9D22 /* BookPricesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91446E264A90A5003C9D22 /* BookPricesTableViewCell.swift */; };
 		DD914471264A90A5003C9D22 /* BookPricesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD91446F264A90A5003C9D22 /* BookPricesTableViewCell.xib */; };
 		DDA43F0A261513A000F41873 /* books.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA43F09261513A000F41873 /* books.json */; };
@@ -53,6 +54,7 @@
 		DD521CA92610FE8500493A37 /* SearchingBooksAnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingBooksAnimationVC.swift; sourceTree = "<group>"; };
 		DD87CD1E260FE9B0002F5C81 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		DD87CD26260FE9C8002F5C81 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		DD8E5694264AB06E00FF1738 /* BookPricingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPricingModels.swift; sourceTree = "<group>"; };
 		DD91446E264A90A5003C9D22 /* BookPricesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPricesTableViewCell.swift; sourceTree = "<group>"; };
 		DD91446F264A90A5003C9D22 /* BookPricesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookPricesTableViewCell.xib; sourceTree = "<group>"; };
 		DDA43F09261513A000F41873 /* books.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = books.json; sourceTree = "<group>"; };
@@ -133,12 +135,12 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		DD30DA8A2614FE6000BE4BB5 /* Model */ = {
+		DD30DA8A2614FE6000BE4BB5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				DD30DA8B2614FE9300BE4BB5 /* BookModels.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		DD521C8C2610F49100493A37 /* CustomAnimations */ = {
@@ -178,6 +180,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		DD8E5693264AB05F00FF1738 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD8E5694264AB06E00FF1738 /* BookPricingModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		DDDE6B33263118EA0062568D /* FavoriteBooks */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +210,7 @@
 		DDFE7073260FACB400138959 /* BookDetail */ = {
 			isa = PBXGroup;
 			children = (
+				DD8E5693264AB05F00FF1738 /* Models */,
 				DDDE6CB52649D81800291C0F /* Views */,
 				DDDE6CAC2649C09500291C0F /* BookDetailVC.swift */,
 			);
@@ -209,7 +220,7 @@
 		DDFE7074260FAEA500138959 /* BookResults */ = {
 			isa = PBXGroup;
 			children = (
-				DD30DA8A2614FE6000BE4BB5 /* Model */,
+				DD30DA8A2614FE6000BE4BB5 /* Models */,
 				DD87CD2E260FED50002F5C81 /* Views */,
 				DDFE7078260FAEF200138959 /* BookResultsVC.swift */,
 			);
@@ -314,6 +325,7 @@
 				DD23448F2610EAE8004EC0A1 /* SearchResultTextTableViewCell.swift in Sources */,
 				DD30DA822614FDB700BE4BB5 /* DecodeHelper.swift in Sources */,
 				DD273932260E556300266851 /* SceneDelegate.swift in Sources */,
+				DD8E5695264AB06E00FF1738 /* BookPricingModels.swift in Sources */,
 				DD30DA8C2614FE9300BE4BB5 /* BookModels.swift in Sources */,
 				DDDE6B35263119170062568D /* FavoriteBooksVC.swift in Sources */,
 			);
