@@ -10,47 +10,50 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BookDetailsTableViewCell" rowHeight="418" id="KGk-i7-Jjw" customClass="BookDetailsTableViewCell" customModule="Book_Discovery" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="439" height="400"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BookDetailsTableViewCell" rowHeight="327" id="KGk-i7-Jjw" customClass="BookDetailsTableViewCell" customModule="Book_Discovery" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="412" height="309"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="439" height="400"/>
+                <rect key="frame" x="0.0" y="0.0" width="412" height="309"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oez-HV-vBX">
-                        <rect key="frame" x="16" y="3.3333333333333286" width="407" height="194"/>
-                        <color key="tintColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <imageReference key="image" image="book.fill" catalog="system" symbolScale="small"/>
-                    </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="IwY-iT-fbD">
-                        <rect key="frame" x="16" y="216" width="407" height="147.66666666666663"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IwY-iT-fbD">
+                        <rect key="frame" x="16" y="0.0" width="380" height="287.66666666666669"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oez-HV-vBX">
+                                <rect key="frame" x="0.0" y="3.3333333333333286" width="380" height="144"/>
+                                <color key="tintColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="qIf-DP-U5W"/>
+                                </constraints>
+                                <imageReference key="image" image="book.fill" catalog="system" symbolScale="small"/>
+                            </imageView>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beN-An-fIL">
-                                <rect key="frame" x="0.0" y="0.0" width="407" height="31.333333333333332"/>
+                                <rect key="frame" x="0.0" y="158" width="380" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqD-fh-fSc">
-                                <rect key="frame" x="0.0" y="35.333333333333343" width="407" height="28"/>
+                                <rect key="frame" x="0.0" y="190" width="380" height="21.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqx-bO-hw3">
-                                <rect key="frame" x="0.0" y="67.333333333333314" width="407" height="23.333333333333329"/>
+                                <rect key="frame" x="0.0" y="219.66666666666666" width="380" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AaH-F3-XAR" userLabel="Book Genres">
-                                <rect key="frame" x="0.0" y="94.666666666666686" width="407" height="22.333333333333329"/>
+                                <rect key="frame" x="0.0" y="245.66666666666666" width="380" height="16.999999999999972"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pages" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mry-1t-Ge9" userLabel="Pages Label">
-                                <rect key="frame" x="0.0" y="121.00000000000001" width="407" height="26.666666666666671"/>
+                                <rect key="frame" x="0.0" y="270.66666666666669" width="380" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -59,14 +62,10 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="oez-HV-vBX" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.5" id="2uZ-CX-fZj"/>
-                    <constraint firstItem="IwY-iT-fbD" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.369565" id="Avd-SN-gNW"/>
-                    <constraint firstItem="oez-HV-vBX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="baR-V4-NG4"/>
-                    <constraint firstItem="oez-HV-vBX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bbP-Te-1Vk"/>
+                    <constraint firstItem="IwY-iT-fbD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Abb-0z-Epx"/>
                     <constraint firstAttribute="trailing" secondItem="IwY-iT-fbD" secondAttribute="trailing" constant="16" id="k24-ke-5Xn"/>
-                    <constraint firstItem="IwY-iT-fbD" firstAttribute="top" secondItem="oez-HV-vBX" secondAttribute="bottom" constant="16" id="uLl-BP-3DN"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IwY-iT-fbD" secondAttribute="bottom" constant="16" id="kfR-nY-Qf7"/>
                     <constraint firstItem="IwY-iT-fbD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="uQJ-XV-RGM"/>
-                    <constraint firstAttribute="trailing" secondItem="oez-HV-vBX" secondAttribute="trailing" constant="16" id="y4V-Vq-aCP"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -78,7 +77,7 @@
                 <outlet property="publisherLabel" destination="Qqx-bO-hw3" id="P6G-AF-l2J"/>
                 <outlet property="titleLabel" destination="beN-An-fIL" id="vPF-V6-TDg"/>
             </connections>
-            <point key="canvasLocation" x="221.01449275362322" y="204.91071428571428"/>
+            <point key="canvasLocation" x="200" y="-65.047393364928908"/>
         </tableViewCell>
     </objects>
     <resources>

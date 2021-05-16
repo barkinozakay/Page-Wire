@@ -19,8 +19,24 @@ extension UIViewController {
         }
     }
     
+    final func delayOperation(delayTime: Double, _ operation: @escaping () -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayTime) {
+            operation()
+        }
+    }
+    
+    final func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc final func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     // MARK: - Alerts -
-    func showAlert(title: String?, message: String?, okTitle: String?, cancelTitle: String?,okAction: (() -> Void)?, cancelAction: (() -> Void)?) {
+    final func showAlert(title: String?, message: String?, okTitle: String?, cancelTitle: String?,okAction: (() -> Void)?, cancelAction: (() -> Void)?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         if let _okTitle = okTitle {
             let alertOkAction = UIAlertAction(title: _okTitle, style: .default) { (_) in
@@ -34,11 +50,12 @@ extension UIViewController {
             }
             alert.addAction(alertCancelAction)
         }
+        alert.view.tintColor = #colorLiteral(red: 0.5808190107, green: 0.0884276256, blue: 0.3186392188, alpha: 1)
         self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Safari -
-    func presentSafariViewController(with url: URL) {
+    final func presentSafariViewController(with url: URL) {
         let safariViewController = SFSafariViewController(url: url)
         safariViewController.preferredControlTintColor = .systemGreen
         safariViewController.modalPresentationStyle = .pageSheet

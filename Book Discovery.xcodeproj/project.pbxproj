@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB786616472FA3B024657EC0 /* Pods_Book_Discovery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD361ADF149125E3968B1542 /* Pods_Book_Discovery.framework */; };
 		DD23444A2610BD0F004EC0A1 /* BookResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2344482610BD0F004EC0A1 /* BookResultsTableViewCell.swift */; };
 		DD23444B2610BD0F004EC0A1 /* BookResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD2344492610BD0F004EC0A1 /* BookResultsTableViewCell.xib */; };
 		DD23448F2610EAE8004EC0A1 /* SearchResultTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD23448D2610EAE8004EC0A1 /* SearchResultTextTableViewCell.swift */; };
@@ -17,6 +18,7 @@
 		DD27393C260E556400266851 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD27393A260E556400266851 /* LaunchScreen.storyboard */; };
 		DD30DA822614FDB700BE4BB5 /* DecodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30DA812614FDB700BE4BB5 /* DecodeHelper.swift */; };
 		DD30DA8C2614FE9300BE4BB5 /* BookModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30DA8B2614FE9300BE4BB5 /* BookModels.swift */; };
+		DD41E19326519B0E0092E19E /* BarcodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = DD41E19226519B0E0092E19E /* BarcodeScanner */; };
 		DD521C922610FC2600493A37 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DD521C912610FC2600493A37 /* Lottie */; };
 		DD521CA02610FE0000493A37 /* searching_books_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DD521C9F2610FE0000493A37 /* searching_books_animation.json */; };
 		DD521CAA2610FE8500493A37 /* SearchingBooksAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD521CA92610FE8500493A37 /* SearchingBooksAnimationVC.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4BCE283E972AB990100F7A1A /* Pods-Book Discovery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Book Discovery.debug.xcconfig"; path = "Target Support Files/Pods-Book Discovery/Pods-Book Discovery.debug.xcconfig"; sourceTree = "<group>"; };
+		AD361ADF149125E3968B1542 /* Pods_Book_Discovery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Book_Discovery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2344482610BD0F004EC0A1 /* BookResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookResultsTableViewCell.swift; sourceTree = "<group>"; };
 		DD2344492610BD0F004EC0A1 /* BookResultsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookResultsTableViewCell.xib; sourceTree = "<group>"; };
 		DD23448D2610EAE8004EC0A1 /* SearchResultTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTextTableViewCell.swift; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 		DDDE6CC02649E91200291C0F /* Notification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
 		DDFE7078260FAEF200138959 /* BookResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookResultsVC.swift; sourceTree = "<group>"; };
 		DDFE7085260FAF1D00138959 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		F07B31CF8E9EBC1387060684 /* Pods-Book Discovery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Book Discovery.release.xcconfig"; path = "Target Support Files/Pods-Book Discovery/Pods-Book Discovery.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,19 +78,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD41E19326519B0E0092E19E /* BarcodeScanner in Frameworks */,
 				DDFE7062260FA6EC00138959 /* SwiftSoup in Frameworks */,
 				DD521C922610FC2600493A37 /* Lottie in Frameworks */,
+				DB786616472FA3B024657EC0 /* Pods_Book_Discovery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F841C6A2B8DF4704F7ACB0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD361ADF149125E3968B1542 /* Pods_Book_Discovery.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		33989678CC772A44B3A09B68 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4BCE283E972AB990100F7A1A /* Pods-Book Discovery.debug.xcconfig */,
+				F07B31CF8E9EBC1387060684 /* Pods-Book Discovery.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DD273923260E556300266851 = {
 			isa = PBXGroup;
 			children = (
 				DD27392E260E556300266851 /* Book Discovery */,
 				DD27392D260E556300266851 /* Products */,
+				33989678CC772A44B3A09B68 /* Pods */,
+				1F841C6A2B8DF4704F7ACB0B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,9 +189,9 @@
 		DD87CD15260FE8CA002F5C81 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DDDE6CC02649E91200291C0F /* Notification+Extensions.swift */,
 				DD87CD26260FE9C8002F5C81 /* String+Extensions.swift */,
 				DD87CD1E260FE9B0002F5C81 /* UIViewController+Extensions.swift */,
-				DDDE6CC02649E91200291C0F /* Notification+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -234,6 +260,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD273956260E556400266851 /* Build configuration list for PBXNativeTarget "Book Discovery" */;
 			buildPhases = (
+				8F87C16D3C3A1DBE55CE4A80 /* [CP] Check Pods Manifest.lock */,
 				DD273928260E556300266851 /* Sources */,
 				DD273929260E556300266851 /* Frameworks */,
 				DD27392A260E556300266851 /* Resources */,
@@ -246,6 +273,7 @@
 			packageProductDependencies = (
 				DDFE7061260FA6EC00138959 /* SwiftSoup */,
 				DD521C912610FC2600493A37 /* Lottie */,
+				DD41E19226519B0E0092E19E /* BarcodeScanner */,
 			);
 			productName = "Book Discovery";
 			productReference = DD27392C260E556300266851 /* Book Discovery.app */;
@@ -277,6 +305,7 @@
 			packageReferences = (
 				DDFE7060260FA6EC00138959 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				DD521C902610FC2600493A37 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				DD41E19126519B0E0092E19E /* XCRemoteSwiftPackageReference "BarcodeScanner" */,
 			);
 			productRefGroup = DD27392D260E556300266851 /* Products */;
 			projectDirPath = "";
@@ -304,6 +333,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8F87C16D3C3A1DBE55CE4A80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Book Discovery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DD273928260E556300266851 /* Sources */ = {
@@ -471,17 +525,18 @@
 		};
 		DD273957260E556400266851 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BCE283E972AB990100F7A1A /* Pods-Book Discovery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = W3G4UYUA3Z;
 				INFOPLIST_FILE = "Book Discovery/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "barkinozakay.Book-Discovery";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.barkinozakay.book-discovery";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -490,17 +545,18 @@
 		};
 		DD273958260E556400266851 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F07B31CF8E9EBC1387060684 /* Pods-Book Discovery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = W3G4UYUA3Z;
 				INFOPLIST_FILE = "Book Discovery/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "barkinozakay.Book-Discovery";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.barkinozakay.book-discovery";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -531,6 +587,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DD41E19126519B0E0092E19E /* XCRemoteSwiftPackageReference "BarcodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hyperoslo/BarcodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 		DD521C902610FC2600493A37 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
@@ -550,6 +614,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DD41E19226519B0E0092E19E /* BarcodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD41E19126519B0E0092E19E /* XCRemoteSwiftPackageReference "BarcodeScanner" */;
+			productName = BarcodeScanner;
+		};
 		DD521C912610FC2600493A37 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DD521C902610FC2600493A37 /* XCRemoteSwiftPackageReference "lottie-ios" */;

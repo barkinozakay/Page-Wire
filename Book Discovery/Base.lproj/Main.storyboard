@@ -18,7 +18,7 @@
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="36c-EW-zjW">
                                 <rect key="frame" x="60" y="164" width="270" height="32"/>
-                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="Title"/>
                                     <segment title="Author"/>
@@ -30,13 +30,6 @@
                                     <constraint firstAttribute="height" constant="44" id="AW8-Q0-hkJ"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="TcZ-31-mRE"/>
-                                </connections>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bI5-Tl-mjl" userLabel="Search Button">
                                 <rect key="frame" x="344.33333333333331" y="215" width="24.666666666666686" height="20"/>
@@ -66,14 +59,17 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbZ-kD-2a0" userLabel="Barcode Button">
-                                <rect key="frame" x="251.33333333333334" y="655" width="100.33333333333334" height="77"/>
+                                <rect key="frame" x="253.33333333333334" y="656.33333333333326" width="96.333333333333343" height="73.666666666666629"/>
                                 <color key="tintColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" backgroundImage="barcode.viewfinder" catalog="system"/>
+                                <state key="normal" backgroundImage="barcode" catalog="system"/>
+                                <connections>
+                                    <action selector="scanBarcodeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nCW-CI-uRK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoB-2s-s1j" userLabel="Camera Button">
-                                <rect key="frame" x="45.000000000000007" y="656.33333333333337" width="104.66666666666669" height="73.333333333333371"/>
+                                <rect key="frame" x="55.000000000000007" y="655.66666666666674" width="84.666666666666686" height="75.333333333333371"/>
                                 <color key="tintColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" backgroundImage="camera.fill" catalog="system"/>
+                                <state key="normal" backgroundImage="book.closed.fill" catalog="system"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -85,7 +81,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="36c-EW-zjW" secondAttribute="trailing" constant="60" id="8pZ-ko-A7A"/>
                             <constraint firstItem="36c-EW-zjW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="9gU-9P-ZKk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NoB-2s-s1j" secondAttribute="bottom" constant="30" id="EeE-Jo-dLG"/>
-                            <constraint firstItem="NoB-2s-s1j" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.06325" constant="80" id="F5e-Ew-hPa"/>
+                            <constraint firstItem="NoB-2s-s1j" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.06325" constant="60" id="F5e-Ew-hPa"/>
                             <constraint firstItem="SbZ-kD-2a0" firstAttribute="width" secondItem="NoB-2s-s1j" secondAttribute="width" multiplier="0.194268" constant="80" id="GBf-91-SK9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bI5-Tl-mjl" secondAttribute="trailing" constant="21" id="JsC-rS-ZlK"/>
                             <constraint firstItem="NoB-2s-s1j" firstAttribute="centerX" secondItem="qh8-fm-koY" secondAttribute="centerX" id="LDO-it-MGg"/>
@@ -111,7 +107,6 @@
                         <outlet property="searchBar" destination="GMn-CC-ABO" id="zWF-sq-68a"/>
                         <outlet property="searchButton" destination="bI5-Tl-mjl" id="SrK-2V-a47"/>
                         <outlet property="segmentedControl" destination="36c-EW-zjW" id="fVy-iz-212"/>
-                        <segue destination="LOQ-z6-j0h" kind="show" id="Hdi-lZ-1lA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -123,11 +118,11 @@
             <objects>
                 <viewController storyboardIdentifier="BookResultsVC" title="Book Results" id="LOQ-z6-j0h" customClass="BookResultsVC" customModule="Book_Discovery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K1U-PZ-eee">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cG2-R4-UPz">
-                                <rect key="frame" x="0.0" y="140" width="390" height="704"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchResultTextTableViewCell" id="MMO-dT-Y17" customClass="SearchResultTextTableViewCell" customModule="Book_Discovery" customModuleProvider="target">
@@ -175,17 +170,17 @@
                             <constraint firstItem="cG2-R4-UPz" firstAttribute="leading" secondItem="5GP-OP-jC9" secondAttribute="leading" id="zz3-Oo-eaf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Book Results" id="266-wj-box">
+                    <navigationItem key="navigationItem" title="Book Results" largeTitleDisplayMode="always" id="266-wj-box">
                         <barButtonItem key="backBarButtonItem" title=" " id="hRP-Lf-Dmk"/>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="cG2-R4-UPz" id="ELU-Xw-EAZ"/>
-                        <segue destination="Gdz-b1-xkD" kind="show" id="K9U-yP-eAk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v73-PD-FQ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6576.9230769230771" y="91.706161137440759"/>
+            <point key="canvasLocation" x="6602" y="-269"/>
         </scene>
         <!--Book Discovery Navigation-->
         <scene sceneID="gMy-p3-bdi">
@@ -312,11 +307,11 @@
             <objects>
                 <viewController storyboardIdentifier="BookDetailVC" title="Book Detail" id="Gdz-b1-xkD" customClass="BookDetailVC" customModule="Book_Discovery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZVz-qE-ZH0">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pXe-aR-CYv">
-                                <rect key="frame" x="0.0" y="140" width="390" height="621"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Gdz-b1-xkD" id="MGg-50-0be"/>
@@ -333,22 +328,23 @@
                             <constraint firstItem="Ww2-7d-CMm" firstAttribute="bottom" secondItem="pXe-aR-CYv" secondAttribute="bottom" id="hF4-Xr-gNB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Book Detail" id="Bzg-xN-xDb">
+                    <navigationItem key="navigationItem" title="Book Details" largeTitleDisplayMode="always" id="Bzg-xN-xDb">
                         <barButtonItem key="backBarButtonItem" title=" " id="Fwx-KD-1BO"/>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="pXe-aR-CYv" id="ZIY-9p-xgX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ruV-WD-rjC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7541.538461538461" y="91.706161137440759"/>
+            <point key="canvasLocation" x="6602" y="425"/>
         </scene>
     </scenes>
     <resources>
-        <image name="barcode.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="barcode" catalog="system" width="128" height="93"/>
+        <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="books.vertical.fill" catalog="system" width="128" height="100"/>
-        <image name="camera.fill" catalog="system" width="128" height="94"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="heart.slash.fill" catalog="system" width="128" height="115"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

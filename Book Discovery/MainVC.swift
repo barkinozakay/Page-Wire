@@ -7,17 +7,21 @@
 
 import UIKit
 import Lottie
+import BarcodeScanner
 
 class MainVC: UIViewController {
 
+    // MARK: - Outlets -
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var searchButton: UIButton!
     @IBOutlet private weak var cameraButton: UIButton!
     @IBOutlet private weak var barcodeButton: UIButton!
     
+    // MARK: - Variables -
     private lazy var books: [BookModel] = []
     private lazy var searchBarText: String = ""
+    private weak var barcodeScanner: BarcodeScannerViewController?
     private lazy var animationView = AnimationView(name: "searching_books_animation")
     private lazy var blurEffectView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .dark)
@@ -44,23 +48,46 @@ class MainVC: UIViewController {
         }
     }
     
+    // MARK: - LIFECYCLE -
     override func viewDidLoad() {
         super.viewDidLoad()
-        setLottieAnimation()
+        setUI()
         parseBookList()
     }
-    
+}
+
+// MARK: - IBActions-
+extension MainVC {
     @IBAction func searchButtonAction(_ sender: Any) {
-        guard !searchBarText.isEmpty else {
-            return showAlert(title: "", message: "Search Text can not be empty!", okTitle: "OK", cancelTitle: nil, okAction: nil, cancelAction: nil)
-        }
-        showLoadingAnimation = true
-        filterBooks()
+        searchBooks()
+    }
+    
+    @IBAction func scanBarcodeAction(_ sender: Any) {
+        let barcodeScanner = makeBarcodeScannerVC()
+        barcodeScanner.title = "Barcode Scanner"
+        present(barcodeScanner, animated: true, completion: nil)
     }
 }
 
 // MARK: - Functions -
 extension MainVC {
+    private func setUI() {
+        searchBar.delegate = self
+        setLottieAnimation()
+        hideKeyboardWhenTappedAround()
+    }
+    
+    private func searchBooks() {
+        guard !searchBarText.isEmpty else {
+            return showAlert(title: "", message: "Search Text can not be empty!", okTitle: "OK", cancelTitle: nil, okAction: nil, cancelAction: nil)
+        }
+        showLoadingAnimation = true
+        // TODO: - Remove Delay -
+        delayOperation(delayTime: 2.0) {
+            self.filterBooks()
+        }
+    }
+    
     private func parseBookList() {
         DispatchQueue.main.async {
             if let response = DecoderHelper.decode(resourcePath: "books", BookList.self) {
@@ -86,15 +113,42 @@ extension MainVC {
     }
     
     private func showSearchNotFoundError() {
-        showAlert(title: "", message: "Books not found.", okTitle: "OK", cancelTitle: nil, okAction: nil, cancelAction: nil)
+        showAlert(title: "", message: "Book not found.", okTitle: "OK", cancelTitle: nil, okAction: nil, cancelAction: nil)
     }
     
+    private func makeBarcodeScannerVC() -> BarcodeScannerViewController {
+        let viewController = BarcodeScannerViewController()
+        viewController.codeDelegate = self
+        viewController.errorDelegate = self
+        viewController.dismissalDelegate = self
+        return viewController
+    }
+    
+    private func findBookWithISBN(_ isbn: String) {
+        guard let scanner = barcodeScanner else { return }
+        guard let index = books.firstIndex(where: { "\($0.isbn)" == isbn}) else {
+            return scanner.resetWithError(message: "Book not found.")
+        }
+        let book = books[index]
+        scanner.dismiss(animated: true, completion: nil)
+        goToBookDetail(book)
+    }
+}
+
+// MARK: - Navigation Functions -
+extension MainVC {
     private func goToBookResults(_ books: [BookModel]) {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookResultsVC") as! BookResultsVC
         vc.searchText = searchBarText
         vc.searchType = segmentedControl.selectedSegmentIndex == 0 ? .title : .author
         vc.books = books
         showLoadingAnimation = false
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func goToBookDetail(_ book: BookModel) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookDetailVC") as! BookDetailVC
+        vc.book = book
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -114,7 +168,7 @@ extension MainVC {
     }
 }
 
-// MARK: - Search Bar Delegate -
+// MARK: - Search Bar Delegates -
 extension MainVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         guard text.isAlphaNumeric else { return false }
@@ -124,5 +178,29 @@ extension MainVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard let text = searchBar.text else { return }
         searchBarText = text
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBooks()
+    }
+}
+
+// MARK: - Barcode Scanner Delegates -
+extension MainVC: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
+    func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
+        delayOperation(delayTime: 2.0) {
+            self.barcodeScanner = controller
+            print(code)
+            self.findBookWithISBN(code)
+        }
+    }
+    
+    func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
+        print(error)
+    }
+    
+    func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
