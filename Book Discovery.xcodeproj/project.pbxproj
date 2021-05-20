@@ -28,6 +28,7 @@
 		DD914471264A90A5003C9D22 /* BookPricesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD91446F264A90A5003C9D22 /* BookPricesTableViewCell.xib */; };
 		DDA43F0A261513A000F41873 /* books.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA43F09261513A000F41873 /* books.json */; };
 		DDCDED5C2656F3E500687161 /* BookDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDED5B2656F3E500687161 /* BookDataViewModel.swift */; };
+		DDCDED642657108200687161 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = DDCDED632657108200687161 /* Nuke */; };
 		DDDE6B2F263118890062568D /* FavoriteBooksCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE6B2E263118890062568D /* FavoriteBooksCache.swift */; };
 		DDDE6B35263119170062568D /* FavoriteBooksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE6B34263119170062568D /* FavoriteBooksVC.swift */; };
 		DDDE6CAD2649C09500291C0F /* BookDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE6CAC2649C09500291C0F /* BookDetailVC.swift */; };
@@ -82,6 +83,7 @@
 				DDFE7062260FA6EC00138959 /* SwiftSoup in Frameworks */,
 				DD521C922610FC2600493A37 /* Lottie in Frameworks */,
 				DB786616472FA3B024657EC0 /* Pods_Book_Discovery.framework in Frameworks */,
+				DDCDED642657108200687161 /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +276,7 @@
 				DDFE7061260FA6EC00138959 /* SwiftSoup */,
 				DD521C912610FC2600493A37 /* Lottie */,
 				DD41E19226519B0E0092E19E /* BarcodeScanner */,
+				DDCDED632657108200687161 /* Nuke */,
 			);
 			productName = "Book Discovery";
 			productReference = DD27392C260E556300266851 /* Book Discovery.app */;
@@ -306,6 +309,7 @@
 				DDFE7060260FA6EC00138959 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				DD521C902610FC2600493A37 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				DD41E19126519B0E0092E19E /* XCRemoteSwiftPackageReference "BarcodeScanner" */,
+				DDCDED622657108200687161 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = DD27392D260E556300266851 /* Products */;
 			projectDirPath = "";
@@ -603,6 +607,14 @@
 				minimumVersion = 3.2.1;
 			};
 		};
+		DDCDED622657108200687161 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.6.0;
+			};
+		};
 		DDFE7060260FA6EC00138959 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup";
@@ -623,6 +635,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DD521C902610FC2600493A37 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		DDCDED632657108200687161 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDCDED622657108200687161 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
 		};
 		DDFE7061260FA6EC00138959 /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;

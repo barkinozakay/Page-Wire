@@ -58,6 +58,16 @@ class BookDataViewModel {
         semaphore.wait()
     }
     
+    private func startNewSessionSync2(_ url: URL?, _ comp: @escaping (String?) -> ()) {
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if error != nil {
+                print(error!)
+            } else {
+                comp(String(decoding: data!, as: UTF8.self))
+            }
+        }.resume()
+    }
+    
     private func prepareQuery(_ query: String) -> String {
         var newQuery = query
         newQuery.getAlphaNumericValue()
@@ -93,10 +103,33 @@ class BookDataViewModel {
         guard !html.isEmpty else { return nil }
         let link = getLink(html, site)
         guard !link.isEmpty else { return nil }
-        // PARSE HTML FOR ARTWORK
-        let artwork = "ben 1 urlim"
+        var siteHtml: String?
+        let url = URL(string: link)
+        startNewSessionSync(url) { (content) in
+            siteHtml = content
+        }
+        guard let mySiteHtml = siteHtml, !mySiteHtml.isEmpty else { return nil }
+        let artwork = getArtwork(mySiteHtml)
         self.book?.artwork = artwork
         return artwork
+    }
+    
+    private func getArtwork(_ html: String) -> String? {
+        do {
+            let doc: Document = try SwiftSoup.parse(html)
+            let jpgs: Elements = try doc.select("img")
+            var images: [String] = []
+            for jpg in jpgs {
+                images.append(try jpg.attr("data-src"))
+            }
+            return images.filter { $0.contains("cache") }.first
+        } catch Exception.Error(let type, let message) {
+            print("Error Type: \(type)")
+            print("Error Message: \(message)")
+        } catch {
+            print("Error")
+        }
+        return nil
     }
 }
 

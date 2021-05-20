@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Nuke
 
 class BookResultsTableViewCell: UITableViewCell {
     
@@ -16,14 +17,14 @@ class BookResultsTableViewCell: UITableViewCell {
     @IBOutlet private weak var publisherLabel: UILabel!
     @IBOutlet private weak var favoriteButton: UIButton!
     
-    weak var favoriteDelegate: FavoriteBook?
-    
     var book: BookModel?
     var hideFavoriteButton: Bool = false {
         didSet {
             favoriteButton.isHidden = hideFavoriteButton
         }
     }
+    
+    weak var favoriteDelegate: FavoriteBook?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,17 +33,20 @@ class BookResultsTableViewCell: UITableViewCell {
     
     
     func setBook() {
+        setArtwork()
         titleLabel.text = book?.name
         authorLabel.text = book?.author
         pagesLabel.text = "Pages: \(book?.pages ?? 0)"
         publisherLabel.text = "Publisher: \(book?.publisher ?? "")"
     }
     
-    private func setBookArtwork(imageURL: String) {
-        let imageUrl = URL(string: imageURL)!
-        let imageData = try! Data(contentsOf: imageUrl)
-        let image = UIImage(data: imageData)
-        artwork.image = image
+    private func setArtwork() {
+        guard let url = book?.artwork else { return }
+        let options = ImageLoadingOptions(
+            placeholder: UIImage(systemName: "book.fill"),
+            transition: .fadeIn(duration: 0.33)
+        )
+        Nuke.loadImage(with: URL(string: url)!, options: options, into: artwork)
     }
     
     @objc func changeFavorite() {
