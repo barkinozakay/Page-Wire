@@ -14,13 +14,18 @@ class BookDetailVC: UIViewController {
     
     // MARK: - Variables -
     var book: BookModel?
-    var favoriteButton: UIBarButtonItem!
+    private var pricingViewModel: BookPricingViewModel?
+    private var favoriteButton: UIBarButtonItem!
     lazy var isComingFromFavorites: Bool = false
     weak var favoriteDelegate: FavoriteBook?
+    
+    var bookDataList: [BookDataModel?]?
     
     // MARK: - LIFECYCLE -
     override func viewDidLoad() {
         super.viewDidLoad()
+        pricingViewModel = BookPricingViewModel(book: book!)
+        bookDataList = pricingViewModel?.getBookDataForSites() ?? []
         tableView.register(UINib(nibName: "BookDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "BookDetailsTableViewCell")
         tableView.register(UINib(nibName: "BookPricesTableViewCell", bundle: nil), forCellReuseIdentifier: "BookPricesTableViewCell")
         NotificationCenter.default.addObserver(self, selector: #selector(removeBookFromFavorites(_:)), name: .removeBookFromFavorites, object: nil)
@@ -29,11 +34,12 @@ class BookDetailVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if !isComingFromFavorites {
-            checkIfBookIsFavorited()
-        }
+        if !isComingFromFavorites { checkIfBookIsFavorited() }
     }
+}
 
+// MARK: - Favorite Book Functions -
+extension BookDetailVC {
     private func changeFavoriteButtonVisibility() {
         if isComingFromFavorites {
             navigationItem.rightBarButtonItems = []
@@ -81,7 +87,13 @@ class BookDetailVC: UIViewController {
             }
         }
     }
-    
+}
+
+extension BookDetailVC: NavigateToSite {
+    func navigateToSite(index: Int) {
+        guard let urlString = bookDataList?[index]?.url, !urlString.isEmpty, let url = URL(string: urlString) else { return }
+        presentSafariViewController(with: url)
+    }
 }
 
 // MARK: - Table View Delegate, Datasource -
@@ -90,7 +102,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int { 2 }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        section == 0 ? 1 : 10
+        section == 0 ? 1 : (bookDataList?.count ?? 0)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -102,7 +114,10 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookPricesTableViewCell", for: indexPath) as? BookPricesTableViewCell else { return UITableViewCell() }
+            cell.bookData = bookDataList?[indexPath.row]
+            cell.index = indexPath.row
             cell.setBookPricesCell()
+            cell.delegate = self
             return cell
         default:
             return UITableViewCell()

@@ -19,6 +19,7 @@
 		DD30DA822614FDB700BE4BB5 /* DecodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30DA812614FDB700BE4BB5 /* DecodeHelper.swift */; };
 		DD30DA8C2614FE9300BE4BB5 /* BookModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30DA8B2614FE9300BE4BB5 /* BookModels.swift */; };
 		DD41E19326519B0E0092E19E /* BarcodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = DD41E19226519B0E0092E19E /* BarcodeScanner */; };
+		DD45C53626548A1900F6D53A /* BookPricingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD45C53526548A1900F6D53A /* BookPricingViewModel.swift */; };
 		DD521C922610FC2600493A37 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DD521C912610FC2600493A37 /* Lottie */; };
 		DD521CA02610FE0000493A37 /* searching_books_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DD521C9F2610FE0000493A37 /* searching_books_animation.json */; };
 		DD521CAA2610FE8500493A37 /* SearchingBooksAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD521CA92610FE8500493A37 /* SearchingBooksAnimationVC.swift */; };
@@ -54,6 +55,7 @@
 		DD27393D260E556400266851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD30DA812614FDB700BE4BB5 /* DecodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeHelper.swift; sourceTree = "<group>"; };
 		DD30DA8B2614FE9300BE4BB5 /* BookModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModels.swift; sourceTree = "<group>"; };
+		DD45C53526548A1900F6D53A /* BookPricingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPricingViewModel.swift; sourceTree = "<group>"; };
 		DD521C9F2610FE0000493A37 /* searching_books_animation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = searching_books_animation.json; sourceTree = "<group>"; };
 		DD521CA92610FE8500493A37 /* SearchingBooksAnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingBooksAnimationVC.swift; sourceTree = "<group>"; };
 		DD87CD1E260FE9B0002F5C81 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -169,6 +171,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		DD45C52F2654897900F6D53A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DD45C53526548A1900F6D53A /* BookPricingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		DD521C8C2610F49100493A37 /* CustomAnimations */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,8 +246,9 @@
 		DDFE7073260FACB400138959 /* BookDetail */ = {
 			isa = PBXGroup;
 			children = (
-				DD8E5693264AB05F00FF1738 /* Models */,
 				DDDE6CB52649D81800291C0F /* Views */,
+				DD8E5693264AB05F00FF1738 /* Models */,
+				DD45C52F2654897900F6D53A /* ViewModel */,
 				DDDE6CAC2649C09500291C0F /* BookDetailVC.swift */,
 			);
 			path = BookDetail;
@@ -373,6 +384,7 @@
 				DD914470264A90A5003C9D22 /* BookPricesTableViewCell.swift in Sources */,
 				DD87CD1F260FE9B0002F5C81 /* UIViewController+Extensions.swift in Sources */,
 				DD87CD27260FE9C8002F5C81 /* String+Extensions.swift in Sources */,
+				DD45C53626548A1900F6D53A /* BookPricingViewModel.swift in Sources */,
 				DDFE7079260FAEF200138959 /* BookResultsVC.swift in Sources */,
 				DDDE6B2F263118890062568D /* FavoriteBooksCache.swift in Sources */,
 				DDDE6CC12649E91200291C0F /* Notification+Extensions.swift in Sources */,

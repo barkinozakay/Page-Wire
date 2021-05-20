@@ -7,18 +7,26 @@
 
 import Foundation
 
-enum BookPricingSite {
-    case amazon
-    case bkmkitap
-    case dnr
-    case eganba
-    case idefix
-    case istanbul_kitapcisi
-    case kidega
-    case kitapkoala
-    case kitapyurdu
-    case pandora
-    case ucuza_kitap_al
+enum BookPricingSite: String, CaseIterable {
+    case amazon = "Amazon"
+    case bkmkitap = "BKM Kitap"
+    case dnr = "DR"
+    case eganba = "Eganba"
+    case idefix = "İdefix"
+    case istanbul_kitapcisi = "İstanbul Kitapçısı"
+    case kidega = "Kidega"
+    case kitapkoala = "Kitap Koala"
+    case kitapsepeti = "Kitap Sepeti"
+    case kitapyurdu = "Kitap Yurdu"
+    case pandora = "Pandora"
+    case ucuz_kitap_al = "Ucuz Kitap Al"
+}
+
+struct BookDataModel: Equatable {
+    var site: BookPricingSite?
+    var price: String?
+    var discount: String?
+    var url: String?
 }
 
 

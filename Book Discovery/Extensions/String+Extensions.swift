@@ -13,6 +13,15 @@ extension String {
         let turkishCharacters: [String] = ["ğıöşü"]
         return !isEmpty && range(of: "[^a-zA-Z0-9\(turkishCharacters) ]", options: .regularExpression) == nil
     }
+    
+    mutating func getAlphaNumericValue() {
+        let unsafeChars = CharacterSet.alphanumerics.inverted
+        self  = self.components(separatedBy: unsafeChars).joined(separator: " ")
+    }
+    
+    func removeDiacritics() -> String {
+        return self.folding(options: .diacriticInsensitive, locale: .current).replacingOccurrences(of: "ı", with: "i")
+    }
 }
 
 extension DefaultStringInterpolation {

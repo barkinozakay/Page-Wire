@@ -7,8 +7,8 @@
 
 import Foundation
 import UIKit
+import Lottie
 import SafariServices
-
 
 extension UIViewController {
     
@@ -54,10 +54,49 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    // MARK: - Loading Animation -
+    final func showLoadingAnimation() {
+        // Animation
+        let animationView = AnimationView(name: "searching_books_animation")
+        let size = view.frame.width + 100
+        animationView.frame = CGRect(x: 0, y: 0, width: size, height: size)
+        animationView.center = view.center
+        animationView.backgroundColor = .clear
+        animationView.loopMode = .loop
+        animationView.contentMode = .scaleAspectFill
+        animationView.tag = 24011994
+        animationView.play()
+        // Blur
+        let blurEffect = UIBlurEffect(style: .systemChromeMaterial)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurEffectView.tag = 24011995
+        view.isUserInteractionEnabled = false
+        view.addSubview(blurEffectView)
+        view.addSubview(animationView)
+    }
+
+    final func hideLoadingAnimaton() {
+        view.isUserInteractionEnabled = true
+        let animationView = view.viewWithTag(24011994)
+        let blurView = view.viewWithTag(24011995)
+        if let animation = animationView {
+            DispatchQueue.main.async {
+                animation.removeFromSuperview()
+            }
+        }
+        if let blur = blurView {
+            DispatchQueue.main.async {
+                blur.removeFromSuperview()
+            }
+        }
+    }
+    
     // MARK: - Safari -
     final func presentSafariViewController(with url: URL) {
         let safariViewController = SFSafariViewController(url: url)
-        safariViewController.preferredControlTintColor = .systemGreen
+        safariViewController.preferredControlTintColor = UIColor(red: 148.0/255.0, green: 23.0/255.0, blue: 81.0/255.0, alpha: 1.0)
         safariViewController.modalPresentationStyle = .pageSheet
         present(safariViewController, animated: true, completion: nil)
     }
