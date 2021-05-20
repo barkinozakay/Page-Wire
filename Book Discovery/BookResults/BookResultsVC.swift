@@ -14,9 +14,11 @@ class BookResultsVC: UIViewController {
     var searchText: String = ""
     var searchType: BookSearchType = .title
     var books: [BookModel] = []
+    private var bookDataViewModel: BookDataViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getBookArtworks()
         setFavoritedBooks()
         tableView.register(UINib(nibName: "SerachTextTableViewCell", bundle: nil), forCellReuseIdentifier: "SerachTextTableViewCell")
         tableView.register(UINib(nibName: "BookResultsTableViewCell", bundle: nil), forCellReuseIdentifier: "BookResultsTableViewCell")
@@ -31,6 +33,13 @@ class BookResultsVC: UIViewController {
 
 // MARK: - Functions -
 extension BookResultsVC {
+    private func getBookArtworks() {
+        for i in 0..<books.count {
+            bookDataViewModel = BookDataViewModel(book: books[i])
+            books[i].artwork = bookDataViewModel?.getBookArtworkUrl() ?? books[i].artwork
+        }
+    }
+    
     private func setFavoritedBooks() {
         let favoriteBooks = FavoriteBooksCache.getFavorites()
         for i in 0..<books.count {

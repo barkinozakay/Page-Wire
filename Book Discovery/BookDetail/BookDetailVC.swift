@@ -14,18 +14,16 @@ class BookDetailVC: UIViewController {
     
     // MARK: - Variables -
     var book: BookModel?
-    private var pricingViewModel: BookPricingViewModel?
+    private var bookDataViewModel: BookDataViewModel?
     private var favoriteButton: UIBarButtonItem!
     lazy var isComingFromFavorites: Bool = false
     weak var favoriteDelegate: FavoriteBook?
     
-    var bookDataList: [BookDataModel?]?
-    
     // MARK: - LIFECYCLE -
     override func viewDidLoad() {
         super.viewDidLoad()
-        pricingViewModel = BookPricingViewModel(book: book!)
-        bookDataList = pricingViewModel?.getBookDataForSites() ?? []
+        bookDataViewModel = BookDataViewModel(book: book!)
+        setBookData()
         tableView.register(UINib(nibName: "BookDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "BookDetailsTableViewCell")
         tableView.register(UINib(nibName: "BookPricesTableViewCell", bundle: nil), forCellReuseIdentifier: "BookPricesTableViewCell")
         NotificationCenter.default.addObserver(self, selector: #selector(removeBookFromFavorites(_:)), name: .removeBookFromFavorites, object: nil)
@@ -35,6 +33,11 @@ class BookDetailVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if !isComingFromFavorites { checkIfBookIsFavorited() }
+    }
+    
+    private func setBookData() {
+        book?.sites = bookDataViewModel?.getBookDataForSites()
+        // TODO: prices, discount ...
     }
 }
 
@@ -91,7 +94,7 @@ extension BookDetailVC {
 
 extension BookDetailVC: NavigateToSite {
     func navigateToSite(index: Int) {
-        guard let urlString = bookDataList?[index]?.url, !urlString.isEmpty, let url = URL(string: urlString) else { return }
+        guard let urlString = book?.sites?[index].url, !urlString.isEmpty, let url = URL(string: urlString) else { return }
         presentSafariViewController(with: url)
     }
 }
@@ -102,7 +105,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int { 2 }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        section == 0 ? 1 : (bookDataList?.count ?? 0)
+        section == 0 ? 1 : (book?.sites?.count ?? 0)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -114,7 +117,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookPricesTableViewCell", for: indexPath) as? BookPricesTableViewCell else { return UITableViewCell() }
-            cell.bookData = bookDataList?[indexPath.row]
+            cell.book = book
             cell.index = indexPath.row
             cell.setBookPricesCell()
             cell.delegate = self

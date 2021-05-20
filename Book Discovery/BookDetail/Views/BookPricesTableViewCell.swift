@@ -19,7 +19,7 @@ class BookPricesTableViewCell: UITableViewCell {
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var navigateToSiteButton: UIButton!
     
-    var bookData: BookDataModel?
+    var book: BookModel?
     var index: Int = 0
     
     weak var delegate: NavigateToSite?
@@ -29,20 +29,24 @@ class BookPricesTableViewCell: UITableViewCell {
     }
     
     func setBookPricesCell() {
+        guard let siteList = book?.sites, !siteList.isEmpty else { return }
+        guard let site = siteList[index].site else { return }
         setLogoForSite()
-        if bookData?.site == .dnr {
+        if site == .dnr {
             siteNameLabel.text = "D&R"
         } else {
-            siteNameLabel.text = bookData?.site?.rawValue
+            siteNameLabel.text = site.rawValue
         }
-        discountLabel.text = bookData?.discount ?? "%10"
-        priceLabel.text = bookData?.price ?? "100₺"
+        discountLabel.text = book?.discount ?? "%10"
+        priceLabel.text = book?.price ?? "100₺"
         navigateToSiteButton.tag = index
     }
     
     private func setLogoForSite() {
+        guard let siteList = book?.sites, !siteList.isEmpty else { return }
+        guard let site = siteList[index].site else { return }
         var image = UIImage(systemName: "book.fill")
-        switch bookData?.site {
+        switch site {
             case .amazon:
                 image = UIImage(named: "amazon")
             case .bkmkitap:
@@ -67,8 +71,6 @@ class BookPricesTableViewCell: UITableViewCell {
                 image = UIImage(named: "pandora")
             case .ucuz_kitap_al:
                 image = UIImage(named: "ucuz_kitap_al")
-            default:
-                return
         }
         logoImageView.image = image
     }

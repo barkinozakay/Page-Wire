@@ -1,37 +1,37 @@
 //
-//  BookPricingViewModel.swift
+//  BookDataViewModel.swift
 //  Book Discovery
 //
-//  Created by Barkın Özakay on 19.05.2021.
+//  Created by Barkın Özakay on 20.05.2021.
 //
 
 import Foundation
 import SwiftSoup
 
-class BookPricingViewModel {
+class BookDataViewModel {
     
     private var book: BookModel?
     private var googleSearchQueryPrefix: String = "https://www.google.com.tr/search?q="
     private var httpsPrefix: String = "https://www."
     
-    private var bookDataList: [BookDataModel?] = []
-    
     required init(book: BookModel) {
         self.book = book
     }
     
-    func getBookDataForSites() -> [BookDataModel?] {
-        guard let name = book?.name, let publisher = book?.publisher else { return [] }
-        for site in BookPricingSite.allCases {
+    func getBookDataForSites() -> [BookSiteData]? {
+        guard let name = book?.name, let publisher = book?.publisher else { return nil }
+        var bookSiteDataList = book?.sites
+        bookSiteDataList = []
+        for site in BookSite.allCases {
             let query = prepareQuery("\(name) \(publisher) \(site.rawValue) satın al")
             let html = getHtmlFromGoogleSearchQuery(query)
             let link = getLink(html, site)
             if !html.isEmpty, !link.isEmpty {
-                let bookData = BookDataModel(site: site, price: nil, discount: nil, url: link)
-                bookDataList.append(bookData)
+                bookSiteDataList?.append(BookSiteData(site: site, url: link))
             }
         }
-        return bookDataList
+        self.book?.sites = bookSiteDataList
+        return bookSiteDataList
     }
     
     private func getHtmlFromGoogleSearchQuery(_ query: String) -> String {
@@ -65,7 +65,7 @@ class BookPricingViewModel {
         return newQuery
     }
     
-    private func getLink(_ html: String, _ site: BookPricingSite) -> String {
+    private func getLink(_ html: String, _ site: BookSite) -> String {
         guard !html.isEmpty else { return "" }
         do {
             let doc: Document = try SwiftSoup.parse(html)
@@ -84,10 +84,24 @@ class BookPricingViewModel {
         }
         return ""
     }
+    
+    func getBookArtworkUrl() -> String? {
+        guard let name = book?.name, let publisher = book?.publisher else { return nil }
+        let site = BookSite.idefix
+        let query = prepareQuery("\(name) \(publisher) \(site.rawValue) satın al")
+        let html = getHtmlFromGoogleSearchQuery(query)
+        guard !html.isEmpty else { return nil }
+        let link = getLink(html, site)
+        guard !link.isEmpty else { return nil }
+        // PARSE HTML FOR ARTWORK
+        let artwork = "ben 1 urlim"
+        self.book?.artwork = artwork
+        return artwork
+    }
 }
 
 // MARK: - Book Data Functions -
-extension BookPricingViewModel {
+extension BookDataViewModel {
     
     func decideToGetSiteData() {
         getAmazonData()
@@ -97,47 +111,48 @@ extension BookPricingViewModel {
         
     }
     
-//    private func getBkmData() {
-//
-//    }
+    //    private func getBkmData() {
+    //
+    //    }
     
     private func getDrData() {
         
     }
     
-//    private func getEganbaData() {
-//
-//    }
+    //    private func getEganbaData() {
+    //
+    //    }
     
     private func getIdefixData() {
         
     }
     
-//    private func getIstanbulKitapcisiData() {
-//
-//    }
-//
-//    private func getKidegaData() {
-//
-//    }
-//
-//    private func getKitapKoalaData() {
-//
-//    }
-//
-//    private func getKitapSepetiData() {
-
-//    }
+    //    private func getIstanbulKitapcisiData() {
+    //
+    //    }
+    //
+    //    private func getKidegaData() {
+    //
+    //    }
+    //
+    //    private func getKitapKoalaData() {
+    //
+    //    }
+    //
+    //    private func getKitapSepetiData() {
+    
+    //    }
     
     private func getKitapYurduData() {
         
     }
     
-//    private func getPandoraData() {
-//
-//    }
-//
-//    private func getUcuzKitapAlData() {
-//
-//    }
+    //    private func getPandoraData() {
+    //
+    //    }
+    //
+    //    private func getUcuzKitapAlData() {
+    //
+    //    }
 }
+
