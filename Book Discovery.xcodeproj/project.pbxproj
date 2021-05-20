@@ -216,6 +216,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		DDCDED6726571A0700687161 /* Views2 */ = {
+			isa = PBXGroup;
+			children = (
+				DDDE6CB62649D83400291C0F /* BookDetailsTableViewCell.swift */,
+				DDDE6CB72649D83400291C0F /* BookDetailsTableViewCell.xib */,
+			);
+			path = Views2;
+			sourceTree = "<group>";
+		};
 		DDDE6B33263118EA0062568D /* FavoriteBooks */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,8 +236,6 @@
 		DDDE6CB52649D81800291C0F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DDDE6CB62649D83400291C0F /* BookDetailsTableViewCell.swift */,
-				DDDE6CB72649D83400291C0F /* BookDetailsTableViewCell.xib */,
 				DD91446E264A90A5003C9D22 /* BookPricesTableViewCell.swift */,
 				DD91446F264A90A5003C9D22 /* BookPricesTableViewCell.xib */,
 			);
@@ -238,6 +245,7 @@
 		DDFE7073260FACB400138959 /* BookDetail */ = {
 			isa = PBXGroup;
 			children = (
+				DDCDED6726571A0700687161 /* Views2 */,
 				DDDE6CB52649D81800291C0F /* Views */,
 				DD45C52F2654897900F6D53A /* ViewModel */,
 				DDDE6CAC2649C09500291C0F /* BookDetailVC.swift */,
