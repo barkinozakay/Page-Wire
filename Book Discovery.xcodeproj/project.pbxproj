@@ -216,13 +216,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		DDCDED6726571A0700687161 /* Views2 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views2;
-			sourceTree = "<group>";
-		};
 		DDDE6B33263118EA0062568D /* FavoriteBooks */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,7 +238,6 @@
 		DDFE7073260FACB400138959 /* BookDetail */ = {
 			isa = PBXGroup;
 			children = (
-				DDCDED6726571A0700687161 /* Views2 */,
 				DDDE6CB52649D81800291C0F /* Views */,
 				DD45C52F2654897900F6D53A /* ViewModel */,
 				DDDE6CAC2649C09500291C0F /* BookDetailVC.swift */,
