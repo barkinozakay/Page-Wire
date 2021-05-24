@@ -8,6 +8,10 @@
 import UIKit
 import Nuke
 
+protocol ShowBookInfo: class {
+    func showBookInfo()
+}
+
 class BookDetailsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var artwork: UIImageView!
@@ -16,8 +20,11 @@ class BookDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var pagesLabel: UILabel!
     @IBOutlet weak var publisherLabel: UILabel!
     @IBOutlet weak var genresLabel: UILabel!
+    @IBOutlet weak var bookInfoButton: UIButton!
     
     var book: BookModel?
+    
+    weak var delegate: ShowBookInfo?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,6 +46,10 @@ class BookDetailsTableViewCell: UITableViewCell {
             transition: .fadeIn(duration: 0.33)
         )
         Nuke.loadImage(with: URL(string: url)!, options: options, into: artwork)
+    }
+    
+    @IBAction func showBookInfo(_ sender: Any) {
+        delegate?.showBookInfo()
     }
     
 }

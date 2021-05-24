@@ -69,7 +69,7 @@ extension BookResultsVC {
 }
 
 // MARK: Book Artwork Delegate -
-extension BookResultsVC: BookArtworkFromSiteDelegate {
+extension BookResultsVC: BookArtworkFromSite {
     func getBookArtworkUrl(_ artwork: String, _ index: Int) {
         self.books[index].artwork = artwork
         asyncOperation {

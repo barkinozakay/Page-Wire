@@ -170,7 +170,7 @@
                             <constraint firstItem="cG2-R4-UPz" firstAttribute="leading" secondItem="5GP-OP-jC9" secondAttribute="leading" id="zz3-Oo-eaf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Book Results" largeTitleDisplayMode="always" id="266-wj-box">
+                    <navigationItem key="navigationItem" title="Results" largeTitleDisplayMode="always" id="266-wj-box">
                         <barButtonItem key="backBarButtonItem" title=" " id="hRP-Lf-Dmk"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -181,6 +181,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v73-PD-FQ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6602" y="-269"/>
+        </scene>
+        <!--Book Info-->
+        <scene sceneID="qvh-U0-Rgo">
+            <objects>
+                <viewController storyboardIdentifier="BookInfoVC" title="Book Info" modalTransitionStyle="flipHorizontal" id="Nk9-rm-xV8" customClass="BookInfoVC" customModule="Book_Discovery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RRe-yp-975">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lj6-yy-wdD">
+                                <rect key="frame" x="16" y="32" width="358" height="690"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Nk9-rm-xV8" id="uX0-Jj-g9m"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SG8-Gp-Rtd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lj6-yy-wdD" firstAttribute="leading" secondItem="SG8-Gp-Rtd" secondAttribute="leading" constant="16" id="DMi-iW-KQD"/>
+                            <constraint firstItem="lj6-yy-wdD" firstAttribute="top" secondItem="SG8-Gp-Rtd" secondAttribute="top" constant="32" id="HKK-Kk-EPu"/>
+                            <constraint firstItem="SG8-Gp-Rtd" firstAttribute="bottom" secondItem="lj6-yy-wdD" secondAttribute="bottom" id="Z3A-Za-QNd"/>
+                            <constraint firstItem="SG8-Gp-Rtd" firstAttribute="trailing" secondItem="lj6-yy-wdD" secondAttribute="trailing" constant="16" id="jLy-Ny-XSX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Info" largeTitleDisplayMode="always" id="UOi-Nc-3mR">
+                        <barButtonItem key="backBarButtonItem" title=" " id="YjL-gK-mho"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="textView" destination="lj6-yy-wdD" id="20e-Yk-3Md"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VSN-tA-xBH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7615" y="-269"/>
         </scene>
         <!--Book Discovery Navigation-->
         <scene sceneID="gMy-p3-bdi">
@@ -328,7 +369,7 @@
                             <constraint firstItem="Ww2-7d-CMm" firstAttribute="bottom" secondItem="pXe-aR-CYv" secondAttribute="bottom" id="hF4-Xr-gNB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Book Details" largeTitleDisplayMode="always" id="Bzg-xN-xDb">
+                    <navigationItem key="navigationItem" title="Detail" largeTitleDisplayMode="always" id="Bzg-xN-xDb">
                         <barButtonItem key="backBarButtonItem" title=" " id="Fwx-KD-1BO"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -348,6 +389,9 @@
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="heart.slash.fill" catalog="system" width="128" height="115"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -38,8 +38,8 @@ class BookDetailVC: UIViewController {
     }
 }
 
-// MARK: - Book Data From Site Delegate -
-extension BookDetailVC: BookDataFromSiteDelegate {
+// MARK: - Book Data From Site -
+extension BookDetailVC: BookDataFromSite {
     func getBookDataForSites(_ data: [BookSiteData]?, _ isFinished: Bool) {
         guard let siteData = data else { return }
         book?.siteData = siteData
@@ -48,7 +48,9 @@ extension BookDetailVC: BookDataFromSiteDelegate {
             //book?.siteData?.sorted(by: { $0.site!.rawValue > $1.site!.rawValue})
             asyncOperation {
                 self.tableView.reloadData()
-                self.favoriteButton.isEnabled = true
+                if !self.isComingFromFavorites {
+                    self.favoriteButton.isEnabled = true
+                }
                 self.hideLoadingAnimaton()
             }
         }
@@ -107,6 +109,15 @@ extension BookDetailVC {
     }
 }
 
+// MARK: - Protocol Conformances -
+extension BookDetailVC: ShowBookInfo {
+    func showBookInfo() {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookInfoVC") as! BookInfoVC
+        vc.bookInfo = "Her şey 1984 yılında geçer. Birbiriyle mütemadiyen savaşan üç büyük gücün elinde bölünmüş bir dünya, mutlak güce sahip bir Parti, kapanması yasak tele-ekranlarla her hareketi denetleyen Düşünce Polisi, her şeyi izleyen Büyük Birader ve diğer tüm düşünce biçimlerini imkânsız hâle getirmek için oluşturulan “Yenidil”. Gerçek Bakanlığı’nın altındaki Arşiv Bölümü’nün gözlerden ırak odalarında, Parti’nin ihtiyaçları-na göre geçmişi yeniden yazan Winston Smith’in oyununda arka plan bu kâbustur işte. Herkesi dilediği gibi kontrol eden bu totaliter dünyaya karşı içinde isyan tohumları büyüyen Winston, hakikat ve özgürlüğe duyduğu özlemin yanında aşka da kayıtsız kalamayacaktır."
+        navigationController?.present(vc, animated: true, completion: nil)
+    }
+}
+
 extension BookDetailVC: NavigateToSite {
     func navigateToSite(index: Int) {
         guard let urlString = book?.siteData?[index].url, !urlString.isEmpty, let url = URL(string: urlString) else { return }
@@ -128,6 +139,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookDetailsTableViewCell", for: indexPath) as? BookDetailsTableViewCell else { return UITableViewCell() }
             cell.book = book
+            cell.delegate = self
             cell.setBook()
             return cell
         case 1:

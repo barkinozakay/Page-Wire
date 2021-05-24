@@ -8,11 +8,11 @@
 import Foundation
 import SwiftSoup
 
-protocol BookDataFromSiteDelegate: class {
+protocol BookDataFromSite: class {
     func getBookDataForSites(_ data: [BookSiteData]?, _ isFinished: Bool)
 }
 
-protocol BookArtworkFromSiteDelegate: class {
+protocol BookArtworkFromSite: class {
     func getBookArtworkUrl(_ artwork: String, _ index: Int)
 }
 
@@ -25,8 +25,8 @@ class BookDataViewModel {
     private var googleSearchQueryPrefix: String = "https://www.google.com.tr/search?q="
     
     
-    weak var siteDataDelegate: BookDataFromSiteDelegate?
-    weak var artworkDelegate: BookArtworkFromSiteDelegate?
+    weak var siteDataDelegate: BookDataFromSite?
+    weak var artworkDelegate: BookArtworkFromSite?
     
     init(book: BookModel) {
         self.book = book
