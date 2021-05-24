@@ -27,9 +27,9 @@ class BookDetailsTableViewCell: UITableViewCell {
         setArtwork()
         titleLabel.text = book?.name
         authorLabel.text = book?.author
-        pagesLabel.text = "Pages: \(book?.pages ?? 0)"
-        publisherLabel.text = "Publisher: \(book?.publisher ?? "")"
+        publisherLabel.text = book?.publisher
         genresLabel.text = book?.genre
+        pagesLabel.text = "Pages: \(book?.pages ?? 0)"
     }
     
     func setArtwork() {

@@ -18,7 +18,11 @@ class BookResultsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getBookArtworks()
+        showLoadingAnimation()
+        bookDataViewModel = BookDataViewModel(books: books)
+        bookDataViewModel?.artworkDelegate = self
+        bookDataViewModel?.getBookArtworkUrl()
+        hideLoadingAnimaton()
         setFavoritedBooks()
         tableView.register(UINib(nibName: "SerachTextTableViewCell", bundle: nil), forCellReuseIdentifier: "SerachTextTableViewCell")
         tableView.register(UINib(nibName: "BookResultsTableViewCell", bundle: nil), forCellReuseIdentifier: "BookResultsTableViewCell")
@@ -33,13 +37,6 @@ class BookResultsVC: UIViewController {
 
 // MARK: - Functions -
 extension BookResultsVC {
-    private func getBookArtworks() {
-        for i in 0..<books.count {
-            bookDataViewModel = BookDataViewModel(book: books[i])
-            books[i].artwork = bookDataViewModel?.getBookArtworkUrl() ?? books[i].artwork
-        }
-    }
-    
     private func setFavoritedBooks() {
         let favoriteBooks = FavoriteBooksCache.getFavorites()
         for i in 0..<books.count {
@@ -53,7 +50,7 @@ extension BookResultsVC {
         }
     }
     
-    @objc func removeBookFromFavorites(_ notification: Notification) {
+    @objc private func removeBookFromFavorites(_ notification: Notification) {
         if let removedBook = notification.userInfo!["book"] as? BookModel {
             for i in 0..<books.count {
                 if removedBook == books[i] {
@@ -68,6 +65,16 @@ extension BookResultsVC {
         vc.book = book
         vc.favoriteDelegate = self
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+// MARK: Book Artwork Delegate -
+extension BookResultsVC: BookArtworkFromSiteDelegate {
+    func getBookArtworkUrl(_ artwork: String, _ index: Int) {
+        self.books[index].artwork = artwork
+        asyncOperation {
+            self.tableView.reloadRows(at: [IndexPath(row: index, section: 1)], with: .automatic)
+        }
     }
 }
 

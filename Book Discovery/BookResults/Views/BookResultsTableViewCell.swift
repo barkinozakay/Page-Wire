@@ -41,9 +41,8 @@ class BookResultsTableViewCell: UITableViewCell {
     }
     
     private func setArtwork() {
-        guard let url = book?.artwork else { return }
+        guard let url = book?.artwork, !url.isEmpty else { return }
         let options = ImageLoadingOptions(
-            placeholder: UIImage(systemName: "book.fill"),
             transition: .fadeIn(duration: 0.33)
         )
         Nuke.loadImage(with: URL(string: url)!, options: options, into: artwork)

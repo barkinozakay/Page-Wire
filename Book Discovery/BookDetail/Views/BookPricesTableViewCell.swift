@@ -29,21 +29,24 @@ class BookPricesTableViewCell: UITableViewCell {
     }
     
     func setBookPricesCell() {
-        guard let siteList = book?.sites, !siteList.isEmpty else { return }
+        guard let siteList = book?.siteData, !siteList.isEmpty else { return }
         guard let site = siteList[index].site else { return }
+        let price = siteList[index].price?["current"] ?? "-"
+        let discount = siteList[index].price?["discount"] ?? "-"
         setLogoForSite()
-        if site == .dnr {
-            siteNameLabel.text = "D&R"
+        siteNameLabel.text = site == .dnr ? "D&R" : site.rawValue
+        priceLabel.text = price
+        if discount != "% 0" {
+            discountLabel.isHidden = false
+            discountLabel.text = "Discount: \(discount)"
         } else {
-            siteNameLabel.text = site.rawValue
+            discountLabel.isHidden = true
         }
-        discountLabel.text = book?.discount ?? "%10"
-        priceLabel.text = book?.price ?? "100₺"
         navigateToSiteButton.tag = index
     }
     
     private func setLogoForSite() {
-        guard let siteList = book?.sites, !siteList.isEmpty else { return }
+        guard let siteList = book?.siteData, !siteList.isEmpty else { return }
         guard let site = siteList[index].site else { return }
         var image = UIImage(systemName: "book.fill")
         switch site {

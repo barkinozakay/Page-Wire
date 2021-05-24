@@ -19,10 +19,8 @@ struct BookModel: Codable, Equatable {
     let pages: Int
     let isbn: Int
     var isFavorited: Bool?
-    var sites: [BookSiteData]?
+    var siteData: [BookSiteData]?
     var artwork: String?
-    var price: String?
-    var discount: String?
 }
 
 enum BookSearchType: String {
@@ -33,6 +31,7 @@ enum BookSearchType: String {
 struct BookSiteData: Codable, Equatable {
     var site: BookSite?
     var url: String?
+    var price: [String: String]?
 }
 
 enum BookSite: String, CaseIterable, Codable {

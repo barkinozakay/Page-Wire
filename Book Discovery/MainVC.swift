@@ -57,11 +57,7 @@ extension MainVC {
         guard !searchBarText.isEmpty else {
             return showAlert(title: "", message: "Search Text can not be empty!", okTitle: "OK", cancelTitle: nil, okAction: nil, cancelAction: nil)
         }
-        showLoadingAnimation()
-        // TODO: - Remove Delay -
-        delayOperation(delayTime: 0.25) {
-            self.filterBooks()
-        }
+        self.filterBooks()
     }
     
     private func parseBookList() {
@@ -118,7 +114,6 @@ extension MainVC {
         vc.searchText = searchBarText
         vc.searchType = segmentedControl.selectedSegmentIndex == 0 ? .title : .author
         vc.books = books
-        hideLoadingAnimaton()
         navigationController?.pushViewController(vc, animated: true)
     }
     
