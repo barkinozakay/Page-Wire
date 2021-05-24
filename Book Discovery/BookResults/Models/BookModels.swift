@@ -21,6 +21,7 @@ struct BookModel: Codable, Equatable {
     var isFavorited: Bool?
     var siteData: [BookSiteData]?
     var artwork: String?
+    var info: String?
 }
 
 enum BookSearchType: String {
@@ -31,7 +32,8 @@ enum BookSearchType: String {
 struct BookSiteData: Codable, Equatable {
     var site: BookSite?
     var url: String?
-    var price: [String: String]?
+    var price: Double?
+    var discount: String?
 }
 
 enum BookSite: String, CaseIterable, Codable {

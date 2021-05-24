@@ -29,13 +29,13 @@ class BookPricesTableViewCell: UITableViewCell {
     }
     
     func setBookPricesCell() {
-        guard let siteList = book?.siteData, !siteList.isEmpty else { return }
-        guard let site = siteList[index].site else { return }
-        let price = siteList[index].price?["current"] ?? "-"
-        let discount = siteList[index].price?["discount"] ?? "-"
+        guard let siteList = book?.siteData, !siteList.isEmpty,
+              let site = siteList[index].site,
+              let price = siteList[index].price?.toString()?.addZeroToEnd(),
+              let discount = siteList[index].discount else { return }
         setLogoForSite()
         siteNameLabel.text = site == .dnr ? "D&R" : site.rawValue
-        priceLabel.text = price
+        priceLabel.text = "\(price) ₺"
         if !discount.isEmpty {
             discountLabel.isHidden = false
             discountLabel.text = "Discount: \(discount)"

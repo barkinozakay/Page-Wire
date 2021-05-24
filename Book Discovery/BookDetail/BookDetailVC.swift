@@ -40,12 +40,11 @@ class BookDetailVC: UIViewController {
 
 // MARK: - Book Data From Site -
 extension BookDetailVC: BookDataFromSite {
-    func getBookDataForSites(_ data: [BookSiteData]?, _ isFinished: Bool) {
-        guard let siteData = data else { return }
-        book?.siteData = siteData
+    func getBookDataForSites(_ book: BookModel?, _ isFinished: Bool) {
+        self.book = book
         if isFinished {
             // Sort books on viewModel for lowest price ascending
-            //book?.siteData?.sorted(by: { $0.site!.rawValue > $1.site!.rawValue})
+            //self.book?.siteData?.sort(by: { $0.site!.rawValue > $1.site!.rawValue})
             asyncOperation {
                 self.tableView.reloadData()
                 if !self.isComingFromFavorites {
@@ -112,8 +111,9 @@ extension BookDetailVC {
 // MARK: - Protocol Conformances -
 extension BookDetailVC: ShowBookInfo {
     func showBookInfo() {
+        guard let info = book?.info, !info.isEmpty else { return }
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookInfoVC") as! BookInfoVC
-        vc.bookInfo = "Her şey 1984 yılında geçer. Birbiriyle mütemadiyen savaşan üç büyük gücün elinde bölünmüş bir dünya, mutlak güce sahip bir Parti, kapanması yasak tele-ekranlarla her hareketi denetleyen Düşünce Polisi, her şeyi izleyen Büyük Birader ve diğer tüm düşünce biçimlerini imkânsız hâle getirmek için oluşturulan “Yenidil”. Gerçek Bakanlığı’nın altındaki Arşiv Bölümü’nün gözlerden ırak odalarında, Parti’nin ihtiyaçları-na göre geçmişi yeniden yazan Winston Smith’in oyununda arka plan bu kâbustur işte. Herkesi dilediği gibi kontrol eden bu totaliter dünyaya karşı içinde isyan tohumları büyüyen Winston, hakikat ve özgürlüğe duyduğu özlemin yanında aşka da kayıtsız kalamayacaktır."
+        vc.bookInfo = info
         navigationController?.present(vc, animated: true, completion: nil)
     }
 }

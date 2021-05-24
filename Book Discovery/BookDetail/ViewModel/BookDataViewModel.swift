@@ -9,7 +9,7 @@ import Foundation
 import SwiftSoup
 
 protocol BookDataFromSite: class {
-    func getBookDataForSites(_ data: [BookSiteData]?, _ isFinished: Bool)
+    func getBookDataForSites(_ book: BookModel?, _ isFinished: Bool)
 }
 
 protocol BookArtworkFromSite: class {
@@ -23,7 +23,6 @@ class BookDataViewModel {
     
     private var httpsPrefix: String = "https://www."
     private var googleSearchQueryPrefix: String = "https://www.google.com.tr/search?q="
-    
     
     weak var siteDataDelegate: BookDataFromSite?
     weak var artworkDelegate: BookArtworkFromSite?
@@ -60,14 +59,21 @@ class BookDataViewModel {
                         let artwork: String? = self.getArtwork(responseHtml)
                         self.book?.artwork = artwork
                     }
-                    if let price = self.decideToGetSiteData(site, responseHtml) {
-                        bookSiteDataList?.append(BookSiteData(site: site, url: bookLink, price: price))
+                    if site == .kitapyurdu {
+                        let info = self.getBookInfo(responseHtml)
+                        self.book?.info = info
                     }
-                    self.siteDataDelegate?.getBookDataForSites(bookSiteDataList, isFinished)
+                    if let dic = self.decideToGetSiteData(site, responseHtml) {
+                        if let price = dic["price"] as? Double, let discount = dic["discount"] as? String {
+                            bookSiteDataList?.append(BookSiteData(site: site, url: bookLink, price: price, discount: discount))
+                        }
+                    }
+                    bookSiteDataList = self.sortPrices(bookSiteDataList)
+                    self.book?.siteData = bookSiteDataList
+                    self.siteDataDelegate?.getBookDataForSites(self.book, isFinished)
                 }
             }
         }
-        self.book?.siteData = bookSiteDataList
     }
     
     private func prepareQuery(_ query: String) -> String {
@@ -115,6 +121,24 @@ class BookDataViewModel {
         }
     }
     
+    private func getBookInfo(_ html: String) -> String {
+        do {
+            let doc: Document = try SwiftSoup.parse(html)
+            let a: Elements = try doc.select("span")
+            let classes = try a.map { try $0.attr("class") }
+            let texts = try a.map { try $0.text() }
+            guard let index = classes.firstIndex(of: "info__text") else { return "" }
+            let info = texts[index]
+            return info
+        } catch Exception.Error(let type, let message) {
+            print("Error Type: \(type)")
+            print("Error Message: \(message)")
+        } catch {
+            print("Error")
+        }
+        return ""
+    }
+    
 //    func getBookArtworkUrl() {
 //        var artwork: String = ""
 //        for index in 0..<books.count {
@@ -152,6 +176,11 @@ class BookDataViewModel {
             print("Error")
         }
         return nil
+    }
+    
+    private func sortPrices(_ bookSiteDataList: [BookSiteData]?) -> [BookSiteData]? {
+        guard let list = bookSiteDataList else { return nil }
+        return list.sorted(by: { $0.price ?? 0.0 < $1.price ?? 0.0 })
     }
 }
 
@@ -262,7 +291,7 @@ extension BookDataViewModel {
 // MARK: - Book Data Functions -
 extension BookDataViewModel {
     
-    func decideToGetSiteData(_ site: BookSite, _ html: String) -> [String: String]? {
+    func decideToGetSiteData(_ site: BookSite, _ html: String) -> [String: Any]? {
         switch site {
             case .amazon:
                 return getAmazonPriceData(html)
@@ -291,19 +320,19 @@ extension BookDataViewModel {
         }
     }
     
-    private func getAmazonPriceData(_ html: String) -> [String: String]? {
+    private func getAmazonPriceData(_ html: String) -> [String: Any]? {
         do {
             let doc: Document = try SwiftSoup.parse(html)
             let spanList: Elements = try doc.select("span")
             let prices = try spanList.map { try $0.text() }.filter { $0.contains("TL") }
             
-            guard var price = prices[1].components(separatedBy: "TL").first else { return nil }
-            price = price + "₺"
+            guard let price = prices[1].components(separatedBy: "TL").first?.toDouble()?.rounded(toPlaces: 2) else { return nil }
             var discount = prices[2].components(separatedBy: "(").last
+            discount?.trimmingAllSpaces()
             discount?.removeLast()
             
-            let priceDic: [String : String] = ["current": price,
-                                               "discount": discount ?? ""]
+            let priceDic: [String : Any] = ["price": price,
+                                            "discount": discount ?? ""]
             return priceDic
         } catch Exception.Error(let type, let message) {
             print("Error Type: \(type)")
@@ -314,7 +343,7 @@ extension BookDataViewModel {
         return nil
     }
     
-    private func getBkmData(_ html: String) -> [String: String]? {
+    private func getBkmData(_ html: String) -> [String: Any]? {
         do {
             let doc: Document = try SwiftSoup.parse(html)
             let spanList: Elements = try doc.select("span")
@@ -325,10 +354,11 @@ extension BookDataViewModel {
             guard let currentPriceIndex = spanClasses.firstIndex(of: "product-price"),
                   let discountIndex = spanClasses.firstIndex(of: "col d-flex productDiscount") else { return nil }
             
+            guard let price = spanTexts[currentPriceIndex].toDouble()?.rounded(toPlaces: 2) else { return nil }
             let discount = spanTexts[discountIndex].components(separatedBy: " ").first ?? ""
             
-            let priceDic: [String : String] = ["current": "\(spanTexts[currentPriceIndex]) ₺",
-                                               "discount": discount]
+            let priceDic: [String : Any] = ["price": price,
+                                            "discount": discount]
             return priceDic
         } catch Exception.Error(let type, let message) {
             print("Error Type: \(type)")
@@ -339,7 +369,7 @@ extension BookDataViewModel {
         return nil
     }
     
-    private func getDrData(_ html: String) -> [String: String]? {
+    private func getDrData(_ html: String) -> [String: Any]? {
         do {
             let doc: Document = try SwiftSoup.parse(html)
             
@@ -351,17 +381,16 @@ extension BookDataViewModel {
             let spanClasses = try spanList.map { try $0.attr("class") }
             let spanTexts = try spanList.map { try $0.text() }
             
-            guard let currentPriceIndex = divClasses.firstIndex(of: "product-price"),
-                  let currentPrice = divTexts[currentPriceIndex].components(separatedBy: ")").last?.trimmingCharacters(in: .whitespaces)
-                else { return nil }
+            guard let priceIndex = divClasses.firstIndex(of: "product-price"),
+                  let price = divTexts[priceIndex].components(separatedBy: ")").last?.trimmingCharacters(in: .whitespaces).components(separatedBy: " ").first?.toDouble()?.rounded(toPlaces: 2)  else { return nil }
             
-            var discountPercentage: String = ""
-            if let discountPriceIndex = spanClasses.firstIndex(of: "discount") {
-                discountPercentage = spanTexts[discountPriceIndex].components(separatedBy: "-%").last ?? ""
+            var discount: String = ""
+            if let discountIndex = spanClasses.firstIndex(of: "discount") {
+                discount = spanTexts[discountIndex].components(separatedBy: "-%").last ?? ""
             }
             
-            let priceDic: [String : String] = ["current": currentPrice,
-                                               "discount": "%\(discountPercentage)"]
+            let priceDic: [String : Any] = ["price": price,
+                                            "discount": "%\(discount)"]
             return priceDic
         } catch Exception.Error(let type, let message) {
             print("Error Type: \(type)")
@@ -372,31 +401,31 @@ extension BookDataViewModel {
         return nil
     }
     
-    private func getEganbaData(_ html: String) -> [String: String]? {
+    private func getEganbaData(_ html: String) -> [String: Any]? {
         return nil
     }
     
-    private func getIdefixData(_ html: String) -> [String: String]? {
+    private func getIdefixData(_ html: String) -> [String: Any]? {
         return nil
     }
     
-    private func getIstanbulKitapcisiData(_ html: String) -> [String: String]? {
+    private func getIstanbulKitapcisiData(_ html: String) -> [String: Any]? {
         return nil
     }
 
-    private func getKidegaData(_ html: String) -> [String: String]? {
+    private func getKidegaData(_ html: String) -> [String: Any]? {
         return nil
     }
 
-    private func getKitapKoalaData(_ html: String) -> [String: String]? {
+    private func getKitapKoalaData(_ html: String) -> [String: Any]? {
         return nil
     }
 
-    private func getKitapSepetiData(_ html: String) -> [String: String]? {
+    private func getKitapSepetiData(_ html: String) -> [String: Any]? {
         return nil
     }
     
-    private func getKitapYurduData(_ html: String) -> [String: String]? {
+    private func getKitapYurduData(_ html: String) -> [String: Any]? {
         do {
             let doc: Document = try SwiftSoup.parse(html)
             
@@ -408,16 +437,16 @@ extension BookDataViewModel {
             let spanClasses = try spanList.map { try $0.attr("class") }
             let spanTexts = try spanList.map { try $0.text() }
             
-            guard let priceIndex = divClasses.firstIndex(of: "price__item") else { return nil }
-            let price = "\(divTexts[priceIndex]) ₺"
+            guard let priceIndex = divClasses.firstIndex(of: "price__item"),
+                  let price = divTexts[priceIndex].toDouble()?.rounded(toPlaces: 2) else { return nil }
             
             var discount: String = ""
             if let discountIndex = spanClasses.firstIndex(of: "pr_discount__amount") {
                 discount = "%\(spanTexts[discountIndex])"
             }
             
-            let priceDic: [String : String] = ["current": price,
-                                               "discount": discount]
+            let priceDic: [String : Any] = ["price": price,
+                                            "discount": discount]
             return priceDic
         } catch Exception.Error(let type, let message) {
             print("Error Type: \(type)")
@@ -427,11 +456,11 @@ extension BookDataViewModel {
         }
         return nil    }
     
-    private func getPandoraData(_ html: String) -> [String: String]? {
+    private func getPandoraData(_ html: String) -> [String: Any]? {
         return nil
     }
 
-    private func getUcuzKitapAlData(_ html: String) -> [String: String]? {
+    private func getUcuzKitapAlData(_ html: String) -> [String: Any]? {
         return nil
     }
 }
