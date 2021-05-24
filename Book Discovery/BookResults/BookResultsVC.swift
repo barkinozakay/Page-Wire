@@ -21,7 +21,7 @@ class BookResultsVC: UIViewController {
         showLoadingAnimation()
         bookDataViewModel = BookDataViewModel(books: books)
         bookDataViewModel?.artworkDelegate = self
-        bookDataViewModel?.getBookArtworkUrl()
+        //bookDataViewModel?.getBookArtworkUrl()
         hideLoadingAnimaton()
         setFavoritedBooks()
         tableView.register(UINib(nibName: "SerachTextTableViewCell", bundle: nil), forCellReuseIdentifier: "SerachTextTableViewCell")

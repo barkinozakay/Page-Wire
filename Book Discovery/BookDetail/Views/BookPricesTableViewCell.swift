@@ -36,7 +36,7 @@ class BookPricesTableViewCell: UITableViewCell {
         setLogoForSite()
         siteNameLabel.text = site == .dnr ? "D&R" : site.rawValue
         priceLabel.text = price
-        if discount != "% 0" {
+        if !discount.isEmpty {
             discountLabel.isHidden = false
             discountLabel.text = "Discount: \(discount)"
         } else {
