@@ -2,12 +2,30 @@
   "object": {
     "pins": [
       {
+        "package": "BarcodeScanner",
+        "repositoryURL": "https://github.com/hyperoslo/BarcodeScanner",
+        "state": {
+          "branch": null,
+          "revision": "059cd71c4e3b9efc8d7e42fa1948bf572471b448",
+          "version": "5.0.1"
+        }
+      },
+      {
         "package": "Lottie",
         "repositoryURL": "https://github.com/airbnb/lottie-ios",
         "state": {
           "branch": null,
           "revision": "b3c60ba1716baab6faeeb217d8ce1da336f92718",
           "version": "3.2.1"
+        }
+      },
+      {
+        "package": "Nuke",
+        "repositoryURL": "https://github.com/kean/Nuke.git",
+        "state": {
+          "branch": null,
+          "revision": "7f73ceaeacd5df75a7994cd82e165ad9ff1815db",
+          "version": "9.6.1"
         }
       },
       {
