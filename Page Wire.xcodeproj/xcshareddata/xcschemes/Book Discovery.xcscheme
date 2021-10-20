@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DD27392B260E556300266851"
                BuildableName = "Book Discovery.app"
-               BlueprintName = "Book Discovery"
+               BlueprintName = "Page Wire"
                ReferencedContainer = "container:Page Wire.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,7 +46,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DD27392B260E556300266851"
             BuildableName = "Book Discovery.app"
-            BlueprintName = "Book Discovery"
+            BlueprintName = "Page Wire"
             ReferencedContainer = "container:Page Wire.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -63,7 +63,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DD27392B260E556300266851"
             BuildableName = "Book Discovery.app"
-            BlueprintName = "Book Discovery"
+            BlueprintName = "Page Wire"
             ReferencedContainer = "container:Page Wire.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

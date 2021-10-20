@@ -48,7 +48,7 @@
 		DD2344482610BD0F004EC0A1 /* BookResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookResultsTableViewCell.swift; sourceTree = "<group>"; };
 		DD2344492610BD0F004EC0A1 /* BookResultsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookResultsTableViewCell.xib; sourceTree = "<group>"; };
 		DD23448D2610EAE8004EC0A1 /* SearchResultTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTextTableViewCell.swift; sourceTree = "<group>"; };
-		DD27392C260E556300266851 /* Book Discovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Book Discovery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD27392C260E556300266851 /* Page Wire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Page Wire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD27392F260E556300266851 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD273931260E556300266851 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DD273936260E556300266851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		DD27392D260E556300266851 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DD27392C260E556300266851 /* Book Discovery.app */,
+				DD27392C260E556300266851 /* Page Wire.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -272,9 +272,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DD27392B260E556300266851 /* Book Discovery */ = {
+		DD27392B260E556300266851 /* Page Wire */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DD273956260E556400266851 /* Build configuration list for PBXNativeTarget "Book Discovery" */;
+			buildConfigurationList = DD273956260E556400266851 /* Build configuration list for PBXNativeTarget "Page Wire" */;
 			buildPhases = (
 				8F87C16D3C3A1DBE55CE4A80 /* [CP] Check Pods Manifest.lock */,
 				DD273928260E556300266851 /* Sources */,
@@ -285,7 +285,7 @@
 			);
 			dependencies = (
 			);
-			name = "Book Discovery";
+			name = "Page Wire";
 			packageProductDependencies = (
 				DDFE7061260FA6EC00138959 /* SwiftSoup */,
 				DD521C912610FC2600493A37 /* Lottie */,
@@ -293,7 +293,7 @@
 				DDCDED632657108200687161 /* Nuke */,
 			);
 			productName = "Book Discovery";
-			productReference = DD27392C260E556300266851 /* Book Discovery.app */;
+			productReference = DD27392C260E556300266851 /* Page Wire.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -329,7 +329,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DD27392B260E556300266851 /* Book Discovery */,
+				DD27392B260E556300266851 /* Page Wire */,
 			);
 		};
 /* End PBXProject section */
@@ -595,7 +595,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD273956260E556400266851 /* Build configuration list for PBXNativeTarget "Book Discovery" */ = {
+		DD273956260E556400266851 /* Build configuration list for PBXNativeTarget "Page Wire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD273957260E556400266851 /* Debug */,
