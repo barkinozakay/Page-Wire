@@ -92,7 +92,7 @@
 		DD273923260E556300266851 = {
 			isa = PBXGroup;
 			children = (
-				DD27392E260E556300266851 /* Book Discovery */,
+				DD27392E260E556300266851 /* Page Wire */,
 				DD27392D260E556300266851 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,7 +105,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DD27392E260E556300266851 /* Book Discovery */ = {
+		DD27392E260E556300266851 /* Page Wire */ = {
 			isa = PBXGroup;
 			children = (
 				DD273935260E556300266851 /* Main.storyboard */,
@@ -123,7 +123,7 @@
 				DD30DA892614FE2B00BE4BB5 /* Resources */,
 				DD30DA802614FD3800BE4BB5 /* Utilities */,
 			);
-			path = "Book Discovery";
+			path = "Page Wire";
 			sourceTree = "<group>";
 		};
 		DD30DA802614FD3800BE4BB5 /* Utilities */ = {
