@@ -1,2 +1,2 @@
-# Book-Discovery
-An iOS app to search books with text, artwork, barcode, speech and list for best price options.
+# Page-Wire
+An iOS app to track desired book from online book selling sites, search books with text, barcode and list for best price options.
