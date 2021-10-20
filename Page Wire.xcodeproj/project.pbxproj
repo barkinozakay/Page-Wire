@@ -310,7 +310,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DD273927260E556300266851 /* Build configuration list for PBXProject "Book Discovery" */;
+			buildConfigurationList = DD273927260E556300266851 /* Build configuration list for PBXProject "Page Wire" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -556,7 +556,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.barkinozakay.book-discovery";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.barkinozakay.page-wire";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -576,7 +576,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.barkinozakay.book-discovery";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.barkinozakay.page-wire";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -586,7 +586,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DD273927260E556300266851 /* Build configuration list for PBXProject "Book Discovery" */ = {
+		DD273927260E556300266851 /* Build configuration list for PBXProject "Page Wire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD273954260E556400266851 /* Debug */,

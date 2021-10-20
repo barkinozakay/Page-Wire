@@ -8,11 +8,11 @@
 import Foundation
 import SwiftSoup
 
-protocol BookDataFromSite: class {
+protocol BookDataFromSite: AnyObject {
     func getBookDataForSites(_ book: BookModel?, _ isFinished: Bool)
 }
 
-protocol BookArtworkFromSite: class {
+protocol BookArtworkFromSite: AnyObject {
     func getBookArtworkUrl(_ artwork: String, _ index: Int)
 }
 

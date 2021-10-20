@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol FavoriteBook: class {
+protocol FavoriteBook: AnyObject {
     func changeFavoriteState(_ favoriteBook: BookModel?)
 }
 

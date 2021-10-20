@@ -17,7 +17,7 @@
                BlueprintIdentifier = "DD27392B260E556300266851"
                BuildableName = "Book Discovery.app"
                BlueprintName = "Book Discovery"
-               ReferencedContainer = "container:Book Discovery.xcodeproj">
+               ReferencedContainer = "container:Page Wire.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "DD27392B260E556300266851"
             BuildableName = "Book Discovery.app"
             BlueprintName = "Book Discovery"
-            ReferencedContainer = "container:Book Discovery.xcodeproj">
+            ReferencedContainer = "container:Page Wire.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "DD27392B260E556300266851"
             BuildableName = "Book Discovery.app"
             BlueprintName = "Book Discovery"
-            ReferencedContainer = "container:Book Discovery.xcodeproj">
+            ReferencedContainer = "container:Page Wire.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

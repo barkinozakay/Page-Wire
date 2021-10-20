@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol NavigateToSite: class {
+protocol NavigateToSite: AnyObject {
     func navigateToSite(index: Int)
 }
 

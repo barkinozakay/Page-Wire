@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Book Discovery.xcodeproj">
+      location = "group:/Users/barkin.ozakay/Education/CSE 492 (2021 Fall)/Book Discovery/Page Wire.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

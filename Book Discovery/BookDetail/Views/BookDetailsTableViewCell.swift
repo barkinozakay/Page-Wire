@@ -8,7 +8,7 @@
 import UIKit
 import Nuke
 
-protocol ShowBookInfo: class {
+protocol ShowBookInfo: AnyObject {
     func showBookInfo()
 }
 

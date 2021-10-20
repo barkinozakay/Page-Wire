@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="giT-8x-jbv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="giT-8x-jbv">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,14 +26,14 @@
                                 </segments>
                             </segmentedControl>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for books" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMn-CC-ABO">
-                                <rect key="frame" x="0.0" y="203" width="336.33333333333331" height="44"/>
+                                <rect key="frame" x="0.0" y="203" width="336" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="AW8-Q0-hkJ"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bI5-Tl-mjl" userLabel="Search Button">
-                                <rect key="frame" x="344.33333333333331" y="215" width="24.666666666666686" height="20"/>
+                                <rect key="frame" x="344" y="215" width="25" height="20"/>
                                 <color key="tintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="magnifyingglass" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="medium"/>
@@ -98,7 +99,7 @@
                             <constraint firstItem="NoB-2s-s1j" firstAttribute="centerY" secondItem="SbZ-kD-2a0" secondAttribute="centerY" id="zVi-aj-4fa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Book Discovery" id="vpf-2M-MaO">
+                    <navigationItem key="navigationItem" title="Page Wire" id="vpf-2M-MaO">
                         <barButtonItem key="backBarButtonItem" title=" " id="geI-d3-IEB"/>
                     </navigationItem>
                     <connections>
@@ -126,7 +127,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchResultTextTableViewCell" id="MMO-dT-Y17" customClass="SearchResultTextTableViewCell" customModule="Book_Discovery" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="390" height="44.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="44.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MMO-dT-Y17" id="UGf-gd-FGO">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="44.333332061767578"/>
@@ -385,7 +386,7 @@
     <resources>
         <image name="barcode" catalog="system" width="128" height="93"/>
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
-        <image name="books.vertical.fill" catalog="system" width="128" height="100"/>
+        <image name="books.vertical.fill" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="heart.slash.fill" catalog="system" width="128" height="115"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
