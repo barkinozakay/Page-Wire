@@ -12,7 +12,7 @@
         <!--Book Discovery-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MainVC" title="Book Discovery" id="BYZ-38-t0r" customClass="MainVC" customModule="Book_Discovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainVC" title="Book Discovery" id="BYZ-38-t0r" customClass="MainVC" customModule="Page_Wire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,61 +42,55 @@
                                     <action selector="searchButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lFj-8k-qUr"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Meg-cv-Nsd" userLabel="Scan Labels Stack View">
-                                <rect key="frame" x="16" y="619" width="358" height="20.333333333333371"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Book Cover" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qh8-fm-koY" userLabel="Scan Book Cover">
-                                        <rect key="frame" x="0.0" y="0.0" width="163" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Barcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T38-S9-htY">
-                                        <rect key="frame" x="213" y="0.0" width="145" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lK-dN-PgK" customClass="GIDSignInButton">
+                                <rect key="frame" x="50" y="511.66666666666674" width="290" height="64"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="hpj-6o-hKM"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="onGoogleSignInButtonTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="L69-eV-Ntv"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Barcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T38-S9-htY">
+                                <rect key="frame" x="142.66666666666666" y="635.66666666666663" width="106" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbZ-kD-2a0" userLabel="Barcode Button">
-                                <rect key="frame" x="253.33333333333334" y="656.33333333333326" width="96.333333333333343" height="73.666666666666629"/>
+                                <rect key="frame" x="138" y="666.66666666666663" width="115" height="74.666666666666629"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="Ska-mq-cFS"/>
+                                    <constraint firstAttribute="height" constant="80" id="bUR-aW-Nb1"/>
+                                </constraints>
                                 <color key="tintColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" backgroundImage="barcode" catalog="system"/>
                                 <connections>
                                     <action selector="scanBarcodeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nCW-CI-uRK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoB-2s-s1j" userLabel="Camera Button">
-                                <rect key="frame" x="55.000000000000007" y="655.66666666666674" width="84.666666666666686" height="75.333333333333371"/>
-                                <color key="tintColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" backgroundImage="book.closed.fill" catalog="system"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Meg-cv-Nsd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="23w-VL-b1D"/>
                             <constraint firstItem="bI5-Tl-mjl" firstAttribute="centerY" secondItem="GMn-CC-ABO" secondAttribute="centerY" id="4h8-8V-SoF"/>
                             <constraint firstItem="36c-EW-zjW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="4yq-Fz-bBd"/>
+                            <constraint firstAttribute="bottom" secondItem="SbZ-kD-2a0" secondAttribute="bottom" constant="100" id="6Gn-Y6-8cC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="36c-EW-zjW" secondAttribute="trailing" constant="60" id="8pZ-ko-A7A"/>
                             <constraint firstItem="36c-EW-zjW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="9gU-9P-ZKk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NoB-2s-s1j" secondAttribute="bottom" constant="30" id="EeE-Jo-dLG"/>
-                            <constraint firstItem="NoB-2s-s1j" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.06325" constant="60" id="F5e-Ew-hPa"/>
-                            <constraint firstItem="SbZ-kD-2a0" firstAttribute="width" secondItem="NoB-2s-s1j" secondAttribute="width" multiplier="0.194268" constant="80" id="GBf-91-SK9"/>
+                            <constraint firstItem="4lK-dN-PgK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="IJe-T6-Cdm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bI5-Tl-mjl" secondAttribute="trailing" constant="21" id="JsC-rS-ZlK"/>
-                            <constraint firstItem="NoB-2s-s1j" firstAttribute="centerX" secondItem="qh8-fm-koY" secondAttribute="centerX" id="LDO-it-MGg"/>
-                            <constraint firstItem="NoB-2s-s1j" firstAttribute="top" secondItem="Meg-cv-Nsd" secondAttribute="bottom" constant="16" id="TV3-dO-h5Z"/>
+                            <constraint firstItem="T38-S9-htY" firstAttribute="top" secondItem="4lK-dN-PgK" secondAttribute="bottom" constant="60" id="R3e-vF-NKe"/>
                             <constraint firstItem="GMn-CC-ABO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UCZ-Zs-c85"/>
                             <constraint firstItem="bI5-Tl-mjl" firstAttribute="height" secondItem="GMn-CC-ABO" secondAttribute="height" multiplier="0.454545" id="Uol-mo-74O"/>
                             <constraint firstItem="bI5-Tl-mjl" firstAttribute="leading" secondItem="GMn-CC-ABO" secondAttribute="trailing" constant="8" id="VNs-2Y-A80"/>
-                            <constraint firstItem="SbZ-kD-2a0" firstAttribute="height" secondItem="NoB-2s-s1j" secondAttribute="height" multiplier="0.253112" constant="60" id="WXF-jr-QaQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Meg-cv-Nsd" secondAttribute="trailing" constant="16" id="fTx-fO-DaU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4lK-dN-PgK" secondAttribute="trailing" constant="50" id="Yn2-Bt-Pzq"/>
+                            <constraint firstItem="SbZ-kD-2a0" firstAttribute="centerX" secondItem="T38-S9-htY" secondAttribute="centerX" id="ail-Vj-WhZ"/>
                             <constraint firstItem="GMn-CC-ABO" firstAttribute="top" secondItem="36c-EW-zjW" secondAttribute="bottom" constant="8" id="fgl-7a-v0f"/>
-                            <constraint firstItem="NoB-2s-s1j" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.025" constant="60" id="hqX-L6-7E4"/>
-                            <constraint firstItem="SbZ-kD-2a0" firstAttribute="centerX" secondItem="T38-S9-htY" secondAttribute="centerX" id="uDJ-V9-xXh"/>
-                            <constraint firstItem="Meg-cv-Nsd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="uHu-6M-FJn"/>
-                            <constraint firstItem="NoB-2s-s1j" firstAttribute="centerY" secondItem="SbZ-kD-2a0" secondAttribute="centerY" id="zVi-aj-4fa"/>
+                            <constraint firstItem="SbZ-kD-2a0" firstAttribute="top" secondItem="T38-S9-htY" secondAttribute="bottom" constant="8" id="oth-by-ZGk"/>
+                            <constraint firstItem="SbZ-kD-2a0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="138" id="pQ5-Wq-LeI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SbZ-kD-2a0" secondAttribute="trailing" constant="137" id="zXp-lp-eXZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Page Wire" id="vpf-2M-MaO">
@@ -104,7 +98,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="barcodeButton" destination="SbZ-kD-2a0" id="qc0-g1-Rhi"/>
-                        <outlet property="cameraButton" destination="NoB-2s-s1j" id="xA5-M3-4QQ"/>
+                        <outlet property="googleSignInButton" destination="4lK-dN-PgK" id="x71-ek-dWc"/>
                         <outlet property="searchBar" destination="GMn-CC-ABO" id="zWF-sq-68a"/>
                         <outlet property="searchButton" destination="bI5-Tl-mjl" id="SrK-2V-a47"/>
                         <outlet property="segmentedControl" destination="36c-EW-zjW" id="fVy-iz-212"/>
@@ -117,7 +111,7 @@
         <!--Book Results-->
         <scene sceneID="RTC-8L-UeK">
             <objects>
-                <viewController storyboardIdentifier="BookResultsVC" title="Book Results" id="LOQ-z6-j0h" customClass="BookResultsVC" customModule="Book_Discovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookResultsVC" title="Book Results" id="LOQ-z6-j0h" customClass="BookResultsVC" customModule="Page_Wire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K1U-PZ-eee">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,7 +120,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchResultTextTableViewCell" id="MMO-dT-Y17" customClass="SearchResultTextTableViewCell" customModule="Book_Discovery" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchResultTextTableViewCell" id="MMO-dT-Y17" customClass="SearchResultTextTableViewCell" customModule="Page_Wire" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="44.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MMO-dT-Y17" id="UGf-gd-FGO">
@@ -186,7 +180,7 @@
         <!--Book Info-->
         <scene sceneID="qvh-U0-Rgo">
             <objects>
-                <viewController storyboardIdentifier="BookInfoVC" title="Book Info" modalTransitionStyle="flipHorizontal" id="Nk9-rm-xV8" customClass="BookInfoVC" customModule="Book_Discovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookInfoVC" title="Book Info" modalTransitionStyle="flipHorizontal" id="Nk9-rm-xV8" customClass="BookInfoVC" customModule="Page_Wire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RRe-yp-975">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -247,7 +241,7 @@
         <!--Favorites-->
         <scene sceneID="EJ5-eZ-bbP">
             <objects>
-                <viewController title="Favorites" id="28U-Gc-qi8" customClass="FavoriteBooksVC" customModule="Book_Discovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Favorites" id="28U-Gc-qi8" customClass="FavoriteBooksVC" customModule="Page_Wire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="thc-WW-JTt">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -347,7 +341,7 @@
         <!--Book Detail-->
         <scene sceneID="cQi-n0-tQ0">
             <objects>
-                <viewController storyboardIdentifier="BookDetailVC" title="Book Detail" id="Gdz-b1-xkD" customClass="BookDetailVC" customModule="Book_Discovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookDetailVC" title="Book Detail" id="Gdz-b1-xkD" customClass="BookDetailVC" customModule="Page_Wire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZVz-qE-ZH0">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -385,7 +379,6 @@
     </scenes>
     <resources>
         <image name="barcode" catalog="system" width="128" height="93"/>
-        <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="books.vertical.fill" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="heart.slash.fill" catalog="system" width="128" height="115"/>

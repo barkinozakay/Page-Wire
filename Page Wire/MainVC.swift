@@ -6,24 +6,27 @@
 //
 
 import UIKit
+import GoogleSignIn
 import Lottie
 import BarcodeScanner
 
 class MainVC: UIViewController {
 
-    // MARK: - Outlets -
+    // MARK: - Outlets
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var searchButton: UIButton!
-    @IBOutlet private weak var cameraButton: UIButton!
+    
+    // TODO: Move this to SignIn page.
+    @IBOutlet private weak var googleSignInButton: GIDSignInButton!
     @IBOutlet private weak var barcodeButton: UIButton!
     
-    // MARK: - Variables -
+    // MARK: - Variables
     private lazy var books: [BookModel] = []
     private lazy var searchBarText: String = ""
     private weak var barcodeScanner: BarcodeScannerViewController?
     
-    // MARK: - LIFECYCLE -
+    // MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -31,8 +34,17 @@ class MainVC: UIViewController {
     }
 }
 
-// MARK: - IBActions-
+// MARK: - IBActions
 extension MainVC {
+    
+    // TODO: Complete the action.
+    @IBAction private func onGoogleSignInButtonTapped(_ sender: GIDSignInButton) {
+        let signInConfig = GIDConfiguration.init(clientID: "660244303275-qmd7h39u9mj81dj3o2lbe3tk41don949.apps.googleusercontent.com")
+        GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
+            print("asd")
+        }
+    }
+    
     @IBAction func searchButtonAction(_ sender: Any) {
         searchBooks()
     }
@@ -44,7 +56,7 @@ extension MainVC {
     }
 }
 
-// MARK: - Functions -
+// MARK: - Functions
 extension MainVC {
     private func setUI() {
         searchBar.delegate = self
@@ -107,7 +119,7 @@ extension MainVC {
     }
 }
 
-// MARK: - Navigation Functions -
+// MARK: - Navigation Functions
 extension MainVC {
     private func goToBookResults(_ books: [BookModel]) {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookResultsVC") as! BookResultsVC
@@ -124,7 +136,7 @@ extension MainVC {
     }
 }
 
-// MARK: - Search Bar Delegates -
+// MARK: - Search Bar Delegates
 extension MainVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         guard text.isAlphaNumeric else { return false }
@@ -142,7 +154,7 @@ extension MainVC: UISearchBarDelegate {
     }
 }
 
-// MARK: - Barcode Scanner Delegates -
+// MARK: - Barcode Scanner Delegates
 extension MainVC: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
     func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
         delayOperation(delayTime: 2.0) {

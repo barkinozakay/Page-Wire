@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD118433272CA94B002EAD1C /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD118432272CA94B002EAD1C /* SignIn.storyboard */; };
+		DD118438272CA9E9002EAD1C /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD118437272CA9E9002EAD1C /* SignInVC.swift */; };
 		DD23444A2610BD0F004EC0A1 /* BookResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2344482610BD0F004EC0A1 /* BookResultsTableViewCell.swift */; };
 		DD23444B2610BD0F004EC0A1 /* BookResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD2344492610BD0F004EC0A1 /* BookResultsTableViewCell.xib */; };
 		DD23448F2610EAE8004EC0A1 /* SearchResultTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD23448D2610EAE8004EC0A1 /* SearchResultTextTableViewCell.swift */; };
@@ -25,7 +27,7 @@
 		DD7341A4272C7C7A00769F68 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = DD7341A3272C7C7A00769F68 /* GoogleSignIn */; };
 		DD7341A7272C7E1100769F68 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DD7341A6272C7E1100769F68 /* FirebaseAnalytics */; };
 		DD7341A9272C7E1100769F68 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DD7341A8272C7E1100769F68 /* FirebaseAuth */; };
-		DD7341AB272C7E1100769F68 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = DD7341AA272C7E1100769F68 /* FirebaseCrashlytics */; };
+		DD7341AB272C7E1100769F68 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = DD7341AA272C7E1100769F68 /* FirebaseCrashlytics */; settings = {ATTRIBUTES = (Required, ); }; };
 		DD7341AD272C7E1100769F68 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = DD7341AC272C7E1100769F68 /* FirebaseDatabase */; };
 		DD7341AF272C7E1100769F68 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = DD7341AE272C7E1100769F68 /* FirebaseStorage */; };
 		DD87CD1F260FE9B0002F5C81 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87CD1E260FE9B0002F5C81 /* UIViewController+Extensions.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD118432272CA94B002EAD1C /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		DD118437272CA9E9002EAD1C /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		DD2344482610BD0F004EC0A1 /* BookResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookResultsTableViewCell.swift; sourceTree = "<group>"; };
 		DD2344492610BD0F004EC0A1 /* BookResultsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookResultsTableViewCell.xib; sourceTree = "<group>"; };
 		DD23448D2610EAE8004EC0A1 /* SearchResultTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTextTableViewCell.swift; sourceTree = "<group>"; };
@@ -103,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD118434272CA953002EAD1C /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				DD118432272CA94B002EAD1C /* SignIn.storyboard */,
+				DD118437272CA9E9002EAD1C /* SignInVC.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		DD273923260E556300266851 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +137,7 @@
 			children = (
 				DD273935260E556300266851 /* Main.storyboard */,
 				DDFE7085260FAF1D00138959 /* MainVC.swift */,
+				DD118434272CA953002EAD1C /* SignIn */,
 				DDFE7074260FAEA500138959 /* BookResults */,
 				DDFE7073260FACB400138959 /* BookDetail */,
 				DDDE6B33263118EA0062568D /* FavoriteBooks */,
@@ -343,6 +357,7 @@
 				DDA43F0A261513A000F41873 /* books.json in Resources */,
 				DD27393C260E556400266851 /* LaunchScreen.storyboard in Resources */,
 				DD23444B2610BD0F004EC0A1 /* BookResultsTableViewCell.xib in Resources */,
+				DD118433272CA94B002EAD1C /* SignIn.storyboard in Resources */,
 				DD273939260E556400266851 /* Assets.xcassets in Resources */,
 				DD273937260E556300266851 /* Main.storyboard in Resources */,
 				DD521CA02610FE0000493A37 /* searching_books_animation.json in Resources */,
@@ -367,6 +382,7 @@
 				DD87CD27260FE9C8002F5C81 /* String+Extensions.swift in Sources */,
 				DDFE7079260FAEF200138959 /* BookResultsVC.swift in Sources */,
 				DDDE6B2F263118890062568D /* FavoriteBooksCache.swift in Sources */,
+				DD118438272CA9E9002EAD1C /* SignInVC.swift in Sources */,
 				DD69AD6F265B859200EFE40F /* Double+Extension.swift in Sources */,
 				DDDE6CC12649E91200291C0F /* Notification+Extensions.swift in Sources */,
 				DD23448F2610EAE8004EC0A1 /* SearchResultTextTableViewCell.swift in Sources */,
@@ -529,6 +545,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.barkinozakay.page-wire";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -548,6 +565,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.barkinozakay.page-wire";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
