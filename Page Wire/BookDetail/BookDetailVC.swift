@@ -9,17 +9,17 @@ import UIKit
 
 class BookDetailVC: UIViewController {
 
-    // MARK: - Outlets -
+    // MARK: - Outlets
     @IBOutlet private weak var tableView: UITableView!
     
-    // MARK: - Variables -
+    // MARK: - Variables
     var book: BookModel?
     private var bookDataViewModel: BookDataViewModel?
     private var favoriteButton: UIBarButtonItem!
     lazy var isComingFromFavorites: Bool = false
     weak var favoriteDelegate: FavoriteBook?
     
-    // MARK: - LIFECYCLE -
+    // MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         showLoadingAnimation()
@@ -38,7 +38,7 @@ class BookDetailVC: UIViewController {
     }
 }
 
-// MARK: - Book Data From Site -
+// MARK: - Book Data From Site
 extension BookDetailVC: BookDataFromSite {
     func getBookDataForSites(_ book: BookModel?, _ isFinished: Bool) {
         self.book = book
@@ -56,7 +56,7 @@ extension BookDetailVC: BookDataFromSite {
     }
 }
 
-// MARK: - Favorite Book Functions -
+// MARK: - Favorite Book Functions
 extension BookDetailVC {
     private func changeFavoriteButtonVisibility() {
         if isComingFromFavorites {
@@ -108,7 +108,7 @@ extension BookDetailVC {
     }
 }
 
-// MARK: - Protocol Conformances -
+// MARK: - Protocols
 extension BookDetailVC: ShowBookInfo {
     func showBookInfo() {
         guard let info = book?.info, !info.isEmpty else { return }
@@ -125,7 +125,7 @@ extension BookDetailVC: NavigateToSite {
     }
 }
 
-// MARK: - Table View Delegate, Datasource -
+// MARK: - Table View Delegate, Datasource
 extension BookDetailVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int { 2 }

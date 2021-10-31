@@ -36,39 +36,28 @@ class BookDataViewModel {
     }
     
     func getBookDataForSites() {
-        guard let name = book?.name, let author = book?.author else { return }
+        guard let name = book?.name, let author = book?.author.components(separatedBy: " ").last else { return }
         var bookSiteDataList = book?.siteData
         bookSiteDataList = []
         var callCounter = 0
         var totalCallCount = BookSite.allCases.count
         for site in BookSite.allCases {
             let searchQuery = prepareQuery("\(name) \(author)")
-            guard let siteQueryPrefix = selectQueryForSite(site),
-                  !siteQueryPrefix.isEmpty else {
+            guard let siteQueryPrefix = selectQueryForSite(site), !siteQueryPrefix.isEmpty else {
                 totalCallCount -= 1
                 continue
             }
             getHtmlFromSearchQuery(siteQueryPrefix + searchQuery) { (response) in
                 guard let html = response, !html.isEmpty else { return }
-                guard let bookLink = self.getBookLinkForSite(site, html), !bookLink.isEmpty else { return }
+                guard let bookLink = self.getBookLinkForSite(site, html), !bookLink.isEmpty else { return totalCallCount -= 1 }
                 self.startNewSessionAsync(URL(string: bookLink)) { (response) in
                     callCounter += 1
                     guard let responseHtml = response else { return }
                     let isFinished = callCounter == totalCallCount ? true : false
-                    if site == .idefix {            // CHANGE
-                        let artwork: String? = self.getArtwork(responseHtml)
-                        self.book?.artwork = artwork
-                    }
-                    if site == .kitapyurdu {
-                        let info = self.getBookInfo(responseHtml)
-                        self.book?.info = info
-                    }
-                    if let dic = self.decideToGetSiteData(site, responseHtml) {
-                        if let price = dic["price"] as? Double, let discount = dic["discount"] as? String {
-                            bookSiteDataList?.append(BookSiteData(site: site, url: bookLink, price: price, discount: discount))
-                        }
-                    }
-                    bookSiteDataList = self.sortPrices(bookSiteDataList)
+                    self.parseBookArtwork(site, responseHtml)
+                    self.parseBookInfo(site, responseHtml)
+                    self.addBookSiteData(site, responseHtml, bookLink, &bookSiteDataList)
+                    self.sortPrices(&bookSiteDataList)
                     self.book?.siteData = bookSiteDataList
                     self.siteDataDelegate?.getBookDataForSites(self.book, isFinished)
                 }
@@ -88,7 +77,8 @@ class BookDataViewModel {
             case .amazon:
                 return httpsPrefix + "amazon.com.tr/s?k="
             case .bkmkitap:
-                return httpsPrefix + "bkmkitap.com/arama?q="
+                return nil
+                //return httpsPrefix + "bkmkitap.com/arama?q="
             case .dnr:
                 return httpsPrefix + "dr.com.tr/search?q="
             case .kitapyurdu:
@@ -119,6 +109,18 @@ class BookDataViewModel {
                 }
             }.resume()
         }
+    }
+    
+    private func parseBookArtwork(_ site: BookSite, _ html: String) {
+        guard site == .idefix else { return }       // TODO: Change this.
+        let artwork: String? = self.getArtwork(html)
+        self.book?.artwork = artwork
+    }
+    
+    private func parseBookInfo(_ site: BookSite, _ html: String) {
+        guard site == .kitapyurdu else { return }
+        let info = self.getBookInfo(html)
+        self.book?.info = info
     }
     
     private func getBookInfo(_ html: String) -> String {
@@ -178,9 +180,17 @@ class BookDataViewModel {
         return nil
     }
     
-    private func sortPrices(_ bookSiteDataList: [BookSiteData]?) -> [BookSiteData]? {
-        guard let list = bookSiteDataList else { return nil }
-        return list.sorted(by: { $0.price ?? 0.0 < $1.price ?? 0.0 })
+    private func sortPrices(_ bookSiteDataList: inout [BookSiteData]?) {
+        guard let list = bookSiteDataList else { return }
+        bookSiteDataList = list.sorted(by: { $0.price ?? 0.0 < $1.price ?? 0.0 })
+    }
+    
+    private func addBookSiteData(_ site: BookSite, _ html: String, _ bookLink: String, _ bookSiteDataList: inout [BookSiteData]?) {
+        if let dic = self.decideToGetSiteData(site, html) {
+            if let price = dic["price"] as? Double, let discount = dic["discount"] as? String {
+                bookSiteDataList?.append(BookSiteData(site: site, url: bookLink, price: price, discount: discount))
+            }
+        }
     }
 }
 
@@ -255,9 +265,10 @@ extension BookDataViewModel {
         do {
             let doc: Document = try SwiftSoup.parse(html)
             let a: Elements = try doc.select("a")
-            let classes = try a.map { try $0.attr("class") }
             let links = try a.map { try $0.attr("href") }
-            guard let index = classes.firstIndex(of: "item-name") else { return nil }
+            let texts = try a.map { try $0.text() }
+            guard let bookName = book?.name, !bookName.isEmpty else { return nil }
+            guard let index = texts.firstIndex(where: { $0.contains(bookName) }) else { return nil }
             let link = httpsPrefix + "dr.com.tr" + links[index]
             return link
         } catch Exception.Error(let type, let message) {
@@ -324,10 +335,15 @@ extension BookDataViewModel {
         do {
             let doc: Document = try SwiftSoup.parse(html)
             let spanList: Elements = try doc.select("span")
-            let prices = try spanList.map { try $0.text() }.filter { $0.contains("TL") }
             
-            guard let price = prices[1].components(separatedBy: "TL").first?.toDouble()?.rounded(toPlaces: 2) else { return nil }
-            var discount = prices[2].components(separatedBy: "(").last
+            let spanClasses = try spanList.map { try $0.attr("class") }
+            let spanTexts = try spanList.map { try $0.text() }
+            
+            guard let currentPriceIndex = spanClasses.firstIndex(of: "a-size-base a-color-price") else { return nil }
+            
+            guard let price = spanTexts[currentPriceIndex].components(separatedBy: "TL").first?.toDouble()?.rounded(toPlaces: 2) else { return nil }
+            var discount = spanTexts.filter { $0.contains("TL") && $0.contains("%") }.first?.components(separatedBy: "(").last
+
             discount?.trimmingAllSpaces()
             discount?.removeLast()
             
@@ -381,16 +397,16 @@ extension BookDataViewModel {
             let spanClasses = try spanList.map { try $0.attr("class") }
             let spanTexts = try spanList.map { try $0.text() }
             
-            guard let priceIndex = divClasses.firstIndex(of: "product-price"),
-                  let price = divTexts[priceIndex].components(separatedBy: ")").last?.trimmingCharacters(in: .whitespaces).components(separatedBy: " ").first?.toDouble()?.rounded(toPlaces: 2)  else { return nil }
+            guard let priceIndex = divClasses.firstIndex(of: "salePrice"),
+                  let price = divTexts[priceIndex].components(separatedBy: " ").first?.toDouble()?.rounded(toPlaces: 2)  else { return nil }
             
             var discount: String = ""
-            if let discountIndex = spanClasses.firstIndex(of: "discount") {
-                discount = spanTexts[discountIndex].components(separatedBy: "-%").last ?? ""
+            if let discountIndex = spanClasses.firstIndex(of: "discount-rate") {
+                discount = spanTexts[discountIndex]
             }
             
             let priceDic: [String : Any] = ["price": price,
-                                            "discount": "%\(discount)"]
+                                            "discount": discount]
             return priceDic
         } catch Exception.Error(let type, let message) {
             print("Error Type: \(type)")
