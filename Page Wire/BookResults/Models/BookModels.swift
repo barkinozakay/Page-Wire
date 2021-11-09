@@ -14,9 +14,9 @@ struct BookList: Codable, Equatable {
 struct BookModel: Codable, Equatable {
     let name: String
     let author: String
-    let publisher: String
+    var publisher: String
     let genre: String
-    let pages: Int
+    var pages: Int
     let isbn: Int
     var isFavorited: Bool?
     var siteData: [BookSiteData]?

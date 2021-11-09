@@ -48,12 +48,6 @@ class BookDetailVC: UIViewController {
         super.viewWillAppear(animated)
         if !isComingFromFavorites { checkIfBookIsFavorited() }
     }
-    
-    private func loadOtherPublishers() {
-        let asd = book?.otherPublishers
-        let asddsa = 5
-    }
-    
 }
 
 // MARK: - Book Data From Site
@@ -69,6 +63,20 @@ extension BookDetailVC: BookDataFromSite {
                     self.favoriteButton.isEnabled = true
                 }
                 self.hideLoadingAnimaton()
+            }
+        }
+    }
+}
+
+// MARK: - Other Publishers
+extension BookDetailVC {
+    private func loadOtherPublishers() {
+        book?.otherPublishers = []
+        for item in BookManager.shared.bookList {
+            if book?.name == item.name, book?.author == item.author {
+                let otherPublisher = [item.publisher: item.pages]
+                book?.otherPublishers?.append(otherPublisher)
+                publisherList.append(item.publisher)
             }
         }
     }
@@ -128,7 +136,6 @@ extension BookDetailVC {
 
 // MARK: - BookDetailsTableViewCellDelegate
 extension BookDetailVC: BookDetailsTableViewCellDelegate {
-    
     func selectPublisher() {
         pickerOpened ? closePicker() : openPicker()
         
@@ -144,13 +151,12 @@ extension BookDetailVC: BookDetailsTableViewCellDelegate {
 
 // MARK: - Custom Picker
 extension BookDetailVC: ApplyPickerItemProtocol {
-    
     func addPickerView() {
         pickerView = CustomPickerView()
         let scrHeight = UIScreen.main.bounds.height
         let scrWidth = UIScreen.main.bounds.width
         pickerView.applyDelegate = self
-        pickerView.dataSource = ["Test"]
+        pickerView.dataSource = publisherList
         pickerView.frame = CGRect(x: 0, y: scrHeight, width: scrWidth, height: 300)
         view.addSubview(pickerView)
     }
@@ -159,7 +165,7 @@ extension BookDetailVC: ApplyPickerItemProtocol {
         guard !pickerOpened else { return }
         UIView.animate(withDuration: 0.3, animations: {
             self.pickerView.layer.position.y -= 300
-            if let selectedIndex = self.pickerView.dataSource.firstIndex(of: "Test") {
+            if let selectedIndex = self.pickerView.dataSource.firstIndex(of: self.currentPublisher) {
                 self.pickerView.pickerView.selectRow(selectedIndex, inComponent: 0, animated: false)
                 self.pickerOpened = true
             }
@@ -180,7 +186,20 @@ extension BookDetailVC: ApplyPickerItemProtocol {
     
     func apply(for item: String) {
         closePicker()
-        pickerView.changeSelectedItem("Test")
+        pickerView.changeSelectedItem(item)
+        book?.publisher = item
+        changePageLabel(publisher: item)
+    }
+    
+    private func changePageLabel(publisher: String) {
+        guard let otherPublishers = book?.otherPublishers else { return }
+        for item in otherPublishers {
+            if let pageNumber = item["\(publisher)"] {
+                book?.pages = pageNumber
+                tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+                break
+            }
+        }
     }
     
     func calculateLabelSize(text: String, fontSize: Int) -> CGSize {

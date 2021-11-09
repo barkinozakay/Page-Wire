@@ -61,7 +61,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klM-Un-hTw">
                                 <rect key="frame" x="0.0" y="295.66666666666669" width="380" height="31"/>
-                                <color key="tintColor" red="0.1268774179311899" green="0.47305403489332931" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.0" green="0.61913639948918253" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="Select Publisher" imagePadding="4">
                                     <imageReference key="image" image="arrowtriangle.down.fill" catalog="system" symbolScale="medium"/>

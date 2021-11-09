@@ -31,7 +31,7 @@ class BookInfoVC: UIViewController {
     private func setInfoText() {
         let attributedString = NSMutableAttributedString(string: book?.info ?? "", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15, weight: .regular)])
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 3
+        paragraphStyle.lineSpacing = 4
         attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
         textView.attributedText = attributedString
     }

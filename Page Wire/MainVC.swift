@@ -76,22 +76,8 @@ extension MainVC {
         // TODO: Calculate time.
         DispatchQueue.main.async {
             if let response = DecoderHelper.decode(resourcePath: "books", BookList.self) {
+                BookManager.shared.bookList = response.books
                 self.books = response.books.unique { $0.name }
-                
-                // TODO: this doesn't work. find other publishers.
-                //self.addOtherPublishers(with: response.books)
-            }
-        }
-    }
-    
-    private func addOtherPublishers(with data: [BookModel]) {
-        for book in self.books {
-            for item in data {
-                if book.name == item.name, book.author == item.author {
-                    guard let index = self.books.firstIndex(of: book) else { continue }
-                    let otherPublisher = [item.publisher: item.pages]
-                    self.books[index].otherPublishers?.append(otherPublisher)
-                }
             }
         }
     }
