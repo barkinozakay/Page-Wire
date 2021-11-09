@@ -16,13 +16,23 @@ class BookDetailVC: UIViewController {
     var book: BookModel?
     private var bookDataViewModel: BookDataViewModel?
     private var favoriteButton: UIBarButtonItem!
-    lazy var isComingFromFavorites: Bool = false
+    var isComingFromFavorites: Bool = false
     weak var favoriteDelegate: FavoriteBook?
+    
+    lazy var pickerView: CustomPickerView = {
+        let picker = CustomPickerView()
+        return picker
+    }()
+    private var pickerOpened: Bool = false
+    
+    private var publisherList: [String] = []
+    private var currentPublisher: String = ""
     
     // MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         showLoadingAnimation()
+        loadOtherPublishers()
         bookDataViewModel = BookDataViewModel(book: book!)
         bookDataViewModel?.siteDataDelegate = self
         bookDataViewModel?.getBookDataForSites()
@@ -30,12 +40,20 @@ class BookDetailVC: UIViewController {
         tableView.register(UINib(nibName: "BookPricesTableViewCell", bundle: nil), forCellReuseIdentifier: "BookPricesTableViewCell")
         NotificationCenter.default.addObserver(self, selector: #selector(removeBookFromFavorites(_:)), name: .removeBookFromFavorites, object: nil)
         changeFavoriteButtonVisibility()
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closePicker)))
+        addPickerView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if !isComingFromFavorites { checkIfBookIsFavorited() }
     }
+    
+    private func loadOtherPublishers() {
+        let asd = book?.otherPublishers
+        let asddsa = 5
+    }
+    
 }
 
 // MARK: - Book Data From Site
@@ -108,13 +126,65 @@ extension BookDetailVC {
     }
 }
 
-// MARK: - Protocols
-extension BookDetailVC: ShowBookInfo {
+// MARK: - BookDetailsTableViewCellDelegate
+extension BookDetailVC: BookDetailsTableViewCellDelegate {
+    
+    func selectPublisher() {
+        pickerOpened ? closePicker() : openPicker()
+        
+    }
+    
     func showBookInfo() {
-        guard let info = book?.info, !info.isEmpty else { return }
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookInfoVC") as! BookInfoVC
-        vc.bookInfo = info
-        navigationController?.present(vc, animated: true, completion: nil)
+        guard let book = book else { return }
+        let infoVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookInfoVC") as! BookInfoVC
+        infoVC.book = book
+        navigationController?.present(infoVC, animated: true, completion: nil)
+    }
+}
+
+// MARK: - Custom Picker
+extension BookDetailVC: ApplyPickerItemProtocol {
+    
+    func addPickerView() {
+        pickerView = CustomPickerView()
+        let scrHeight = UIScreen.main.bounds.height
+        let scrWidth = UIScreen.main.bounds.width
+        pickerView.applyDelegate = self
+        pickerView.dataSource = ["Test"]
+        pickerView.frame = CGRect(x: 0, y: scrHeight, width: scrWidth, height: 300)
+        view.addSubview(pickerView)
+    }
+    
+    @objc func openPicker() {
+        guard !pickerOpened else { return }
+        UIView.animate(withDuration: 0.3, animations: {
+            self.pickerView.layer.position.y -= 300
+            if let selectedIndex = self.pickerView.dataSource.firstIndex(of: "Test") {
+                self.pickerView.pickerView.selectRow(selectedIndex, inComponent: 0, animated: false)
+                self.pickerOpened = true
+            }
+        }) { (_) in
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc func closePicker() {
+        guard pickerOpened else { return }
+        UIView.animate(withDuration: 0.3, animations: {
+            self.pickerView.layer.position.y += 300
+            self.pickerOpened = false
+        }) { (_) in
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func apply(for item: String) {
+        closePicker()
+        pickerView.changeSelectedItem("Test")
+    }
+    
+    func calculateLabelSize(text: String, fontSize: Int) -> CGSize {
+        return (text as NSString).size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .regular)])
     }
 }
 
@@ -141,6 +211,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource {
             cell.book = book
             cell.delegate = self
             cell.setBook()
+            currentPublisher = cell.publisherLabel.text ?? ""
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookPricesTableViewCell", for: indexPath) as? BookPricesTableViewCell else { return UITableViewCell() }

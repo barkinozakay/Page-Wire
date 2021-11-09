@@ -8,23 +8,25 @@
 import UIKit
 import Nuke
 
-protocol ShowBookInfo: AnyObject {
+protocol BookDetailsTableViewCellDelegate: AnyObject {
+    func selectPublisher()
     func showBookInfo()
 }
 
 class BookDetailsTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var artwork: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var pagesLabel: UILabel!
+    @IBOutlet private weak var artwork: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var authorLabel: UILabel!
+    @IBOutlet private weak var pagesLabel: UILabel!
     @IBOutlet weak var publisherLabel: UILabel!
-    @IBOutlet weak var genresLabel: UILabel!
-    @IBOutlet weak var bookInfoButton: UIButton!
+    @IBOutlet private weak var genresLabel: UILabel!
+    @IBOutlet private weak var selectPublisherButton: UIButton!
+    @IBOutlet private weak var bookInfoButton: UIButton!
     
     var book: BookModel?
     
-    weak var delegate: ShowBookInfo?
+    weak var delegate: BookDetailsTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,7 +41,7 @@ class BookDetailsTableViewCell: UITableViewCell {
         pagesLabel.text = "Pages: \(book?.pages ?? 0)"
     }
     
-    func setArtwork() {
+    private func setArtwork() {
         guard let url = book?.artwork else { return }
         let options = ImageLoadingOptions(
             placeholder: UIImage(systemName: "book.fill"),
@@ -48,8 +50,11 @@ class BookDetailsTableViewCell: UITableViewCell {
         Nuke.loadImage(with: URL(string: url)!, options: options, into: artwork)
     }
     
-    @IBAction func showBookInfo(_ sender: Any) {
-        delegate?.showBookInfo()
+    @IBAction private func selectPublisher(_ sender: Any) {
+        delegate?.selectPublisher()
     }
     
+    @IBAction private func showBookInfo(_ sender: Any) {
+        delegate?.showBookInfo()
+    }
 }

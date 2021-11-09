@@ -13,8 +13,6 @@ class BookResultsTableViewCell: UITableViewCell {
     @IBOutlet private weak var artwork: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var authorLabel: UILabel!
-    @IBOutlet private weak var pagesLabel: UILabel!
-    @IBOutlet private weak var publisherLabel: UILabel!
     @IBOutlet private weak var favoriteButton: UIButton!
     
     var book: BookModel?
@@ -36,8 +34,6 @@ class BookResultsTableViewCell: UITableViewCell {
         setArtwork()
         titleLabel.text = book?.name
         authorLabel.text = book?.author
-        pagesLabel.text = "Pages: \(book?.pages ?? 0)"
-        publisherLabel.text = "Publisher: \(book?.publisher ?? "")"
     }
     
     private func setArtwork() {

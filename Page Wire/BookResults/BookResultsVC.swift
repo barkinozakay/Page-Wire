@@ -24,7 +24,6 @@ class BookResultsVC: UIViewController {
         //bookDataViewModel?.getBookArtworkUrl()
         hideLoadingAnimaton()
         setFavoritedBooks()
-        tableView.register(UINib(nibName: "SerachTextTableViewCell", bundle: nil), forCellReuseIdentifier: "SerachTextTableViewCell")
         tableView.register(UINib(nibName: "BookResultsTableViewCell", bundle: nil), forCellReuseIdentifier: "BookResultsTableViewCell")
         NotificationCenter.default.addObserver(self, selector: #selector(removeBookFromFavorites(_:)), name: .removeBookFromFavorites, object: nil)
     }
@@ -100,26 +99,19 @@ extension BookResultsVC: FavoriteBook {
 // MARK: - Table View Delegate, Datasource -
 extension BookResultsVC: UITableViewDelegate, UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int { 2 }
+    func numberOfSections(in tableView: UITableView) -> Int { 1 }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        section == 0 ? 1 : books.count
+        books.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultTextTableViewCell", for: indexPath) as? SearchResultTextTableViewCell else { return UITableViewCell() }
-            cell.searchTextLabel.text = "Showing \(searchType.rawValue) results for \"\(searchText)\""
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
-            return cell
-        } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookResultsTableViewCell", for: indexPath) as? BookResultsTableViewCell else { return UITableViewCell() }
-            cell.book = books[indexPath.row]
-            cell.setBook()
-            cell.favoriteDelegate = self
-            cell.setFavoriteButtonImage()
-            return cell
-        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookResultsTableViewCell", for: indexPath) as? BookResultsTableViewCell else { return UITableViewCell() }
+        cell.book = books[indexPath.row]
+        cell.setBook()
+        cell.favoriteDelegate = self
+        cell.setFavoriteButtonImage()
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
