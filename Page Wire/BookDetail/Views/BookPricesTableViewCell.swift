@@ -52,8 +52,6 @@ class BookPricesTableViewCell: UITableViewCell {
         switch site {
             case .amazon:
                 image = UIImage(named: "amazon")
-            case .bkmkitap:
-                image = UIImage(named: "bkmkitap")
             case .dnr:
                 image = UIImage(named: "d&r")
             case .eganba:

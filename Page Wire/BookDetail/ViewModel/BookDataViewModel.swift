@@ -22,7 +22,6 @@ class BookDataViewModel {
     private var books: [BookModel] = []
     
     private var httpsPrefix: String = "https://www."
-    private var googleSearchQueryPrefix: String = "https://www.google.com.tr/search?q="
     
     weak var siteDataDelegate: BookDataFromSite?
     weak var artworkDelegate: BookArtworkFromSite?
@@ -36,17 +35,17 @@ class BookDataViewModel {
     }
     
     func getBookDataForSites() {
-        guard let name = book?.name, let author = book?.author.components(separatedBy: " ").last else { return }
         var bookSiteDataList = book?.siteData
         bookSiteDataList = []
         var callCounter = 0
         var totalCallCount = BookSite.allCases.count
         for site in BookSite.allCases {
-            let searchQuery = prepareQuery("\(name) \(author)")
-            guard let siteQueryPrefix = selectQueryForSite(site), !siteQueryPrefix.isEmpty else {
+            guard let searchQuery = prepareQuery(site), let siteQueryPrefix = selectQueryForSite(site),
+                    !siteQueryPrefix.isEmpty, !searchQuery.isEmpty else {
                 totalCallCount -= 1
                 continue
             }
+            // TODO: Test for wrong site urls.
             getHtmlFromSearchQuery(siteQueryPrefix + searchQuery) { (response) in
                 guard let html = response, !html.isEmpty else { return }
                 guard let bookLink = self.getBookLinkForSite(site, html), !bookLink.isEmpty else { return totalCallCount -= 1 }
@@ -65,7 +64,20 @@ class BookDataViewModel {
         }
     }
     
-    private func prepareQuery(_ query: String) -> String {
+    private func prepareQuery(_ site: BookSite) -> String? {
+        switch site {
+        case .amazon, .dnr, .idefix:
+            guard let isbn = book?.isbn.description else { return nil }
+            return isbn
+        case .kitapyurdu:   // TODO: search query with ISBN?
+            guard let name = book?.name, let author = book?.author.components(separatedBy: " ").last else { return nil }
+            return formatQuery(query: "\(name) \(author)")
+        default:
+            return nil
+        }
+    }
+    
+    private func formatQuery(query: String) -> String? {
         var newQuery = query
         newQuery.getAlphaNumericValue()
         newQuery = newQuery.removeDiacritics().split(separator: " ").joined(separator: "+")
@@ -74,17 +86,18 @@ class BookDataViewModel {
     
     private func selectQueryForSite(_ site: BookSite) -> String? {
         switch site {
-            case .amazon:
-                return httpsPrefix + "amazon.com.tr/s?k="
-            case .bkmkitap:
-                return nil
-                //return httpsPrefix + "bkmkitap.com/arama?q="
-            case .dnr:
-                return httpsPrefix + "dr.com.tr/search?q="
-            case .kitapyurdu:
-                return httpsPrefix + "kitapyurdu.com/index.php?route=product/search&filter_name="
-            default:
-                return nil
+        case .amazon:
+            return httpsPrefix + "amazon.com.tr/s?k="
+        case .dnr:
+            return httpsPrefix + "dr.com.tr/search?q="
+        case .idefix:
+            return httpsPrefix + "idefix.com/search/?Q="
+        case .kitapyurdu:
+            return httpsPrefix + "kitapyurdu.com/index.php?route=product/search&filter_name="
+        case .pandora:
+            return httpsPrefix + "pandora.com.tr/Arama/?type=9&isbn="
+        default:
+            return nil
         }
     }
     
@@ -112,7 +125,7 @@ class BookDataViewModel {
     }
     
     private func parseBookArtwork(_ site: BookSite, _ html: String) {
-        guard site == .idefix else { return }       // TODO: Change this.
+        guard site == .idefix else { return }
         let artwork: String? = self.getArtwork(html)
         self.book?.artwork = artwork
     }
@@ -198,34 +211,32 @@ class BookDataViewModel {
 extension BookDataViewModel {
     private func getBookLinkForSite(_ site: BookSite, _ html: String) -> String? {
         switch site {
-            case .amazon:
-                return getAmazonBookLink(html, site)
-            case .bkmkitap:
-                return getBkmBookLink(html, site)
-            case .dnr:
-                return getDrBookLink(html, site)
-            case .eganba:
-                return nil
-            case .idefix:
-                return nil
-            case .istanbul_kitapcisi:
-                return nil
-            case .kidega:
-                return nil
-            case .kitapkoala:
-                return nil
-            case .kitapsepeti:
-                return nil
-            case .kitapyurdu:
-                return getKitapYurduBookLink(html, site)
-            case .pandora:
-                return nil
-            case .ucuz_kitap_al:
-                return nil
+        case .amazon:
+            return getAmazonBookLink(html)
+        case .dnr:
+            return getDrBookLink(html)
+        case .eganba:
+            return nil
+        case .idefix:
+            return getIdefixBookLink(html)
+        case .istanbul_kitapcisi:
+            return nil
+        case .kidega:
+            return nil
+        case .kitapkoala:
+            return nil
+        case .kitapsepeti:
+            return nil
+        case .kitapyurdu:
+            return getKitapYurduBookLink(html)
+        case .pandora:
+            return nil
+        case .ucuz_kitap_al:
+            return nil
         }
     }
     
-    private func getAmazonBookLink(_ html: String, _ site: BookSite) -> String? {
+    private func getAmazonBookLink(_ html: String) -> String? {
         do {
             let doc: Document = try SwiftSoup.parse(html)
             let a: Elements = try doc.select("a")
@@ -243,25 +254,25 @@ extension BookDataViewModel {
         return ""
     }
     
-    private func getBkmBookLink(_ html: String, _ site: BookSite) -> String? {
-        do {
-            let doc: Document = try SwiftSoup.parse(html)
-            let a: Elements = try doc.select("a")
-            let classes = try a.map { try $0.attr("class") }
-            let links = try a.map { try $0.attr("href") }
-            guard let index = classes.firstIndex(of: "fl col-12 text-description detailLink") else { return nil }
-            let link = httpsPrefix + "bkmkitap.com" + links[index]
-            return link
-        } catch Exception.Error(let type, let message) {
-            print("Error Type: \(type)")
-            print("Error Message: \(message)")
-        } catch {
-            print("Error")
-        }
-        return ""
-    }
+//    private func getBkmBookLink(_ html: String) -> String? {
+//        do {
+//            let doc: Document = try SwiftSoup.parse(html)
+//            let a: Elements = try doc.select("a")
+//            let classes = try a.map { try $0.attr("class") }
+//            let links = try a.map { try $0.attr("href") }
+//            guard let index = classes.firstIndex(of: "fl col-12 text-description detailLink") else { return nil }
+//            let link = httpsPrefix + "bkmkitap.com" + links[index]
+//            return link
+//        } catch Exception.Error(let type, let message) {
+//            print("Error Type: \(type)")
+//            print("Error Message: \(message)")
+//        } catch {
+//            print("Error")
+//        }
+//        return ""
+//    }
     
-    private func getDrBookLink(_ html: String, _ site: BookSite) -> String? {
+    private func getDrBookLink(_ html: String) -> String? {
         do {
             let doc: Document = try SwiftSoup.parse(html)
             let a: Elements = try doc.select("a")
@@ -280,7 +291,43 @@ extension BookDataViewModel {
         return ""
     }
     
-    private func getKitapYurduBookLink(_ html: String, _ site: BookSite) -> String? {
+    private func getIdefixBookLink(_ html: String) -> String? {
+        do {
+            let doc: Document = try SwiftSoup.parse(html)
+            let a: Elements = try doc.select("a")
+            let classes = try a.map { try $0.attr("class") }
+            let links = try a.map { try $0.attr("href") }
+            guard let index = classes.firstIndex(of: "product-image") else { return nil }
+            let link = links[index].components(separatedBy: " ").joined(separator: "+")
+            return httpsPrefix + "idefix.com" + link
+        } catch Exception.Error(let type, let message) {
+            print("Error Type: \(type)")
+            print("Error Message: \(message)")
+        } catch {
+            print("Error")
+        }
+        return ""
+    }
+    
+    private func getKitapYurduBookLink(_ html: String) -> String? {
+        do {
+            let doc: Document = try SwiftSoup.parse(html)
+            let a: Elements = try doc.select("a")
+            let classes = try a.map { try $0.attr("class") }
+            let links = try a.map { try $0.attr("href") }
+            guard let index = classes.firstIndex(of: "pr-img-link") else { return nil }
+            let link = links[index].components(separatedBy: " ").joined(separator: "+")
+            return link
+        } catch Exception.Error(let type, let message) {
+            print("Error Type: \(type)")
+            print("Error Message: \(message)")
+        } catch {
+            print("Error")
+        }
+        return ""
+    }
+    
+    private func getPandoraBookLink(_ html: String) -> String? {
         do {
             let doc: Document = try SwiftSoup.parse(html)
             let a: Elements = try doc.select("a")
@@ -304,30 +351,28 @@ extension BookDataViewModel {
     
     func decideToGetSiteData(_ site: BookSite, _ html: String) -> [String: Any]? {
         switch site {
-            case .amazon:
-                return getAmazonPriceData(html)
-            case .bkmkitap:
-                return getBkmData(html)
-            case .dnr:
-                return getDrData(html)
-            case .eganba:
-                return getEganbaData(html)
-            case .idefix:
-                return getIdefixData(html)
-            case .istanbul_kitapcisi:
-                return getIstanbulKitapcisiData(html)
-            case .kidega:
-                return getKidegaData(html)
-            case .kitapkoala:
-                return getKitapKoalaData(html)
-            case .kitapsepeti:
-                return getKitapSepetiData(html)
-            case .kitapyurdu:
-                return getKitapYurduData(html)
-            case .pandora:
-                return getPandoraData(html)
-            case .ucuz_kitap_al:
-                return getUcuzKitapAlData(html)
+        case .amazon:
+            return getAmazonPriceData(html)
+        case .dnr:
+            return getDrData(html)
+        case .eganba:
+            return getEganbaData(html)
+        case .idefix:
+            return getIdefixData(html)
+        case .istanbul_kitapcisi:
+            return getIstanbulKitapcisiData(html)
+        case .kidega:
+            return getKidegaData(html)
+        case .kitapkoala:
+            return getKitapKoalaData(html)
+        case .kitapsepeti:
+            return getKitapSepetiData(html)
+        case .kitapyurdu:
+            return getKitapYurduData(html)
+        case .pandora:
+            return getPandoraData(html)
+        case .ucuz_kitap_al:
+            return getUcuzKitapAlData(html)
         }
     }
     
@@ -359,31 +404,31 @@ extension BookDataViewModel {
         return nil
     }
     
-    private func getBkmData(_ html: String) -> [String: Any]? {
-        do {
-            let doc: Document = try SwiftSoup.parse(html)
-            let spanList: Elements = try doc.select("span")
-            
-            let spanClasses = try spanList.map { try $0.attr("class") }
-            let spanTexts = try spanList.map { try $0.text() }
-            
-            guard let currentPriceIndex = spanClasses.firstIndex(of: "product-price"),
-                  let discountIndex = spanClasses.firstIndex(of: "col d-flex productDiscount") else { return nil }
-            
-            guard let price = spanTexts[currentPriceIndex].toDouble()?.rounded(toPlaces: 2) else { return nil }
-            let discount = spanTexts[discountIndex].components(separatedBy: " ").first ?? ""
-            
-            let priceDic: [String : Any] = ["price": price,
-                                            "discount": discount]
-            return priceDic
-        } catch Exception.Error(let type, let message) {
-            print("Error Type: \(type)")
-            print("Error Message: \(message)")
-        } catch {
-            print("Error")
-        }
-        return nil
-    }
+//    private func getBkmData(_ html: String) -> [String: Any]? {
+//        do {
+//            let doc: Document = try SwiftSoup.parse(html)
+//            let spanList: Elements = try doc.select("span")
+//
+//            let spanClasses = try spanList.map { try $0.attr("class") }
+//            let spanTexts = try spanList.map { try $0.text() }
+//
+//            guard let currentPriceIndex = spanClasses.firstIndex(of: "product-price"),
+//                  let discountIndex = spanClasses.firstIndex(of: "col d-flex productDiscount") else { return nil }
+//
+//            guard let price = spanTexts[currentPriceIndex].toDouble()?.rounded(toPlaces: 2) else { return nil }
+//            let discount = spanTexts[discountIndex].components(separatedBy: " ").first ?? ""
+//
+//            let priceDic: [String : Any] = ["price": price,
+//                                            "discount": discount]
+//            return priceDic
+//        } catch Exception.Error(let type, let message) {
+//            print("Error Type: \(type)")
+//            print("Error Message: \(message)")
+//        } catch {
+//            print("Error")
+//        }
+//        return nil
+//    }
     
     private func getDrData(_ html: String) -> [String: Any]? {
         do {
@@ -422,6 +467,34 @@ extension BookDataViewModel {
     }
     
     private func getIdefixData(_ html: String) -> [String: Any]? {
+        do {
+            let doc: Document = try SwiftSoup.parse(html)
+            
+            let divList: Elements = try doc.select("div")
+            let divClasses = try divList.map { try $0.attr("class") }
+            let divTexts = try divList.map { try $0.text() }
+            
+            let spanList: Elements = try doc.select("span")
+            let spanClasses = try spanList.map { try $0.attr("class") }
+            let spanTexts = try spanList.map { try $0.text() }
+            
+            guard let priceIndex = divClasses.firstIndex(of: "current-price"),
+                  let price = divTexts[priceIndex].components(separatedBy: " ").first?.toDouble()?.rounded(toPlaces: 2)  else { return nil }
+            
+            var discount: String = ""
+            if let discountIndex = spanClasses.firstIndex(of: "discount") {
+                discount = spanTexts[discountIndex]
+            }
+            
+            let priceDic: [String : Any] = ["price": price,
+                                            "discount": discount]
+            return priceDic
+        } catch Exception.Error(let type, let message) {
+            print("Error Type: \(type)")
+            print("Error Message: \(message)")
+        } catch {
+            print("Error")
+        }
         return nil
     }
     

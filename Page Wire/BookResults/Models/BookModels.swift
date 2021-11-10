@@ -39,7 +39,6 @@ struct BookSiteData: Codable, Equatable {
 
 enum BookSite: String, CaseIterable, Codable {
     case amazon = "Amazon"
-    case bkmkitap = "BKM Kitap"
     case dnr = "DR"
     case eganba = "Eganba"
     case idefix = "İdefix"
