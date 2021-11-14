@@ -18,7 +18,7 @@ protocol BookArtworkFromSite: AnyObject {
 
 class BookDataViewModel {
     
-    private var book: BookModel?
+    var book: BookModel?
     private var books: [BookModel] = []
     
     private var httpsPrefix: String = "https://www."
@@ -26,9 +26,7 @@ class BookDataViewModel {
     weak var siteDataDelegate: BookDataFromSite?
     weak var artworkDelegate: BookArtworkFromSite?
     
-    init(book: BookModel) {
-        self.book = book
-    }
+    init() {}
     
     init(books: [BookModel]) {
         self.books = books

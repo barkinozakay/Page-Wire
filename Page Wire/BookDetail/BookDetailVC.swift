@@ -28,12 +28,15 @@ class BookDetailVC: UIViewController {
     private var publisherList: [String] = []
     private var currentPublisher: String = ""
     
+    private var isbnList: [String: Int] = [:]
+    
     // MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         showLoadingAnimation()
         loadOtherPublishers()
-        bookDataViewModel = BookDataViewModel(book: book!)
+        bookDataViewModel = BookDataViewModel()
+        bookDataViewModel?.book = book
         bookDataViewModel?.siteDataDelegate = self
         bookDataViewModel?.getBookDataForSites()
         tableView.register(UINib(nibName: "BookDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "BookDetailsTableViewCell")
@@ -71,12 +74,12 @@ extension BookDetailVC: BookDataFromSite {
 // MARK: - Other Publishers
 extension BookDetailVC {
     private func loadOtherPublishers() {
-        book?.otherPublishers = []
+        book?.otherPublishers = [:]
         for item in BookManager.shared.bookList {
             if book?.name == item.name, book?.author == item.author {
-                let otherPublisher = [item.publisher: item.pages]
-                book?.otherPublishers?.append(otherPublisher)
+                book?.otherPublishers?[item.publisher] = item.pages
                 publisherList.append(item.publisher)
+                isbnList[item.publisher] = item.isbn
             }
         }
     }
@@ -186,20 +189,24 @@ extension BookDetailVC: ApplyPickerItemProtocol {
     
     func apply(for item: String) {
         closePicker()
+        showLoadingAnimation()
         pickerView.changeSelectedItem(item)
         book?.publisher = item
-        changePageLabel(publisher: item)
+        changeIsbn(publisher: item)
+        changePageNumber(publisher: item)
+        bookDataViewModel?.book = book
+        bookDataViewModel?.getBookDataForSites()
     }
     
-    private func changePageLabel(publisher: String) {
-        guard let otherPublishers = book?.otherPublishers else { return }
-        for item in otherPublishers {
-            if let pageNumber = item["\(publisher)"] {
-                book?.pages = pageNumber
-                tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
-                break
-            }
-        }
+    private func changePageNumber(publisher: String) {
+        guard let pageNumber = book?.otherPublishers?[publisher] else { return }
+        book?.pages = pageNumber
+        tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+    }
+    
+    private func changeIsbn(publisher: String) {
+        guard let isbn = isbnList[publisher] else { return }
+        book?.isbn = isbn
     }
     
     func calculateLabelSize(text: String, fontSize: Int) -> CGSize {

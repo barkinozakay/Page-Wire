@@ -17,12 +17,12 @@ struct BookModel: Codable, Equatable {
     var publisher: String
     let genre: String
     var pages: Int
-    let isbn: Int
+    var isbn: Int
     var isFavorited: Bool?
     var siteData: [BookSiteData]?
     var artwork: String?
     var info: String?
-    var otherPublishers: [[String: Int]]?
+    var otherPublishers: [String: Int]?
 }
 
 enum BookSearchType: String {
