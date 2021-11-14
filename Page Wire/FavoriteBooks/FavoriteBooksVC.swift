@@ -68,7 +68,6 @@ extension FavoriteBooksVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookResultsTableViewCell", for: indexPath) as? BookResultsTableViewCell else { return UITableViewCell() }
         cell.book = favoriteBooks[indexPath.row]
         cell.setBook()
-        cell.hideFavoriteButton = true
         return cell
     }
     

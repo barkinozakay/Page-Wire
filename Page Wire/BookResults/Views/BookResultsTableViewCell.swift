@@ -13,20 +13,11 @@ class BookResultsTableViewCell: UITableViewCell {
     @IBOutlet private weak var artwork: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var authorLabel: UILabel!
-    @IBOutlet private weak var favoriteButton: UIButton!
     
     var book: BookModel?
-    var hideFavoriteButton: Bool = false {
-        didSet {
-            favoriteButton.isHidden = hideFavoriteButton
-        }
-    }
-    
-    weak var favoriteDelegate: FavoriteBook?
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        favoriteButton.addTarget(self, action: #selector(changeFavorite), for: .touchUpInside)
     }
     
     
@@ -41,25 +32,9 @@ class BookResultsTableViewCell: UITableViewCell {
         let options = ImageLoadingOptions(
             transition: .fadeIn(duration: 0.33)
         )
-        Nuke.loadImage(with: URL(string: url)!, options: options, into: artwork)
-    }
-    
-    @objc func changeFavorite() {
-        changeFavoriteButtonState()
-        favoriteDelegate?.changeFavoriteState(book)
-    }
-    
-    private func changeFavoriteButtonState() {
-        let isFavorited = book?.isFavorited ?? false
-        book?.isFavorited = !isFavorited
-        setFavoriteButtonImage()
-    }
-    
-    func setFavoriteButtonImage() {
-        if let isFavorited = book?.isFavorited, isFavorited {
-            favoriteButton.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
-        } else {
-            favoriteButton.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
+        Nuke.loadImage(with: URL(string: url)!, options: options, into: artwork) { _ in
+            self.artwork.clipsToBounds = true
+            self.artwork.contentMode = .scaleAspectFit
         }
     }
 }

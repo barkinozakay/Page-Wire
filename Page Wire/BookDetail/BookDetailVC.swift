@@ -35,6 +35,7 @@ class BookDetailVC: UIViewController {
         super.viewDidLoad()
         showLoadingAnimation()
         loadOtherPublishers()
+        currentPublisher = book?.publisher ?? "-"
         bookDataViewModel = BookDataViewModel()
         bookDataViewModel?.book = book
         bookDataViewModel?.siteDataDelegate = self
@@ -192,6 +193,7 @@ extension BookDetailVC: ApplyPickerItemProtocol {
         showLoadingAnimation()
         pickerView.changeSelectedItem(item)
         book?.publisher = item
+        currentPublisher = item
         changeIsbn(publisher: item)
         changePageNumber(publisher: item)
         bookDataViewModel?.book = book
@@ -237,7 +239,6 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource {
             cell.book = book
             cell.delegate = self
             cell.setBook()
-            currentPublisher = cell.publisherLabel.text ?? ""
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookPricesTableViewCell", for: indexPath) as? BookPricesTableViewCell else { return UITableViewCell() }

@@ -19,7 +19,7 @@ class BookDetailsTableViewCell: UITableViewCell {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var authorLabel: UILabel!
     @IBOutlet private weak var pagesLabel: UILabel!
-    @IBOutlet weak var publisherLabel: UILabel!
+    @IBOutlet private weak var publisherLabel: UILabel!
     @IBOutlet private weak var genresLabel: UILabel!
     @IBOutlet private weak var selectPublisherButton: UIButton!
     @IBOutlet private weak var bookInfoButton: UIButton!
@@ -45,9 +45,12 @@ class BookDetailsTableViewCell: UITableViewCell {
         guard let url = book?.artwork else { return }
         let options = ImageLoadingOptions(
             placeholder: UIImage(systemName: "book.fill"),
-            transition: .fadeIn(duration: 0.33)
+            transition: .fadeIn(duration: 0.05)
         )
-        Nuke.loadImage(with: URL(string: url)!, options: options, into: artwork)
+        Nuke.loadImage(with: URL(string: url)!, options: options, into: artwork) { _ in
+            self.artwork.clipsToBounds = true
+            self.artwork.contentMode = .scaleToFill
+        }
     }
     
     @IBAction private func selectPublisher(_ sender: Any) {
