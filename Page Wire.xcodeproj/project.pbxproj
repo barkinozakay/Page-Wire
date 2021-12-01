@@ -124,7 +124,6 @@
 				7320C88335B2EBACD8E13C54 /* Pods-Page Wire.debug.xcconfig */,
 				B757F44349EA18468B68A0D3 /* Pods-Page Wire.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -385,9 +384,9 @@
 				DDFE7060260FA6EC00138959 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				DD521C902610FC2600493A37 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				DD41E19126519B0E0092E19E /* XCRemoteSwiftPackageReference "BarcodeScanner" */,
-				DDCDED622657108200687161 /* XCRemoteSwiftPackageReference "Nuke.git" */,
+				DDCDED622657108200687161 /* XCRemoteSwiftPackageReference "Nuke" */,
 				DD7341A2272C7C7A00769F68 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
-				DD7341A5272C7E1100769F68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */,
+				DD7341A5272C7E1100769F68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = DD27392D260E556300266851 /* Products */;
 			projectDirPath = "";
@@ -720,7 +719,7 @@
 				minimumVersion = 6.0.0;
 			};
 		};
-		DD7341A5272C7E1100769F68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */ = {
+		DD7341A5272C7E1100769F68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -728,7 +727,7 @@
 				minimumVersion = 8.0.0;
 			};
 		};
-		DDCDED622657108200687161 /* XCRemoteSwiftPackageReference "Nuke.git" */ = {
+		DDCDED622657108200687161 /* XCRemoteSwiftPackageReference "Nuke" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke.git";
 			requirement = {
@@ -764,32 +763,32 @@
 		};
 		DD7341A6272C7E1100769F68 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DD7341A5272C7E1100769F68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
+			package = DD7341A5272C7E1100769F68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
 		};
 		DD7341A8272C7E1100769F68 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DD7341A5272C7E1100769F68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
+			package = DD7341A5272C7E1100769F68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
 		DD7341AA272C7E1100769F68 /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DD7341A5272C7E1100769F68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
+			package = DD7341A5272C7E1100769F68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
 		};
 		DD7341AC272C7E1100769F68 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DD7341A5272C7E1100769F68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
+			package = DD7341A5272C7E1100769F68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
 		};
 		DD7341AE272C7E1100769F68 /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DD7341A5272C7E1100769F68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
+			package = DD7341A5272C7E1100769F68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
 		};
 		DDCDED632657108200687161 /* Nuke */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DDCDED622657108200687161 /* XCRemoteSwiftPackageReference "Nuke.git" */;
+			package = DDCDED622657108200687161 /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = Nuke;
 		};
 		DDFE7061260FA6EC00138959 /* SwiftSoup */ = {
