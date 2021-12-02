@@ -26,7 +26,7 @@ class BookResultsVC: UIViewController {
         showLoadingAnimation()
         bookDataViewModel = BookDataViewModel(books: books)
         bookDataViewModel?.artworkDelegate = self
-        //bookDataViewModel?.getBookArtworkUrl()
+        bookDataViewModel?.getBookArtworkUrl()
         hideLoadingAnimaton()
     }
     
@@ -63,50 +63,33 @@ extension BookResultsVC: BookArtworkFromSite {
     func getBookArtworkUrl(_ artwork: String, _ index: Int) {
         self.books[index].artwork = artwork
         asyncOperation {
-            self.collectionView.reloadItems(at:  [IndexPath(row: index, section: 1)])
+            self.collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
         }
     }
 }
 
 // MARK: - Collection View Delegate, Datasource
 extension BookResultsVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int { 1 }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         books.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? BookResultsCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookResultsCollectionViewCell", for: indexPath) as? BookResultsCollectionViewCell else { return UICollectionViewCell() }
         cell.book = books[indexPath.item]
+        cell.layer.cornerRadius = 8
         cell.setBook()
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        goToBookDetail(books[indexPath.item])
+        let currentCenteredPage = centeredCollectionViewFlowLayout.currentCenteredPage
+        if currentCenteredPage != indexPath.row {
+            centeredCollectionViewFlowLayout.scrollToPage(index: indexPath.row, animated: true)
+        } else {
+            goToBookDetail(books[indexPath.item])
+        }
     }
 }
-
-// MARK: - Table View Delegate, Datasource -
-//extension BookResultsVC: UITableViewDelegate, UITableViewDataSource {
-//
-//    func numberOfSections(in tableView: UITableView) -> Int { 1 }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        books.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookResultsTableViewCell", for: indexPath) as? BookResultsTableViewCell else { return UITableViewCell() }
-//        cell.book = books[indexPath.row]
-//        cell.setBook()
-//        return cell
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableView.automaticDimension
-//    }
-//
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        goToBookDetail(books[indexPath.row])
-//    }
-//}

@@ -152,26 +152,23 @@ class BookDataViewModel {
         return ""
     }
     
-//    func getBookArtworkUrl() {
-//        var artwork: String = ""
-//        for index in 0..<books.count {
-//            let name = books[index].name
-//            let publisher = books[index].publisher
-//            let site = BookSite.idefix
-//            let query = prepareQuery("\(name) \(publisher) \(site.rawValue) satın al")
-//            getHtmlFromSearchQuery(query) { (response) in
-//                guard let html = response, !html.isEmpty else { return }
-//                guard let link = self.getLink(html, site), !link.isEmpty else { return }
-//                let url = URL(string: link)
-//                self.startNewSessionAsync(url, delay: 0.1) { (content) in
-//                    guard let siteHtml = content, !siteHtml.isEmpty else { return }
-//                    artwork = self.getArtwork(siteHtml) ?? ""
-//                    self.books[index].artwork = artwork
-//                    self.artworkDelegate?.getBookArtworkUrl(artwork, index)
-//                }
-//            }
-//        }
-//    }
+    func getBookArtworkUrl() {
+        var artwork: String = ""
+        for index in 0..<books.count {
+            let searchQuery = books[index].isbn.description
+            guard let siteQueryPrefix = selectQueryForSite(.idefix) else { continue }
+            getHtmlFromSearchQuery(siteQueryPrefix + searchQuery) { (response) in
+                guard let html = response, !html.isEmpty else { return }
+                guard let bookLink = self.getBookLinkForSite(.idefix, html), !bookLink.isEmpty else { return }
+                self.startNewSessionAsync(URL(string: bookLink)) { (response) in
+                    guard let responseHtml = response else { return }
+                    artwork = self.getArtwork(responseHtml) ?? ""
+                    self.books[index].artwork = artwork
+                    self.artworkDelegate?.getBookArtworkUrl(artwork, index)
+                }
+            }
+        }
+    }
     
     private func getArtwork(_ html: String) -> String? {
         do {
