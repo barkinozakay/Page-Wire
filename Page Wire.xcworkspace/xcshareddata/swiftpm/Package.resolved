@@ -38,6 +38,15 @@
         }
       },
       {
+        "package": "CenteredCollectionView",
+        "repositoryURL": "https://github.com/BenEmdon/CenteredCollectionView",
+        "state": {
+          "branch": null,
+          "revision": "f2bf371dae314b46f1bc03c222861c9fc40fff32",
+          "version": "2.2.2"
+        }
+      },
+      {
         "package": "Firebase",
         "repositoryURL": "https://github.com/firebase/firebase-ios-sdk.git",
         "state": {

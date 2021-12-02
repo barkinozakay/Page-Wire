@@ -170,23 +170,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cG2-R4-UPz">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <sections/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pda-ho-b4Q">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="722"/>
+                                <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewLayout key="collectionViewLayout" id="E4n-JO-dfv" customClass="CenteredCollectionViewFlowLayout" customModule="CenteredCollectionView"/>
+                                <cells/>
                                 <connections>
-                                    <outlet property="dataSource" destination="LOQ-z6-j0h" id="wqo-Fd-eDv"/>
-                                    <outlet property="delegate" destination="LOQ-z6-j0h" id="Udm-dk-iA8"/>
+                                    <outlet property="dataSource" destination="LOQ-z6-j0h" id="hK7-2s-sxg"/>
+                                    <outlet property="delegate" destination="LOQ-z6-j0h" id="blW-C4-uLK"/>
                                 </connections>
-                            </tableView>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5GP-OP-jC9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="cG2-R4-UPz" secondAttribute="bottom" id="dMk-Rs-jfv"/>
-                            <constraint firstItem="cG2-R4-UPz" firstAttribute="top" secondItem="5GP-OP-jC9" secondAttribute="top" id="nh5-zP-ugw"/>
-                            <constraint firstItem="5GP-OP-jC9" firstAttribute="trailing" secondItem="cG2-R4-UPz" secondAttribute="trailing" id="vOv-Vp-oYl"/>
-                            <constraint firstItem="cG2-R4-UPz" firstAttribute="leading" secondItem="5GP-OP-jC9" secondAttribute="leading" id="zz3-Oo-eaf"/>
+                            <constraint firstItem="5GP-OP-jC9" firstAttribute="trailing" secondItem="Pda-ho-b4Q" secondAttribute="trailing" id="6SH-O4-io3"/>
+                            <constraint firstItem="Pda-ho-b4Q" firstAttribute="leading" secondItem="5GP-OP-jC9" secondAttribute="leading" id="8Rj-tB-tfc"/>
+                            <constraint firstItem="5GP-OP-jC9" firstAttribute="bottom" secondItem="Pda-ho-b4Q" secondAttribute="bottom" id="EQc-Pe-jyZ"/>
+                            <constraint firstItem="Pda-ho-b4Q" firstAttribute="top" secondItem="5GP-OP-jC9" secondAttribute="top" id="wYQ-Ut-57c"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Results" largeTitleDisplayMode="always" id="266-wj-box">
@@ -194,7 +195,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
-                        <outlet property="tableView" destination="cG2-R4-UPz" id="ELU-Xw-EAZ"/>
+                        <outlet property="collectionView" destination="Pda-ho-b4Q" id="1hr-nZ-gnn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v73-PD-FQ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

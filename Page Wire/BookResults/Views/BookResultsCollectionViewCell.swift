@@ -1,14 +1,14 @@
 //
-//  BookResultsTableViewCell.swift
-//  Book Discovery
+//  BookResultsCollectionViewCell.swift
+//  Page Wire
 //
-//  Created by Barkın Özakay on 28.03.2021.
+//  Created by Barkın Özakay on 2.12.2021.
 //
 
 import UIKit
 import Nuke
 
-class BookResultsTableViewCell: UITableViewCell {
+class BookResultsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var artwork: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
