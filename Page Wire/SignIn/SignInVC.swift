@@ -20,6 +20,7 @@ class SignInVC: UIViewController {
     @IBAction private func onGoogleSignInButtonTapped(_ sender: UIButton) {
         GIDSignIn.sharedInstance.signIn(with: GoogleManager.shared.googleSignInConfig, presenting: self) { user, error in
             guard error == nil else { return }
+            appDel.userID = user?.userID
             guard let authentication = user?.authentication, let idToken = authentication.idToken else { return }
             let credential = GoogleAuthProvider.credential(withIDToken: idToken,
                                                            accessToken: authentication.accessToken)

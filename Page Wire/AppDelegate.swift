@@ -15,6 +15,7 @@ let appDel = UIApplication.shared.delegate as! AppDelegate
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    final var userID: String? = ""
     final var splashVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Splash") as? SplashVC
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -22,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         GIDSignIn.sharedInstance.restorePreviousSignIn { [weak self] user, error in
             guard let self = self else { return }
+            self.userID = user?.userID
             if error != nil || user == nil {
                 print("Signed out")
                 self.splashVC?.openSignInPage()

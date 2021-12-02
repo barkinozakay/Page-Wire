@@ -153,6 +153,7 @@ class BookDataViewModel {
     }
     
     func getBookArtworkUrl() {
+        guard books.count <= 10 else { return }
         var artwork: String = ""
         for index in 0..<books.count {
             let searchQuery = books[index].isbn.description

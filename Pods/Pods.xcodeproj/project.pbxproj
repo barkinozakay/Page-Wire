@@ -7,44 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		052BF418FE3E4447F48D4A2D6D1A215F /* NFXInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5404E3D4631A53777DC2C9A4544A893 /* NFXInfoController.swift */; };
-		0A655241480BD1F6FF4D3A5B3B961EF4 /* NFXURLDetailsControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E77D08A02D2D5BDC3E78B8A579F3E6 /* NFXURLDetailsControllerViewController.swift */; };
-		10D1738B0C623905EDBD48F1166FACB6 /* NFXHTTPModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD9FCC41D2287B9EB0ECD6924162A7F /* NFXHTTPModelManager.swift */; };
-		12DAD153457201FB450F66B97522153F /* NFXHTTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313D62CA517CCB176496B2E5751316BF /* NFXHTTPModel.swift */; };
-		12EA824D7BB93529DF764CC730F1A1AA /* NFXLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 56C202794EF7A4A3ECF3C33E5892F182 /* NFXLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1A677EB1A79EB7CFAF62EFAFC0687EF5 /* NFXListCell_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6951B8EA83E657B21905E9AE83B96E96 /* NFXListCell_iOS.swift */; };
-		1B68E3B1DF5EAD1D12E6A134F0788040 /* NFXSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2747F9CB54942955A0D32AF33CDFE84 /* NFXSettingsController.swift */; };
-		276F15E09DFFECDEFB87974C733543BD /* NFXInfoController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FF706366598F6987C74A0D352E04D0 /* NFXInfoController_iOS.swift */; };
-		29CBCB28CC38885A27059C8DEFAD49EF /* Pods-Page Wire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B8877811A77F9075F7D37F2392BC746A /* Pods-Page Wire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		32DAE0C890606FD24D605B5AF138BAE9 /* NFXRawBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F2B37C813A9DEA4881054ABCA9BE3E /* NFXRawBodyDetailsController.swift */; };
-		474E7C781DA81AA49DED7CCD86B479A1 /* Pods-Page Wire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 89509AAC27C3F2C659467D97FB0CA7F5 /* Pods-Page Wire-dummy.m */; };
-		4B69AD914916C4D3EFEC019A21F4227D /* NFXAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2F4CED3C5E35BA4AC3D2B501587D1E /* NFXAssets.swift */; };
-		4B8422A4BD5053DAAB5CFFF9968F8869 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		4BE239D23BE78D4174C2EF3D447D8CB2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		5BDD3DD08086FD0C903B7D1A1C88CB6F /* NFXStatisticsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E51521D5FD74906CCD5ABD8617E2078 /* NFXStatisticsController_iOS.swift */; };
-		5E18405FE9B3D3E4F9888A2C40A484A4 /* NFXHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B997BE1C254C8E6CE4ED9240383CEA6 /* NFXHelper.swift */; };
-		765AD01749568FBC1BA6B3E4E39BBF70 /* NFXGenericController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F9D8198B7162F60286D1483B48BF5B /* NFXGenericController.swift */; };
-		7905407C27F35EBC33BA7751E68EBCD2 /* netfox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30F4D082C3FD175DA1EE7394A2D9A871 /* netfox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8A5E711FF2D8D191E2402C951A474D32 /* NFXSettingsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C947649E5E4399382934BFD39C011 /* NFXSettingsController_iOS.swift */; };
-		8B5451A245500CE73F37975BB1D2A580 /* NFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B14D4C37F1313FCF25C20C817A92A4 /* NFX.swift */; };
-		8D77CE642CAD272A1B7C2DD5C70E833E /* netfox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B51C4703D24C6D66B827494DFE3C90 /* netfox-dummy.m */; };
-		93E3FE9E89D2448E2758E64E26845FD8 /* NFXHelper_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002D31DBCECF94B63708538C62DC37AE /* NFXHelper_iOS.swift */; };
-		9DC1D8B0F58A3F3FA7A8A42338AEB815 /* NFXWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A4462915D41483DCBA2B4450A28212 /* NFXWindowController.swift */; };
-		A2F6661F69C6D0931DC79F718492A90F /* NFXLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B25C48383B9EFEA8D538E15BA08E0169 /* NFXLoader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		A42AE680DBDC354679B89B91665A7F33 /* NFXProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A09DC84389E3EE97C353EE0F9127D /* NFXProtocol.swift */; };
-		A45FD52C77E599CB03340D717DCB012D /* NFXAuthenticationChallengeSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC19EFF8884CDD70ECEF2676BBFCAB7 /* NFXAuthenticationChallengeSender.swift */; };
-		B0FF0F43CD0781FCE571AB1F76BFF97A /* NFXGenericBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87832D1AA533A3C2CE2AD8C9FE30C6C /* NFXGenericBodyDetailsController.swift */; };
-		B6A618FEA001EA7C5532497C27E7FD31 /* NFXListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F00C7420418359B758B505C9CC31AE4 /* NFXListController.swift */; };
-		C1B5B52081197FD2D67C87CDAAB25784 /* NFXConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A23463BCB337239BDEDD9C8603227C /* NFXConstants.swift */; };
-		C9EAEF5751BBBCEE7D6E56216B301225 /* NFXStatisticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6937F0635470FB937764A82616BFF675 /* NFXStatisticsController.swift */; };
-		D547D41B0280DEEE7C43D5880DF28158 /* NFXImageBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79DBC76B359FFC860E0EAD95438A3BB /* NFXImageBodyDetailsController.swift */; };
-		DCD28CC0065C5FF36DBD8C550748CB4C /* NFXDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D407A89CD653383B0B3C1014396FCF4 /* NFXDetailsController.swift */; };
-		E1719A97421D4131383D2CC788C9E6C1 /* NFXListController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAABCE94DC6FA9AD46EF9ADD2065540F /* NFXListController_iOS.swift */; };
-		F322487CDD2094845E4448282594BC10 /* NFXDetailsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAED54915D42057F2E1E8AB3B0D7DCF /* NFXDetailsController_iOS.swift */; };
+		0823AAFC65E6ACD256C2B030CC08215E /* NFXLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B25C48383B9EFEA8D538E15BA08E0169 /* NFXLoader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0A0A8075D1C6462A72E5056CEA1C8A46 /* NFXHelper_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002D31DBCECF94B63708538C62DC37AE /* NFXHelper_iOS.swift */; };
+		1485F6C024841999765DF5E8653E74C9 /* NFXSettingsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C947649E5E4399382934BFD39C011 /* NFXSettingsController_iOS.swift */; };
+		232A2E1E4E7442E50E26BA57F3D1CC41 /* NFXRawBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F2B37C813A9DEA4881054ABCA9BE3E /* NFXRawBodyDetailsController.swift */; };
+		23CEF0818515C8E850B267C68EA76FF6 /* NFXSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2747F9CB54942955A0D32AF33CDFE84 /* NFXSettingsController.swift */; };
+		294C9893223AD7292C6C9A187F8A97C3 /* netfox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B51C4703D24C6D66B827494DFE3C90 /* netfox-dummy.m */; };
+		2B12953FEB685E957006EC69E1B34FCB /* NFXStatisticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6937F0635470FB937764A82616BFF675 /* NFXStatisticsController.swift */; };
+		2C254204FD57642AE3FAD785319C891B /* NFXWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A4462915D41483DCBA2B4450A28212 /* NFXWindowController.swift */; };
+		41585A86FF570ADF5DD8B90F9F24A60D /* NFXGenericController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F9D8198B7162F60286D1483B48BF5B /* NFXGenericController.swift */; };
+		465F63904BEB5ABCB90E983BB7460C3E /* NFXDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D407A89CD653383B0B3C1014396FCF4 /* NFXDetailsController.swift */; };
+		48F06CB06276E6B594CC4F1614D8A503 /* NFXListController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAABCE94DC6FA9AD46EF9ADD2065540F /* NFXListController_iOS.swift */; };
+		4A2458C436514FC077F1F1E16527DEAF /* Pods-Page Wire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B8877811A77F9075F7D37F2392BC746A /* Pods-Page Wire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D3A10ED2B5B96BE5351D26FFA303EB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		55F0A92A9DC85C13AE52555FF382BA59 /* NFXURLDetailsControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E77D08A02D2D5BDC3E78B8A579F3E6 /* NFXURLDetailsControllerViewController.swift */; };
+		6D44B9205717FEC2F64AD9F59CF483D9 /* NFXInfoController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FF706366598F6987C74A0D352E04D0 /* NFXInfoController_iOS.swift */; };
+		7E16D5A22CA03938E5831DD595B1343C /* NFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B14D4C37F1313FCF25C20C817A92A4 /* NFX.swift */; };
+		91E767C2411F565DED32A7D6D6B6B8FC /* NFXImageBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79DBC76B359FFC860E0EAD95438A3BB /* NFXImageBodyDetailsController.swift */; };
+		967B1D2843E2E1DC339D2C32A47E2B38 /* NFXAuthenticationChallengeSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC19EFF8884CDD70ECEF2676BBFCAB7 /* NFXAuthenticationChallengeSender.swift */; };
+		987C1913CF2608250BE712322225116D /* NFXInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5404E3D4631A53777DC2C9A4544A893 /* NFXInfoController.swift */; };
+		9D1BC86F0790DDEE4302D4A2EA90F6F7 /* NFXProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A09DC84389E3EE97C353EE0F9127D /* NFXProtocol.swift */; };
+		A169AEC404AE1E06FD7BC023EBC15B9F /* netfox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30F4D082C3FD175DA1EE7394A2D9A871 /* netfox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABC442AE104F7BEF1579E0EE7426CBA9 /* NFXListCell_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6951B8EA83E657B21905E9AE83B96E96 /* NFXListCell_iOS.swift */; };
+		ADF85B783BB6D56B8A1BC55D400ED152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		AE8E034C0383A855C53E2E3CC46CDA70 /* NFXHTTPModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD9FCC41D2287B9EB0ECD6924162A7F /* NFXHTTPModelManager.swift */; };
+		B13659A4F929AA46B77DB752AA9F3898 /* NFXDetailsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAED54915D42057F2E1E8AB3B0D7DCF /* NFXDetailsController_iOS.swift */; };
+		B4F64508D4B3D43617842BD935777D96 /* NFXHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B997BE1C254C8E6CE4ED9240383CEA6 /* NFXHelper.swift */; };
+		B735942FAFBD3F252143606D3B13759E /* NFXGenericBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87832D1AA533A3C2CE2AD8C9FE30C6C /* NFXGenericBodyDetailsController.swift */; };
+		B88D2385036C996C9310C0AA6CF478B5 /* NFXListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F00C7420418359B758B505C9CC31AE4 /* NFXListController.swift */; };
+		C278AC573D2FD354AE3214DF89BDD29A /* NFXHTTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313D62CA517CCB176496B2E5751316BF /* NFXHTTPModel.swift */; };
+		CD5A6FA43A4D20A3703CB480894E836A /* Pods-Page Wire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 89509AAC27C3F2C659467D97FB0CA7F5 /* Pods-Page Wire-dummy.m */; };
+		E965413D1D186E17969A068EE6AE520B /* NFXAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2F4CED3C5E35BA4AC3D2B501587D1E /* NFXAssets.swift */; };
+		F9881FAB42B1193AA2A3001EFF8ABB73 /* NFXStatisticsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E51521D5FD74906CCD5ABD8617E2078 /* NFXStatisticsController_iOS.swift */; };
+		F9A3B94B28AA98639B4E0F545B3B456A /* NFXConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A23463BCB337239BDEDD9C8603227C /* NFXConstants.swift */; };
+		FF5F759F9348B0DB687B5AA207A5AD8B /* NFXLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 56C202794EF7A4A3ECF3C33E5892F182 /* NFXLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		22EE65F1A57A918FE1188A4C350A28EC /* PBXContainerItemProxy */ = {
+		0F3CB23441BDA7BF3FD4B560B7169589 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -80,9 +80,9 @@
 		874DA5BD0E61F83DA7A255AA0CC97C74 /* Pods-Page Wire-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Page Wire-acknowledgements.markdown"; sourceTree = "<group>"; };
 		89509AAC27C3F2C659467D97FB0CA7F5 /* Pods-Page Wire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Page Wire-dummy.m"; sourceTree = "<group>"; };
 		8C4DED8774DBB7D531BFFB03436048B2 /* Pods-Page Wire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Page Wire-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F00C7420418359B758B505C9CC31AE4 /* NFXListController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXListController.swift; path = netfox/Core/NFXListController.swift; sourceTree = "<group>"; };
-		A19C74F35AE65E03FE81E2C921A60544 /* Pods_Page_Wire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Page_Wire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A19C74F35AE65E03FE81E2C921A60544 /* Pods-Page Wire */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Page Wire"; path = Pods_Page_Wire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2747F9CB54942955A0D32AF33CDFE84 /* NFXSettingsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXSettingsController.swift; path = netfox/Core/NFXSettingsController.swift; sourceTree = "<group>"; };
 		A6B51C4703D24C6D66B827494DFE3C90 /* netfox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "netfox-dummy.m"; sourceTree = "<group>"; };
 		B1C9950F2A279997ED8A88368D91461E /* netfox-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "netfox-Info.plist"; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		BAABCE94DC6FA9AD46EF9ADD2065540F /* NFXListController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXListController_iOS.swift; path = netfox/iOS/NFXListController_iOS.swift; sourceTree = "<group>"; };
 		BBC19EFF8884CDD70ECEF2676BBFCAB7 /* NFXAuthenticationChallengeSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXAuthenticationChallengeSender.swift; path = netfox/Core/NFXAuthenticationChallengeSender.swift; sourceTree = "<group>"; };
 		BBE89CDA36426041D99C7E70FE9E05AE /* netfox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = netfox.release.xcconfig; sourceTree = "<group>"; };
-		BF1952EA0085A4CE36B4AE041BE60B82 /* netfox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = netfox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF1952EA0085A4CE36B4AE041BE60B82 /* netfox */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = netfox; path = netfox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A23463BCB337239BDEDD9C8603227C /* NFXConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXConstants.swift; path = netfox/Core/NFXConstants.swift; sourceTree = "<group>"; };
 		C59C947649E5E4399382934BFD39C011 /* NFXSettingsController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXSettingsController_iOS.swift; path = netfox/iOS/NFXSettingsController_iOS.swift; sourceTree = "<group>"; };
 		D9F9D8198B7162F60286D1483B48BF5B /* NFXGenericController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXGenericController.swift; path = netfox/Core/NFXGenericController.swift; sourceTree = "<group>"; };
@@ -105,34 +105,25 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		73DC17047AF80EB5286FDE658924DD97 /* Frameworks */ = {
+		62B0581C1B1760E5E67DC41C908502CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BE239D23BE78D4174C2EF3D447D8CB2 /* Foundation.framework in Frameworks */,
+				ADF85B783BB6D56B8A1BC55D400ED152 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF79171F7FE3B91E262F81FDF99BDA9B /* Frameworks */ = {
+		EB95A9485FC2729B7E959FD224035C45 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B8422A4BD5053DAAB5CFFF9968F8869 /* Foundation.framework in Frameworks */,
+				4D3A10ED2B5B96BE5351D26FFA303EB5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		14AC55E6FE75770770C653C7C6361F3C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				BF1952EA0085A4CE36B4AE041BE60B82 /* netfox.framework */,
-				A19C74F35AE65E03FE81E2C921A60544 /* Pods_Page_Wire.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		16302E3CB18D7353F07C019A1C6643CB /* Pods-Page Wire */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +174,7 @@
 				F5A4462915D41483DCBA2B4450A28212 /* NFXWindowController.swift */,
 				FB6A28EDCB4DC5AC221579DC0D6952A7 /* Support Files */,
 			);
+			name = netfox;
 			path = netfox;
 			sourceTree = "<group>";
 		};
@@ -192,6 +184,15 @@
 				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		A61DE4BCFAD63285CE8FED9E27C69884 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF1952EA0085A4CE36B4AE041BE60B82 /* netfox */,
+				A19C74F35AE65E03FE81E2C921A60544 /* Pods-Page Wire */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		C3F9B9DBD9D496B8AB2F2CD17CD9380D /* Pods */ = {
@@ -208,7 +209,7 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				C3F9B9DBD9D496B8AB2F2CD17CD9380D /* Pods */,
-				14AC55E6FE75770770C653C7C6361F3C /* Products */,
+				A61DE4BCFAD63285CE8FED9E27C69884 /* Products */,
 				EEAB80003708976547D17E8DC54F66AB /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -247,20 +248,20 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		11BDBF1AA3D833803DE32CCE487093CE /* Headers */ = {
+		130B362115ECFE708F0F097C947B918F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7905407C27F35EBC33BA7751E68EBCD2 /* netfox-umbrella.h in Headers */,
-				12EA824D7BB93529DF764CC730F1A1AA /* NFXLoader.h in Headers */,
+				A169AEC404AE1E06FD7BC023EBC15B9F /* netfox-umbrella.h in Headers */,
+				FF5F759F9348B0DB687B5AA207A5AD8B /* NFXLoader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		432508265D20EE4663F05B149A2751C8 /* Headers */ = {
+		7F6F2B7B2AF5B464DB38026CBF4FD956 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29CBCB28CC38885A27059C8DEFAD49EF /* Pods-Page Wire-umbrella.h in Headers */,
+				4A2458C436514FC077F1F1E16527DEAF /* Pods-Page Wire-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,12 +270,12 @@
 /* Begin PBXNativeTarget section */
 		33426EFE1931E100B59ABF41FD14377D /* netfox */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7892CEEC13781101CA728B98D607D0FD /* Build configuration list for PBXNativeTarget "netfox" */;
+			buildConfigurationList = B0FCBF9772E0C8823514DBA91FA3EF76 /* Build configuration list for PBXNativeTarget "netfox" */;
 			buildPhases = (
-				11BDBF1AA3D833803DE32CCE487093CE /* Headers */,
-				6FBCCF45DB37D66240FEE4844BCB2A62 /* Sources */,
-				73DC17047AF80EB5286FDE658924DD97 /* Frameworks */,
-				F4354C4E1A10C8049F85BD382B0AD9DD /* Resources */,
+				130B362115ECFE708F0F097C947B918F /* Headers */,
+				B1FF20635A02A1782FFAB0A08601F5D3 /* Sources */,
+				EB95A9485FC2729B7E959FD224035C45 /* Frameworks */,
+				E956BC91C8E256EB8E0D11E4194A652E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -282,26 +283,26 @@
 			);
 			name = netfox;
 			productName = netfox;
-			productReference = BF1952EA0085A4CE36B4AE041BE60B82 /* netfox.framework */;
+			productReference = BF1952EA0085A4CE36B4AE041BE60B82 /* netfox */;
 			productType = "com.apple.product-type.framework";
 		};
 		4EE21DBDB5F41213EF5D7B2608F3156A /* Pods-Page Wire */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 99C9C3866204A79B418D306D3E2CD813 /* Build configuration list for PBXNativeTarget "Pods-Page Wire" */;
+			buildConfigurationList = 1B2F1DCFB3F4829F93B919BC614B7059 /* Build configuration list for PBXNativeTarget "Pods-Page Wire" */;
 			buildPhases = (
-				432508265D20EE4663F05B149A2751C8 /* Headers */,
-				02E201D6901CDB25ACD77D00840155DB /* Sources */,
-				BF79171F7FE3B91E262F81FDF99BDA9B /* Frameworks */,
-				F8C944A14AAAC501DF114BAA971F742D /* Resources */,
+				7F6F2B7B2AF5B464DB38026CBF4FD956 /* Headers */,
+				278205ED14F2AD660E35F0413B84BB60 /* Sources */,
+				62B0581C1B1760E5E67DC41C908502CA /* Frameworks */,
+				73F6F9AC05C0181ABF1C4C44751E326A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				458CA2364CD7E91E3D9954E62A1343ED /* PBXTargetDependency */,
+				36DE49C68FD9A8121BE0F9491C9266F2 /* PBXTargetDependency */,
 			);
 			name = "Pods-Page Wire";
-			productName = "Pods-Page Wire";
-			productReference = A19C74F35AE65E03FE81E2C921A60544 /* Pods_Page_Wire.framework */;
+			productName = Pods_Page_Wire;
+			productReference = A19C74F35AE65E03FE81E2C921A60544 /* Pods-Page Wire */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -311,18 +312,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 14AC55E6FE75770770C653C7C6361F3C /* Products */;
+			productRefGroup = A61DE4BCFAD63285CE8FED9E27C69884 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -333,14 +334,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F4354C4E1A10C8049F85BD382B0AD9DD /* Resources */ = {
+		73F6F9AC05C0181ABF1C4C44751E326A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F8C944A14AAAC501DF114BAA971F742D /* Resources */ = {
+		E956BC91C8E256EB8E0D11E4194A652E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -350,57 +351,57 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		02E201D6901CDB25ACD77D00840155DB /* Sources */ = {
+		278205ED14F2AD660E35F0413B84BB60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				474E7C781DA81AA49DED7CCD86B479A1 /* Pods-Page Wire-dummy.m in Sources */,
+				CD5A6FA43A4D20A3703CB480894E836A /* Pods-Page Wire-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6FBCCF45DB37D66240FEE4844BCB2A62 /* Sources */ = {
+		B1FF20635A02A1782FFAB0A08601F5D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D77CE642CAD272A1B7C2DD5C70E833E /* netfox-dummy.m in Sources */,
-				8B5451A245500CE73F37975BB1D2A580 /* NFX.swift in Sources */,
-				4B69AD914916C4D3EFEC019A21F4227D /* NFXAssets.swift in Sources */,
-				A45FD52C77E599CB03340D717DCB012D /* NFXAuthenticationChallengeSender.swift in Sources */,
-				C1B5B52081197FD2D67C87CDAAB25784 /* NFXConstants.swift in Sources */,
-				DCD28CC0065C5FF36DBD8C550748CB4C /* NFXDetailsController.swift in Sources */,
-				F322487CDD2094845E4448282594BC10 /* NFXDetailsController_iOS.swift in Sources */,
-				B0FF0F43CD0781FCE571AB1F76BFF97A /* NFXGenericBodyDetailsController.swift in Sources */,
-				765AD01749568FBC1BA6B3E4E39BBF70 /* NFXGenericController.swift in Sources */,
-				5E18405FE9B3D3E4F9888A2C40A484A4 /* NFXHelper.swift in Sources */,
-				93E3FE9E89D2448E2758E64E26845FD8 /* NFXHelper_iOS.swift in Sources */,
-				12DAD153457201FB450F66B97522153F /* NFXHTTPModel.swift in Sources */,
-				10D1738B0C623905EDBD48F1166FACB6 /* NFXHTTPModelManager.swift in Sources */,
-				D547D41B0280DEEE7C43D5880DF28158 /* NFXImageBodyDetailsController.swift in Sources */,
-				052BF418FE3E4447F48D4A2D6D1A215F /* NFXInfoController.swift in Sources */,
-				276F15E09DFFECDEFB87974C733543BD /* NFXInfoController_iOS.swift in Sources */,
-				1A677EB1A79EB7CFAF62EFAFC0687EF5 /* NFXListCell_iOS.swift in Sources */,
-				B6A618FEA001EA7C5532497C27E7FD31 /* NFXListController.swift in Sources */,
-				E1719A97421D4131383D2CC788C9E6C1 /* NFXListController_iOS.swift in Sources */,
-				A2F6661F69C6D0931DC79F718492A90F /* NFXLoader.m in Sources */,
-				A42AE680DBDC354679B89B91665A7F33 /* NFXProtocol.swift in Sources */,
-				32DAE0C890606FD24D605B5AF138BAE9 /* NFXRawBodyDetailsController.swift in Sources */,
-				1B68E3B1DF5EAD1D12E6A134F0788040 /* NFXSettingsController.swift in Sources */,
-				8A5E711FF2D8D191E2402C951A474D32 /* NFXSettingsController_iOS.swift in Sources */,
-				C9EAEF5751BBBCEE7D6E56216B301225 /* NFXStatisticsController.swift in Sources */,
-				5BDD3DD08086FD0C903B7D1A1C88CB6F /* NFXStatisticsController_iOS.swift in Sources */,
-				0A655241480BD1F6FF4D3A5B3B961EF4 /* NFXURLDetailsControllerViewController.swift in Sources */,
-				9DC1D8B0F58A3F3FA7A8A42338AEB815 /* NFXWindowController.swift in Sources */,
+				294C9893223AD7292C6C9A187F8A97C3 /* netfox-dummy.m in Sources */,
+				7E16D5A22CA03938E5831DD595B1343C /* NFX.swift in Sources */,
+				E965413D1D186E17969A068EE6AE520B /* NFXAssets.swift in Sources */,
+				967B1D2843E2E1DC339D2C32A47E2B38 /* NFXAuthenticationChallengeSender.swift in Sources */,
+				F9A3B94B28AA98639B4E0F545B3B456A /* NFXConstants.swift in Sources */,
+				465F63904BEB5ABCB90E983BB7460C3E /* NFXDetailsController.swift in Sources */,
+				B13659A4F929AA46B77DB752AA9F3898 /* NFXDetailsController_iOS.swift in Sources */,
+				B735942FAFBD3F252143606D3B13759E /* NFXGenericBodyDetailsController.swift in Sources */,
+				41585A86FF570ADF5DD8B90F9F24A60D /* NFXGenericController.swift in Sources */,
+				B4F64508D4B3D43617842BD935777D96 /* NFXHelper.swift in Sources */,
+				0A0A8075D1C6462A72E5056CEA1C8A46 /* NFXHelper_iOS.swift in Sources */,
+				C278AC573D2FD354AE3214DF89BDD29A /* NFXHTTPModel.swift in Sources */,
+				AE8E034C0383A855C53E2E3CC46CDA70 /* NFXHTTPModelManager.swift in Sources */,
+				91E767C2411F565DED32A7D6D6B6B8FC /* NFXImageBodyDetailsController.swift in Sources */,
+				987C1913CF2608250BE712322225116D /* NFXInfoController.swift in Sources */,
+				6D44B9205717FEC2F64AD9F59CF483D9 /* NFXInfoController_iOS.swift in Sources */,
+				ABC442AE104F7BEF1579E0EE7426CBA9 /* NFXListCell_iOS.swift in Sources */,
+				B88D2385036C996C9310C0AA6CF478B5 /* NFXListController.swift in Sources */,
+				48F06CB06276E6B594CC4F1614D8A503 /* NFXListController_iOS.swift in Sources */,
+				0823AAFC65E6ACD256C2B030CC08215E /* NFXLoader.m in Sources */,
+				9D1BC86F0790DDEE4302D4A2EA90F6F7 /* NFXProtocol.swift in Sources */,
+				232A2E1E4E7442E50E26BA57F3D1CC41 /* NFXRawBodyDetailsController.swift in Sources */,
+				23CEF0818515C8E850B267C68EA76FF6 /* NFXSettingsController.swift in Sources */,
+				1485F6C024841999765DF5E8653E74C9 /* NFXSettingsController_iOS.swift in Sources */,
+				2B12953FEB685E957006EC69E1B34FCB /* NFXStatisticsController.swift in Sources */,
+				F9881FAB42B1193AA2A3001EFF8ABB73 /* NFXStatisticsController_iOS.swift in Sources */,
+				55F0A92A9DC85C13AE52555FF382BA59 /* NFXURLDetailsControllerViewController.swift in Sources */,
+				2C254204FD57642AE3FAD785319C891B /* NFXWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		458CA2364CD7E91E3D9954E62A1343ED /* PBXTargetDependency */ = {
+		36DE49C68FD9A8121BE0F9491C9266F2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = netfox;
 			target = 33426EFE1931E100B59ABF41FD14377D /* netfox */;
-			targetProxy = 22EE65F1A57A918FE1188A4C350A28EC /* PBXContainerItemProxy */;
+			targetProxy = 0F3CB23441BDA7BF3FD4B560B7169589 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -471,7 +472,7 @@
 			};
 			name = Debug;
 		};
-		4342DE28180E7799B933621C31FB167F /* Debug */ = {
+		5FA4DDE75A62345767BBD5AFAAAA81C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7125FAF4261A96B81791961518F533EF /* Pods-Page Wire.debug.xcconfig */;
 			buildSettings = {
@@ -507,44 +508,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		607FBA0319C0977B1DD73DFE4CE88D0C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA34AA483B09335A42218A76DFA9D469 /* Pods-Page Wire.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Page Wire/Pods-Page Wire-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Page Wire/Pods-Page Wire.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -608,7 +571,79 @@
 			};
 			name = Release;
 		};
-		8E3CA2C5E402BAEFC730011B19980508 /* Release */ = {
+		6E3E56E39F5F1137A2D1678DE13A837B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA34AA483B09335A42218A76DFA9D469 /* Pods-Page Wire.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Page Wire/Pods-Page Wire-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Page Wire/Pods-Page Wire.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		75A753364782C87721D70AEDDBBFEB3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FF7D256FA0A1FD21F048230854145E1 /* netfox.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/netfox/netfox-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/netfox/netfox-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/netfox/netfox.modulemap";
+				PRODUCT_MODULE_NAME = netfox;
+				PRODUCT_NAME = netfox;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9DC7E3B0E7FCF47D73E00D73827476E8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BBE89CDA36426041D99C7E70FE9E05AE /* netfox.release.xcconfig */;
 			buildSettings = {
@@ -623,7 +658,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/netfox/netfox-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/netfox/netfox-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -643,43 +678,18 @@
 			};
 			name = Release;
 		};
-		EAE80BAC1F7B5013E8580AAE1E600214 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FF7D256FA0A1FD21F048230854145E1 /* netfox.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/netfox/netfox-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/netfox/netfox-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/netfox/netfox.modulemap";
-				PRODUCT_MODULE_NAME = netfox;
-				PRODUCT_NAME = netfox;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1B2F1DCFB3F4829F93B919BC614B7059 /* Build configuration list for PBXNativeTarget "Pods-Page Wire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FA4DDE75A62345767BBD5AFAAAA81C6 /* Debug */,
+				6E3E56E39F5F1137A2D1678DE13A837B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -689,20 +699,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7892CEEC13781101CA728B98D607D0FD /* Build configuration list for PBXNativeTarget "netfox" */ = {
+		B0FCBF9772E0C8823514DBA91FA3EF76 /* Build configuration list for PBXNativeTarget "netfox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EAE80BAC1F7B5013E8580AAE1E600214 /* Debug */,
-				8E3CA2C5E402BAEFC730011B19980508 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		99C9C3866204A79B418D306D3E2CD813 /* Build configuration list for PBXNativeTarget "Pods-Page Wire" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4342DE28180E7799B933621C31FB167F /* Debug */,
-				607FBA0319C0977B1DD73DFE4CE88D0C /* Release */,
+				75A753364782C87721D70AEDDBBFEB3B /* Debug */,
+				9DC7E3B0E7FCF47D73E00D73827476E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

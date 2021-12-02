@@ -104,14 +104,17 @@ extension BookDetailVC {
     }
     
     private func checkFavoriteActionForBook() {
+        guard var book = book else { return }
         if favoriteButton.tag == 0 {
-            FavoriteBooksCache.addToFavorites(book!)
-            book?.isFavorited = true
+            FavoriteBooksManager.shared.addToFavorites(book)
+            FavoriteBooksManager.shared.addBookToFavorites(book)
+            book.isFavorited = true
             favoriteButton.image = UIImage(systemName: "heart.fill")
             favoriteButton.tag = 1
         } else {
-            FavoriteBooksCache.removeFromFavorites(book!)
-            book?.isFavorited = false
+            FavoriteBooksManager.shared.removeFromFavorites(book)
+            FavoriteBooksManager.shared.removeBookFromFavorites(book)
+            book.isFavorited = false
             favoriteButton.image = UIImage(systemName: "heart")
             favoriteButton.tag = 0
         }

@@ -33,7 +33,7 @@ class FavoriteBooksVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        favoriteBooks = FavoriteBooksCache.getFavorites()
+        favoriteBooks = FavoriteBooksManager.shared.getFavorites()
         checkForEmptyState()
     }
 }
@@ -86,7 +86,7 @@ extension FavoriteBooksVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-            FavoriteBooksCache.removeFromFavorites(favoriteBooks[indexPath.row])
+            FavoriteBooksManager.shared.removeFromFavorites(favoriteBooks[indexPath.row])
             NotificationCenter.default.post(name: .removeBookFromFavorites, object: nil, userInfo: ["book": favoriteBooks[indexPath.row]])
             favoriteBooks.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
