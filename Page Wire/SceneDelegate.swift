@@ -11,7 +11,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -26,6 +25,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let navigationController = UINavigationController(rootViewController: signIn)
 //        window?.rootViewController = navigationController
 //        window?.makeKeyAndVisible()
+    }
+    
+    func setRootViewController(_ vc: UIViewController, signedIn: Bool = true) {
+        if let window = self.window {
+            window.rootViewController = vc
+            UIView.transition(with: window,
+                              duration: 0.8,
+                              options: signedIn ? .transitionCurlUp : .transitionCurlDown,
+                              animations: nil)
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

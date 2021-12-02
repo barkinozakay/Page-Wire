@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="giT-8x-jbv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qgf-9V-AWd">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,6 +9,74 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--SplashVC-->
+        <scene sceneID="9Yg-eh-1Pt">
+            <objects>
+                <viewController storyboardIdentifier="Splash" id="Qgf-9V-AWd" customClass="SplashVC" customModule="Page_Wire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yQj-PO-9Gl">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Vr4-EM-Lia"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BqS-pt-HuZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1527" y="450"/>
+        </scene>
+        <!--Sign InVC-->
+        <scene sceneID="mAf-2J-YZ5">
+            <objects>
+                <viewController storyboardIdentifier="SignIn" id="nSg-oC-8ph" customClass="SignInVC" customModule="Page_Wire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jzz-I2-CV0">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page Wire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSy-NK-LyM">
+                                <rect key="frame" x="113" y="201" width="164" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page-wire" translatesAutoresizingMaskIntoConstraints="NO" id="NbG-hF-hJo">
+                                <rect key="frame" x="75" y="322" width="240" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="DbE-Ov-P63"/>
+                                    <constraint firstAttribute="width" constant="240" id="SZZ-22-fNT"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-IZ-dSf">
+                                <rect key="frame" x="70" y="678" width="250" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="wmw-dK-P0w"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="google" imagePlacement="trailing" title="Continue with   " titleAlignment="center"/>
+                                <connections>
+                                    <action selector="onGoogleSignInButtonTapped:" destination="nSg-oC-8ph" eventType="touchUpInside" id="C30-OM-312"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="94Q-K4-y3i"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="94Q-K4-y3i" firstAttribute="trailing" secondItem="Hft-IZ-dSf" secondAttribute="trailing" constant="70" id="Pea-te-aZM"/>
+                            <constraint firstItem="ZSy-NK-LyM" firstAttribute="centerX" secondItem="Jzz-I2-CV0" secondAttribute="centerX" id="b9F-T7-l6F"/>
+                            <constraint firstItem="NbG-hF-hJo" firstAttribute="centerY" secondItem="Jzz-I2-CV0" secondAttribute="centerY" id="fap-v7-eb2"/>
+                            <constraint firstItem="94Q-K4-y3i" firstAttribute="bottom" secondItem="Hft-IZ-dSf" secondAttribute="bottom" constant="82" id="pby-ap-y9W"/>
+                            <constraint firstItem="ZSy-NK-LyM" firstAttribute="centerY" secondItem="Jzz-I2-CV0" secondAttribute="centerY" constant="-200" id="uTL-Q5-3v1"/>
+                            <constraint firstItem="Hft-IZ-dSf" firstAttribute="leading" secondItem="94Q-K4-y3i" secondAttribute="leading" constant="70" id="umD-Zn-eYx"/>
+                            <constraint firstItem="NbG-hF-hJo" firstAttribute="centerX" secondItem="Jzz-I2-CV0" secondAttribute="centerX" id="xp4-Ig-p8w"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="googleSignInButton" destination="Hft-IZ-dSf" id="jLB-60-EbG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hFB-QK-rf2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2518" y="444"/>
+        </scene>
         <!--Book Discovery-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -42,16 +110,6 @@
                                     <action selector="searchButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lFj-8k-qUr"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lK-dN-PgK" customClass="GIDSignInButton">
-                                <rect key="frame" x="50" y="511.66666666666674" width="290" height="64"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="hpj-6o-hKM"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="onGoogleSignInButtonTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="L69-eV-Ntv"/>
-                                </connections>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Barcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T38-S9-htY">
                                 <rect key="frame" x="142.66666666666666" y="635.66666666666663" width="106" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -79,13 +137,10 @@
                             <constraint firstAttribute="bottom" secondItem="SbZ-kD-2a0" secondAttribute="bottom" constant="100" id="6Gn-Y6-8cC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="36c-EW-zjW" secondAttribute="trailing" constant="60" id="8pZ-ko-A7A"/>
                             <constraint firstItem="36c-EW-zjW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="9gU-9P-ZKk"/>
-                            <constraint firstItem="4lK-dN-PgK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="IJe-T6-Cdm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bI5-Tl-mjl" secondAttribute="trailing" constant="21" id="JsC-rS-ZlK"/>
-                            <constraint firstItem="T38-S9-htY" firstAttribute="top" secondItem="4lK-dN-PgK" secondAttribute="bottom" constant="60" id="R3e-vF-NKe"/>
                             <constraint firstItem="GMn-CC-ABO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UCZ-Zs-c85"/>
                             <constraint firstItem="bI5-Tl-mjl" firstAttribute="height" secondItem="GMn-CC-ABO" secondAttribute="height" multiplier="0.454545" id="Uol-mo-74O"/>
                             <constraint firstItem="bI5-Tl-mjl" firstAttribute="leading" secondItem="GMn-CC-ABO" secondAttribute="trailing" constant="8" id="VNs-2Y-A80"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4lK-dN-PgK" secondAttribute="trailing" constant="50" id="Yn2-Bt-Pzq"/>
                             <constraint firstItem="SbZ-kD-2a0" firstAttribute="centerX" secondItem="T38-S9-htY" secondAttribute="centerX" id="ail-Vj-WhZ"/>
                             <constraint firstItem="GMn-CC-ABO" firstAttribute="top" secondItem="36c-EW-zjW" secondAttribute="bottom" constant="8" id="fgl-7a-v0f"/>
                             <constraint firstItem="SbZ-kD-2a0" firstAttribute="top" secondItem="T38-S9-htY" secondAttribute="bottom" constant="8" id="oth-by-ZGk"/>
@@ -98,7 +153,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="barcodeButton" destination="SbZ-kD-2a0" id="qc0-g1-Rhi"/>
-                        <outlet property="googleSignInButton" destination="4lK-dN-PgK" id="x71-ek-dWc"/>
                         <outlet property="searchBar" destination="GMn-CC-ABO" id="zWF-sq-68a"/>
                         <outlet property="searchButton" destination="bI5-Tl-mjl" id="SrK-2V-a47"/>
                         <outlet property="segmentedControl" destination="36c-EW-zjW" id="fVy-iz-212"/>
@@ -177,7 +231,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" metaFont="system" size="15"/>
@@ -300,7 +354,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="ExJ-ZC-BAO">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="giT-8x-jbv" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="giT-8x-jbv" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6tQ-bs-FwI">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -379,9 +433,11 @@
     <resources>
         <image name="barcode" catalog="system" width="128" height="93"/>
         <image name="books.vertical.fill" catalog="system" width="128" height="109"/>
+        <image name="google" width="30" height="30"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="heart.slash.fill" catalog="system" width="128" height="115"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="page-wire" width="180" height="180"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

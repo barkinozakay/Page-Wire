@@ -16,9 +16,6 @@ class MainVC: UIViewController {
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var searchButton: UIButton!
-    
-    // TODO: Move this to SignIn page.
-    @IBOutlet private weak var googleSignInButton: GIDSignInButton!
     @IBOutlet private weak var barcodeButton: UIButton!
     
     // MARK: - Variables
@@ -36,14 +33,6 @@ class MainVC: UIViewController {
 
 // MARK: - IBActions
 extension MainVC {
-    
-    // TODO: Complete the action.
-    @IBAction private func onGoogleSignInButtonTapped(_ sender: GIDSignInButton) {
-        let signInConfig = GIDConfiguration.init(clientID: "660244303275-qmd7h39u9mj81dj3o2lbe3tk41don949.apps.googleusercontent.com")
-        GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
-            print("asd")
-        }
-    }
     
     @IBAction func searchButtonAction(_ sender: Any) {
         searchBooks()

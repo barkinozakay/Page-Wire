@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>660244303275-qmd7h39u9mj81dj3o2lbe3tk41don949.apps.googleusercontent.com</string>
+	<string>116524147870-ldnq24951j94f57f8dpodapsk485kd5v.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.660244303275-qmd7h39u9mj81dj3o2lbe3tk41don949</string>
+	<string>com.googleusercontent.apps.116524147870-ldnq24951j94f57f8dpodapsk485kd5v</string>
 	<key>API_KEY</key>
-	<string>AIzaSyABdXqMkt6ZX9v-PFIrgi1C_ZtIzTQ1XFI</string>
+	<string>AIzaSyBcapxgHQeGoDwwmY_419N5O0w-YdOAyww</string>
 	<key>GCM_SENDER_ID</key>
-	<string>660244303275</string>
+	<string>116524147870</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.barkinozakay.page-wire</string>
 	<key>PROJECT_ID</key>
-	<string>page-wire</string>
+	<string>page-wire-ios</string>
 	<key>STORAGE_BUCKET</key>
-	<string>page-wire.appspot.com</string>
+	<string>page-wire-ios.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:660244303275:ios:d710391f4ce769c9f0d6ee</string>
+	<string>1:116524147870:ios:77766b9fbafbe1b054078f</string>
 </dict>
 </plist>
