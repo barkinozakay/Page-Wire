@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--SplashVC-->
+        <!--Splash-->
         <scene sceneID="9Yg-eh-1Pt">
             <objects>
-                <viewController storyboardIdentifier="Splash" id="Qgf-9V-AWd" customClass="SplashVC" customModule="Page_Wire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Splash" title="Splash" id="Qgf-9V-AWd" customClass="SplashVC" customModule="Page_Wire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yQj-PO-9Gl">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,17 +24,17 @@
             </objects>
             <point key="canvasLocation" x="1527" y="450"/>
         </scene>
-        <!--Sign InVC-->
+        <!--Sign In-->
         <scene sceneID="mAf-2J-YZ5">
             <objects>
-                <viewController storyboardIdentifier="SignIn" id="nSg-oC-8ph" customClass="SignInVC" customModule="Page_Wire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignIn" title="Sign In" id="nSg-oC-8ph" customClass="SignInVC" customModule="Page_Wire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jzz-I2-CV0">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page Wire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSy-NK-LyM">
-                                <rect key="frame" x="113" y="201" width="164" height="42"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <rect key="frame" x="101.66666666666669" y="198" width="187" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -351,6 +351,44 @@
             </objects>
             <point key="canvasLocation" x="5670.7692307692305" y="873.69668246445497"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="hWo-PJ-vtB">
+            <objects>
+                <viewController id="zxd-5Z-gDA" customClass="SettingsVC" customModule="Page_Wire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cQp-mV-9cK">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h62-I6-qIw">
+                                <rect key="frame" x="70" y="402" width="250" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="hZR-aZ-9ot"/>
+                                </constraints>
+                                <color key="tintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Sign Out"/>
+                                <connections>
+                                    <action selector="onSignOutButtonTapped:" destination="zxd-5Z-gDA" eventType="touchUpInside" id="0iQ-fx-RNX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ydl-eT-uyF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ydl-eT-uyF" firstAttribute="trailing" secondItem="h62-I6-qIw" secondAttribute="trailing" constant="70" id="CoV-wx-Yp0"/>
+                            <constraint firstItem="h62-I6-qIw" firstAttribute="leading" secondItem="ydl-eT-uyF" secondAttribute="leading" constant="70" id="Nqh-Ye-69O"/>
+                            <constraint firstItem="h62-I6-qIw" firstAttribute="centerY" secondItem="cQp-mV-9cK" secondAttribute="centerY" id="m56-Lo-mUk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="cg6-RC-YQO"/>
+                    <connections>
+                        <outlet property="signOutButton" destination="h62-I6-qIw" id="gql-03-le0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mMs-1S-Oen" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5673.8461538461534" y="1692.654028436019"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ExJ-ZC-BAO">
             <objects>
@@ -365,31 +403,12 @@
                     <connections>
                         <segue destination="fkB-lf-C1f" kind="relationship" relationship="viewControllers" id="QDT-0V-Qlh"/>
                         <segue destination="Qdd-ez-DOj" kind="relationship" relationship="viewControllers" id="gfR-sG-4Ha"/>
+                        <segue destination="O0L-tr-nVY" kind="relationship" relationship="viewControllers" id="Fh2-bm-jmz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGr-XP-gyz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3549" y="444"/>
-        </scene>
-        <!--Favorites Navigation-->
-        <scene sceneID="Poj-aP-idf">
-            <objects>
-                <navigationController title="Favorites Navigation" automaticallyAdjustsScrollViewInsets="NO" id="Qdd-ez-DOj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="EZB-vC-Osc"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ngm-bu-m6p">
-                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="28U-Gc-qi8" kind="relationship" relationship="rootViewController" id="bQx-fp-5Df"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mFa-o8-dyZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4745" y="874"/>
         </scene>
         <!--Book Detail-->
         <scene sceneID="cQi-n0-tQ0">
@@ -429,10 +448,51 @@
             </objects>
             <point key="canvasLocation" x="6602" y="425"/>
         </scene>
+        <!--Settings Navigation-->
+        <scene sceneID="67Z-yz-X0T">
+            <objects>
+                <navigationController title="Settings Navigation" automaticallyAdjustsScrollViewInsets="NO" id="O0L-tr-nVY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape.fill" catalog="system" id="0ra-KQ-Icu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="3db-l3-JWO">
+                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zxd-5Z-gDA" kind="relationship" relationship="rootViewController" id="rJ4-fU-plg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r3v-jg-3u7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4744.6153846153848" y="1692.654028436019"/>
+        </scene>
+        <!--Favorites Navigation-->
+        <scene sceneID="Poj-aP-idf">
+            <objects>
+                <navigationController title="Favorites Navigation" automaticallyAdjustsScrollViewInsets="NO" id="Qdd-ez-DOj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="EZB-vC-Osc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ngm-bu-m6p">
+                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="28U-Gc-qi8" kind="relationship" relationship="rootViewController" id="bQx-fp-5Df"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mFa-o8-dyZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4745" y="874"/>
+        </scene>
     </scenes>
     <resources>
         <image name="barcode" catalog="system" width="128" height="93"/>
         <image name="books.vertical.fill" catalog="system" width="128" height="109"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="google" width="30" height="30"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="heart.slash.fill" catalog="system" width="128" height="115"/>

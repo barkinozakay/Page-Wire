@@ -17,7 +17,7 @@ class SignInVC: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func onGoogleSignInButtonTapped(_ sender: UIButton) {
+    @IBAction private func onGoogleSignInButtonTapped(_ sender: UIButton) {
         GIDSignIn.sharedInstance.signIn(with: GoogleManager.shared.googleSignInConfig, presenting: self) { user, error in
             guard error == nil else { return }
             guard let authentication = user?.authentication, let idToken = authentication.idToken else { return }

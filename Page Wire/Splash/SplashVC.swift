@@ -25,7 +25,7 @@ class SplashVC: UIViewController {
     public final func openSignInPage() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let signInVC = storyboard.instantiateViewController(identifier: "SignIn")
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(signInVC)
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(signInVC, signedIn: false)
     }
 
     public final func openFirstPage() {

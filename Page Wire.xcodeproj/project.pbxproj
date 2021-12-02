@@ -41,6 +41,7 @@
 		DDD8996827584C4F00853597 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDD8996727584C4F00853597 /* GoogleService-Info.plist */; };
 		DDD8996A2758536F00853597 /* GoogleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD899692758536F00853597 /* GoogleManager.swift */; };
 		DDD8996D275860AB00853597 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8996C275860AB00853597 /* SplashVC.swift */; };
+		DDD8997027586ED800853597 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8996F27586ED800853597 /* SettingsVC.swift */; };
 		DDDB338F265BFCBB007040F4 /* BookInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB338E265BFCBB007040F4 /* BookInfoVC.swift */; };
 		DDDE6B2F263118890062568D /* FavoriteBooksCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE6B2E263118890062568D /* FavoriteBooksCache.swift */; };
 		DDDE6B35263119170062568D /* FavoriteBooksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE6B34263119170062568D /* FavoriteBooksVC.swift */; };
@@ -83,6 +84,7 @@
 		DDD8996727584C4F00853597 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DDD899692758536F00853597 /* GoogleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleManager.swift; sourceTree = "<group>"; };
 		DDD8996C275860AB00853597 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		DDD8996F27586ED800853597 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		DDDB338E265BFCBB007040F4 /* BookInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoVC.swift; sourceTree = "<group>"; };
 		DDDE6B2E263118890062568D /* FavoriteBooksCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBooksCache.swift; sourceTree = "<group>"; };
 		DDDE6B34263119170062568D /* FavoriteBooksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBooksVC.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				DDFE7074260FAEA500138959 /* BookResults */,
 				DDFE7073260FACB400138959 /* BookDetail */,
 				DDDE6B33263118EA0062568D /* FavoriteBooks */,
+				DDD8996E27586EBD00853597 /* Settings */,
 				DD273938260E556400266851 /* Assets.xcassets */,
 				DD27392F260E556300266851 /* AppDelegate.swift */,
 				DD273931260E556300266851 /* SceneDelegate.swift */,
@@ -272,6 +275,14 @@
 				DDD8996C275860AB00853597 /* SplashVC.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		DDD8996E27586EBD00853597 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DDD8996F27586ED800853597 /* SettingsVC.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		DDDB338D265BFCA4007040F4 /* Book Info */ = {
@@ -481,6 +492,7 @@
 				DDFE7086260FAF1D00138959 /* MainVC.swift in Sources */,
 				DDDE6CAD2649C09500291C0F /* BookDetailVC.swift in Sources */,
 				DD914470264A90A5003C9D22 /* BookPricesTableViewCell.swift in Sources */,
+				DDD8997027586ED800853597 /* SettingsVC.swift in Sources */,
 				DD87CD1F260FE9B0002F5C81 /* UIViewController+Extensions.swift in Sources */,
 				DD87CD27260FE9C8002F5C81 /* String+Extensions.swift in Sources */,
 				DDFE7079260FAEF200138959 /* BookResultsVC.swift in Sources */,
