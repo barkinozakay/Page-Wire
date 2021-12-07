@@ -54,6 +54,10 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    final func showErrorAlert() {
+        showAlert(title: "", message: "Some unexpected error occured.", okTitle: "OK", cancelTitle: nil, okAction: nil, cancelAction: nil)
+    }
+    
     // MARK: - Loading Animation -
     final func showLoadingAnimation() {
         // Animation
@@ -67,11 +71,12 @@ extension UIViewController {
         animationView.tag = 24011994
         animationView.play()
         // Blur
-        let blurEffect = UIBlurEffect(style: .systemChromeMaterial)
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterial)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         blurEffectView.tag = 24011995
+        blurEffectView.alpha = 0.75
         view.isUserInteractionEnabled = false
         view.addSubview(blurEffectView)
         view.addSubview(animationView)

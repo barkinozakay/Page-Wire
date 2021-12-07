@@ -62,12 +62,13 @@ extension MainVC {
     }
     
     private func parseBookList() {
-        // TODO: Append missing isbn to Firestore.
         // TODO: Calculate time.
         DispatchQueue.main.async {
             if let response = DecoderHelper.decode(resourcePath: "books", BookList.self) {
                 BookManager.shared.bookList = response.books
                 self.books = response.books.unique { $0.name }
+                // TODO: IDK about the next line.
+                FavoriteBooksManager.shared.appendAllBooksToFirebase(self.books)
             }
         }
     }

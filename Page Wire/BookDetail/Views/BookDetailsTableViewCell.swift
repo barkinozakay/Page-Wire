@@ -42,12 +42,12 @@ class BookDetailsTableViewCell: UITableViewCell {
     }
     
     private func setArtwork() {
-        guard let url = book?.artwork else { return }
+        guard let urlStr = book?.artwork, !urlStr.isEmpty, let artworkUrl = URL(string: urlStr) else { return }
         let options = ImageLoadingOptions(
             placeholder: UIImage(systemName: "book.fill"),
             transition: .fadeIn(duration: 0.05)
         )
-        Nuke.loadImage(with: URL(string: url)!, options: options, into: artwork) { _ in
+        Nuke.loadImage(with: artworkUrl, options: options, into: artwork) { _ in
             self.artwork.clipsToBounds = true
             self.artwork.contentMode = .scaleToFill
         }

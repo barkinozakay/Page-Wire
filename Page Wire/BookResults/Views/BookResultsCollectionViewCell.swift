@@ -29,7 +29,8 @@ class BookResultsCollectionViewCell: UICollectionViewCell {
     private func setArtwork() {
         guard let url = book?.artwork, !url.isEmpty else { return }
         let options = ImageLoadingOptions(
-            transition: .fadeIn(duration: 0.25, options: .transitionCrossDissolve)
+            placeholder: UIImage(named: "book.fill"),
+            transition: .fadeIn(duration: 0.1, options: .transitionCrossDissolve)
         )
         Nuke.loadImage(with: URL(string: url)!, options: options, into: artwork) { _ in
             self.artwork.clipsToBounds = true

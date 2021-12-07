@@ -27,11 +27,12 @@ class BookResultsTableViewCell: UITableViewCell {
     }
     
     private func setArtwork() {
-        guard let url = book?.artwork, !url.isEmpty else { return }
+        guard let urlStr = book?.artwork, !urlStr.isEmpty, let artworkUrl = URL(string: urlStr) else { return }
         let options = ImageLoadingOptions(
-            transition: .fadeIn(duration: 0.33)
+            placeholder: UIImage(named: "book.fill"),
+            transition: .fadeIn(duration: 0.1, options: .transitionCrossDissolve)
         )
-        Nuke.loadImage(with: URL(string: url)!, options: options, into: artwork) { _ in
+        Nuke.loadImage(with: artworkUrl, options: options, into: artwork) { _ in
             self.artwork.clipsToBounds = true
             self.artwork.contentMode = .scaleAspectFit
         }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Hero
 
 protocol FavoriteBook: AnyObject {
     func changeFavoriteState(_ favoriteBook: BookModel?)
@@ -26,12 +27,14 @@ class FavoriteBooksVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        showLoadingAnimation()
         tableView.register(UINib(nibName: "BookResultsTableViewCell", bundle: nil), forCellReuseIdentifier: "BookResultsTableViewCell")
         tableView.tableHeaderView = UIView()
         tableView.tableFooterView = UIView()
         FavoriteBooksManager.shared.getFavoritedBooks({ favoritedBooks in
             self.favoritedBooks = favoritedBooks
             self.checkForEmptyState()
+            self.hideLoadingAnimaton()
         })
         NotificationCenter.default.addObserver(self, selector: #selector(changeBookFavoriteStateFromDetail(_:)), name: .changeBookFavoriteStateFromDetail, object: nil)
     }
@@ -44,18 +47,16 @@ class FavoriteBooksVC: UIViewController {
 // MARK: - Functions -
 extension FavoriteBooksVC {
     private func checkForEmptyState() {
-        if favoritedBooks.isEmpty {
-            showEmptyState = true
-        } else {
-            showEmptyState = false
-            tableView.reloadData()
-        }
+        showEmptyState = favoritedBooks.isEmpty ? true : false
+        tableView.reloadData()
     }
     
     private func goToBookDetail(_ book: BookModel) {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookDetailVC") as! BookDetailVC
         vc.book = book
         vc.isComingFromFavorites = true
+        vc.isHeroEnabled = true
+        navigationController?.hero.navigationAnimationType = .selectBy(presenting: .pageIn(direction: .left), dismissing: .pageOut(direction: .right))
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -102,12 +103,17 @@ extension FavoriteBooksVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-            FavoriteBooksManager.shared.removeBookFromFavorites(favoritedBooks[indexPath.row])
-            NotificationCenter.default.post(name: .removeBookFromFavorites, object: nil, userInfo: ["book": favoritedBooks[indexPath.row]])
-            favoritedBooks.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            tableView.endUpdates()
-            checkForEmptyState()
+            FavoriteBooksManager.shared.removeBookFromFavorites(favoritedBooks[indexPath.row]) { isSuccess in
+                if isSuccess {
+                    self.favoritedBooks.remove(at: indexPath.row)
+                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                    self.tableView.endUpdates()
+                    self.checkForEmptyState()
+                    NotificationCenter.default.post(name: .removeBookFromFavorites, object: nil, userInfo: ["book": self.favoritedBooks[indexPath.row]])
+                } else {
+                    self.showErrorAlert()
+                }
+            }
         }
     }
     

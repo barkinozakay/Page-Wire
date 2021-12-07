@@ -40,17 +40,13 @@ class BookDetailVC: UIViewController {
         bookDataViewModel?.book = book
         bookDataViewModel?.siteDataDelegate = self
         bookDataViewModel?.getBookDataForSites()
+        addFavoriteButton()
+        checkIfBookIsFavorited()
         tableView.register(UINib(nibName: "BookDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "BookDetailsTableViewCell")
         tableView.register(UINib(nibName: "BookPricesTableViewCell", bundle: nil), forCellReuseIdentifier: "BookPricesTableViewCell")
         NotificationCenter.default.addObserver(self, selector: #selector(removeBookFromFavorites(_:)), name: .removeBookFromFavorites, object: nil)
-        changeFavoriteButtonVisibility()
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closePicker)))
         addPickerView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if !isComingFromFavorites { checkIfBookIsFavorited() }
     }
     
     deinit {
@@ -64,12 +60,10 @@ extension BookDetailVC: BookDataFromSite {
         self.book = book
         if isFinished {
             // TODO: Sort books on viewModel for lowest price ascending
-            // TODO: self.book?.siteData?.sort(by: { $0.site!.rawValue > $1.site!.rawValue})
+            self.book?.siteData?.shuffle()
+            self.book?.siteData?.sort(by: { $0.site!.rawValue > $1.site!.rawValue})
             asyncOperation {
                 self.tableView.reloadData()
-                if !self.isComingFromFavorites {
-                    self.favoriteButton.isEnabled = true
-                }
                 self.hideLoadingAnimaton()
             }
         }
@@ -92,15 +86,23 @@ extension BookDetailVC {
 
 // MARK: - Favorite Book Functions
 extension BookDetailVC {
-    private func changeFavoriteButtonVisibility() {
-        if isComingFromFavorites {
-            navigationItem.rightBarButtonItems = []
-        } else {
-            favoriteButton = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(favoriteAction))
-            favoriteButton.tintColor = #colorLiteral(red: 0.5808190107, green: 0.0884276256, blue: 0.3186392188, alpha: 1)
-            favoriteButton.isEnabled = false
-            navigationItem.rightBarButtonItems = [favoriteButton]
+    private func checkIfBookIsFavorited() {
+        guard !isComingFromFavorites else { return setFavoriteButtonStatus(true) }
+        FavoriteBooksManager.shared.checkForFavoritedBook(book) { isFavorited in
+            self.setFavoriteButtonStatus(isFavorited)
         }
+    }
+    
+    private func setFavoriteButtonStatus(_ isFavorited: Bool) {
+        self.favoriteButton.image = isFavorited ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+        self.favoriteButton.tag = isFavorited ? 1 : 0
+    }
+    
+    private func addFavoriteButton() {
+        favoriteButton = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(favoriteAction))
+        favoriteButton.tintColor = #colorLiteral(red: 0.5808190107, green: 0.0884276256, blue: 0.3186392188, alpha: 1)
+        favoriteButton.isEnabled = true
+        navigationItem.rightBarButtonItems = [favoriteButton]
     }
     
     @objc private func favoriteAction() {
@@ -108,32 +110,31 @@ extension BookDetailVC {
     }
     
     private func checkFavoriteActionForBook() {
-        guard var book = book else { return }
+        guard let detailBook = book else { return }
         if favoriteButton.tag == 0 {
-            book.isFavorited = true
-            favoriteButton.image = UIImage(systemName: "heart.fill")
-            favoriteButton.tag = 1
-            FavoriteBooksManager.shared.addBookToFavorites(book)
-            NotificationCenter.default.post(name: .changeBookFavoriteStateFromDetail, object: nil, userInfo: ["book": book, "action": FavoriteBookAction.add])
+            FavoriteBooksManager.shared.addBookToFavorites(detailBook) { isSuccess in
+                if isSuccess {
+                    self.book?.isFavorited = true
+                    self.favoriteButton.image = UIImage(systemName: "heart.fill")
+                    self.favoriteButton.tag = 1
+                    NotificationCenter.default.post(name: .changeBookFavoriteStateFromDetail, object: nil, userInfo: ["book": detailBook, "action": FavoriteBookAction.add])
+                } else {
+                    self.showErrorAlert()
+                }
+            }
         } else {
-            book.isFavorited = false
-            favoriteButton.image = UIImage(systemName: "heart")
-            favoriteButton.tag = 0
-            FavoriteBooksManager.shared.removeBookFromFavorites(book)
-            NotificationCenter.default.post(name: .changeBookFavoriteStateFromDetail, object: nil, userInfo: ["book": book, "action": FavoriteBookAction.remove])
+            FavoriteBooksManager.shared.removeBookFromFavorites(detailBook) { isSuccess in
+                if isSuccess {
+                    self.book?.isFavorited = false
+                    self.favoriteButton.image = UIImage(systemName: "heart")
+                    self.favoriteButton.tag = 0
+                    NotificationCenter.default.post(name: .changeBookFavoriteStateFromDetail, object: nil, userInfo: ["book": detailBook, "action": FavoriteBookAction.remove])
+                } else {
+                    self.showErrorAlert()
+                }
+            }
         }
         favoriteDelegate?.changeFavoriteState(book)
-    }
-    
-    private func checkIfBookIsFavorited() {
-        guard let isFavorited = book?.isFavorited else { return }
-        if isFavorited {
-            favoriteButton.image = UIImage(systemName: "heart.fill")
-            favoriteButton.tag = 1
-        } else {
-            favoriteButton.image = UIImage(systemName: "heart")
-            favoriteButton.tag = 0
-        }
     }
     
     @objc func removeBookFromFavorites(_ notification: Notification) {
