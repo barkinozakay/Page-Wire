@@ -38,11 +38,11 @@
 		DD8C0710275EB5CA002777C2 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = DD8C070F275EB5CA002777C2 /* FirebasePerformance */; };
 		DD8C0712275EB5CA002777C2 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = DD8C0711275EB5CA002777C2 /* FirebaseStorage */; };
 		DD8C0715275EC5A6002777C2 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = DD8C0714275EC5A6002777C2 /* Nuke */; };
+		DD8D26C2275F40EA00E33DB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD8D26C1275F40EA00E33DB5 /* GoogleService-Info.plist */; };
 		DD914470264A90A5003C9D22 /* BookPricesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91446E264A90A5003C9D22 /* BookPricesTableViewCell.swift */; };
 		DD914471264A90A5003C9D22 /* BookPricesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD91446F264A90A5003C9D22 /* BookPricesTableViewCell.xib */; };
 		DDA43F0A261513A000F41873 /* books.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA43F09261513A000F41873 /* books.json */; };
 		DDCDED5C2656F3E500687161 /* BookDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDED5B2656F3E500687161 /* BookDataViewModel.swift */; };
-		DDD8996827584C4F00853597 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDD8996727584C4F00853597 /* GoogleService-Info.plist */; };
 		DDD8996A2758536F00853597 /* GoogleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD899692758536F00853597 /* GoogleManager.swift */; };
 		DDD8996D275860AB00853597 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8996C275860AB00853597 /* SplashVC.swift */; };
 		DDD8997027586ED800853597 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8996F27586ED800853597 /* SettingsVC.swift */; };
@@ -84,11 +84,11 @@
 		DD69AD6E265B859200EFE40F /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		DD87CD1E260FE9B0002F5C81 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		DD87CD26260FE9C8002F5C81 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		DD8D26C1275F40EA00E33DB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD91446E264A90A5003C9D22 /* BookPricesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPricesTableViewCell.swift; sourceTree = "<group>"; };
 		DD91446F264A90A5003C9D22 /* BookPricesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookPricesTableViewCell.xib; sourceTree = "<group>"; };
 		DDA43F09261513A000F41873 /* books.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = books.json; sourceTree = "<group>"; };
 		DDCDED5B2656F3E500687161 /* BookDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDataViewModel.swift; sourceTree = "<group>"; };
-		DDD8996727584C4F00853597 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DDD899692758536F00853597 /* GoogleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleManager.swift; sourceTree = "<group>"; };
 		DDD8996C275860AB00853597 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		DDD8996F27586ED800853597 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 				DD273931260E556300266851 /* SceneDelegate.swift */,
 				DD27393A260E556400266851 /* LaunchScreen.storyboard */,
 				DD27393D260E556400266851 /* Info.plist */,
-				DDD8996727584C4F00853597 /* GoogleService-Info.plist */,
+				DD8D26C1275F40EA00E33DB5 /* GoogleService-Info.plist */,
 				DD521C8C2610F49100493A37 /* CustomAnimations */,
 				DD4351B32739DDF000087C92 /* CustomViews */,
 				DD87CD15260FE8CA002F5C81 /* Extensions */,
@@ -384,6 +384,7 @@
 				DD273929260E556300266851 /* Frameworks */,
 				DD27392A260E556300266851 /* Resources */,
 				68CAC09649843C59B488637A /* [CP] Embed Pods Frameworks */,
+				DD8D26C0275F3B8800E33DB5 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -465,7 +466,7 @@
 				DD27393C260E556400266851 /* LaunchScreen.storyboard in Resources */,
 				DD273939260E556400266851 /* Assets.xcassets in Resources */,
 				DD4351C72739EB5000087C92 /* CustomPickerView.xib in Resources */,
-				DDD8996827584C4F00853597 /* GoogleService-Info.plist in Resources */,
+				DD8D26C2275F40EA00E33DB5 /* GoogleService-Info.plist in Resources */,
 				DD273937260E556300266851 /* Main.storyboard in Resources */,
 				DD521CA02610FE0000493A37 /* searching_books_animation.json in Resources */,
 			);
@@ -512,6 +513,26 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		DD8D26C0275F3B8800E33DB5 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -696,6 +717,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = W3G4UYUA3Z;
 				INFOPLIST_FILE = "Page Wire/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -717,6 +739,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = W3G4UYUA3Z;
 				INFOPLIST_FILE = "Page Wire/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

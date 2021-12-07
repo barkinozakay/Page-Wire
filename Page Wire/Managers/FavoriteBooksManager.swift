@@ -21,7 +21,7 @@ class FavoriteBooksManager {
     static let shared = FavoriteBooksManager()
     
     private let firestore = Firestore.firestore()
-    private let realtimeDatabase = Database.database(url: "https://page-wire-ios-default-rtdb.europe-west1.firebasedatabase.app/").reference()
+    private let realtimeDatabase = Database.database().reference()
     
     // TODO: Maybe async w/delegate?
     func getFavoritedBooks(_ completion: @escaping ([BookModel]) -> Void) {
@@ -82,11 +82,6 @@ class FavoriteBooksManager {
         for book in books {
             guard let bookData = book.dictionary else { continue }
             let isbn = book.isbn.description
-//            let docRef = firestore.collection("Books").document("\(isbn)")
-//            docRef.setData(bookData, merge: true) { error in
-//                guard error == nil else { return print("Could not save book data.") }
-//                print("Book with isbn: \(isbn) saved to database successfully.")
-//            }
             realtimeDatabase.child("Books").child(isbn).setValue(bookData) { (error: Error?, ref: DatabaseReference) in
                 if let error = error {
                     print("Data could not be saved: \(error).")
