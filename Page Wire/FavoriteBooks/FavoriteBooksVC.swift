@@ -29,15 +29,15 @@ class FavoriteBooksVC: UIViewController {
         tableView.register(UINib(nibName: "BookResultsTableViewCell", bundle: nil), forCellReuseIdentifier: "BookResultsTableViewCell")
         tableView.tableHeaderView = UIView()
         tableView.tableFooterView = UIView()
-        NotificationCenter.default.addObserver(self, selector: #selector(changeBookFavoriteStateFromDetail(_:)), name: .changeBookFavoriteStateFromDetail, object: nil)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         FavoriteBooksManager.shared.getFavoritedBooks({ favoritedBooks in
             self.favoritedBooks = favoritedBooks
             self.checkForEmptyState()
         })
+        NotificationCenter.default.addObserver(self, selector: #selector(changeBookFavoriteStateFromDetail(_:)), name: .changeBookFavoriteStateFromDetail, object: nil)
+    }
+        
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
@@ -69,6 +69,7 @@ extension FavoriteBooksVC {
             guard let index = favoritedBooks.firstIndex(where: { $0.isbn == book.isbn }) else { return }
             favoritedBooks.remove(at: index)
         }
+        checkForEmptyState()
     }
 }
 

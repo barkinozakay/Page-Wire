@@ -9,7 +9,6 @@ import UIKit
 import GoogleSignIn
 import Lottie
 import BarcodeScanner
-import FirebaseDatabase
 
 class MainVC: UIViewController {
 
@@ -63,12 +62,12 @@ extension MainVC {
     }
     
     private func parseBookList() {
+        // TODO: Append missing isbn to Firestore.
         // TODO: Calculate time.
         DispatchQueue.main.async {
             if let response = DecoderHelper.decode(resourcePath: "books", BookList.self) {
                 BookManager.shared.bookList = response.books
                 self.books = response.books.unique { $0.name }
-                //FavoriteBooksManager.shared.appendAllBooksToFirebase(self.books)
             }
         }
     }

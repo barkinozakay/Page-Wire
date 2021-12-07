@@ -52,6 +52,10 @@ class BookDetailVC: UIViewController {
         super.viewWillAppear(animated)
         if !isComingFromFavorites { checkIfBookIsFavorited() }
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
 // MARK: - Book Data From Site
@@ -59,8 +63,8 @@ extension BookDetailVC: BookDataFromSite {
     func getBookDataForSites(_ book: BookModel?, _ isFinished: Bool) {
         self.book = book
         if isFinished {
-            // Sort books on viewModel for lowest price ascending
-            //self.book?.siteData?.sort(by: { $0.site!.rawValue > $1.site!.rawValue})
+            // TODO: Sort books on viewModel for lowest price ascending
+            // TODO: self.book?.siteData?.sort(by: { $0.site!.rawValue > $1.site!.rawValue})
             asyncOperation {
                 self.tableView.reloadData()
                 if !self.isComingFromFavorites {

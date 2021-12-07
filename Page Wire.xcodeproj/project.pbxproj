@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C4C07D134790DA4BB6E9CFF3 /* Pods_Page_Wire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCF1937C3D9C00DD042177F /* Pods_Page_Wire.framework */; };
+		DD03245B275F688B0034F40A /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = DD03245A275F688B0034F40A /* Hero */; };
 		DD118438272CA9E9002EAD1C /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD118437272CA9E9002EAD1C /* SignInVC.swift */; };
 		DD273930260E556300266851 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27392F260E556300266851 /* AppDelegate.swift */; };
 		DD273932260E556300266851 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD273931260E556300266851 /* SceneDelegate.swift */; };
@@ -116,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD03245B275F688B0034F40A /* Hero in Frameworks */,
 				DD8C0710275EB5CA002777C2 /* FirebasePerformance in Frameworks */,
 				DD8C0704275EB5CA002777C2 /* FirebaseAppCheck in Frameworks */,
 				DD8C0702275EB5CA002777C2 /* FirebaseAnalytics in Frameworks */,
@@ -407,6 +409,7 @@
 				DD8C070F275EB5CA002777C2 /* FirebasePerformance */,
 				DD8C0711275EB5CA002777C2 /* FirebaseStorage */,
 				DD8C0714275EC5A6002777C2 /* Nuke */,
+				DD03245A275F688B0034F40A /* Hero */,
 			);
 			productName = "Book Discovery";
 			productReference = DD27392C260E556300266851 /* Page Wire.app */;
@@ -443,6 +446,7 @@
 				DD8C06FD275EB4F2002777C2 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				DD8C0700275EB5CA002777C2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				DD8C0713275EC5A6002777C2 /* XCRemoteSwiftPackageReference "Nuke" */,
+				DD032459275F688B0034F40A /* XCRemoteSwiftPackageReference "Hero" */,
 			);
 			productRefGroup = DD27392D260E556300266851 /* Products */;
 			projectDirPath = "";
@@ -778,6 +782,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DD032459275F688B0034F40A /* XCRemoteSwiftPackageReference "Hero" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HeroTransitions/Hero.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		DD8C06F1275EB42D002777C2 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup";
@@ -837,6 +849,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DD03245A275F688B0034F40A /* Hero */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD032459275F688B0034F40A /* XCRemoteSwiftPackageReference "Hero" */;
+			productName = Hero;
+		};
 		DD8C06F2275EB42D002777C2 /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DD8C06F1275EB42D002777C2 /* XCRemoteSwiftPackageReference "SwiftSoup" */;

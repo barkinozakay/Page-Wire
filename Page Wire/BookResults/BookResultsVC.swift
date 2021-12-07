@@ -7,6 +7,7 @@
 
 import UIKit
 import CenteredCollectionView
+import Hero
 
 class BookResultsVC: UIViewController {
 
@@ -54,6 +55,8 @@ extension BookResultsVC {
     private func goToBookDetail(_ book: BookModel) {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookDetailVC") as! BookDetailVC
         vc.book = book
+        vc.isHeroEnabled = true
+        navigationController?.hero.navigationAnimationType = .selectBy(presenting: .pageIn(direction: .left), dismissing: .pageOut(direction: .right))
         navigationController?.pushViewController(vc, animated: true)
     }
 }

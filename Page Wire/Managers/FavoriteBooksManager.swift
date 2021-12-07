@@ -42,19 +42,18 @@ class FavoriteBooksManager {
     }
     
     private func convertBookDataToModel(data: [String: Any]) -> BookModel? {
-        var favoritedBook: BookModel?
-        favoritedBook?.name = data["name"] as! String
-        favoritedBook?.author = data["author"] as! String
-        favoritedBook?.publisher = data["publisher"] as! String
-        favoritedBook?.genre = data["genre"] as! String
-        favoritedBook?.pages = data["pages"] as! Int
-        favoritedBook?.isbn = data["isbn"] as! Int
-        favoritedBook?.isFavorited = data["isFavorited"] as? Bool
-        favoritedBook?.siteData = data["siteData"] as? [BookSiteData]
-        favoritedBook?.artwork = data["artwork"] as? String
-        favoritedBook?.info = data["info"] as? String
-        favoritedBook?.otherPublishers = data["otherPublishers"] as? [String : Int]
-        return favoritedBook
+        let name = data["name"] as? String ?? ""
+        let author = data["author"] as? String ?? ""
+        let publisher = data["publisher"] as? String ?? ""
+        let genre = data["genre"] as? String ?? ""
+        let pages = data["pages"] as? Int ?? 0
+        let isbn = data["isbn"] as? Int ?? 0
+        let isFavorited = data["isFavorited"] as? Bool ?? false
+        let siteData = data["siteData"] as? [BookSiteData] ?? []
+        let artwork = data["artwork"] as? String ?? ""
+        let info = data["info"] as? String ?? ""
+        let otherPublishers = data["otherPublishers"] as? [String : Int] ?? [:]
+        return BookModel(name: name, author: author, publisher: publisher, genre: genre, pages: pages, isbn: isbn, isFavorited: isFavorited, siteData: siteData, artwork: artwork, info: info, otherPublishers: otherPublishers)
     }
     
     func addBookToFavorites(_ book: BookModel) {
