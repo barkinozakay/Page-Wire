@@ -8,6 +8,7 @@
 import Foundation
 
 extension Notification.Name {
-    static let removeBookFromFavorites = Notification.Name("removeBookFromFavorites")
+    static let removeBookFromFavorites = Notification.Name.init(rawValue: #function)
+    static let changeBookFavoriteStateFromDetail = Notification.Name.init(rawValue: #function)
 }
 

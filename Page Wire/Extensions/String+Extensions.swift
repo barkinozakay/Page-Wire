@@ -10,7 +10,7 @@ import Foundation
 extension String {
     
     var isAlphaNumeric: Bool {
-        let turkishCharacters: [String] = ["ğıöşü"]
+        let turkishCharacters: [String] = ["çğıöşü"]
         return !isEmpty && range(of: "[^a-zA-Z0-9\(turkishCharacters) ]", options: .regularExpression) == nil
     }
     

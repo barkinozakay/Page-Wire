@@ -61,7 +61,7 @@ extension BookResultsVC {
 // MARK: Book Artwork Delegate -
 extension BookResultsVC: BookArtworkFromSite {
     func getBookArtworkUrl(_ artwork: String, _ index: Int) {
-        self.books[index].artwork = artwork
+        books[index].artwork = artwork
         asyncOperation {
             self.collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
         }

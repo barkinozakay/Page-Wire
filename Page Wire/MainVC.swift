@@ -9,6 +9,7 @@ import UIKit
 import GoogleSignIn
 import Lottie
 import BarcodeScanner
+import FirebaseDatabase
 
 class MainVC: UIViewController {
 
@@ -67,6 +68,7 @@ extension MainVC {
             if let response = DecoderHelper.decode(resourcePath: "books", BookList.self) {
                 BookManager.shared.bookList = response.books
                 self.books = response.books.unique { $0.name }
+                //FavoriteBooksManager.shared.appendAllBooksToFirebase(self.books)
             }
         }
     }

@@ -12,10 +12,10 @@ struct BookList: Codable, Equatable {
 }
 
 struct BookModel: Codable, Equatable {
-    let name: String
-    let author: String
+    var name: String
+    var author: String
     var publisher: String
-    let genre: String
+    var genre: String
     var pages: Int
     var isbn: Int
     var isFavorited: Bool?
