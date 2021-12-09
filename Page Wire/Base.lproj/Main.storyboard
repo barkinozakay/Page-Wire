@@ -167,11 +167,11 @@
             <objects>
                 <viewController storyboardIdentifier="BookResultsVC" title="Book Results" id="LOQ-z6-j0h" customClass="BookResultsVC" customModule="Page_Wire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K1U-PZ-eee">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pda-ho-b4Q">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="722"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
                                 <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="E4n-JO-dfv" customClass="CenteredCollectionViewFlowLayout" customModule="CenteredCollectionView"/>
                                 <cells/>
@@ -190,10 +190,10 @@
                             <constraint firstItem="Pda-ho-b4Q" firstAttribute="top" secondItem="5GP-OP-jC9" secondAttribute="top" id="wYQ-Ut-57c"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Results" largeTitleDisplayMode="always" id="266-wj-box">
+                    <navigationItem key="navigationItem" title="Results" largeTitleDisplayMode="never" id="266-wj-box">
                         <barButtonItem key="backBarButtonItem" title=" " id="hRP-Lf-Dmk"/>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="Pda-ho-b4Q" id="1hr-nZ-gnn"/>
                     </connections>
@@ -211,24 +211,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hRe-9y-Nqo">
-                                <rect key="frame" x="24" y="120.00000000000001" width="342" height="60.666666666666671"/>
+                                <rect key="frame" x="24" y="76" width="342" height="60.666666666666657"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaC-gS-MVu">
                                         <rect key="frame" x="148.66666666666666" y="0.0" width="45" height="26.333333333333332"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                        <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3f-dk-dnf">
-                                        <rect key="frame" x="141.66666666666666" y="34.333333333333343" width="58.666666666666657" height="26.333333333333329"/>
+                                        <rect key="frame" x="141.66666666666666" y="34.333333333333329" width="58.666666666666657" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lj6-yy-wdD">
-                                <rect key="frame" x="16" y="196.66666666666669" width="358" height="613.33333333333326"/>
+                                <rect key="frame" x="16" y="152.66666666666669" width="358" height="657.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -261,7 +261,7 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="UOi-Nc-3mR">
                         <barButtonItem key="backBarButtonItem" title=" " id="YjL-gK-mho"/>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="authorLabel" destination="w3f-dk-dnf" id="vBo-ZM-qRQ"/>
                         <outlet property="textView" destination="lj6-yy-wdD" id="20e-Yk-3Md"/>
@@ -419,11 +419,11 @@
             <objects>
                 <viewController storyboardIdentifier="BookDetailVC" title="Book Detail" id="Gdz-b1-xkD" customClass="BookDetailVC" customModule="Page_Wire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZVz-qE-ZH0">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pXe-aR-CYv">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="722"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Gdz-b1-xkD" id="MGg-50-0be"/>
@@ -440,10 +440,10 @@
                             <constraint firstItem="Ww2-7d-CMm" firstAttribute="bottom" secondItem="pXe-aR-CYv" secondAttribute="bottom" id="hF4-Xr-gNB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Bzg-xN-xDb">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Bzg-xN-xDb">
                         <barButtonItem key="backBarButtonItem" title=" " id="Fwx-KD-1BO"/>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>

@@ -60,9 +60,9 @@ extension BookDetailVC: BookDataFromSite {
         self.book = book
         if isFinished {
             // TODO: Sort books on viewModel for lowest price ascending
-            self.book?.siteData?.shuffle()
-            self.book?.siteData?.sort(by: { $0.site!.rawValue > $1.site!.rawValue})
+            self.book?.siteData?.sort(by: { $0.price! < $1.price! })
             asyncOperation {
+                self.checkIfBookIsFavorited()
                 self.tableView.reloadData()
                 self.hideLoadingAnimaton()
             }
@@ -150,7 +150,6 @@ extension BookDetailVC {
 extension BookDetailVC: BookDetailsTableViewCellDelegate {
     func selectPublisher() {
         pickerOpened ? closePicker() : openPicker()
-        
     }
     
     func showBookInfo() {

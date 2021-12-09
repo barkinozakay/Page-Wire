@@ -129,7 +129,7 @@ class BookDataViewModel {
     }
     
     private func parseBookInfo(_ site: BookSite, _ html: String) {
-        guard site == .kitapyurdu else { return }
+        guard site == .amazon else { return }
         let info = self.getBookInfo(html)
         self.book?.info = info
     }
@@ -137,10 +137,10 @@ class BookDataViewModel {
     private func getBookInfo(_ html: String) -> String {
         do {
             let doc: Document = try SwiftSoup.parse(html)
-            let a: Elements = try doc.select("span")
+            let a: Elements = try doc.select("div")
             let classes = try a.map { try $0.attr("class") }
             let texts = try a.map { try $0.text() }
-            guard let index = classes.firstIndex(of: "info__text") else { return "" }
+            guard let index = classes.firstIndex(of: "a-section a-spacing-large text-direction-override") else { return "" }
             let info = texts[index]
             return info
         } catch Exception.Error(let type, let message) {
@@ -153,9 +153,9 @@ class BookDataViewModel {
     }
     
     func getBookArtworkUrl() {
-        guard books.count <= 10 else { return }
         var artwork: String = ""
         for index in 0..<books.count {
+            guard index < 9 else { break }
             let searchQuery = books[index].isbn.description
             guard let siteQueryPrefix = selectQueryForSite(.idefix) else { continue }
             getHtmlFromSearchQuery(siteQueryPrefix + searchQuery) { (response) in
