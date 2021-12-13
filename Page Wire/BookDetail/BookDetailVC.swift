@@ -33,6 +33,7 @@ class BookDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showLoadingAnimation()
+        checkIfBookIsFavorited()
         loadOtherPublishers()
         currentPublisher = book?.publisher ?? "-"
         bookDataViewModel = BookDataViewModel()
@@ -40,7 +41,6 @@ class BookDetailVC: UIViewController {
         bookDataViewModel?.siteDataDelegate = self
         bookDataViewModel?.getBookDataForSites()
         addFavoriteButton()
-        checkIfBookIsFavorited()
         tableView.register(UINib(nibName: "BookDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "BookDetailsTableViewCell")
         tableView.register(UINib(nibName: "BookPricesTableViewCell", bundle: nil), forCellReuseIdentifier: "BookPricesTableViewCell")
         NotificationCenter.default.addObserver(self, selector: #selector(removeBookFromFavorites(_:)), name: .removeBookFromFavorites, object: nil)
@@ -58,7 +58,6 @@ extension BookDetailVC: BookDataFromSite {
     func getBookDataForSites(_ book: BookModel?, _ isFinished: Bool) {
         self.book = book
         if isFinished {
-            // TODO: Sort books on viewModel for lowest price ascending
             self.book?.siteData?.sort(by: { $0.price! < $1.price! })
             asyncOperation {
                 self.checkIfBookIsFavorited()
@@ -110,6 +109,7 @@ extension BookDetailVC {
     
     private func checkFavoriteActionForBook() {
         guard let detailBook = book else { return }
+        favoriteButton.isEnabled = false
         if favoriteButton.tag == 0 {
             FavoriteBooksManager.shared.addBookToFavorites(detailBook) { isSuccess in
                 if isSuccess {
@@ -120,6 +120,7 @@ extension BookDetailVC {
                 } else {
                     self.showErrorAlert()
                 }
+                self.favoriteButton.isEnabled = true
             }
         } else {
             FavoriteBooksManager.shared.removeBookFromFavorites(detailBook) { isSuccess in
@@ -131,6 +132,7 @@ extension BookDetailVC {
                 } else {
                     self.showErrorAlert()
                 }
+                self.favoriteButton.isEnabled = true
             }
         }
     }

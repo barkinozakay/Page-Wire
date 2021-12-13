@@ -23,7 +23,6 @@ class FavoriteBooksManager {
     private let firestore = Firestore.firestore()
     private let realtimeDatabase = Database.database().reference()
     
-    // TODO: Maybe async w/delegate?
     func getFavoritedBooks(_ completion: @escaping ([BookModel]) -> Void) {
         guard let userID = appDel.userID else { return completion([]) }
         let docRef = firestore.collection("Favorites").document("Users").collection(userID)
