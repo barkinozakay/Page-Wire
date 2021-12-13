@@ -112,19 +112,20 @@ class FavoriteBooksManager {
 //                print("Book with isbn: 123 saved to Realtime Database successfully.")
 //            }
 //        }
-        var counter = 0
-        for book in books {
-            guard counter <= 10 else { return }
-            guard let bookData = book.dictionary else { continue }
-            let isbn = book.isbn.description
-            realtimeDatabase.child("Books").child("\(isbn)").setValue(bookData) { error, databaseRef in
-                if let error = error {
-                    print("Data could not be saved: \(error).")
-                } else {
-                    print("Book with isbn: \(isbn) saved to Realtime Database successfully.")
-                }
-                counter += 1
-            }
-        }
+        
+//        var counter = 0
+//        for book in books {
+//            guard counter <= 10 else { return }
+//            guard let bookData = book.dictionary else { continue }
+//            let isbn = book.isbn.description
+//            realtimeDatabase.child("Books").child("\(isbn)").setValue(bookData) { error, databaseRef in
+//                if let error = error {
+//                    print("Data could not be saved: \(error).")
+//                } else {
+//                    print("Book with isbn: \(isbn) saved to Realtime Database successfully.")
+//                }
+//                counter += 1
+//            }
+//        }
     }
 }

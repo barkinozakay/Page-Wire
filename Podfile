@@ -4,4 +4,5 @@ inhibit_all_warnings!
 
 target 'Page Wire' do
   pod 'netfox'
+  pod 'Hero'
 end

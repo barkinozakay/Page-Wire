@@ -8,13 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		C4C07D134790DA4BB6E9CFF3 /* Pods_Page_Wire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCF1937C3D9C00DD042177F /* Pods_Page_Wire.framework */; };
-		DD03245B275F688B0034F40A /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = DD03245A275F688B0034F40A /* Hero */; };
 		DD118438272CA9E9002EAD1C /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD118437272CA9E9002EAD1C /* SignInVC.swift */; };
 		DD273930260E556300266851 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27392F260E556300266851 /* AppDelegate.swift */; };
 		DD273932260E556300266851 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD273931260E556300266851 /* SceneDelegate.swift */; };
-		DD273937260E556300266851 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD273935260E556300266851 /* Main.storyboard */; };
 		DD273939260E556400266851 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD273938260E556400266851 /* Assets.xcassets */; };
-		DD27393C260E556400266851 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD27393A260E556400266851 /* LaunchScreen.storyboard */; };
 		DD30DA822614FDB700BE4BB5 /* DecodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30DA812614FDB700BE4BB5 /* DecodeHelper.swift */; };
 		DD30DA8C2614FE9300BE4BB5 /* BookModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30DA8B2614FE9300BE4BB5 /* BookModels.swift */; };
 		DD4351B22739A70200087C92 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4351B12739A70200087C92 /* Array+Extension.swift */; };
@@ -42,6 +39,8 @@
 		DD8D26C2275F40EA00E33DB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD8D26C1275F40EA00E33DB5 /* GoogleService-Info.plist */; };
 		DD914470264A90A5003C9D22 /* BookPricesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91446E264A90A5003C9D22 /* BookPricesTableViewCell.swift */; };
 		DD914471264A90A5003C9D22 /* BookPricesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD91446F264A90A5003C9D22 /* BookPricesTableViewCell.xib */; };
+		DD94E0DE2767CFB3006D9E2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD94E0DC2767CFB3006D9E2F /* LaunchScreen.storyboard */; };
+		DD94E0DF2767CFB3006D9E2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD94E0DD2767CFB3006D9E2F /* Main.storyboard */; };
 		DDA43F0A261513A000F41873 /* books.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA43F09261513A000F41873 /* books.json */; };
 		DDCDED5C2656F3E500687161 /* BookDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDED5B2656F3E500687161 /* BookDataViewModel.swift */; };
 		DDD8996A2758536F00853597 /* GoogleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD899692758536F00853597 /* GoogleManager.swift */; };
@@ -73,9 +72,7 @@
 		DD27392C260E556300266851 /* Page Wire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Page Wire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD27392F260E556300266851 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD273931260E556300266851 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DD273936260E556300266851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD273938260E556400266851 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DD27393B260E556400266851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD27393D260E556400266851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD30DA812614FDB700BE4BB5 /* DecodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeHelper.swift; sourceTree = "<group>"; };
 		DD30DA8B2614FE9300BE4BB5 /* BookModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModels.swift; sourceTree = "<group>"; };
@@ -89,6 +86,8 @@
 		DD8D26C1275F40EA00E33DB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD91446E264A90A5003C9D22 /* BookPricesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPricesTableViewCell.swift; sourceTree = "<group>"; };
 		DD91446F264A90A5003C9D22 /* BookPricesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookPricesTableViewCell.xib; sourceTree = "<group>"; };
+		DD94E0DC2767CFB3006D9E2F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DD94E0DD2767CFB3006D9E2F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DDA43F09261513A000F41873 /* books.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = books.json; sourceTree = "<group>"; };
 		DDCDED5B2656F3E500687161 /* BookDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDataViewModel.swift; sourceTree = "<group>"; };
 		DDD899692758536F00853597 /* GoogleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleManager.swift; sourceTree = "<group>"; };
@@ -119,7 +118,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD03245B275F688B0034F40A /* Hero in Frameworks */,
 				DD8C0710275EB5CA002777C2 /* FirebasePerformance in Frameworks */,
 				DD8C0704275EB5CA002777C2 /* FirebaseAppCheck in Frameworks */,
 				DD8C0702275EB5CA002777C2 /* FirebaseAnalytics in Frameworks */,
@@ -188,7 +186,8 @@
 		DD27392E260E556300266851 /* Page Wire */ = {
 			isa = PBXGroup;
 			children = (
-				DD273935260E556300266851 /* Main.storyboard */,
+				DD94E0DC2767CFB3006D9E2F /* LaunchScreen.storyboard */,
+				DD94E0DD2767CFB3006D9E2F /* Main.storyboard */,
 				DDFE7085260FAF1D00138959 /* MainVC.swift */,
 				DDD8996B2758608E00853597 /* Splash */,
 				DD118434272CA953002EAD1C /* SignIn */,
@@ -199,7 +198,6 @@
 				DD273938260E556400266851 /* Assets.xcassets */,
 				DD27392F260E556300266851 /* AppDelegate.swift */,
 				DD273931260E556300266851 /* SceneDelegate.swift */,
-				DD27393A260E556400266851 /* LaunchScreen.storyboard */,
 				DD27393D260E556400266851 /* Info.plist */,
 				DD8D26C1275F40EA00E33DB5 /* GoogleService-Info.plist */,
 				DD521C8C2610F49100493A37 /* CustomAnimations */,
@@ -389,6 +387,7 @@
 				DD273929260E556300266851 /* Frameworks */,
 				DD27392A260E556300266851 /* Resources */,
 				68CAC09649843C59B488637A /* [CP] Embed Pods Frameworks */,
+				DDF5EE662767CC8000947BD0 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -411,7 +410,6 @@
 				DD8C070F275EB5CA002777C2 /* FirebasePerformance */,
 				DD8C0711275EB5CA002777C2 /* FirebaseStorage */,
 				DD8C0714275EC5A6002777C2 /* Nuke */,
-				DD03245A275F688B0034F40A /* Hero */,
 			);
 			productName = "Book Discovery";
 			productReference = DD27392C260E556300266851 /* Page Wire.app */;
@@ -448,7 +446,6 @@
 				DD8C06FD275EB4F2002777C2 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				DD8C0700275EB5CA002777C2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				DD8C0713275EC5A6002777C2 /* XCRemoteSwiftPackageReference "Nuke" */,
-				DD032459275F688B0034F40A /* XCRemoteSwiftPackageReference "Hero" */,
 			);
 			productRefGroup = DD27392D260E556300266851 /* Products */;
 			projectDirPath = "";
@@ -467,13 +464,13 @@
 				DD914471264A90A5003C9D22 /* BookPricesTableViewCell.xib in Resources */,
 				DDDE6CB92649D83400291C0F /* BookDetailsTableViewCell.xib in Resources */,
 				DDD8997B2758781900853597 /* BookResultsTableViewCell.xib in Resources */,
+				DD94E0DE2767CFB3006D9E2F /* LaunchScreen.storyboard in Resources */,
 				DDA43F0A261513A000F41873 /* books.json in Resources */,
+				DD94E0DF2767CFB3006D9E2F /* Main.storyboard in Resources */,
 				DDD899772758738600853597 /* BookResultsCollectionViewCell.xib in Resources */,
-				DD27393C260E556400266851 /* LaunchScreen.storyboard in Resources */,
 				DD273939260E556400266851 /* Assets.xcassets in Resources */,
 				DD4351C72739EB5000087C92 /* CustomPickerView.xib in Resources */,
 				DD8D26C2275F40EA00E33DB5 /* GoogleService-Info.plist in Resources */,
-				DD273937260E556300266851 /* Main.storyboard in Resources */,
 				DD521CA02610FE0000493A37 /* searching_books_animation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +517,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DDF5EE662767CC8000947BD0 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -560,25 +577,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		DD273935260E556300266851 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DD273936260E556300266851 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		DD27393A260E556400266851 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DD27393B260E556400266851 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DD273954260E556400266851 /* Debug */ = {
@@ -765,14 +763,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DD032459275F688B0034F40A /* XCRemoteSwiftPackageReference "Hero" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/HeroTransitions/Hero.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		DD8C06F1275EB42D002777C2 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup";
@@ -832,11 +822,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DD03245A275F688B0034F40A /* Hero */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DD032459275F688B0034F40A /* XCRemoteSwiftPackageReference "Hero" */;
-			productName = Hero;
-		};
 		DD8C06F2275EB42D002777C2 /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DD8C06F1275EB42D002777C2 /* XCRemoteSwiftPackageReference "SwiftSoup" */;

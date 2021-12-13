@@ -35,7 +35,9 @@ class MainVC: UIViewController {
 extension MainVC {
     
     @IBAction func searchButtonAction(_ sender: Any) {
-        searchBooks()
+        let numbers = [0]
+        let _ = numbers[1]
+        //searchBooks()
     }
     
     @IBAction func scanBarcodeAction(_ sender: Any) {
@@ -68,7 +70,7 @@ extension MainVC {
                 BookManager.shared.bookList = response.books
                 self.books = response.books.unique { $0.name }
                 // TODO: IDK about the next line.
-                FavoriteBooksManager.shared.appendAllBooksToFirebase(self.books)
+                //FavoriteBooksManager.shared.appendAllBooksToFirebase(self.books)
             }
         }
     }

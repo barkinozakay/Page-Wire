@@ -1,16 +1,20 @@
 PODS:
+  - Hero (1.6.1)
   - netfox (1.19.0)
 
 DEPENDENCIES:
+  - Hero
   - netfox
 
 SPEC REPOS:
   trunk:
+    - Hero
     - netfox
 
 SPEC CHECKSUMS:
+  Hero: 215865ba3ae41dd9bb08cd6c60a645529c6fc94b
   netfox: efeec1d23406df6cd605212f09a40957bb5654eb
 
-PODFILE CHECKSUM: 854b0d710a85308f7fdbcf328ff185f4a52fc510
+PODFILE CHECKSUM: e7712d1fa04e7b6dd8100324662c75f4f33c5033
 
 COCOAPODS: 1.11.2

@@ -7,109 +7,245 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0823AAFC65E6ACD256C2B030CC08215E /* NFXLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B25C48383B9EFEA8D538E15BA08E0169 /* NFXLoader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		0A0A8075D1C6462A72E5056CEA1C8A46 /* NFXHelper_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002D31DBCECF94B63708538C62DC37AE /* NFXHelper_iOS.swift */; };
-		1485F6C024841999765DF5E8653E74C9 /* NFXSettingsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C947649E5E4399382934BFD39C011 /* NFXSettingsController_iOS.swift */; };
-		232A2E1E4E7442E50E26BA57F3D1CC41 /* NFXRawBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F2B37C813A9DEA4881054ABCA9BE3E /* NFXRawBodyDetailsController.swift */; };
-		23CEF0818515C8E850B267C68EA76FF6 /* NFXSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2747F9CB54942955A0D32AF33CDFE84 /* NFXSettingsController.swift */; };
-		294C9893223AD7292C6C9A187F8A97C3 /* netfox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B51C4703D24C6D66B827494DFE3C90 /* netfox-dummy.m */; };
-		2B12953FEB685E957006EC69E1B34FCB /* NFXStatisticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6937F0635470FB937764A82616BFF675 /* NFXStatisticsController.swift */; };
-		2C254204FD57642AE3FAD785319C891B /* NFXWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A4462915D41483DCBA2B4450A28212 /* NFXWindowController.swift */; };
-		41585A86FF570ADF5DD8B90F9F24A60D /* NFXGenericController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F9D8198B7162F60286D1483B48BF5B /* NFXGenericController.swift */; };
-		465F63904BEB5ABCB90E983BB7460C3E /* NFXDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D407A89CD653383B0B3C1014396FCF4 /* NFXDetailsController.swift */; };
-		48F06CB06276E6B594CC4F1614D8A503 /* NFXListController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAABCE94DC6FA9AD46EF9ADD2065540F /* NFXListController_iOS.swift */; };
-		4A2458C436514FC077F1F1E16527DEAF /* Pods-Page Wire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B8877811A77F9075F7D37F2392BC746A /* Pods-Page Wire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4D3A10ED2B5B96BE5351D26FFA303EB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		55F0A92A9DC85C13AE52555FF382BA59 /* NFXURLDetailsControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E77D08A02D2D5BDC3E78B8A579F3E6 /* NFXURLDetailsControllerViewController.swift */; };
-		6D44B9205717FEC2F64AD9F59CF483D9 /* NFXInfoController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FF706366598F6987C74A0D352E04D0 /* NFXInfoController_iOS.swift */; };
-		7E16D5A22CA03938E5831DD595B1343C /* NFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B14D4C37F1313FCF25C20C817A92A4 /* NFX.swift */; };
-		91E767C2411F565DED32A7D6D6B6B8FC /* NFXImageBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79DBC76B359FFC860E0EAD95438A3BB /* NFXImageBodyDetailsController.swift */; };
-		967B1D2843E2E1DC339D2C32A47E2B38 /* NFXAuthenticationChallengeSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC19EFF8884CDD70ECEF2676BBFCAB7 /* NFXAuthenticationChallengeSender.swift */; };
-		987C1913CF2608250BE712322225116D /* NFXInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5404E3D4631A53777DC2C9A4544A893 /* NFXInfoController.swift */; };
-		9D1BC86F0790DDEE4302D4A2EA90F6F7 /* NFXProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A09DC84389E3EE97C353EE0F9127D /* NFXProtocol.swift */; };
-		A169AEC404AE1E06FD7BC023EBC15B9F /* netfox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30F4D082C3FD175DA1EE7394A2D9A871 /* netfox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ABC442AE104F7BEF1579E0EE7426CBA9 /* NFXListCell_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6951B8EA83E657B21905E9AE83B96E96 /* NFXListCell_iOS.swift */; };
-		ADF85B783BB6D56B8A1BC55D400ED152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		AE8E034C0383A855C53E2E3CC46CDA70 /* NFXHTTPModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD9FCC41D2287B9EB0ECD6924162A7F /* NFXHTTPModelManager.swift */; };
-		B13659A4F929AA46B77DB752AA9F3898 /* NFXDetailsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAED54915D42057F2E1E8AB3B0D7DCF /* NFXDetailsController_iOS.swift */; };
-		B4F64508D4B3D43617842BD935777D96 /* NFXHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B997BE1C254C8E6CE4ED9240383CEA6 /* NFXHelper.swift */; };
-		B735942FAFBD3F252143606D3B13759E /* NFXGenericBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87832D1AA533A3C2CE2AD8C9FE30C6C /* NFXGenericBodyDetailsController.swift */; };
-		B88D2385036C996C9310C0AA6CF478B5 /* NFXListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F00C7420418359B758B505C9CC31AE4 /* NFXListController.swift */; };
-		C278AC573D2FD354AE3214DF89BDD29A /* NFXHTTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313D62CA517CCB176496B2E5751316BF /* NFXHTTPModel.swift */; };
-		CD5A6FA43A4D20A3703CB480894E836A /* Pods-Page Wire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 89509AAC27C3F2C659467D97FB0CA7F5 /* Pods-Page Wire-dummy.m */; };
-		E965413D1D186E17969A068EE6AE520B /* NFXAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2F4CED3C5E35BA4AC3D2B501587D1E /* NFXAssets.swift */; };
-		F9881FAB42B1193AA2A3001EFF8ABB73 /* NFXStatisticsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E51521D5FD74906CCD5ABD8617E2078 /* NFXStatisticsController_iOS.swift */; };
-		F9A3B94B28AA98639B4E0F545B3B456A /* NFXConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A23463BCB337239BDEDD9C8603227C /* NFXConstants.swift */; };
-		FF5F759F9348B0DB687B5AA207A5AD8B /* NFXLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 56C202794EF7A4A3ECF3C33E5892F182 /* NFXLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0153415516ADD1D706B173597E8D15DE /* CAMediaTimingFunction+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422E50E5CBC3E50E1736432020613DEF /* CAMediaTimingFunction+Hero.swift */; };
+		03494FEF50DC7E3256E1D508D51458CC /* Hero-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 61A3C72A369108D1270FAA548F5EC243 /* Hero-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0823AAFC65E6ACD256C2B030CC08215E /* NFXLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = A38BB3FCDCEA9FA22CE7B416671D9211 /* NFXLoader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0A0A8075D1C6462A72E5056CEA1C8A46 /* NFXHelper_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10929A4482CB58D4C1AA3EC022496C31 /* NFXHelper_iOS.swift */; };
+		1485F6C024841999765DF5E8653E74C9 /* NFXSettingsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E06096C988FE375F1F63DF517E54F /* NFXSettingsController_iOS.swift */; };
+		14F874BF94A20C6784C5ED78061DFDF4 /* HeroTransition+CustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94B312542701DD61A6BBBA336D732A1 /* HeroTransition+CustomTransition.swift */; };
+		151482556525CEF81110CC0A9CA9E1E0 /* HeroDefaultAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC33329EBFAE487765ED43786EDE95 /* HeroDefaultAnimator.swift */; };
+		22CEEBC7570EB19BD931797B0D740C89 /* HeroTransition+Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FED09C2FA87ACEF295951070AC098F3 /* HeroTransition+Start.swift */; };
+		232A2E1E4E7442E50E26BA57F3D1CC41 /* NFXRawBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40C792CF478234F74AD45EB152EC9D /* NFXRawBodyDetailsController.swift */; };
+		239C0A6B4FACB1A42ADFC078BCB90300 /* HeroTransition+UITabBarControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AED494FB900855C823BF104DC373600 /* HeroTransition+UITabBarControllerDelegate.swift */; };
+		23ABF11371E72754AB4C3A385C28FB35 /* Pods-Page Wire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B8877811A77F9075F7D37F2392BC746A /* Pods-Page Wire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23CEF0818515C8E850B267C68EA76FF6 /* NFXSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEB1B58181C0C3D3EC38C04A908EED /* NFXSettingsController.swift */; };
+		24580BEC54DF3EB1A69034AB26B5E684 /* HeroModifier+HeroStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E8FCD56F543FEEE601D48D852DECF2 /* HeroModifier+HeroStringConvertible.swift */; };
+		27355974072F5545C30CDA294506D62C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD9AC0426072933256DCBD071CD50BA /* UIKit.framework */; };
+		290CD7347996289C96A27A90A8372410 /* CG+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C80B5AC0B982AEF6757DBCF7A3CA19 /* CG+Hero.swift */; };
+		294C9893223AD7292C6C9A187F8A97C3 /* netfox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 606C63E7637A107507410E99532D8107 /* netfox-dummy.m */; };
+		2B12953FEB685E957006EC69E1B34FCB /* NFXStatisticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE218BAA66A4627179CE1A854C32803 /* NFXStatisticsController.swift */; };
+		2C254204FD57642AE3FAD785319C891B /* NFXWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1335ABF3D7D5DC3FD657B72136432611 /* NFXWindowController.swift */; };
+		2F1E6A6C4948882F43A6665788765278 /* MatchPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E994BFC7E9272658438FD39ED007F49D /* MatchPreprocessor.swift */; };
+		306FF02477BFE1D4104A4EAAD5A35F3C /* HeroViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C7A7E3452C9AF43862A2E6EDE387B /* HeroViewControllerDelegate.swift */; };
+		34F20820D5F3E08CA3C6BE59E554BADF /* HeroDebugPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0601F710746E6FAA9EAE4E2F86A6BC57 /* HeroDebugPlugin.swift */; };
+		36B3BF9B3AA60BCA8BA0D1C8869505D7 /* HeroModifier+Advanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FE3210726E7B2614AE953215AD2B4 /* HeroModifier+Advanced.swift */; };
+		3BD418D01ECA25B9748E4B5B91EA2180 /* HeroTransition+Interactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7185D7DBA71EF2DC554F89BA1026B39F /* HeroTransition+Interactive.swift */; };
+		41585A86FF570ADF5DD8B90F9F24A60D /* NFXGenericController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24959CE06CDC0B1AF236CDBBF3FA6B49 /* NFXGenericController.swift */; };
+		465F63904BEB5ABCB90E983BB7460C3E /* NFXDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778D6FBFF904D589E8844D5674615289 /* NFXDetailsController.swift */; };
+		48F06CB06276E6B594CC4F1614D8A503 /* NFXListController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C851C28C06E73C97A23DB76F51A20D60 /* NFXListController_iOS.swift */; };
+		4C4CA750821B7AB5D77382FA15318259 /* UIColor+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3EB0DABDAA1D48C4135F40716477CF /* UIColor+HexString.swift */; };
+		4D3A10ED2B5B96BE5351D26FFA303EB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B4A357A9E84FBAC4505EFF2873D26B /* Foundation.framework */; };
+		5288B64C5895E18429E7C6F94E6A1091 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B4A357A9E84FBAC4505EFF2873D26B /* Foundation.framework */; };
+		55F0A92A9DC85C13AE52555FF382BA59 /* NFXURLDetailsControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2B364A31B4F4BBDBB4D473973D3D77 /* NFXURLDetailsControllerViewController.swift */; };
+		5D6A6933FF63F86D2B8C7534315D484C /* HeroCoreAnimationViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931055CD4477FC547BD37F5BF2F2BFB7 /* HeroCoreAnimationViewContext.swift */; };
+		6C9C33E5CF926D0E3BAA5E89A003A2F1 /* HeroTransition+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A451A4A09CDA2F87A3CA7958A798B3C /* HeroTransition+Animate.swift */; };
+		6D44B9205717FEC2F64AD9F59CF483D9 /* NFXInfoController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C497FFB4900B6FF6BAF112107406C181 /* NFXInfoController_iOS.swift */; };
+		71438073BBD2C6C1D77748E56D6C0F9B /* HeroProgressRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EB5D32AFD913CCC87E506AABAF66EE /* HeroProgressRunner.swift */; };
+		72CEB6C018ED66F705CE583804121DF9 /* Locale+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1567E07A5B83F0DEBCB610302C953E20 /* Locale+Hero.swift */; };
+		7987894C6A2A1420E9AC7ABBD01A1F3C /* HeroTransition+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED596380C7BB9F2E5C01979469038D /* HeroTransition+UIViewControllerTransitioningDelegate.swift */; };
+		7CC0BDDB81459D55B547C953AF175148 /* Hero-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 822EB16803EF771A31B4D4194B99B805 /* Hero-dummy.m */; };
+		7E16D5A22CA03938E5831DD595B1343C /* NFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA592A9D7119AE76F0230FFF1445EE1 /* NFX.swift */; };
+		7E3B00774A4B94D728A983A67CE45669 /* CascadePreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D80068DD94D26DB8C3FFF5CD03FE8DA /* CascadePreprocessor.swift */; };
+		7E8E54FF0A03B7BADEBF22C10AF9ABB1 /* HeroDebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A5B9B234F39BF1CFB7E7EBA914B957 /* HeroDebugView.swift */; };
+		84D2F28E4B4CBEB043380B30CBE3EAD9 /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744EC57F48CCCE69A21B405772BCFE4 /* SwiftSupport.swift */; };
+		8E011223B84081D7759DDD9D86113C72 /* HeroTransition+Complete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969663495D80EAF3884167D7C59CE6F /* HeroTransition+Complete.swift */; };
+		91E767C2411F565DED32A7D6D6B6B8FC /* NFXImageBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4CEBB773E05F63919AF74F24BD6E8F /* NFXImageBodyDetailsController.swift */; };
+		945B9DBBE9F52087055A2A844976A4D8 /* Nodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB31892445D40EF8CE66E44FC35FB8B3 /* Nodes.swift */; };
+		94611C229D3F5539A011373D00693D82 /* DispatchQueue+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118AC4080238C2546FC5FF1B6FC86933 /* DispatchQueue+Hero.swift */; };
+		95CD2FB157934A9AF9553A6DD32EE76B /* DefaultAnimationPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0FA00D261FD624BE3A2ABD8D041C6 /* DefaultAnimationPreprocessor.swift */; };
+		967B1D2843E2E1DC339D2C32A47E2B38 /* NFXAuthenticationChallengeSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD40F4F6566A4265FDFFF3F5CFC0418 /* NFXAuthenticationChallengeSender.swift */; };
+		987C1913CF2608250BE712322225116D /* NFXInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7027899D2757B83E881CD50F3C7EEC /* NFXInfoController.swift */; };
+		9D1BC86F0790DDEE4302D4A2EA90F6F7 /* NFXProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EE3CD352933787F882B8CB84328F50 /* NFXProtocol.swift */; };
+		A0B0D60C0789D86925FBD22DB9E9F76A /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCB2088FCEFACD783C0CD4F2AE3FB2 /* Parser.swift */; };
+		A169AEC404AE1E06FD7BC023EBC15B9F /* netfox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 017018AD998658A82EE125A10C8EB8F7 /* netfox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1CE141B1C185FB73E7EDF61A2A6E42F /* HeroTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A94F6D4BB98D89A7C91A461FD032C /* HeroTypes.swift */; };
+		A7DB847A513187E25ED1F299E10EF9C4 /* HeroTransition+UINavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8604F26BF66D848EDDB3EDD2F38B4203 /* HeroTransition+UINavigationControllerDelegate.swift */; };
+		ABC06AC2D319CE550CDB3C31CD23F759 /* HeroTargetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA62FC57907D14889AC4E63B1417B5 /* HeroTargetState.swift */; };
+		ABC442AE104F7BEF1579E0EE7426CBA9 /* NFXListCell_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D89BE997B70794C16B1B0541E0EE93 /* NFXListCell_iOS.swift */; };
+		AE311AF2F53F908249E96319F3688927 /* HeroStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26225C12D8F0D94456F23502CEC20D31 /* HeroStringConvertible.swift */; };
+		AE8E034C0383A855C53E2E3CC46CDA70 /* NFXHTTPModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E336381634117CF5454B5AC492A2C28 /* NFXHTTPModelManager.swift */; };
+		B13659A4F929AA46B77DB752AA9F3898 /* NFXDetailsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8AD15A8CF0082D9D987F395D348FAA /* NFXDetailsController_iOS.swift */; };
+		B1883A0E868F7E4D81930F39C0E5B1DC /* HeroTransitionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D354DE2DD9A0B1B4238D04F021FB258 /* HeroTransitionState.swift */; };
+		B4F64508D4B3D43617842BD935777D96 /* NFXHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274FB92E222852E79F334C31B55F7C8 /* NFXHelper.swift */; };
+		B58F2A64CB7DE3D0A6D0BCD6B1D0085F /* SourcePreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026C276AED9E82C0A5DB1371317DDC0 /* SourcePreprocessor.swift */; };
+		B6AA345C6C1AD7C15E59CA69355FEACB /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511D70D163FCE2E3AE8CE1CC30733DC0 /* Lexer.swift */; };
+		B735942FAFBD3F252143606D3B13759E /* NFXGenericBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A00789ADFAC18FEF1CC08FF896CA7EF /* NFXGenericBodyDetailsController.swift */; };
+		B88D2385036C996C9310C0AA6CF478B5 /* NFXListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C52B7019A8FD574AAF7CA36C599A00 /* NFXListController.swift */; };
+		BCE9E4B20B27631B7AA3B0CC6CB0E6B4 /* CALayer+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3C5F1AF433E88D6F5274D0479E50C /* CALayer+Hero.swift */; };
+		C09CE221D9FB8CFFAD7132853DDB7AF2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C830FF7C3F0EB792F7F0D41B08BE65 /* QuartzCore.framework */; };
+		C278AC573D2FD354AE3214DF89BDD29A /* NFXHTTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5595B29AF7CAFC038F146009D1600B14 /* NFXHTTPModel.swift */; };
+		C56A5F0000597F6706F6AFBBEE77FA6E /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327D01F62F125CAFB717209B5D43AF91 /* Regex.swift */; };
+		CB0AC15AA50B46C4B84FD40F2229F8C4 /* HeroPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D5DDFCFAC734BCDE71102AFF82D30B /* HeroPlugin.swift */; };
+		CD203F1B89EAE6EB96A1D3FDB5082D2B /* BasePreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AEEECC78938F5D4893E058A9E29F64 /* BasePreprocessor.swift */; };
+		CFB856AA712DF68446678D39DCD0EB71 /* HeroTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6993022A1DAB3AEF6BA667FF16EBA /* HeroTransition.swift */; };
+		D2167C7CA3BAEFCECA853BBB3F7D88DD /* ConditionalPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FA112AA5E772CB7062EF8011057C5C /* ConditionalPreprocessor.swift */; };
+		D286BC2C12C3C097ED2C5115C9AC772C /* HeroModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B560C996BCC4E73243872B9ACEE389FA /* HeroModifier.swift */; };
+		D4A3622FDF5C0940F36D2239B74F2077 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B4A357A9E84FBAC4505EFF2873D26B /* Foundation.framework */; };
+		D7278C7E94DC131BD1610F43076819BD /* HeroContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CAF8C187D23C4CA32C7A5D5FFC5153 /* HeroContext.swift */; };
+		D77A44871E466FE472DD738E43711B01 /* HeroAnimatorViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC65B86E68CBA6F0FC3FDBF35968B37 /* HeroAnimatorViewContext.swift */; };
+		D851519470641B81AE42885C8949EE71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C1F7D15DF1E2C8B980BC1B49D38419 /* CoreGraphics.framework */; };
+		D85EF87FE963C92FF9D30B0A79CB2625 /* UIKit+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DF4164BCB1EE09FD2347EA4C2E2752 /* UIKit+Hero.swift */; };
+		E62691FC18B7E41760F2EC4B3FDCB259 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95568154064CE960195D45B95A17D3E7 /* CoreMedia.framework */; };
+		E724F3BB81DD7C9E512A22072DE751B4 /* HeroViewPropertyViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C101F85BE4CD5512B2B3BAC65BB7403 /* HeroViewPropertyViewContext.swift */; };
+		E965413D1D186E17969A068EE6AE520B /* NFXAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCC7CB40E0338162162A77DFFE0C1D /* NFXAssets.swift */; };
+		EB00CE07C32B67FE1E78BE0875CFA875 /* HeroCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA624D17EB200547168E14950F3E5B4 /* HeroCompatible.swift */; };
+		EC7583E16BEEAE8811A5DE6FD96960F8 /* Pods-Page Wire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 89509AAC27C3F2C659467D97FB0CA7F5 /* Pods-Page Wire-dummy.m */; };
+		F1A085326179C7F156053D6BF35B620B /* UIViewController+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2166C0F17946F71C053193177777F2BE /* UIViewController+Hero.swift */; };
+		F9881FAB42B1193AA2A3001EFF8ABB73 /* NFXStatisticsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F84AE65B22AD7ABF3073BEB226B100 /* NFXStatisticsController_iOS.swift */; };
+		F9A3B94B28AA98639B4E0F545B3B456A /* NFXConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FB0DAB33BAABD75C3321D13F94479C /* NFXConstants.swift */; };
+		FB5225F3940E5186566D5BDD47C30BD1 /* Array+HeroModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313C942F9A57A18B1C020652118CB7A /* Array+HeroModifier.swift */; };
+		FCA8E9B6166E2349ADF7D4A53C1E904E /* UIView+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2351B23973198CC534B6F03D64A776 /* UIView+Hero.swift */; };
+		FE6F1C6D1A1C224FD5EED4FAFFB19480 /* IgnoreSubviewModifiersPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F94153B10AECCE5068C48FD94C48B6 /* IgnoreSubviewModifiersPreprocessor.swift */; };
+		FF5F759F9348B0DB687B5AA207A5AD8B /* NFXLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = ABE57033980453E8401326BBD9A5F989 /* NFXLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0F3CB23441BDA7BF3FD4B560B7169589 /* PBXContainerItemProxy */ = {
+		72537AF809AC4BB4698792B97AE74BA4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 33426EFE1931E100B59ABF41FD14377D;
 			remoteInfo = netfox;
 		};
+		A9377532C27BC004F999BA61A5644A04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3893AEA4D7DBB9A086E889FC469132D;
+			remoteInfo = Hero;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		002D31DBCECF94B63708538C62DC37AE /* NFXHelper_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHelper_iOS.swift; path = netfox/iOS/NFXHelper_iOS.swift; sourceTree = "<group>"; };
-		0D44B29103A12DE33D7CB5C7B1AB2A29 /* netfox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = netfox.modulemap; sourceTree = "<group>"; };
-		14B14D4C37F1313FCF25C20C817A92A4 /* NFX.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFX.swift; path = netfox/Core/NFX.swift; sourceTree = "<group>"; };
+		017018AD998658A82EE125A10C8EB8F7 /* netfox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "netfox-umbrella.h"; sourceTree = "<group>"; };
+		02A5B9B234F39BF1CFB7E7EBA914B957 /* HeroDebugView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroDebugView.swift; path = "Sources/Debug Plugin/HeroDebugView.swift"; sourceTree = "<group>"; };
+		0601F710746E6FAA9EAE4E2F86A6BC57 /* HeroDebugPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroDebugPlugin.swift; path = "Sources/Debug Plugin/HeroDebugPlugin.swift"; sourceTree = "<group>"; };
+		0AE218BAA66A4627179CE1A854C32803 /* NFXStatisticsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXStatisticsController.swift; path = netfox/Core/NFXStatisticsController.swift; sourceTree = "<group>"; };
+		0C101F85BE4CD5512B2B3BAC65BB7403 /* HeroViewPropertyViewContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroViewPropertyViewContext.swift; path = Sources/Animator/HeroViewPropertyViewContext.swift; sourceTree = "<group>"; };
+		10929A4482CB58D4C1AA3EC022496C31 /* NFXHelper_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHelper_iOS.swift; path = netfox/iOS/NFXHelper_iOS.swift; sourceTree = "<group>"; };
+		118AC4080238C2546FC5FF1B6FC86933 /* DispatchQueue+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Hero.swift"; path = "Sources/Extensions/DispatchQueue+Hero.swift"; sourceTree = "<group>"; };
+		1335ABF3D7D5DC3FD657B72136432611 /* NFXWindowController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXWindowController.swift; path = netfox/Core/NFXWindowController.swift; sourceTree = "<group>"; };
+		13E778F4B833EE5D7ABE882406A8215E /* Hero */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Hero; path = Hero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1567E07A5B83F0DEBCB610302C953E20 /* Locale+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Locale+Hero.swift"; path = "Sources/Extensions/Locale+Hero.swift"; sourceTree = "<group>"; };
 		16996D101A8E9D0967C90FE1C2019F24 /* Pods-Page Wire-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Page Wire-acknowledgements.plist"; sourceTree = "<group>"; };
-		19F2B37C813A9DEA4881054ABCA9BE3E /* NFXRawBodyDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXRawBodyDetailsController.swift; path = netfox/Core/NFXRawBodyDetailsController.swift; sourceTree = "<group>"; };
-		22FF706366598F6987C74A0D352E04D0 /* NFXInfoController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXInfoController_iOS.swift; path = netfox/iOS/NFXInfoController_iOS.swift; sourceTree = "<group>"; };
-		2DD9FCC41D2287B9EB0ECD6924162A7F /* NFXHTTPModelManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHTTPModelManager.swift; path = netfox/Core/NFXHTTPModelManager.swift; sourceTree = "<group>"; };
-		30F4D082C3FD175DA1EE7394A2D9A871 /* netfox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "netfox-umbrella.h"; sourceTree = "<group>"; };
-		313D62CA517CCB176496B2E5751316BF /* NFXHTTPModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHTTPModel.swift; path = netfox/Core/NFXHTTPModel.swift; sourceTree = "<group>"; };
-		37E77D08A02D2D5BDC3E78B8A579F3E6 /* NFXURLDetailsControllerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXURLDetailsControllerViewController.swift; path = netfox/iOS/NFXURLDetailsControllerViewController.swift; sourceTree = "<group>"; };
-		439A09DC84389E3EE97C353EE0F9127D /* NFXProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXProtocol.swift; path = netfox/Core/NFXProtocol.swift; sourceTree = "<group>"; };
-		4B997BE1C254C8E6CE4ED9240383CEA6 /* NFXHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHelper.swift; path = netfox/Core/NFXHelper.swift; sourceTree = "<group>"; };
+		1AE0FA00D261FD624BE3A2ABD8D041C6 /* DefaultAnimationPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultAnimationPreprocessor.swift; path = Sources/Preprocessors/DefaultAnimationPreprocessor.swift; sourceTree = "<group>"; };
+		1CC65B86E68CBA6F0FC3FDBF35968B37 /* HeroAnimatorViewContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroAnimatorViewContext.swift; path = Sources/Animator/HeroAnimatorViewContext.swift; sourceTree = "<group>"; };
+		1E336381634117CF5454B5AC492A2C28 /* NFXHTTPModelManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHTTPModelManager.swift; path = netfox/Core/NFXHTTPModelManager.swift; sourceTree = "<group>"; };
+		1E40C792CF478234F74AD45EB152EC9D /* NFXRawBodyDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXRawBodyDetailsController.swift; path = netfox/Core/NFXRawBodyDetailsController.swift; sourceTree = "<group>"; };
+		20C500A22501590115EA503F3B0A4FF7 /* netfox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = netfox.release.xcconfig; sourceTree = "<group>"; };
+		2166C0F17946F71C053193177777F2BE /* UIViewController+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Hero.swift"; path = "Sources/Extensions/UIViewController+Hero.swift"; sourceTree = "<group>"; };
+		2313C942F9A57A18B1C020652118CB7A /* Array+HeroModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+HeroModifier.swift"; path = "Sources/Extensions/Array+HeroModifier.swift"; sourceTree = "<group>"; };
+		24959CE06CDC0B1AF236CDBBF3FA6B49 /* NFXGenericController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXGenericController.swift; path = netfox/Core/NFXGenericController.swift; sourceTree = "<group>"; };
+		26225C12D8F0D94456F23502CEC20D31 /* HeroStringConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroStringConvertible.swift; path = Sources/Parser/HeroStringConvertible.swift; sourceTree = "<group>"; };
+		2969663495D80EAF3884167D7C59CE6F /* HeroTransition+Complete.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+Complete.swift"; path = "Sources/Transition/HeroTransition+Complete.swift"; sourceTree = "<group>"; };
+		2BA592A9D7119AE76F0230FFF1445EE1 /* NFX.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFX.swift; path = netfox/Core/NFX.swift; sourceTree = "<group>"; };
+		2C53C1152BCF62A494DC0ACC7410F681 /* netfox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = netfox.debug.xcconfig; sourceTree = "<group>"; };
+		3026C276AED9E82C0A5DB1371317DDC0 /* SourcePreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SourcePreprocessor.swift; path = Sources/Preprocessors/SourcePreprocessor.swift; sourceTree = "<group>"; };
+		327D01F62F125CAFB717209B5D43AF91 /* Regex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Regex.swift; path = Sources/Parser/Regex.swift; sourceTree = "<group>"; };
+		41E4EB302DE41A9EE6E9AC9763C53E58 /* netfox-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "netfox-Info.plist"; sourceTree = "<group>"; };
+		422E50E5CBC3E50E1736432020613DEF /* CAMediaTimingFunction+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CAMediaTimingFunction+Hero.swift"; path = "Sources/Extensions/CAMediaTimingFunction+Hero.swift"; sourceTree = "<group>"; };
+		47C1F7D15DF1E2C8B980BC1B49D38419 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		4A3EB0DABDAA1D48C4135F40716477CF /* UIColor+HexString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+HexString.swift"; path = "Sources/Extensions/UIColor+HexString.swift"; sourceTree = "<group>"; };
+		4B4A94F6D4BB98D89A7C91A461FD032C /* HeroTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroTypes.swift; path = Sources/HeroTypes.swift; sourceTree = "<group>"; };
+		511D70D163FCE2E3AE8CE1CC30733DC0 /* Lexer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Lexer.swift; path = Sources/Parser/Lexer.swift; sourceTree = "<group>"; };
 		55937925242562F21DAD06B6AB23A3EB /* Pods-Page Wire-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Page Wire-frameworks.sh"; sourceTree = "<group>"; };
-		56C202794EF7A4A3ECF3C33E5892F182 /* NFXLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NFXLoader.h; path = netfox/Core/NFXLoader.h; sourceTree = "<group>"; };
-		5D407A89CD653383B0B3C1014396FCF4 /* NFXDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXDetailsController.swift; path = netfox/Core/NFXDetailsController.swift; sourceTree = "<group>"; };
-		5FAED54915D42057F2E1E8AB3B0D7DCF /* NFXDetailsController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXDetailsController_iOS.swift; path = netfox/iOS/NFXDetailsController_iOS.swift; sourceTree = "<group>"; };
-		6937F0635470FB937764A82616BFF675 /* NFXStatisticsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXStatisticsController.swift; path = netfox/Core/NFXStatisticsController.swift; sourceTree = "<group>"; };
-		6951B8EA83E657B21905E9AE83B96E96 /* NFXListCell_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXListCell_iOS.swift; path = netfox/iOS/NFXListCell_iOS.swift; sourceTree = "<group>"; };
-		6FF7D256FA0A1FD21F048230854145E1 /* netfox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = netfox.debug.xcconfig; sourceTree = "<group>"; };
+		5595B29AF7CAFC038F146009D1600B14 /* NFXHTTPModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHTTPModel.swift; path = netfox/Core/NFXHTTPModel.swift; sourceTree = "<group>"; };
+		5CBCC7CB40E0338162162A77DFFE0C1D /* NFXAssets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXAssets.swift; path = netfox/Core/NFXAssets.swift; sourceTree = "<group>"; };
+		5E2B364A31B4F4BBDBB4D473973D3D77 /* NFXURLDetailsControllerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXURLDetailsControllerViewController.swift; path = netfox/iOS/NFXURLDetailsControllerViewController.swift; sourceTree = "<group>"; };
+		606C63E7637A107507410E99532D8107 /* netfox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "netfox-dummy.m"; sourceTree = "<group>"; };
+		61A3C72A369108D1270FAA548F5EC243 /* Hero-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hero-umbrella.h"; sourceTree = "<group>"; };
+		61CAF8C187D23C4CA32C7A5D5FFC5153 /* HeroContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroContext.swift; path = Sources/HeroContext.swift; sourceTree = "<group>"; };
+		62FB0DAB33BAABD75C3321D13F94479C /* NFXConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXConstants.swift; path = netfox/Core/NFXConstants.swift; sourceTree = "<group>"; };
+		64F84AE65B22AD7ABF3073BEB226B100 /* NFXStatisticsController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXStatisticsController_iOS.swift; path = netfox/iOS/NFXStatisticsController_iOS.swift; sourceTree = "<group>"; };
+		6AED494FB900855C823BF104DC373600 /* HeroTransition+UITabBarControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+UITabBarControllerDelegate.swift"; path = "Sources/Transition/HeroTransition+UITabBarControllerDelegate.swift"; sourceTree = "<group>"; };
+		6B3C7A7E3452C9AF43862A2E6EDE387B /* HeroViewControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroViewControllerDelegate.swift; path = Sources/HeroViewControllerDelegate.swift; sourceTree = "<group>"; };
+		6DA624D17EB200547168E14950F3E5B4 /* HeroCompatible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroCompatible.swift; path = Sources/HeroCompatible.swift; sourceTree = "<group>"; };
+		6F4CEBB773E05F63919AF74F24BD6E8F /* NFXImageBodyDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXImageBodyDetailsController.swift; path = netfox/Core/NFXImageBodyDetailsController.swift; sourceTree = "<group>"; };
 		7125FAF4261A96B81791961518F533EF /* Pods-Page Wire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Page Wire.debug.xcconfig"; sourceTree = "<group>"; };
-		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		731B25E9333CC6804EF7623263943FD0 /* netfox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "netfox-prefix.pch"; sourceTree = "<group>"; };
-		7E51521D5FD74906CCD5ABD8617E2078 /* NFXStatisticsController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXStatisticsController_iOS.swift; path = netfox/iOS/NFXStatisticsController_iOS.swift; sourceTree = "<group>"; };
+		7185D7DBA71EF2DC554F89BA1026B39F /* HeroTransition+Interactive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+Interactive.swift"; path = "Sources/Transition/HeroTransition+Interactive.swift"; sourceTree = "<group>"; };
+		7274FB92E222852E79F334C31B55F7C8 /* NFXHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHelper.swift; path = netfox/Core/NFXHelper.swift; sourceTree = "<group>"; };
+		73F3C5F1AF433E88D6F5274D0479E50C /* CALayer+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CALayer+Hero.swift"; path = "Sources/Extensions/CALayer+Hero.swift"; sourceTree = "<group>"; };
+		74EE3CD352933787F882B8CB84328F50 /* NFXProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXProtocol.swift; path = netfox/Core/NFXProtocol.swift; sourceTree = "<group>"; };
+		778D6FBFF904D589E8844D5674615289 /* NFXDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXDetailsController.swift; path = netfox/Core/NFXDetailsController.swift; sourceTree = "<group>"; };
+		7A451A4A09CDA2F87A3CA7958A798B3C /* HeroTransition+Animate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+Animate.swift"; path = "Sources/Transition/HeroTransition+Animate.swift"; sourceTree = "<group>"; };
+		822EB16803EF771A31B4D4194B99B805 /* Hero-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Hero-dummy.m"; sourceTree = "<group>"; };
+		8604F26BF66D848EDDB3EDD2F38B4203 /* HeroTransition+UINavigationControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+UINavigationControllerDelegate.swift"; path = "Sources/Transition/HeroTransition+UINavigationControllerDelegate.swift"; sourceTree = "<group>"; };
+		86F94153B10AECCE5068C48FD94C48B6 /* IgnoreSubviewModifiersPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IgnoreSubviewModifiersPreprocessor.swift; path = Sources/Preprocessors/IgnoreSubviewModifiersPreprocessor.swift; sourceTree = "<group>"; };
 		874DA5BD0E61F83DA7A255AA0CC97C74 /* Pods-Page Wire-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Page Wire-acknowledgements.markdown"; sourceTree = "<group>"; };
 		89509AAC27C3F2C659467D97FB0CA7F5 /* Pods-Page Wire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Page Wire-dummy.m"; sourceTree = "<group>"; };
+		8A00789ADFAC18FEF1CC08FF896CA7EF /* NFXGenericBodyDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXGenericBodyDetailsController.swift; path = netfox/Core/NFXGenericBodyDetailsController.swift; sourceTree = "<group>"; };
 		8C4DED8774DBB7D531BFFB03436048B2 /* Pods-Page Wire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Page Wire-Info.plist"; sourceTree = "<group>"; };
+		8D80068DD94D26DB8C3FFF5CD03FE8DA /* CascadePreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CascadePreprocessor.swift; path = Sources/Preprocessors/CascadePreprocessor.swift; sourceTree = "<group>"; };
+		8FD40F4F6566A4265FDFFF3F5CFC0418 /* NFXAuthenticationChallengeSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXAuthenticationChallengeSender.swift; path = netfox/Core/NFXAuthenticationChallengeSender.swift; sourceTree = "<group>"; };
+		8FED09C2FA87ACEF295951070AC098F3 /* HeroTransition+Start.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+Start.swift"; path = "Sources/Transition/HeroTransition+Start.swift"; sourceTree = "<group>"; };
+		90FA112AA5E772CB7062EF8011057C5C /* ConditionalPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConditionalPreprocessor.swift; path = Sources/Preprocessors/ConditionalPreprocessor.swift; sourceTree = "<group>"; };
+		931055CD4477FC547BD37F5BF2F2BFB7 /* HeroCoreAnimationViewContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroCoreAnimationViewContext.swift; path = Sources/Animator/HeroCoreAnimationViewContext.swift; sourceTree = "<group>"; };
+		94E8FCD56F543FEEE601D48D852DECF2 /* HeroModifier+HeroStringConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroModifier+HeroStringConvertible.swift"; path = "Sources/HeroModifier+HeroStringConvertible.swift"; sourceTree = "<group>"; };
+		95568154064CE960195D45B95A17D3E7 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		966B6CC93DFAF5102C052CC0114E6D63 /* netfox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = netfox.modulemap; sourceTree = "<group>"; };
+		97988A56AB19F272D4683CB06A9E9968 /* Hero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Hero.release.xcconfig; sourceTree = "<group>"; };
+		99E2BF74631D117B802BC291FF0732A3 /* Hero.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Hero.modulemap; sourceTree = "<group>"; };
+		9D354DE2DD9A0B1B4238D04F021FB258 /* HeroTransitionState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroTransitionState.swift; path = Sources/Transition/HeroTransitionState.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F00C7420418359B758B505C9CC31AE4 /* NFXListController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXListController.swift; path = netfox/Core/NFXListController.swift; sourceTree = "<group>"; };
 		A19C74F35AE65E03FE81E2C921A60544 /* Pods-Page Wire */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Page Wire"; path = Pods_Page_Wire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2747F9CB54942955A0D32AF33CDFE84 /* NFXSettingsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXSettingsController.swift; path = netfox/Core/NFXSettingsController.swift; sourceTree = "<group>"; };
-		A6B51C4703D24C6D66B827494DFE3C90 /* netfox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "netfox-dummy.m"; sourceTree = "<group>"; };
-		B1C9950F2A279997ED8A88368D91461E /* netfox-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "netfox-Info.plist"; sourceTree = "<group>"; };
-		B25C48383B9EFEA8D538E15BA08E0169 /* NFXLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NFXLoader.m; path = netfox/Core/NFXLoader.m; sourceTree = "<group>"; };
+		A1EEB1B58181C0C3D3EC38C04A908EED /* NFXSettingsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXSettingsController.swift; path = netfox/Core/NFXSettingsController.swift; sourceTree = "<group>"; };
+		A38BB3FCDCEA9FA22CE7B416671D9211 /* NFXLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NFXLoader.m; path = netfox/Core/NFXLoader.m; sourceTree = "<group>"; };
+		A5C80B5AC0B982AEF6757DBCF7A3CA19 /* CG+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CG+Hero.swift"; path = "Sources/Extensions/CG+Hero.swift"; sourceTree = "<group>"; };
+		A744EC57F48CCCE69A21B405772BCFE4 /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = Sources/SwiftSupport.swift; sourceTree = "<group>"; };
+		ABE57033980453E8401326BBD9A5F989 /* NFXLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NFXLoader.h; path = netfox/Core/NFXLoader.h; sourceTree = "<group>"; };
+		ABEA62FC57907D14889AC4E63B1417B5 /* HeroTargetState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroTargetState.swift; path = Sources/HeroTargetState.swift; sourceTree = "<group>"; };
+		B2D5DDFCFAC734BCDE71102AFF82D30B /* HeroPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroPlugin.swift; path = Sources/HeroPlugin.swift; sourceTree = "<group>"; };
+		B560C996BCC4E73243872B9ACEE389FA /* HeroModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroModifier.swift; path = Sources/HeroModifier.swift; sourceTree = "<group>"; };
 		B59A4AF9BDB32FD2880DD058A5FBC7BD /* Pods-Page Wire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Page Wire.modulemap"; sourceTree = "<group>"; };
+		B7DF4164BCB1EE09FD2347EA4C2E2752 /* UIKit+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIKit+Hero.swift"; path = "Sources/Extensions/UIKit+Hero.swift"; sourceTree = "<group>"; };
 		B8877811A77F9075F7D37F2392BC746A /* Pods-Page Wire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Page Wire-umbrella.h"; sourceTree = "<group>"; };
 		BA34AA483B09335A42218A76DFA9D469 /* Pods-Page Wire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Page Wire.release.xcconfig"; sourceTree = "<group>"; };
-		BAABCE94DC6FA9AD46EF9ADD2065540F /* NFXListController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXListController_iOS.swift; path = netfox/iOS/NFXListController_iOS.swift; sourceTree = "<group>"; };
-		BBC19EFF8884CDD70ECEF2676BBFCAB7 /* NFXAuthenticationChallengeSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXAuthenticationChallengeSender.swift; path = netfox/Core/NFXAuthenticationChallengeSender.swift; sourceTree = "<group>"; };
-		BBE89CDA36426041D99C7E70FE9E05AE /* netfox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = netfox.release.xcconfig; sourceTree = "<group>"; };
+		BB7E06096C988FE375F1F63DF517E54F /* NFXSettingsController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXSettingsController_iOS.swift; path = netfox/iOS/NFXSettingsController_iOS.swift; sourceTree = "<group>"; };
 		BF1952EA0085A4CE36B4AE041BE60B82 /* netfox */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = netfox; path = netfox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C4A23463BCB337239BDEDD9C8603227C /* NFXConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXConstants.swift; path = netfox/Core/NFXConstants.swift; sourceTree = "<group>"; };
-		C59C947649E5E4399382934BFD39C011 /* NFXSettingsController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXSettingsController_iOS.swift; path = netfox/iOS/NFXSettingsController_iOS.swift; sourceTree = "<group>"; };
-		D9F9D8198B7162F60286D1483B48BF5B /* NFXGenericController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXGenericController.swift; path = netfox/Core/NFXGenericController.swift; sourceTree = "<group>"; };
-		DB2F4CED3C5E35BA4AC3D2B501587D1E /* NFXAssets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXAssets.swift; path = netfox/Core/NFXAssets.swift; sourceTree = "<group>"; };
-		E5404E3D4631A53777DC2C9A4544A893 /* NFXInfoController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXInfoController.swift; path = netfox/Core/NFXInfoController.swift; sourceTree = "<group>"; };
-		F5A4462915D41483DCBA2B4450A28212 /* NFXWindowController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXWindowController.swift; path = netfox/Core/NFXWindowController.swift; sourceTree = "<group>"; };
-		F79DBC76B359FFC860E0EAD95438A3BB /* NFXImageBodyDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXImageBodyDetailsController.swift; path = netfox/Core/NFXImageBodyDetailsController.swift; sourceTree = "<group>"; };
-		F87832D1AA533A3C2CE2AD8C9FE30C6C /* NFXGenericBodyDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXGenericBodyDetailsController.swift; path = netfox/Core/NFXGenericBodyDetailsController.swift; sourceTree = "<group>"; };
+		BFBC33329EBFAE487765ED43786EDE95 /* HeroDefaultAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroDefaultAnimator.swift; path = Sources/Animator/HeroDefaultAnimator.swift; sourceTree = "<group>"; };
+		C2C52B7019A8FD574AAF7CA36C599A00 /* NFXListController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXListController.swift; path = netfox/Core/NFXListController.swift; sourceTree = "<group>"; };
+		C41FE3210726E7B2614AE953215AD2B4 /* HeroModifier+Advanced.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroModifier+Advanced.swift"; path = "Sources/HeroModifier+Advanced.swift"; sourceTree = "<group>"; };
+		C497FFB4900B6FF6BAF112107406C181 /* NFXInfoController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXInfoController_iOS.swift; path = netfox/iOS/NFXInfoController_iOS.swift; sourceTree = "<group>"; };
+		C6B4A357A9E84FBAC4505EFF2873D26B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		C7D89BE997B70794C16B1B0541E0EE93 /* NFXListCell_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXListCell_iOS.swift; path = netfox/iOS/NFXListCell_iOS.swift; sourceTree = "<group>"; };
+		C851C28C06E73C97A23DB76F51A20D60 /* NFXListController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXListController_iOS.swift; path = netfox/iOS/NFXListController_iOS.swift; sourceTree = "<group>"; };
+		D0EB5D32AFD913CCC87E506AABAF66EE /* HeroProgressRunner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroProgressRunner.swift; path = Sources/Transition/HeroProgressRunner.swift; sourceTree = "<group>"; };
+		D40AC7E8A92A1D4F90DF7F4B33EC001C /* Hero-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hero-prefix.pch"; sourceTree = "<group>"; };
+		D7153BF806C07E30C1E625C7300EC47D /* netfox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "netfox-prefix.pch"; sourceTree = "<group>"; };
+		D8ED596380C7BB9F2E5C01979469038D /* HeroTransition+UIViewControllerTransitioningDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+UIViewControllerTransitioningDelegate.swift"; path = "Sources/Transition/HeroTransition+UIViewControllerTransitioningDelegate.swift"; sourceTree = "<group>"; };
+		DAFCB2088FCEFACD783C0CD4F2AE3FB2 /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Sources/Parser/Parser.swift; sourceTree = "<group>"; };
+		DF2351B23973198CC534B6F03D64A776 /* UIView+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Hero.swift"; path = "Sources/Extensions/UIView+Hero.swift"; sourceTree = "<group>"; };
+		E994BFC7E9272658438FD39ED007F49D /* MatchPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatchPreprocessor.swift; path = Sources/Preprocessors/MatchPreprocessor.swift; sourceTree = "<group>"; };
+		E9AEEECC78938F5D4893E058A9E29F64 /* BasePreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BasePreprocessor.swift; path = Sources/Preprocessors/BasePreprocessor.swift; sourceTree = "<group>"; };
+		EB31892445D40EF8CE66E44FC35FB8B3 /* Nodes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Nodes.swift; path = Sources/Parser/Nodes.swift; sourceTree = "<group>"; };
+		EBA240A7B05CE60D7F769A444973B0EF /* Hero-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Hero-Info.plist"; sourceTree = "<group>"; };
+		F8C830FF7C3F0EB792F7F0D41B08BE65 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		F94B312542701DD61A6BBBA336D732A1 /* HeroTransition+CustomTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+CustomTransition.swift"; path = "Sources/Transition/HeroTransition+CustomTransition.swift"; sourceTree = "<group>"; };
+		FAC6993022A1DAB3AEF6BA667FF16EBA /* HeroTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroTransition.swift; path = Sources/Transition/HeroTransition.swift; sourceTree = "<group>"; };
+		FAD9AC0426072933256DCBD071CD50BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB6D0DE05BF698598B5F347BF6F4CB4B /* Hero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Hero.debug.xcconfig; sourceTree = "<group>"; };
+		FD7027899D2757B83E881CD50F3C7EEC /* NFXInfoController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXInfoController.swift; path = netfox/Core/NFXInfoController.swift; sourceTree = "<group>"; };
+		FE8AD15A8CF0082D9D987F395D348FAA /* NFXDetailsController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXDetailsController_iOS.swift; path = netfox/iOS/NFXDetailsController_iOS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		62B0581C1B1760E5E67DC41C908502CA /* Frameworks */ = {
+		60B172CCA7AF67E6261B20C3AA42AF0C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADF85B783BB6D56B8A1BC55D400ED152 /* Foundation.framework in Frameworks */,
+				D851519470641B81AE42885C8949EE71 /* CoreGraphics.framework in Frameworks */,
+				E62691FC18B7E41760F2EC4B3FDCB259 /* CoreMedia.framework in Frameworks */,
+				D4A3622FDF5C0940F36D2239B74F2077 /* Foundation.framework in Frameworks */,
+				C09CE221D9FB8CFFAD7132853DDB7AF2 /* QuartzCore.framework in Frameworks */,
+				27355974072F5545C30CDA294506D62C /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE612FECF4CC46E5FCD8C653C4E66272 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5288B64C5895E18429E7C6F94E6A1091 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +260,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E607B8C21FA2BA40F9E59C754C98AD3 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				47C1F7D15DF1E2C8B980BC1B49D38419 /* CoreGraphics.framework */,
+				95568154064CE960195D45B95A17D3E7 /* CoreMedia.framework */,
+				C6B4A357A9E84FBAC4505EFF2873D26B /* Foundation.framework */,
+				F8C830FF7C3F0EB792F7F0D41B08BE65 /* QuartzCore.framework */,
+				FAD9AC0426072933256DCBD071CD50BA /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 		16302E3CB18D7353F07C019A1C6643CB /* Pods-Page Wire */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,85 +289,158 @@
 			path = "Target Support Files/Pods-Page Wire";
 			sourceTree = "<group>";
 		};
-		50EFA918ED5158F8245D0338F4B509DA /* netfox */ = {
+		37EC10D6D735091E413222508C5EAA9A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				14B14D4C37F1313FCF25C20C817A92A4 /* NFX.swift */,
-				DB2F4CED3C5E35BA4AC3D2B501587D1E /* NFXAssets.swift */,
-				BBC19EFF8884CDD70ECEF2676BBFCAB7 /* NFXAuthenticationChallengeSender.swift */,
-				C4A23463BCB337239BDEDD9C8603227C /* NFXConstants.swift */,
-				5D407A89CD653383B0B3C1014396FCF4 /* NFXDetailsController.swift */,
-				5FAED54915D42057F2E1E8AB3B0D7DCF /* NFXDetailsController_iOS.swift */,
-				F87832D1AA533A3C2CE2AD8C9FE30C6C /* NFXGenericBodyDetailsController.swift */,
-				D9F9D8198B7162F60286D1483B48BF5B /* NFXGenericController.swift */,
-				4B997BE1C254C8E6CE4ED9240383CEA6 /* NFXHelper.swift */,
-				002D31DBCECF94B63708538C62DC37AE /* NFXHelper_iOS.swift */,
-				313D62CA517CCB176496B2E5751316BF /* NFXHTTPModel.swift */,
-				2DD9FCC41D2287B9EB0ECD6924162A7F /* NFXHTTPModelManager.swift */,
-				F79DBC76B359FFC860E0EAD95438A3BB /* NFXImageBodyDetailsController.swift */,
-				E5404E3D4631A53777DC2C9A4544A893 /* NFXInfoController.swift */,
-				22FF706366598F6987C74A0D352E04D0 /* NFXInfoController_iOS.swift */,
-				6951B8EA83E657B21905E9AE83B96E96 /* NFXListCell_iOS.swift */,
-				9F00C7420418359B758B505C9CC31AE4 /* NFXListController.swift */,
-				BAABCE94DC6FA9AD46EF9ADD2065540F /* NFXListController_iOS.swift */,
-				56C202794EF7A4A3ECF3C33E5892F182 /* NFXLoader.h */,
-				B25C48383B9EFEA8D538E15BA08E0169 /* NFXLoader.m */,
-				439A09DC84389E3EE97C353EE0F9127D /* NFXProtocol.swift */,
-				19F2B37C813A9DEA4881054ABCA9BE3E /* NFXRawBodyDetailsController.swift */,
-				A2747F9CB54942955A0D32AF33CDFE84 /* NFXSettingsController.swift */,
-				C59C947649E5E4399382934BFD39C011 /* NFXSettingsController_iOS.swift */,
-				6937F0635470FB937764A82616BFF675 /* NFXStatisticsController.swift */,
-				7E51521D5FD74906CCD5ABD8617E2078 /* NFXStatisticsController_iOS.swift */,
-				37E77D08A02D2D5BDC3E78B8A579F3E6 /* NFXURLDetailsControllerViewController.swift */,
-				F5A4462915D41483DCBA2B4450A28212 /* NFXWindowController.swift */,
-				FB6A28EDCB4DC5AC221579DC0D6952A7 /* Support Files */,
+				99E2BF74631D117B802BC291FF0732A3 /* Hero.modulemap */,
+				822EB16803EF771A31B4D4194B99B805 /* Hero-dummy.m */,
+				EBA240A7B05CE60D7F769A444973B0EF /* Hero-Info.plist */,
+				D40AC7E8A92A1D4F90DF7F4B33EC001C /* Hero-prefix.pch */,
+				61A3C72A369108D1270FAA548F5EC243 /* Hero-umbrella.h */,
+				FB6D0DE05BF698598B5F347BF6F4CB4B /* Hero.debug.xcconfig */,
+				97988A56AB19F272D4683CB06A9E9968 /* Hero.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Hero";
+			sourceTree = "<group>";
+		};
+		AB311551E5F8213F083793EA3F028404 /* netfox */ = {
+			isa = PBXGroup;
+			children = (
+				2BA592A9D7119AE76F0230FFF1445EE1 /* NFX.swift */,
+				5CBCC7CB40E0338162162A77DFFE0C1D /* NFXAssets.swift */,
+				8FD40F4F6566A4265FDFFF3F5CFC0418 /* NFXAuthenticationChallengeSender.swift */,
+				62FB0DAB33BAABD75C3321D13F94479C /* NFXConstants.swift */,
+				778D6FBFF904D589E8844D5674615289 /* NFXDetailsController.swift */,
+				FE8AD15A8CF0082D9D987F395D348FAA /* NFXDetailsController_iOS.swift */,
+				8A00789ADFAC18FEF1CC08FF896CA7EF /* NFXGenericBodyDetailsController.swift */,
+				24959CE06CDC0B1AF236CDBBF3FA6B49 /* NFXGenericController.swift */,
+				7274FB92E222852E79F334C31B55F7C8 /* NFXHelper.swift */,
+				10929A4482CB58D4C1AA3EC022496C31 /* NFXHelper_iOS.swift */,
+				5595B29AF7CAFC038F146009D1600B14 /* NFXHTTPModel.swift */,
+				1E336381634117CF5454B5AC492A2C28 /* NFXHTTPModelManager.swift */,
+				6F4CEBB773E05F63919AF74F24BD6E8F /* NFXImageBodyDetailsController.swift */,
+				FD7027899D2757B83E881CD50F3C7EEC /* NFXInfoController.swift */,
+				C497FFB4900B6FF6BAF112107406C181 /* NFXInfoController_iOS.swift */,
+				C7D89BE997B70794C16B1B0541E0EE93 /* NFXListCell_iOS.swift */,
+				C2C52B7019A8FD574AAF7CA36C599A00 /* NFXListController.swift */,
+				C851C28C06E73C97A23DB76F51A20D60 /* NFXListController_iOS.swift */,
+				ABE57033980453E8401326BBD9A5F989 /* NFXLoader.h */,
+				A38BB3FCDCEA9FA22CE7B416671D9211 /* NFXLoader.m */,
+				74EE3CD352933787F882B8CB84328F50 /* NFXProtocol.swift */,
+				1E40C792CF478234F74AD45EB152EC9D /* NFXRawBodyDetailsController.swift */,
+				A1EEB1B58181C0C3D3EC38C04A908EED /* NFXSettingsController.swift */,
+				BB7E06096C988FE375F1F63DF517E54F /* NFXSettingsController_iOS.swift */,
+				0AE218BAA66A4627179CE1A854C32803 /* NFXStatisticsController.swift */,
+				64F84AE65B22AD7ABF3073BEB226B100 /* NFXStatisticsController_iOS.swift */,
+				5E2B364A31B4F4BBDBB4D473973D3D77 /* NFXURLDetailsControllerViewController.swift */,
+				1335ABF3D7D5DC3FD657B72136432611 /* NFXWindowController.swift */,
+				E4DDD73C2D5C615DA711685ECB77278D /* Support Files */,
 			);
 			name = netfox;
 			path = netfox;
 			sourceTree = "<group>";
 		};
-		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+		B94D7768568A9992200DB461E8CF687F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+				0E607B8C21FA2BA40F9E59C754C98AD3 /* iOS */,
 			);
-			name = iOS;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A61DE4BCFAD63285CE8FED9E27C69884 /* Products */ = {
+		C9244D36C3B2B21681351D953DA3FA7E /* Hero */ = {
 			isa = PBXGroup;
 			children = (
+				2313C942F9A57A18B1C020652118CB7A /* Array+HeroModifier.swift */,
+				E9AEEECC78938F5D4893E058A9E29F64 /* BasePreprocessor.swift */,
+				73F3C5F1AF433E88D6F5274D0479E50C /* CALayer+Hero.swift */,
+				422E50E5CBC3E50E1736432020613DEF /* CAMediaTimingFunction+Hero.swift */,
+				8D80068DD94D26DB8C3FFF5CD03FE8DA /* CascadePreprocessor.swift */,
+				A5C80B5AC0B982AEF6757DBCF7A3CA19 /* CG+Hero.swift */,
+				90FA112AA5E772CB7062EF8011057C5C /* ConditionalPreprocessor.swift */,
+				1AE0FA00D261FD624BE3A2ABD8D041C6 /* DefaultAnimationPreprocessor.swift */,
+				118AC4080238C2546FC5FF1B6FC86933 /* DispatchQueue+Hero.swift */,
+				1CC65B86E68CBA6F0FC3FDBF35968B37 /* HeroAnimatorViewContext.swift */,
+				6DA624D17EB200547168E14950F3E5B4 /* HeroCompatible.swift */,
+				61CAF8C187D23C4CA32C7A5D5FFC5153 /* HeroContext.swift */,
+				931055CD4477FC547BD37F5BF2F2BFB7 /* HeroCoreAnimationViewContext.swift */,
+				0601F710746E6FAA9EAE4E2F86A6BC57 /* HeroDebugPlugin.swift */,
+				02A5B9B234F39BF1CFB7E7EBA914B957 /* HeroDebugView.swift */,
+				BFBC33329EBFAE487765ED43786EDE95 /* HeroDefaultAnimator.swift */,
+				B560C996BCC4E73243872B9ACEE389FA /* HeroModifier.swift */,
+				C41FE3210726E7B2614AE953215AD2B4 /* HeroModifier+Advanced.swift */,
+				94E8FCD56F543FEEE601D48D852DECF2 /* HeroModifier+HeroStringConvertible.swift */,
+				B2D5DDFCFAC734BCDE71102AFF82D30B /* HeroPlugin.swift */,
+				D0EB5D32AFD913CCC87E506AABAF66EE /* HeroProgressRunner.swift */,
+				26225C12D8F0D94456F23502CEC20D31 /* HeroStringConvertible.swift */,
+				ABEA62FC57907D14889AC4E63B1417B5 /* HeroTargetState.swift */,
+				FAC6993022A1DAB3AEF6BA667FF16EBA /* HeroTransition.swift */,
+				7A451A4A09CDA2F87A3CA7958A798B3C /* HeroTransition+Animate.swift */,
+				2969663495D80EAF3884167D7C59CE6F /* HeroTransition+Complete.swift */,
+				F94B312542701DD61A6BBBA336D732A1 /* HeroTransition+CustomTransition.swift */,
+				7185D7DBA71EF2DC554F89BA1026B39F /* HeroTransition+Interactive.swift */,
+				8FED09C2FA87ACEF295951070AC098F3 /* HeroTransition+Start.swift */,
+				8604F26BF66D848EDDB3EDD2F38B4203 /* HeroTransition+UINavigationControllerDelegate.swift */,
+				6AED494FB900855C823BF104DC373600 /* HeroTransition+UITabBarControllerDelegate.swift */,
+				D8ED596380C7BB9F2E5C01979469038D /* HeroTransition+UIViewControllerTransitioningDelegate.swift */,
+				9D354DE2DD9A0B1B4238D04F021FB258 /* HeroTransitionState.swift */,
+				4B4A94F6D4BB98D89A7C91A461FD032C /* HeroTypes.swift */,
+				6B3C7A7E3452C9AF43862A2E6EDE387B /* HeroViewControllerDelegate.swift */,
+				0C101F85BE4CD5512B2B3BAC65BB7403 /* HeroViewPropertyViewContext.swift */,
+				86F94153B10AECCE5068C48FD94C48B6 /* IgnoreSubviewModifiersPreprocessor.swift */,
+				511D70D163FCE2E3AE8CE1CC30733DC0 /* Lexer.swift */,
+				1567E07A5B83F0DEBCB610302C953E20 /* Locale+Hero.swift */,
+				E994BFC7E9272658438FD39ED007F49D /* MatchPreprocessor.swift */,
+				EB31892445D40EF8CE66E44FC35FB8B3 /* Nodes.swift */,
+				DAFCB2088FCEFACD783C0CD4F2AE3FB2 /* Parser.swift */,
+				327D01F62F125CAFB717209B5D43AF91 /* Regex.swift */,
+				3026C276AED9E82C0A5DB1371317DDC0 /* SourcePreprocessor.swift */,
+				A744EC57F48CCCE69A21B405772BCFE4 /* SwiftSupport.swift */,
+				4A3EB0DABDAA1D48C4135F40716477CF /* UIColor+HexString.swift */,
+				B7DF4164BCB1EE09FD2347EA4C2E2752 /* UIKit+Hero.swift */,
+				DF2351B23973198CC534B6F03D64A776 /* UIView+Hero.swift */,
+				2166C0F17946F71C053193177777F2BE /* UIViewController+Hero.swift */,
+				37EC10D6D735091E413222508C5EAA9A /* Support Files */,
+			);
+			name = Hero;
+			path = Hero;
+			sourceTree = "<group>";
+		};
+		CB64DBEE27C65B5DFCED3C5F2DC1365C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13E778F4B833EE5D7ABE882406A8215E /* Hero */,
 				BF1952EA0085A4CE36B4AE041BE60B82 /* netfox */,
 				A19C74F35AE65E03FE81E2C921A60544 /* Pods-Page Wire */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C3F9B9DBD9D496B8AB2F2CD17CD9380D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				50EFA918ED5158F8245D0338F4B509DA /* netfox */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				C3F9B9DBD9D496B8AB2F2CD17CD9380D /* Pods */,
-				A61DE4BCFAD63285CE8FED9E27C69884 /* Products */,
+				B94D7768568A9992200DB461E8CF687F /* Frameworks */,
+				F780E2B4686E9C0BE6749F7870666828 /* Pods */,
+				CB64DBEE27C65B5DFCED3C5F2DC1365C /* Products */,
 				EEAB80003708976547D17E8DC54F66AB /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		E4DDD73C2D5C615DA711685ECB77278D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				578452D2E740E91742655AC8F1636D1F /* iOS */,
+				966B6CC93DFAF5102C052CC0114E6D63 /* netfox.modulemap */,
+				606C63E7637A107507410E99532D8107 /* netfox-dummy.m */,
+				41E4EB302DE41A9EE6E9AC9763C53E58 /* netfox-Info.plist */,
+				D7153BF806C07E30C1E625C7300EC47D /* netfox-prefix.pch */,
+				017018AD998658A82EE125A10C8EB8F7 /* netfox-umbrella.h */,
+				2C53C1152BCF62A494DC0ACC7410F681 /* netfox.debug.xcconfig */,
+				20C500A22501590115EA503F3B0A4FF7 /* netfox.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/netfox";
 			sourceTree = "<group>";
 		};
 		EEAB80003708976547D17E8DC54F66AB /* Targets Support Files */ = {
@@ -230,19 +451,13 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		FB6A28EDCB4DC5AC221579DC0D6952A7 /* Support Files */ = {
+		F780E2B4686E9C0BE6749F7870666828 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0D44B29103A12DE33D7CB5C7B1AB2A29 /* netfox.modulemap */,
-				A6B51C4703D24C6D66B827494DFE3C90 /* netfox-dummy.m */,
-				B1C9950F2A279997ED8A88368D91461E /* netfox-Info.plist */,
-				731B25E9333CC6804EF7623263943FD0 /* netfox-prefix.pch */,
-				30F4D082C3FD175DA1EE7394A2D9A871 /* netfox-umbrella.h */,
-				6FF7D256FA0A1FD21F048230854145E1 /* netfox.debug.xcconfig */,
-				BBE89CDA36426041D99C7E70FE9E05AE /* netfox.release.xcconfig */,
+				C9244D36C3B2B21681351D953DA3FA7E /* Hero */,
+				AB311551E5F8213F083793EA3F028404 /* netfox */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/netfox";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,11 +472,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7F6F2B7B2AF5B464DB38026CBF4FD956 /* Headers */ = {
+		1C16F7EDD1B69208C6273C07E999CE2F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A2458C436514FC077F1F1E16527DEAF /* Pods-Page Wire-umbrella.h in Headers */,
+				03494FEF50DC7E3256E1D508D51458CC /* Hero-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		339EDEE98E9470F49B3E468252EB5B98 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23ABF11371E72754AB4C3A385C28FB35 /* Pods-Page Wire-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,21 +511,40 @@
 		};
 		4EE21DBDB5F41213EF5D7B2608F3156A /* Pods-Page Wire */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B2F1DCFB3F4829F93B919BC614B7059 /* Build configuration list for PBXNativeTarget "Pods-Page Wire" */;
+			buildConfigurationList = 6B772CD22750EBB21883F413D1A4CF1A /* Build configuration list for PBXNativeTarget "Pods-Page Wire" */;
 			buildPhases = (
-				7F6F2B7B2AF5B464DB38026CBF4FD956 /* Headers */,
-				278205ED14F2AD660E35F0413B84BB60 /* Sources */,
-				62B0581C1B1760E5E67DC41C908502CA /* Frameworks */,
-				73F6F9AC05C0181ABF1C4C44751E326A /* Resources */,
+				339EDEE98E9470F49B3E468252EB5B98 /* Headers */,
+				2FA5DB26EC02728A4C576D74D7C597EB /* Sources */,
+				DE612FECF4CC46E5FCD8C653C4E66272 /* Frameworks */,
+				0255E516B2EF541C14A1B1E793A2FF8B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				36DE49C68FD9A8121BE0F9491C9266F2 /* PBXTargetDependency */,
+				F715422DCAB75E65BC63F61A30CC10EB /* PBXTargetDependency */,
+				5D71630A255F010CEDF872821F03C841 /* PBXTargetDependency */,
 			);
 			name = "Pods-Page Wire";
 			productName = Pods_Page_Wire;
 			productReference = A19C74F35AE65E03FE81E2C921A60544 /* Pods-Page Wire */;
+			productType = "com.apple.product-type.framework";
+		};
+		B3893AEA4D7DBB9A086E889FC469132D /* Hero */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA5DFF32CB304B0146579BDB2FF308AD /* Build configuration list for PBXNativeTarget "Hero" */;
+			buildPhases = (
+				1C16F7EDD1B69208C6273C07E999CE2F /* Headers */,
+				65EAEF99233906F5B5A18F93AFF73DCD /* Sources */,
+				60B172CCA7AF67E6261B20C3AA42AF0C /* Frameworks */,
+				4BD51ABF96271A288BB09CF3EEDCA068 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hero;
+			productName = Hero;
+			productReference = 13E778F4B833EE5D7ABE882406A8215E /* Hero */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -323,10 +565,11 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = A61DE4BCFAD63285CE8FED9E27C69884 /* Products */;
+			productRefGroup = CB64DBEE27C65B5DFCED3C5F2DC1365C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				B3893AEA4D7DBB9A086E889FC469132D /* Hero */,
 				33426EFE1931E100B59ABF41FD14377D /* netfox */,
 				4EE21DBDB5F41213EF5D7B2608F3156A /* Pods-Page Wire */,
 			);
@@ -334,7 +577,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		73F6F9AC05C0181ABF1C4C44751E326A /* Resources */ = {
+		0255E516B2EF541C14A1B1E793A2FF8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BD51ABF96271A288BB09CF3EEDCA068 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -351,11 +601,68 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		278205ED14F2AD660E35F0413B84BB60 /* Sources */ = {
+		2FA5DB26EC02728A4C576D74D7C597EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD5A6FA43A4D20A3703CB480894E836A /* Pods-Page Wire-dummy.m in Sources */,
+				EC7583E16BEEAE8811A5DE6FD96960F8 /* Pods-Page Wire-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65EAEF99233906F5B5A18F93AFF73DCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB5225F3940E5186566D5BDD47C30BD1 /* Array+HeroModifier.swift in Sources */,
+				CD203F1B89EAE6EB96A1D3FDB5082D2B /* BasePreprocessor.swift in Sources */,
+				BCE9E4B20B27631B7AA3B0CC6CB0E6B4 /* CALayer+Hero.swift in Sources */,
+				0153415516ADD1D706B173597E8D15DE /* CAMediaTimingFunction+Hero.swift in Sources */,
+				7E3B00774A4B94D728A983A67CE45669 /* CascadePreprocessor.swift in Sources */,
+				290CD7347996289C96A27A90A8372410 /* CG+Hero.swift in Sources */,
+				D2167C7CA3BAEFCECA853BBB3F7D88DD /* ConditionalPreprocessor.swift in Sources */,
+				95CD2FB157934A9AF9553A6DD32EE76B /* DefaultAnimationPreprocessor.swift in Sources */,
+				94611C229D3F5539A011373D00693D82 /* DispatchQueue+Hero.swift in Sources */,
+				7CC0BDDB81459D55B547C953AF175148 /* Hero-dummy.m in Sources */,
+				D77A44871E466FE472DD738E43711B01 /* HeroAnimatorViewContext.swift in Sources */,
+				EB00CE07C32B67FE1E78BE0875CFA875 /* HeroCompatible.swift in Sources */,
+				D7278C7E94DC131BD1610F43076819BD /* HeroContext.swift in Sources */,
+				5D6A6933FF63F86D2B8C7534315D484C /* HeroCoreAnimationViewContext.swift in Sources */,
+				34F20820D5F3E08CA3C6BE59E554BADF /* HeroDebugPlugin.swift in Sources */,
+				7E8E54FF0A03B7BADEBF22C10AF9ABB1 /* HeroDebugView.swift in Sources */,
+				151482556525CEF81110CC0A9CA9E1E0 /* HeroDefaultAnimator.swift in Sources */,
+				D286BC2C12C3C097ED2C5115C9AC772C /* HeroModifier.swift in Sources */,
+				36B3BF9B3AA60BCA8BA0D1C8869505D7 /* HeroModifier+Advanced.swift in Sources */,
+				24580BEC54DF3EB1A69034AB26B5E684 /* HeroModifier+HeroStringConvertible.swift in Sources */,
+				CB0AC15AA50B46C4B84FD40F2229F8C4 /* HeroPlugin.swift in Sources */,
+				71438073BBD2C6C1D77748E56D6C0F9B /* HeroProgressRunner.swift in Sources */,
+				AE311AF2F53F908249E96319F3688927 /* HeroStringConvertible.swift in Sources */,
+				ABC06AC2D319CE550CDB3C31CD23F759 /* HeroTargetState.swift in Sources */,
+				CFB856AA712DF68446678D39DCD0EB71 /* HeroTransition.swift in Sources */,
+				6C9C33E5CF926D0E3BAA5E89A003A2F1 /* HeroTransition+Animate.swift in Sources */,
+				8E011223B84081D7759DDD9D86113C72 /* HeroTransition+Complete.swift in Sources */,
+				14F874BF94A20C6784C5ED78061DFDF4 /* HeroTransition+CustomTransition.swift in Sources */,
+				3BD418D01ECA25B9748E4B5B91EA2180 /* HeroTransition+Interactive.swift in Sources */,
+				22CEEBC7570EB19BD931797B0D740C89 /* HeroTransition+Start.swift in Sources */,
+				A7DB847A513187E25ED1F299E10EF9C4 /* HeroTransition+UINavigationControllerDelegate.swift in Sources */,
+				239C0A6B4FACB1A42ADFC078BCB90300 /* HeroTransition+UITabBarControllerDelegate.swift in Sources */,
+				7987894C6A2A1420E9AC7ABBD01A1F3C /* HeroTransition+UIViewControllerTransitioningDelegate.swift in Sources */,
+				B1883A0E868F7E4D81930F39C0E5B1DC /* HeroTransitionState.swift in Sources */,
+				A1CE141B1C185FB73E7EDF61A2A6E42F /* HeroTypes.swift in Sources */,
+				306FF02477BFE1D4104A4EAAD5A35F3C /* HeroViewControllerDelegate.swift in Sources */,
+				E724F3BB81DD7C9E512A22072DE751B4 /* HeroViewPropertyViewContext.swift in Sources */,
+				FE6F1C6D1A1C224FD5EED4FAFFB19480 /* IgnoreSubviewModifiersPreprocessor.swift in Sources */,
+				B6AA345C6C1AD7C15E59CA69355FEACB /* Lexer.swift in Sources */,
+				72CEB6C018ED66F705CE583804121DF9 /* Locale+Hero.swift in Sources */,
+				2F1E6A6C4948882F43A6665788765278 /* MatchPreprocessor.swift in Sources */,
+				945B9DBBE9F52087055A2A844976A4D8 /* Nodes.swift in Sources */,
+				A0B0D60C0789D86925FBD22DB9E9F76A /* Parser.swift in Sources */,
+				C56A5F0000597F6706F6AFBBEE77FA6E /* Regex.swift in Sources */,
+				B58F2A64CB7DE3D0A6D0BCD6B1D0085F /* SourcePreprocessor.swift in Sources */,
+				84D2F28E4B4CBEB043380B30CBE3EAD9 /* SwiftSupport.swift in Sources */,
+				4C4CA750821B7AB5D77382FA15318259 /* UIColor+HexString.swift in Sources */,
+				D85EF87FE963C92FF9D30B0A79CB2625 /* UIKit+Hero.swift in Sources */,
+				FCA8E9B6166E2349ADF7D4A53C1E904E /* UIView+Hero.swift in Sources */,
+				F1A085326179C7F156053D6BF35B620B /* UIViewController+Hero.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,15 +704,59 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		36DE49C68FD9A8121BE0F9491C9266F2 /* PBXTargetDependency */ = {
+		5D71630A255F010CEDF872821F03C841 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = netfox;
 			target = 33426EFE1931E100B59ABF41FD14377D /* netfox */;
-			targetProxy = 0F3CB23441BDA7BF3FD4B560B7169589 /* PBXContainerItemProxy */;
+			targetProxy = 72537AF809AC4BB4698792B97AE74BA4 /* PBXContainerItemProxy */;
+		};
+		F715422DCAB75E65BC63F61A30CC10EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Hero;
+			target = B3893AEA4D7DBB9A086E889FC469132D /* Hero */;
+			targetProxy = A9377532C27BC004F999BA61A5644A04 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		09A2AD1268288BD194DF615B12B5200B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA34AA483B09335A42218A76DFA9D469 /* Pods-Page Wire.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Page Wire/Pods-Page Wire-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Page Wire/Pods-Page Wire.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		2B9E26EAE2CD392AD762421F663075A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -472,11 +823,10 @@
 			};
 			name = Debug;
 		};
-		5FA4DDE75A62345767BBD5AFAAAA81C6 /* Debug */ = {
+		503E3D4574EF6CE509A625CAE8BD5A58 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7125FAF4261A96B81791961518F533EF /* Pods-Page Wire.debug.xcconfig */;
+			baseConfigurationReference = 97988A56AB19F272D4683CB06A9E9968 /* Hero.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -486,28 +836,28 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Page Wire/Pods-Page Wire-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Hero/Hero-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Hero/Hero-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Page Wire/Pods-Page Wire.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/Hero/Hero.modulemap";
+				PRODUCT_MODULE_NAME = Hero;
+				PRODUCT_NAME = Hero;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -571,9 +921,9 @@
 			};
 			name = Release;
 		};
-		6E3E56E39F5F1137A2D1678DE13A837B /* Release */ = {
+		732A814633D86FD6B924FABF38E143CC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA34AA483B09335A42218A76DFA9D469 /* Pods-Page Wire.release.xcconfig */;
+			baseConfigurationReference = 7125FAF4261A96B81791961518F533EF /* Pods-Page Wire.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -603,15 +953,14 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		75A753364782C87721D70AEDDBBFEB3B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FF7D256FA0A1FD21F048230854145E1 /* netfox.debug.xcconfig */;
+			baseConfigurationReference = 2C53C1152BCF62A494DC0ACC7410F681 /* netfox.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -645,7 +994,7 @@
 		};
 		9DC7E3B0E7FCF47D73E00D73827476E8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBE89CDA36426041D99C7E70FE9E05AE /* netfox.release.xcconfig */;
+			baseConfigurationReference = 20C500A22501590115EA503F3B0A4FF7 /* netfox.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -678,18 +1027,44 @@
 			};
 			name = Release;
 		};
+		9ED722F15F248CEAFCC455391A864045 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB6D0DE05BF698598B5F347BF6F4CB4B /* Hero.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Hero/Hero-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Hero/Hero-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Hero/Hero.modulemap";
+				PRODUCT_MODULE_NAME = Hero;
+				PRODUCT_NAME = Hero;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1B2F1DCFB3F4829F93B919BC614B7059 /* Build configuration list for PBXNativeTarget "Pods-Page Wire" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5FA4DDE75A62345767BBD5AFAAAA81C6 /* Debug */,
-				6E3E56E39F5F1137A2D1678DE13A837B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -699,11 +1074,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		6B772CD22750EBB21883F413D1A4CF1A /* Build configuration list for PBXNativeTarget "Pods-Page Wire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				732A814633D86FD6B924FABF38E143CC /* Debug */,
+				09A2AD1268288BD194DF615B12B5200B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B0FCBF9772E0C8823514DBA91FA3EF76 /* Build configuration list for PBXNativeTarget "netfox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				75A753364782C87721D70AEDDBBFEB3B /* Debug */,
 				9DC7E3B0E7FCF47D73E00D73827476E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA5DFF32CB304B0146579BDB2FF308AD /* Build configuration list for PBXNativeTarget "Hero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9ED722F15F248CEAFCC455391A864045 /* Debug */,
+				503E3D4574EF6CE509A625CAE8BD5A58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
