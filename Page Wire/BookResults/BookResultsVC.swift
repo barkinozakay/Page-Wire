@@ -18,6 +18,7 @@ class BookResultsVC: UIViewController {
     var books: [BookModel] = []
     private var bookDataViewModel: BookDataViewModel?
     
+    let cellPercentHeight: CGFloat = 0.5
     let cellPercentWidth: CGFloat = 0.7
     var centeredCollectionViewFlowLayout: CenteredCollectionViewFlowLayout!
     
@@ -45,7 +46,7 @@ extension BookResultsVC {
         collectionView.decelerationRate = .normal
         centeredCollectionViewFlowLayout.itemSize = CGSize(
             width: view.bounds.width * cellPercentWidth,
-            height: view.bounds.height * cellPercentWidth * cellPercentWidth
+            height: view.bounds.height * cellPercentHeight
         )
         centeredCollectionViewFlowLayout.minimumLineSpacing = 20
         collectionView.showsVerticalScrollIndicator = false
@@ -81,8 +82,8 @@ extension BookResultsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookResultsCollectionViewCell", for: indexPath) as? BookResultsCollectionViewCell else { return UICollectionViewCell() }
-        cell.book = books[indexPath.item]
         cell.layer.cornerRadius = 8
+        cell.book = books[indexPath.item]
         cell.setBook()
         return cell
     }

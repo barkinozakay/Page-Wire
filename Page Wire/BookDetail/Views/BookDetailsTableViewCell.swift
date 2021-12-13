@@ -15,6 +15,7 @@ protocol BookDetailsTableViewCellDelegate: AnyObject {
 
 class BookDetailsTableViewCell: UITableViewCell {
     
+    @IBOutlet private weak var artworkContainerView: UIView!
     @IBOutlet private weak var artwork: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var authorLabel: UILabel!
@@ -30,6 +31,7 @@ class BookDetailsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        artwork.applyShadowWithCorner(containerView: artworkContainerView, cornerRadius: 8)
     }
     
     func setBook() {
@@ -48,7 +50,7 @@ class BookDetailsTableViewCell: UITableViewCell {
             transition: .fadeIn(duration: 0.05)
         )
         Nuke.loadImage(with: artworkUrl, options: options, into: artwork) { _ in
-            self.artwork.clipsToBounds = true
+            //self.artwork.clipsToBounds = true
             self.artwork.contentMode = .scaleToFill
         }
     }
