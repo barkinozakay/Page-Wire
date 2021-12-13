@@ -17,7 +17,6 @@ class BookDetailVC: UIViewController {
     private var bookDataViewModel: BookDataViewModel?
     private var favoriteButton: UIBarButtonItem!
     var isComingFromFavorites: Bool = false
-    weak var favoriteDelegate: FavoriteBook?
     
     lazy var pickerView: CustomPickerView = {
         let picker = CustomPickerView()
@@ -134,7 +133,6 @@ extension BookDetailVC {
                 }
             }
         }
-        favoriteDelegate?.changeFavoriteState(book)
     }
     
     @objc func removeBookFromFavorites(_ notification: Notification) {

@@ -8,10 +8,6 @@
 import UIKit
 import Hero
 
-protocol FavoriteBook: AnyObject {
-    func changeFavoriteState(_ favoriteBook: BookModel?)
-}
-
 class FavoriteBooksVC: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
