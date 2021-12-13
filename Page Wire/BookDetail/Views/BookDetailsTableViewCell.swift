@@ -31,7 +31,7 @@ class BookDetailsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        artwork.applyShadowWithCorner(containerView: artworkContainerView, cornerRadius: 8)
+        artwork.applyShadowWithCorner(containerView: artworkContainerView, cornerRadius: 5)
     }
     
     func setBook() {
@@ -50,7 +50,6 @@ class BookDetailsTableViewCell: UITableViewCell {
             transition: .fadeIn(duration: 0.05)
         )
         Nuke.loadImage(with: artworkUrl, options: options, into: artwork) { _ in
-            //self.artwork.clipsToBounds = true
             self.artwork.contentMode = .scaleToFill
         }
     }

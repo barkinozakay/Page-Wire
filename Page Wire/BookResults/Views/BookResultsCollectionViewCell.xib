@@ -22,11 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="274" height="373"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9jE-iw-gq1">
-                                <rect key="frame" x="82" y="41" width="110" height="184"/>
+                                <rect key="frame" x="63" y="41" width="148" height="195"/>
                                 <color key="tintColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="I2q-bA-Fxv">
-                                <rect key="frame" x="16" y="250.5" width="242" height="58"/>
+                                <rect key="frame" x="16" y="261.5" width="242" height="58"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQT-D9-tLL">
                                         <rect key="frame" x="0.0" y="0.0" width="242" height="24"/>
@@ -50,10 +50,10 @@
                             <constraint firstAttribute="trailing" secondItem="I2q-bA-Fxv" secondAttribute="trailing" constant="16" id="OaV-my-0zB"/>
                             <constraint firstItem="9jE-iw-gq1" firstAttribute="centerX" secondItem="bGo-K8-bqm" secondAttribute="centerX" id="cfC-AJ-xCP"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="I2q-bA-Fxv" secondAttribute="bottom" constant="32" id="fff-RY-VAD"/>
-                            <constraint firstItem="9jE-iw-gq1" firstAttribute="width" secondItem="bGo-K8-bqm" secondAttribute="width" multiplier="0.4" id="foX-rJ-pqA"/>
+                            <constraint firstItem="9jE-iw-gq1" firstAttribute="width" secondItem="bGo-K8-bqm" secondAttribute="width" multiplier="0.54" id="foX-rJ-pqA"/>
                             <constraint firstItem="I2q-bA-Fxv" firstAttribute="centerX" secondItem="bGo-K8-bqm" secondAttribute="centerX" id="g0z-5g-QNo"/>
                             <constraint firstItem="I2q-bA-Fxv" firstAttribute="leading" secondItem="bGo-K8-bqm" secondAttribute="leading" constant="16" id="xst-Ua-cQb"/>
-                            <constraint firstItem="9jE-iw-gq1" firstAttribute="height" secondItem="bGo-K8-bqm" secondAttribute="height" multiplier="0.5" id="zbT-4U-af3"/>
+                            <constraint firstItem="9jE-iw-gq1" firstAttribute="height" secondItem="bGo-K8-bqm" secondAttribute="height" multiplier="0.53" id="zbT-4U-af3"/>
                         </constraints>
                     </view>
                 </subviews>
