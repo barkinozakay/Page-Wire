@@ -169,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				DD27392E260E556300266851 /* Page Wire */,
-				DD94E0DC2767CFB3006D9E2F /* LaunchScreen.storyboard */,
 				DD27392D260E556300266851 /* Products */,
 				212B4FB6A395BDB1EF3446E5 /* Pods */,
 				92411000B4FAEAC616C411D5 /* Frameworks */,
@@ -198,6 +197,7 @@
 				DD273938260E556400266851 /* Assets.xcassets */,
 				DD27392F260E556300266851 /* AppDelegate.swift */,
 				DD273931260E556300266851 /* SceneDelegate.swift */,
+				DD94E0DC2767CFB3006D9E2F /* LaunchScreen.storyboard */,
 				DD27393D260E556400266851 /* Info.plist */,
 				DD8D26C1275F40EA00E33DB5 /* GoogleService-Info.plist */,
 				DD521C8C2610F49100493A37 /* CustomAnimations */,
