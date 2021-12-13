@@ -203,7 +203,7 @@ class BookDataViewModel {
     }
 }
 
-// MARK: - Book Site Functions -
+// MARK: - Book Site Functions
 extension BookDataViewModel {
     private func getBookLinkForSite(_ site: BookSite, _ html: String) -> String? {
         switch site {
@@ -342,7 +342,7 @@ extension BookDataViewModel {
     }
 }
 
-// MARK: - Book Data Functions -
+// MARK: - Book Data Functions
 extension BookDataViewModel {
     
     func decideToGetSiteData(_ site: BookSite, _ html: String) -> [String: Any]? {

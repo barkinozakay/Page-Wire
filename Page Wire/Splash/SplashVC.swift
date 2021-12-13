@@ -28,7 +28,7 @@ class SplashVC: UIViewController {
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(signInVC, signedIn: false)
     }
 
-    public final func openFirstPage() {
+    public final func openMainPage() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(identifier: "TabBarController") as! UITabBarController
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(mainTabBarController)

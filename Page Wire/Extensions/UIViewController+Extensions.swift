@@ -55,7 +55,7 @@ extension UIViewController {
     }
     
     final func showErrorAlert() {
-        showAlert(title: "", message: "Some unexpected error occured.", okTitle: "OK", cancelTitle: nil, okAction: nil, cancelAction: nil)
+        showAlert(title: "", message: "An error occured.", okTitle: "OK", cancelTitle: nil, okAction: nil, cancelAction: nil)
     }
     
     // MARK: - Loading Animation -

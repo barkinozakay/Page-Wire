@@ -27,9 +27,10 @@ class SignInVC: UIViewController {
             Auth.auth().signIn(with: credential) { (authResult, error) in
                 if let error = error {
                     print("Error occurs when authenticate with Firebase: \(error.localizedDescription)")
+                    self.showErrorAlert()
                 }
+                appDel.splashVC?.openMainPage()
             }
-            appDel.splashVC?.openFirstPage()
         }
     }
 }

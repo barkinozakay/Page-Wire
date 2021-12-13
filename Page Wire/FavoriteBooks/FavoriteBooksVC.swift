@@ -40,7 +40,7 @@ class FavoriteBooksVC: UIViewController {
     }
 }
 
-// MARK: - Functions -
+// MARK: - Functions
 extension FavoriteBooksVC {
     private func checkForEmptyState() {
         showEmptyState = favoritedBooks.isEmpty ? true : false
@@ -70,7 +70,7 @@ extension FavoriteBooksVC {
     }
 }
 
-// MARK: - Table View Delegate, Datasource -
+// MARK: - Table View Delegate, Datasource
 extension FavoriteBooksVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int { 1 }

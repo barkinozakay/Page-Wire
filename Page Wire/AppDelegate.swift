@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Signed in")
                 GoogleManager.shared.idToken = user?.authentication.idToken
                 GoogleManager.shared.accessToken = user?.authentication.accessToken
-                self.splashVC?.openFirstPage()
+                self.splashVC?.openMainPage()
             }
         }
         return true

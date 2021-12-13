@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Vr4-EM-Lia"/>
-                        <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.97647058819999999" green="0.80392156859999997" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BqS-pt-HuZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -32,12 +32,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page Wire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSy-NK-LyM">
-                                <rect key="frame" x="101.66666666666669" y="198" width="187" height="48"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page-wire" translatesAutoresizingMaskIntoConstraints="NO" id="NbG-hF-hJo">
                                 <rect key="frame" x="75" y="322" width="240" height="200"/>
                                 <constraints>
@@ -51,20 +45,20 @@
                                     <constraint firstAttribute="height" constant="50" id="wmw-dK-P0w"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="google" imagePlacement="trailing" title="Continue with   " titleAlignment="center"/>
+                                <buttonConfiguration key="configuration" style="filled" image="google" imagePlacement="leading" title="   Sign in with Google" titleAlignment="center">
+                                    <color key="baseBackgroundColor" systemColor="tintColor"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="onGoogleSignInButtonTapped:" destination="nSg-oC-8ph" eventType="touchUpInside" id="C30-OM-312"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="94Q-K4-y3i"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.80392156862745101" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="94Q-K4-y3i" firstAttribute="trailing" secondItem="Hft-IZ-dSf" secondAttribute="trailing" constant="70" id="Pea-te-aZM"/>
-                            <constraint firstItem="ZSy-NK-LyM" firstAttribute="centerX" secondItem="Jzz-I2-CV0" secondAttribute="centerX" id="b9F-T7-l6F"/>
                             <constraint firstItem="NbG-hF-hJo" firstAttribute="centerY" secondItem="Jzz-I2-CV0" secondAttribute="centerY" id="fap-v7-eb2"/>
                             <constraint firstItem="94Q-K4-y3i" firstAttribute="bottom" secondItem="Hft-IZ-dSf" secondAttribute="bottom" constant="82" id="pby-ap-y9W"/>
-                            <constraint firstItem="ZSy-NK-LyM" firstAttribute="centerY" secondItem="Jzz-I2-CV0" secondAttribute="centerY" constant="-200" id="uTL-Q5-3v1"/>
                             <constraint firstItem="Hft-IZ-dSf" firstAttribute="leading" secondItem="94Q-K4-y3i" secondAttribute="leading" constant="70" id="umD-Zn-eYx"/>
                             <constraint firstItem="NbG-hF-hJo" firstAttribute="centerX" secondItem="Jzz-I2-CV0" secondAttribute="centerX" id="xp4-Ig-p8w"/>
                         </constraints>
@@ -510,9 +504,12 @@
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="heart.slash.fill" catalog="system" width="128" height="115"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="page-wire" width="180" height="180"/>
+        <image name="page-wire" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

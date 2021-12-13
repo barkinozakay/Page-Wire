@@ -38,7 +38,7 @@ class BookResultsVC: UIViewController {
     }
 }
 
-// MARK: - Functions -
+// MARK: - Functions
 extension BookResultsVC {
     private func setUpCollectionView() {
         collectionView.register(UINib(nibName: "BookResultsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BookResultsCollectionViewCell")
@@ -62,7 +62,7 @@ extension BookResultsVC {
     }
 }
 
-// MARK: Book Artwork Delegate -
+// MARK: Book Artwork Delegate
 extension BookResultsVC: BookArtworkFromSite {
     func getBookArtworkUrl(_ artwork: String, _ index: Int) {
         books[index].artwork = artwork
