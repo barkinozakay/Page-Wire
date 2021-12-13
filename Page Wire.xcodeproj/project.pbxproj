@@ -169,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				DD27392E260E556300266851 /* Page Wire */,
+				DD94E0DC2767CFB3006D9E2F /* LaunchScreen.storyboard */,
 				DD27392D260E556300266851 /* Products */,
 				212B4FB6A395BDB1EF3446E5 /* Pods */,
 				92411000B4FAEAC616C411D5 /* Frameworks */,
@@ -186,7 +187,6 @@
 		DD27392E260E556300266851 /* Page Wire */ = {
 			isa = PBXGroup;
 			children = (
-				DD94E0DC2767CFB3006D9E2F /* LaunchScreen.storyboard */,
 				DD94E0DD2767CFB3006D9E2F /* Main.storyboard */,
 				DDFE7085260FAF1D00138959 /* MainVC.swift */,
 				DDD8996B2758608E00853597 /* Splash */,
