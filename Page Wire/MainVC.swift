@@ -35,9 +35,7 @@ class MainVC: UIViewController {
 extension MainVC {
     
     @IBAction func searchButtonAction(_ sender: Any) {
-        let numbers = [0]
-        let _ = numbers[1]
-        //searchBooks()
+        searchBooks()
     }
     
     @IBAction func scanBarcodeAction(_ sender: Any) {
