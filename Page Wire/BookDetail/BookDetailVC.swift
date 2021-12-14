@@ -74,9 +74,10 @@ extension BookDetailVC {
         book?.otherPublishers = [:]
         for item in BookManager.shared.bookList {
             if book?.name == item.name, book?.author == item.author {
-                book?.otherPublishers?[item.publisher] = item.pages
-                publisherList.append(item.publisher)
-                isbnList[item.publisher] = item.isbn
+                guard let publisher = item.publisher else { continue }
+                book?.otherPublishers?[publisher] = item.pages
+                publisherList.append(publisher)
+                isbnList[publisher] = item.isbn
             }
         }
     }

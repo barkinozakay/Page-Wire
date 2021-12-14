@@ -23,6 +23,7 @@ class BookDataViewModel {
     
     private var httpsPrefix: String = "https://www."
     
+    // TODO: Connect delegate for Main page isbn search.
     weak var siteDataDelegate: BookDataFromSite?
     weak var artworkDelegate: BookArtworkFromSite?
     
@@ -65,10 +66,10 @@ class BookDataViewModel {
     private func prepareQuery(_ site: BookSite) -> String? {
         switch site {
         case .amazon, .dnr, .idefix:
-            guard let isbn = book?.isbn.description else { return nil }
+            guard let isbn = book?.isbn?.description else { return nil }
             return isbn
         case .kitapyurdu:   // TODO: search query with ISBN?
-            guard let name = book?.name, let author = book?.author.components(separatedBy: " ").last else { return nil }
+            guard let name = book?.name, let author = book?.author?.components(separatedBy: " ").last else { return nil }
             return formatQuery(query: "\(name) \(author)")
         default:
             return nil
@@ -156,7 +157,7 @@ class BookDataViewModel {
         var artwork: String = ""
         for index in 0..<books.count {
             guard index < 9 else { break }
-            let searchQuery = books[index].isbn.description
+            guard let searchQuery = books[index].isbn?.description else { continue }
             guard let siteQueryPrefix = selectQueryForSite(.idefix) else { continue }
             getHtmlFromSearchQuery(siteQueryPrefix + searchQuery) { (response) in
                 guard let html = response, !html.isEmpty else { return }

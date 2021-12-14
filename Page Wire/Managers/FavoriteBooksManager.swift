@@ -42,8 +42,8 @@ class FavoriteBooksManager {
     
     func checkForFavoritedBook(_ favBook: BookModel?, _ completion: @escaping (Bool) -> Void) {
         guard let book = favBook else { return completion(false) }
-        guard let userID = appDel.userID, !book.isbn.description.isEmpty else { return completion(false) }
-        let docRef = firestore.collection("Favorites").document("Users").collection(userID).document(book.isbn.description)
+        guard let userID = appDel.userID, let isbn = book.isbn?.description, !isbn.isEmpty else { return completion(false) }
+        let docRef = firestore.collection("Favorites").document("Users").collection(userID).document(isbn)
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
@@ -72,8 +72,7 @@ class FavoriteBooksManager {
     }
     
     func addBookToFavorites(_ book: BookModel, _ completion: @escaping (Bool) -> Void) {
-        guard let userID = appDel.userID, !book.isbn.description.isEmpty else { return completion(false) }
-        let isbn = book.isbn.description
+        guard let userID = appDel.userID, let isbn = book.isbn?.description, !isbn.isEmpty else { return completion(false) }
         let docRef = firestore.collection("Favorites").document("Users").collection(userID).document("\(isbn)")
         let bookData = book.dictionary ?? [:]
         docRef.setData(bookData, merge: true) { error in
@@ -88,8 +87,7 @@ class FavoriteBooksManager {
     }
     
     func removeBookFromFavorites(_ book: BookModel, _ completion: @escaping (Bool) -> Void) {
-        guard let userID = appDel.userID, !book.isbn.description.isEmpty else { return completion(false) }
-        let isbn = book.isbn.description
+        guard let userID = appDel.userID, let isbn = book.isbn?.description, !isbn.isEmpty else { return completion(false) }
         let docRef = firestore.collection("Favorites").document("Users").collection(userID).document("\(isbn)")
         docRef.delete { error in
             if error == nil {
@@ -103,17 +101,9 @@ class FavoriteBooksManager {
     }
     
     func appendAllBooksToFirebase(_ books: [BookModel]) {
-        // TODO: This works actually :)
-//        realtimeDatabase.child("Books").child("isbn").setValue(["bisi": 5]) { error, databaseRef in
-//            if let error = error {
-//                print("Data could not be saved: \(error).")
-//            } else {
-//                print("Book with isbn: 123 saved to Realtime Database successfully.")
-//            }
-//        }
-        
 //        var counter = 0
 //        for book in books {
+//            counter += 1
 //            guard counter <= 10 else { return }
 //            guard let bookData = book.dictionary else { continue }
 //            let isbn = book.isbn.description
@@ -123,7 +113,6 @@ class FavoriteBooksManager {
 //                } else {
 //                    print("Book with isbn: \(isbn) saved to Realtime Database successfully.")
 //                }
-//                counter += 1
 //            }
 //        }
     }

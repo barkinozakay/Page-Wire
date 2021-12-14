@@ -20,6 +20,7 @@ class MainVC: UIViewController {
     
     // MARK: - Variables
     private lazy var books: [BookModel] = []
+    private var bookDataViewModel: BookDataViewModel?
     private var searchBarText: String = ""
     private weak var barcodeScanner: BarcodeScannerViewController?
     
@@ -27,6 +28,7 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        bookDataViewModel = BookDataViewModel()
         parseBookList()
     }
 }
@@ -78,13 +80,13 @@ extension MainVC {
     }
     
     private func filterBookNames() {
-        let filteredBookNames = books.filter { $0.name.lowercased().contains(searchBarText.lowercased()) }
+        let filteredBookNames = books.filter { ($0.name ?? "").lowercased().contains(searchBarText.lowercased()) }
         guard !filteredBookNames.isEmpty else { return showSearchNotFoundError() }
         goToBookResults(filteredBookNames)
     }
     
     private func filterBookAuthors() {
-        let filteredBookAuthors = books.filter { $0.author.lowercased().contains(searchBarText.lowercased()) }
+        let filteredBookAuthors = books.filter { ($0.author ?? "").lowercased().contains(searchBarText.lowercased()) }
         guard !filteredBookAuthors.isEmpty else { return showSearchNotFoundError() }
         goToBookResults(filteredBookAuthors)
     }
@@ -103,12 +105,18 @@ extension MainVC {
     
     private func findBookWithISBN(_ isbn: String) {
         guard let scanner = barcodeScanner else { return }
-        guard let index = books.firstIndex(where: { "\($0.isbn)" == isbn}) else {
+        if let index = books.firstIndex(where: { "\($0.isbn)" == isbn}) {
+            let book = books[index]
+            scanner.dismiss(animated: true, completion: nil)
+            goToBookDetail(book)
+        } else {
+            // TODO: Test this.
+            var book = BookModel()
+            book.isbn = Int(isbn)
+            bookDataViewModel?.book = book
+            bookDataViewModel?.getBookDataForSites()
             return scanner.resetWithError(message: "Book not found.")
         }
-        let book = books[index]
-        scanner.dismiss(animated: true, completion: nil)
-        goToBookDetail(book)
     }
 }
 
