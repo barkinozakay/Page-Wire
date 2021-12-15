@@ -90,7 +90,14 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="AW8-Q0-hkJ"/>
                                 </constraints>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Mvy-uI-Myb"/>
+                                </connections>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bI5-Tl-mjl" userLabel="Search Button">
                                 <rect key="frame" x="344" y="223" width="25" height="20"/>
@@ -190,7 +197,7 @@
                             <constraint firstItem="Pda-ho-b4Q" firstAttribute="top" secondItem="5GP-OP-jC9" secondAttribute="top" id="wYQ-Ut-57c"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Book Results" largeTitleDisplayMode="never" id="266-wj-box">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="266-wj-box">
                         <barButtonItem key="backBarButtonItem" title=" " id="hRP-Lf-Dmk"/>
                     </navigationItem>
                     <connections>
@@ -216,7 +223,6 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaC-gS-MVu">
                                         <rect key="frame" x="148.66666666666666" y="0.0" width="45" height="26.333333333333332"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3f-dk-dnf">

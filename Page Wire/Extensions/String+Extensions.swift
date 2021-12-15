@@ -11,7 +11,7 @@ extension String {
     
     var isAlphaNumeric: Bool {
         let turkishCharacters: [String] = ["çğıöşü"]
-        return !isEmpty && range(of: "[^a-zA-Z0-9\(turkishCharacters) ]", options: .regularExpression) == nil
+        return !isEmpty && range(of: "[^a-zA-Z0-9\n\(turkishCharacters) ]", options: .regularExpression) == nil
     }
     
     mutating func getAlphaNumericValue() {
@@ -28,10 +28,14 @@ extension String {
     }
 
     func toDouble() -> Double? {
-        if self.contains(",") {
-            return NumberFormatter().number(from: self.components(separatedBy: ",").joined(separator: "."))?.doubleValue
-        } else {
+        if #available(iOS 15.1, *) {
             return NumberFormatter().number(from: self)?.doubleValue
+        } else {
+            if self.contains(",") {
+                return NumberFormatter().number(from: self.components(separatedBy: ",").joined(separator: "."))?.doubleValue
+            } else {
+                return NumberFormatter().number(from: self)?.doubleValue
+            }
         }
     }
     

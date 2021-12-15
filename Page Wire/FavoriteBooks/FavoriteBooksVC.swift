@@ -101,11 +101,11 @@ extension FavoriteBooksVC: UITableViewDelegate, UITableViewDataSource {
             tableView.beginUpdates()
             FavoriteBooksManager.shared.removeBookFromFavorites(favoritedBooks[indexPath.row]) { isSuccess in
                 if isSuccess {
+                    NotificationCenter.default.post(name: .removeBookFromFavorites, object: nil, userInfo: ["book": self.favoritedBooks[indexPath.row]])
                     self.favoritedBooks.remove(at: indexPath.row)
                     self.tableView.deleteRows(at: [indexPath], with: .fade)
                     self.tableView.endUpdates()
                     self.checkForEmptyState()
-                    NotificationCenter.default.post(name: .removeBookFromFavorites, object: nil, userInfo: ["book": self.favoritedBooks[indexPath.row]])
                 } else {
                     self.showErrorAlert()
                 }

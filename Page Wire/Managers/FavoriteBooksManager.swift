@@ -77,7 +77,7 @@ class FavoriteBooksManager {
         let bookData = book.dictionary ?? [:]
         docRef.setData(bookData, merge: true) { error in
             if error == nil {
-                print("Book with isbn: \(isbn) saved to Firestore successfully.")
+                print("Book with isbn \"\(isbn)\" saved to Firestore successfully.")
                 completion(true)
             } else {
                 print("Could not save book data.")
@@ -91,7 +91,7 @@ class FavoriteBooksManager {
         let docRef = firestore.collection("Favorites").document("Users").collection(userID).document("\(isbn)")
         docRef.delete { error in
             if error == nil {
-                print("Book with isbn: \(isbn) deleted from Firestore successfully.")
+                print("Book with isbn \"\(isbn)\" deleted from Firestore successfully.")
                 completion(true)
             } else {
                 print("Could not delete book data.")
