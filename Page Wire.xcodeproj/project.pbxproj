@@ -12,6 +12,8 @@
 		DD273930260E556300266851 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27392F260E556300266851 /* AppDelegate.swift */; };
 		DD273932260E556300266851 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD273931260E556300266851 /* SceneDelegate.swift */; };
 		DD273939260E556400266851 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD273938260E556400266851 /* Assets.xcassets */; };
+		DD2DA5FC2769E78A002C2C5D /* UIResponder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2DA5FB2769E78A002C2C5D /* UIResponder+Extension.swift */; };
+		DD2DA6012769FD77002C2C5D /* BookArtworkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2DA6002769FD77002C2C5D /* BookArtworkVC.swift */; };
 		DD30DA822614FDB700BE4BB5 /* DecodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30DA812614FDB700BE4BB5 /* DecodeHelper.swift */; };
 		DD30DA8C2614FE9300BE4BB5 /* BookModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30DA8B2614FE9300BE4BB5 /* BookModels.swift */; };
 		DD4351B22739A70200087C92 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4351B12739A70200087C92 /* Array+Extension.swift */; };
@@ -74,6 +76,8 @@
 		DD273931260E556300266851 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DD273938260E556400266851 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD27393D260E556400266851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD2DA5FB2769E78A002C2C5D /* UIResponder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Extension.swift"; sourceTree = "<group>"; };
+		DD2DA6002769FD77002C2C5D /* BookArtworkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookArtworkVC.swift; sourceTree = "<group>"; };
 		DD30DA812614FDB700BE4BB5 /* DecodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeHelper.swift; sourceTree = "<group>"; };
 		DD30DA8B2614FE9300BE4BB5 /* BookModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModels.swift; sourceTree = "<group>"; };
 		DD4351B12739A70200087C92 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -211,6 +215,14 @@
 			path = "Page Wire";
 			sourceTree = "<group>";
 		};
+		DD2DA5FD2769FD3A002C2C5D /* Book Artwork */ = {
+			isa = PBXGroup;
+			children = (
+				DD2DA6002769FD77002C2C5D /* BookArtworkVC.swift */,
+			);
+			path = "Book Artwork";
+			sourceTree = "<group>";
+		};
 		DD30DA802614FD3800BE4BB5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +290,7 @@
 				DD4351B12739A70200087C92 /* Array+Extension.swift */,
 				DDD899B52758A5C900853597 /* Encodable+Extension.swift */,
 				DDF5EE64276786F600947BD0 /* UIImageView+Extensions.swift */,
+				DD2DA5FB2769E78A002C2C5D /* UIResponder+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -361,6 +374,7 @@
 				DD45C52F2654897900F6D53A /* ViewModel */,
 				DDDE6CAC2649C09500291C0F /* BookDetailVC.swift */,
 				DDDB338D265BFCA4007040F4 /* Book Info */,
+				DD2DA5FD2769FD3A002C2C5D /* Book Artwork */,
 			);
 			path = BookDetail;
 			sourceTree = "<group>";
@@ -387,7 +401,6 @@
 				DD273929260E556300266851 /* Frameworks */,
 				DD27392A260E556300266851 /* Resources */,
 				68CAC09649843C59B488637A /* [CP] Embed Pods Frameworks */,
-				DDF5EE662767CC8000947BD0 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -517,26 +530,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DDF5EE662767CC8000947BD0 /* Crashlytics */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
-				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
-			);
-			name = Crashlytics;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -546,6 +539,7 @@
 			files = (
 				DDF5EE65276786F600947BD0 /* UIImageView+Extensions.swift in Sources */,
 				DD273930260E556300266851 /* AppDelegate.swift in Sources */,
+				DD2DA5FC2769E78A002C2C5D /* UIResponder+Extension.swift in Sources */,
 				DDDE6CB82649D83400291C0F /* BookDetailsTableViewCell.swift in Sources */,
 				DD4351B22739A70200087C92 /* Array+Extension.swift in Sources */,
 				DDEAF321273B1B5E00B1738C /* BookManager.swift in Sources */,
@@ -554,6 +548,7 @@
 				DDDE6CAD2649C09500291C0F /* BookDetailVC.swift in Sources */,
 				DDD8997F275887E200853597 /* Keys.swift in Sources */,
 				DD914470264A90A5003C9D22 /* BookPricesTableViewCell.swift in Sources */,
+				DD2DA6012769FD77002C2C5D /* BookArtworkVC.swift in Sources */,
 				DDD8997027586ED800853597 /* SettingsVC.swift in Sources */,
 				DD87CD1F260FE9B0002F5C81 /* UIViewController+Extensions.swift in Sources */,
 				DD87CD27260FE9C8002F5C81 /* String+Extensions.swift in Sources */,

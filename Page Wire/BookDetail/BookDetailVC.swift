@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Hero
 
 class BookDetailVC: UIViewController {
 
@@ -32,7 +33,9 @@ class BookDetailVC: UIViewController {
     // MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
         showLoadingAnimation()
+        addFavoriteButton()
         checkIfBookIsFavorited()
         loadOtherPublishers()
         currentPublisher = book?.publisher ?? "-"
@@ -40,7 +43,6 @@ class BookDetailVC: UIViewController {
         bookDataViewModel?.book = book
         bookDataViewModel?.siteDataDelegate = self
         bookDataViewModel?.getBookDataForSites()
-        addFavoriteButton()
         tableView.register(UINib(nibName: "BookDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "BookDetailsTableViewCell")
         tableView.register(UINib(nibName: "BookPricesTableViewCell", bundle: nil), forCellReuseIdentifier: "BookPricesTableViewCell")
         NotificationCenter.default.addObserver(self, selector: #selector(removeBookFromFavorites(_:)), name: .removeBookFromFavorites, object: nil)
@@ -158,6 +160,17 @@ extension BookDetailVC: BookDetailsTableViewCellDelegate {
         let infoVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookInfoVC") as! BookInfoVC
         infoVC.book = book
         navigationController?.present(infoVC, animated: true, completion: nil)
+    }
+    
+    func onArtworkTapped(_ image: UIImage?) {
+        let artworkVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookArtwork") as! BookArtworkVC
+        let navigationVC = UINavigationController(rootViewController: artworkVC)
+        navigationVC.isHeroEnabled = true
+        artworkVC.isHeroEnabled = true
+        artworkVC.artworkImage = image
+        navigationVC.modalTransitionStyle = .crossDissolve
+        navigationVC.modalPresentationStyle = .overFullScreen
+        navigationController?.present(navigationVC, animated: true)
     }
 }
 

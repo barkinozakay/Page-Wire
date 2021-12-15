@@ -7,10 +7,12 @@
 
 import UIKit
 import Nuke
+import Hero
 
 protocol BookDetailsTableViewCellDelegate: AnyObject {
     func selectPublisher()
     func showBookInfo()
+    func onArtworkTapped(_ image: UIImage?)
 }
 
 class BookDetailsTableViewCell: UITableViewCell {
@@ -31,6 +33,7 @@ class BookDetailsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        addTapGestureForArtwork()
         artwork.applyShadowWithCorner(containerView: artworkContainerView, cornerRadius: 5)
     }
     
@@ -52,6 +55,18 @@ class BookDetailsTableViewCell: UITableViewCell {
         Nuke.loadImage(with: artworkUrl, options: options, into: artwork) { _ in
             self.artwork.contentMode = .scaleToFill
         }
+    }
+    
+    private func addTapGestureForArtwork() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onArtworkTapped))
+        artwork.isUserInteractionEnabled = true
+        artwork.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc func onArtworkTapped() {
+        let artworkImage = artwork.image ?? UIImage(systemName: "book.fill")
+        artwork.heroID = "artwork"
+        delegate?.onArtworkTapped(artworkImage)
     }
     
     @IBAction private func selectPublisher(_ sender: Any) {

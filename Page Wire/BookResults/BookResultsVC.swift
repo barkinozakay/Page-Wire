@@ -54,11 +54,11 @@ extension BookResultsVC {
     }
     
     private func goToBookDetail(_ book: BookModel) {
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookDetailVC") as! BookDetailVC
-        vc.book = book
-        vc.isHeroEnabled = true
+        let detailVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookDetailVC") as! BookDetailVC
+        detailVC.book = book
+        detailVC.isHeroEnabled = true
         navigationController?.hero.navigationAnimationType = .selectBy(presenting: .pageIn(direction: .left), dismissing: .pageOut(direction: .right))
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
