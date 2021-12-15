@@ -32,13 +32,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page-wire" translatesAutoresizingMaskIntoConstraints="NO" id="NbG-hF-hJo">
-                                <rect key="frame" x="75" y="322" width="240" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="DbE-Ov-P63"/>
-                                    <constraint firstAttribute="width" constant="240" id="SZZ-22-fNT"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-IZ-dSf">
                                 <rect key="frame" x="70" y="678" width="250" height="50"/>
                                 <constraints>
@@ -52,15 +45,20 @@
                                     <action selector="onGoogleSignInButtonTapped:" destination="nSg-oC-8ph" eventType="touchUpInside" id="C30-OM-312"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page-wire" translatesAutoresizingMaskIntoConstraints="NO" id="NbG-hF-hJo">
+                                <rect key="frame" x="71.666666666666686" y="276" width="247" height="292"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="94Q-K4-y3i"/>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.80392156862745101" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="NbG-hF-hJo" firstAttribute="centerY" secondItem="Jzz-I2-CV0" secondAttribute="centerY" id="ICO-2a-gMl"/>
                             <constraint firstItem="94Q-K4-y3i" firstAttribute="trailing" secondItem="Hft-IZ-dSf" secondAttribute="trailing" constant="70" id="Pea-te-aZM"/>
-                            <constraint firstItem="NbG-hF-hJo" firstAttribute="centerY" secondItem="Jzz-I2-CV0" secondAttribute="centerY" id="fap-v7-eb2"/>
+                            <constraint firstItem="NbG-hF-hJo" firstAttribute="centerX" secondItem="Jzz-I2-CV0" secondAttribute="centerX" id="S9p-wD-Wyb"/>
+                            <constraint firstItem="NbG-hF-hJo" firstAttribute="width" secondItem="Jzz-I2-CV0" secondAttribute="width" multiplier="0.633333" id="l6g-dp-CZT"/>
                             <constraint firstItem="94Q-K4-y3i" firstAttribute="bottom" secondItem="Hft-IZ-dSf" secondAttribute="bottom" constant="82" id="pby-ap-y9W"/>
                             <constraint firstItem="Hft-IZ-dSf" firstAttribute="leading" secondItem="94Q-K4-y3i" secondAttribute="leading" constant="70" id="umD-Zn-eYx"/>
-                            <constraint firstItem="NbG-hF-hJo" firstAttribute="centerX" secondItem="Jzz-I2-CV0" secondAttribute="centerX" id="xp4-Ig-p8w"/>
+                            <constraint firstItem="NbG-hF-hJo" firstAttribute="height" secondItem="Jzz-I2-CV0" secondAttribute="height" multiplier="0.345972" id="yt9-9l-5DJ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -69,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFB-QK-rf2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2518" y="444"/>
+            <point key="canvasLocation" x="2516.9230769230767" y="443.60189573459712"/>
         </scene>
         <!--Book Discovery-->
         <scene sceneID="tne-QT-ifu">
@@ -122,19 +120,26 @@
                                     <action selector="scanBarcodeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nCW-CI-uRK"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page-wire" translatesAutoresizingMaskIntoConstraints="NO" id="syi-xr-I6Z">
+                                <rect key="frame" x="91" y="301.33333333333331" width="208" height="241.33333333333331"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="syi-xr-I6Z" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.533333" id="0dS-bd-hCt"/>
                             <constraint firstItem="bI5-Tl-mjl" firstAttribute="centerY" secondItem="GMn-CC-ABO" secondAttribute="centerY" id="4h8-8V-SoF"/>
                             <constraint firstItem="36c-EW-zjW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="4yq-Fz-bBd"/>
                             <constraint firstAttribute="bottom" secondItem="SbZ-kD-2a0" secondAttribute="bottom" constant="100" id="6Gn-Y6-8cC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="36c-EW-zjW" secondAttribute="trailing" constant="60" id="8pZ-ko-A7A"/>
                             <constraint firstItem="36c-EW-zjW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="9gU-9P-ZKk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bI5-Tl-mjl" secondAttribute="trailing" constant="21" id="JsC-rS-ZlK"/>
+                            <constraint firstItem="syi-xr-I6Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Nu5-wO-a53"/>
+                            <constraint firstItem="syi-xr-I6Z" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.285972" id="P75-EA-5Th"/>
                             <constraint firstItem="GMn-CC-ABO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UCZ-Zs-c85"/>
                             <constraint firstItem="bI5-Tl-mjl" firstAttribute="height" secondItem="GMn-CC-ABO" secondAttribute="height" multiplier="0.454545" id="Uol-mo-74O"/>
                             <constraint firstItem="bI5-Tl-mjl" firstAttribute="leading" secondItem="GMn-CC-ABO" secondAttribute="trailing" constant="8" id="VNs-2Y-A80"/>
+                            <constraint firstItem="syi-xr-I6Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yse-7x-5pO"/>
                             <constraint firstItem="SbZ-kD-2a0" firstAttribute="centerX" secondItem="T38-S9-htY" secondAttribute="centerX" id="ail-Vj-WhZ"/>
                             <constraint firstItem="GMn-CC-ABO" firstAttribute="top" secondItem="36c-EW-zjW" secondAttribute="bottom" constant="16" id="fgl-7a-v0f"/>
                             <constraint firstItem="SbZ-kD-2a0" firstAttribute="top" secondItem="T38-S9-htY" secondAttribute="bottom" constant="8" id="oth-by-ZGk"/>
@@ -155,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5671" y="92"/>
+            <point key="canvasLocation" x="5670.7692307692305" y="91.706161137440759"/>
         </scene>
         <!--Book Results-->
         <scene sceneID="RTC-8L-UeK">
