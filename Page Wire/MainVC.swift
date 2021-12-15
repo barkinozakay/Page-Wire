@@ -35,7 +35,6 @@ class MainVC: UIViewController {
 
 // MARK: - IBActions
 extension MainVC {
-    
     @IBAction func searchButtonAction(_ sender: Any) {
         searchBooks()
     }
