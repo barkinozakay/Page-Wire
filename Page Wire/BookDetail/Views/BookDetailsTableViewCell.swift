@@ -44,6 +44,7 @@ class BookDetailsTableViewCell: UITableViewCell {
         publisherLabel.text = book?.publisher
         genresLabel.text = book?.genre
         pagesLabel.text = "Pages: \(book?.pages ?? 0)"
+        checkForScannedBook()
     }
     
     private func setArtwork() {
@@ -55,6 +56,12 @@ class BookDetailsTableViewCell: UITableViewCell {
         Nuke.loadImage(with: artworkUrl, options: options, into: artwork) { _ in
             self.artwork.contentMode = .scaleToFill
         }
+    }
+    
+    private func checkForScannedBook() {
+        let isScanned = book?.isScanned ?? false
+        publisherLabel.isHidden = isScanned
+        selectPublisherButton.isHidden = isScanned
     }
     
     private func addTapGestureForArtwork() {

@@ -52,8 +52,8 @@ class BookDataViewModel {
                     callCounter += 1
                     guard let responseHtml = response else { return }
                     let isFinished = callCounter == totalCallCount ? true : false
-                    self.parseBookArtwork(site, responseHtml)
                     self.parseBookInfo(site, responseHtml)
+                    self.parseBookArtwork(site, responseHtml)
                     self.addBookSiteData(site, responseHtml, bookLink, &bookSiteDataList)
                     self.sortPrices(&bookSiteDataList)
                     self.book?.siteData = bookSiteDataList
@@ -125,17 +125,52 @@ class BookDataViewModel {
     
     private func parseBookArtwork(_ site: BookSite, _ html: String) {
         guard site == .idefix else { return }
-        let artwork: String? = self.getArtwork(html)
+        let artwork: String? = getArtwork(html)
         self.book?.artwork = artwork
     }
     
     private func parseBookInfo(_ site: BookSite, _ html: String) {
         guard site == .amazon else { return }
-        let info = self.getBookInfo(html)
-        self.book?.info = info
+        if book?.name == nil { getBookInfo(html, &book) }
+        let description = getBookShortDescription(html)
+        self.book?.info = description
     }
     
-    private func getBookInfo(_ html: String) -> String {
+    private func getBookInfo(_ html: String, _ book: inout BookModel?) {
+        do {
+            let doc: Document = try SwiftSoup.parse(html)
+            let divList: Elements = try doc.select("div")
+            let divClasses = try divList.map { try $0.attr("class") }
+            let divTexts = try divList.map { try $0.text() }
+            
+            let spanList: Elements = try doc.select("span")
+            let spanClasses = try spanList.map { try $0.attr("class") }
+            let spanTexts = try spanList.map { try $0.text() }
+            
+            if let nameIndex = divClasses.firstIndex(of: "a-section a-spacing-small") {
+                book?.name = divTexts[nameIndex]
+            }
+            
+            if let authorIndex = divClasses.firstIndex(of: "a-row a-spacing-none") {
+                book?.author = divTexts[authorIndex].components(separatedBy: " ve").first
+            }
+            
+            if let pageText = divTexts.filter { $0.contains("sayfa") }.filter({ $0.components(separatedBy: " ").count == 2 }).first?.components(separatedBy: " ").first, let pages = Int(pageText) {
+                book?.pages = pages
+            }
+            
+            if let publisherIndex = spanClasses.firstIndex(of: "rpi-icon book_details-publisher") {
+                book?.publisher = spanTexts[publisherIndex + 1]
+            }
+        } catch Exception.Error(let type, let message) {
+            print("Error Type: \(type)")
+            print("Error Message: \(message)")
+        } catch {
+            print("Error")
+        }
+    }
+    
+    private func getBookShortDescription(_ html: String) -> String {
         do {
             let doc: Document = try SwiftSoup.parse(html)
             let a: Elements = try doc.select("div")
@@ -274,9 +309,16 @@ extension BookDataViewModel {
             let doc: Document = try SwiftSoup.parse(html)
             let a: Elements = try doc.select("a")
             let links = try a.map { try $0.attr("href") }
-            let texts = try a.map { try $0.text() }
-            guard let bookName = book?.name, !bookName.isEmpty else { return nil }
-            guard let index = texts.firstIndex(where: { $0.contains(bookName) }) else { return nil }
+
+            guard !links.filter({ $0.contains("/Yazar") }).isEmpty else { return nil }
+            var index: Int = 0
+            let linksList = links.compactMap ({ $0.components(separatedBy: "/") })
+            for i in 0..<linksList.count {
+                if linksList[i].contains("Yazar") {
+                    index = i - 1
+                    break
+                }
+            }
             let link = httpsPrefix + "dr.com.tr" + links[index]
             return link
         } catch Exception.Error(let type, let message) {

@@ -23,6 +23,7 @@ struct BookModel: Codable, Equatable {
     var artwork: String?
     var info: String?
     var otherPublishers: [String: Int]?
+    var isScanned: Bool?
 }
 
 enum BookSearchType: String {

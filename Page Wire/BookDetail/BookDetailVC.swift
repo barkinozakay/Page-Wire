@@ -15,6 +15,7 @@ class BookDetailVC: UIViewController {
     
     // MARK: - Variables
     var book: BookModel?
+    var isBookScanned: Bool = false
     private var bookDataViewModel: BookDataViewModel?
     private var favoriteButton: UIBarButtonItem!
     var isComingFromFavorites: Bool = false
@@ -34,15 +35,17 @@ class BookDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
-        showLoadingAnimation()
+        bookDataViewModel = BookDataViewModel()
+        bookDataViewModel?.book = book
+        bookDataViewModel?.siteDataDelegate = self
+        if let isScanned = book?.isScanned, !isScanned {
+            showLoadingAnimation()
+            bookDataViewModel?.getBookDataForSites()
+        }
         addFavoriteButton()
         checkIfBookIsFavorited()
         loadOtherPublishers()
         currentPublisher = book?.publisher ?? "-"
-        bookDataViewModel = BookDataViewModel()
-        bookDataViewModel?.book = book
-        bookDataViewModel?.siteDataDelegate = self
-        bookDataViewModel?.getBookDataForSites()
         tableView.register(UINib(nibName: "BookDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "BookDetailsTableViewCell")
         tableView.register(UINib(nibName: "BookPricesTableViewCell", bundle: nil), forCellReuseIdentifier: "BookPricesTableViewCell")
         NotificationCenter.default.addObserver(self, selector: #selector(removeBookFromFavorites(_:)), name: .removeBookFromFavorites, object: nil)
@@ -73,6 +76,7 @@ extension BookDetailVC: BookDataFromSite {
 // MARK: - Other Publishers
 extension BookDetailVC {
     private func loadOtherPublishers() {
+        guard !isBookScanned else { return }
         book?.otherPublishers = [:]
         for item in BookManager.shared.bookList {
             if book?.name == item.name, book?.author == item.author {

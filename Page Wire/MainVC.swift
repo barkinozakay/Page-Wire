@@ -23,6 +23,7 @@ class MainVC: UIViewController {
     private var bookDataViewModel: BookDataViewModel?
     private var searchBarText: String = ""
     private weak var barcodeScanner: BarcodeScannerViewController?
+    private var scannedBook: BookModel?
     
     // MARK: - LIFECYCLE
     override func viewDidLoad() {
@@ -109,12 +110,26 @@ extension MainVC {
             scanner.dismiss(animated: true, completion: nil)
             goToBookDetail(book)
         } else {
-            // TODO: Test this.
-            var book = BookModel()
-            book.isbn = Int(isbn)
-            bookDataViewModel?.book = book
+            scannedBook = BookModel()
+            scannedBook?.isbn = Int(isbn)
+            scannedBook?.isScanned = true
+            bookDataViewModel?.book = scannedBook
+            bookDataViewModel?.siteDataDelegate = self
             bookDataViewModel?.getBookDataForSites()
-            return scanner.resetWithError(message: "Book not found.")
+        }
+    }
+}
+
+// MARK: - Book Data From Site
+extension MainVC: BookDataFromSite {
+    func getBookDataForSites(_ book: BookModel?, _ isFinished: Bool) {
+        scannedBook = book
+        if let scanned = scannedBook, isFinished {
+            self.scannedBook?.siteData?.sort(by: { $0.price! < $1.price! })
+            asyncOperation {
+                self.barcodeScanner?.dismiss(animated: true, completion: nil)
+                self.goToBookDetail(scanned)
+            }
         }
     }
 }
