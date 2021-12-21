@@ -38,10 +38,7 @@ class BookDetailVC: UIViewController {
         bookDataViewModel = BookDataViewModel()
         bookDataViewModel?.book = book
         bookDataViewModel?.siteDataDelegate = self
-        if let isScanned = book?.isScanned, !isScanned {
-            showLoadingAnimation()
-            bookDataViewModel?.getBookDataForSites()
-        }
+        decideToGetBookData()
         addFavoriteButton()
         checkIfBookIsFavorited()
         loadOtherPublishers()
@@ -69,6 +66,14 @@ extension BookDetailVC: BookDataFromSite {
                 self.tableView.reloadData()
                 self.hideLoadingAnimaton()
             }
+        }
+    }
+    
+    private func decideToGetBookData() {
+        let isScanned = book?.isScanned ?? false
+        if !isScanned {
+            showLoadingAnimation()
+            bookDataViewModel?.getBookDataForSites()
         }
     }
 }
@@ -115,14 +120,14 @@ extension BookDetailVC {
     }
     
     private func checkFavoriteActionForBook() {
-        guard let detailBook = book else { return }
+        guard var detailBook = book else { return }
         favoriteButton.isEnabled = false
         if favoriteButton.tag == 0 {
+            detailBook.isFavorited = true
             FavoriteBooksManager.shared.addBookToFavorites(detailBook) { isSuccess in
                 if isSuccess {
                     self.book?.isFavorited = true
-                    self.favoriteButton.image = UIImage(systemName: "heart.fill")
-                    self.favoriteButton.tag = 1
+                    self.setFavoriteButtonStatus(true)
                     NotificationCenter.default.post(name: .changeBookFavoriteStateFromDetail, object: nil, userInfo: ["book": detailBook, "action": FavoriteBookAction.add])
                 } else {
                     self.showErrorAlert()
@@ -130,11 +135,11 @@ extension BookDetailVC {
                 self.favoriteButton.isEnabled = true
             }
         } else {
+            detailBook.isFavorited = false
             FavoriteBooksManager.shared.removeBookFromFavorites(detailBook) { isSuccess in
                 if isSuccess {
                     self.book?.isFavorited = false
-                    self.favoriteButton.image = UIImage(systemName: "heart")
-                    self.favoriteButton.tag = 0
+                    self.setFavoriteButtonStatus(false)
                     NotificationCenter.default.post(name: .changeBookFavoriteStateFromDetail, object: nil, userInfo: ["book": detailBook, "action": FavoriteBookAction.remove])
                 } else {
                     self.showErrorAlert()
@@ -148,6 +153,7 @@ extension BookDetailVC {
         if let removedBook = notification.userInfo!["book"] as? BookModel {
             if removedBook == book {
                 book?.isFavorited = false
+                setFavoriteButtonStatus(false)
             }
         }
     }
@@ -279,5 +285,9 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
