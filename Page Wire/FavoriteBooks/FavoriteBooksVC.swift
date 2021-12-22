@@ -86,6 +86,7 @@ extension FavoriteBooksVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         goToBookDetail(favoritedBooks[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -112,5 +113,4 @@ extension FavoriteBooksVC: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-    
 }
