@@ -28,11 +28,15 @@ extension String {
     }
 
     func toDouble() -> Double? {
-        if self.contains(",") {
-            return NumberFormatter().number(from: self.components(separatedBy: ",").joined(separator: "."))?.doubleValue
-        } else {
+        #if targetEnvironment(simulator)
+            if self.contains(",") {
+                return NumberFormatter().number(from: self.components(separatedBy: ",").joined(separator: "."))?.doubleValue
+            } else {
+                return NumberFormatter().number(from: self)?.doubleValue
+            }
+        #else
             return NumberFormatter().number(from: self)?.doubleValue
-        }
+        #endif
     }
     
     func addZeroToEnd() -> String? {
