@@ -28,14 +28,10 @@ extension String {
     }
 
     func toDouble() -> Double? {
-        if #available(iOS 15.1, *) {
-            return NumberFormatter().number(from: self)?.doubleValue
+        if self.contains(",") {
+            return NumberFormatter().number(from: self.components(separatedBy: ",").joined(separator: "."))?.doubleValue
         } else {
-            if self.contains(",") {
-                return NumberFormatter().number(from: self.components(separatedBy: ",").joined(separator: "."))?.doubleValue
-            } else {
-                return NumberFormatter().number(from: self)?.doubleValue
-            }
+            return NumberFormatter().number(from: self)?.doubleValue
         }
     }
     

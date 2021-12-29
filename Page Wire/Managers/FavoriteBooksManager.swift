@@ -7,7 +7,6 @@
 
 import Foundation
 import FirebaseFirestore
-import FirebaseDatabase
 
 enum FavoriteBookAction {
     case add
@@ -21,7 +20,6 @@ class FavoriteBooksManager {
     static let shared = FavoriteBooksManager()
     
     private let firestore = Firestore.firestore()
-    private let realtimeDatabase = Database.database().reference()
     
     func getFavoritedBooks(_ completion: @escaping ([BookModel]) -> Void) {
         guard let userID = appDel.userID else { return completion([]) }
@@ -98,22 +96,5 @@ class FavoriteBooksManager {
                 return completion(false)
             }
         }
-    }
-    
-    func appendAllBooksToFirebase(_ books: [BookModel]) {
-//        var counter = 0
-//        for book in books {
-//            counter += 1
-//            guard counter <= 10 else { return }
-//            guard let bookData = book.dictionary else { continue }
-//            let isbn = book.isbn.description
-//            realtimeDatabase.child("Books").child("\(isbn)").setValue(bookData) { error, databaseRef in
-//                if let error = error {
-//                    print("Data could not be saved: \(error).")
-//                } else {
-//                    print("Book with isbn: \(isbn) saved to Realtime Database successfully.")
-//                }
-//            }
-//        }
     }
 }

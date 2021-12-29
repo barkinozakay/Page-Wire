@@ -60,7 +60,6 @@ extension BookDetailVC: BookDataFromSite {
     func getBookDataForSites(_ book: BookModel?, _ isFinished: Bool) {
         self.book = book
         if isFinished {
-            self.book?.siteData?.sort(by: { $0.price! < $1.price! })
             asyncOperation {
                 self.checkIfBookIsFavorited()
                 self.tableView.reloadData()
@@ -97,7 +96,10 @@ extension BookDetailVC {
 // MARK: - Favorite Book Functions
 extension BookDetailVC {
     private func checkIfBookIsFavorited() {
-        guard !isComingFromFavorites else { return setFavoriteButtonStatus(true) }
+        guard !isComingFromFavorites else {
+            isComingFromFavorites = false
+            return setFavoriteButtonStatus(true)
+        }
         FavoriteBooksManager.shared.checkForFavoritedBook(book) { isFavorited in
             self.setFavoriteButtonStatus(isFavorited)
         }

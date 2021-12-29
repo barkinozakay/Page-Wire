@@ -9,6 +9,7 @@ import UIKit
 import GoogleSignIn
 import Lottie
 import BarcodeScanner
+import FirebaseDatabase
 
 class MainVC: UIViewController {
 
@@ -24,6 +25,8 @@ class MainVC: UIViewController {
     private var searchBarText: String = ""
     private weak var barcodeScanner: BarcodeScannerViewController?
     private var scannedBook: BookModel?
+    
+    private let realtimeDatabase = Database.database().reference()
     
     // MARK: - LIFECYCLE
     override func viewDidLoad() {
@@ -69,27 +72,76 @@ extension MainVC {
             if let response = DecoderHelper.decode(resourcePath: "books", BookList.self) {
                 BookManager.shared.bookList = response.books
                 self.books = response.books.unique { $0.name }
-                // TODO: IDK about the next line.
-                //FavoriteBooksManager.shared.appendAllBooksToFirebase(self.books)
             }
         }
     }
     
+    private enum FilterType: String {
+        case name = "name"
+        case author = "author"
+    }
+    
     private func filterBooks() {
-        segmentedControl.selectedSegmentIndex == 0 ? filterBookNames() : filterBookAuthors()
+        showLoadingAnimation()
+        if segmentedControl.selectedSegmentIndex == 0 {
+            filterBookNames(filterType: .name) { filteredBookNames in
+                self.hideLoadingAnimaton()
+                self.goToBookResults(filteredBookNames)
+            }
+        } else {
+            filterBookNames(filterType: .author) { filteredBookAuthors in
+                self.hideLoadingAnimaton()
+                self.goToBookResults(filteredBookAuthors)
+            }
+        }
     }
     
-    private func filterBookNames() {
-        let filteredBookNames = books.filter { ($0.name ?? "").lowercased().contains(searchBarText.lowercased()) }
-        guard !filteredBookNames.isEmpty else { return showSearchNotFoundError() }
-        goToBookResults(filteredBookNames)
+    private func filterBookNames(filterType: FilterType, _ completion: @escaping ([BookModel]) -> Void) {
+        realtimeDatabase.child("Books").queryOrdered(byChild: filterType.rawValue).queryStarting(atValue: searchBarText).queryEnding(atValue: searchBarText + "\u{f8ff}").observeSingleEvent(of: .value, with: { snapshot in
+            
+            guard snapshot.exists() != false else {
+                print("Snapshot does not exists.")
+                return completion([])
+            }
+            
+            guard let filteredBooks = snapshot.value as? [String: Any] else {
+                return completion([])
+            }
+            
+            var book = BookModel()
+            var books: [BookModel] = []
+            
+            for filteredBook in filteredBooks.values {
+                book.name = (filteredBook as? [String: Any])!["name"] as? String
+                book.author = (filteredBook as? [String: Any])!["author"] as? String
+                book.publisher = (filteredBook as? [String: Any])!["publisher"] as? String
+                book.genre = (filteredBook as? [String: Any])!["genre"] as? String
+                book.pages = (filteredBook as? [String: Any])!["pages"] as? Int
+                book.isbn = (filteredBook as? [String: Any])!["isbn"] as? Int
+                book.isFavorited = (filteredBook as? [String: Any])!["isFavorited"] as? Bool
+                book.siteData = (filteredBook as? [String: Any])!["siteData"] as? [BookSiteData]
+                book.artwork = (filteredBook as? [String: Any])!["artwork"] as? String
+                book.info = (filteredBook as? [String: Any])!["info"] as? String
+                book.otherPublishers = (filteredBook as? [String: Any])!["otherPublishers"] as? [String: Int]
+                book.isScanned = (filteredBook as? [String: Any])!["isScanned"] as? Bool
+                books.append(book)
+            }
+            completion(books)
+        })
     }
     
-    private func filterBookAuthors() {
-        let filteredBookAuthors = books.filter { ($0.author ?? "").lowercased().contains(searchBarText.lowercased()) }
-        guard !filteredBookAuthors.isEmpty else { return showSearchNotFoundError() }
-        goToBookResults(filteredBookAuthors)
-    }
+    // MARK: Old filtering methods.
+//    private func filterBookNames() {
+//        let filteredBookNames = books.filter { ($0.name ?? "").lowercased().contains(searchBarText.lowercased()) }
+//        guard !filteredBookNames.isEmpty else { return showSearchNotFoundError() }
+//        goToBookResults(filteredBookNames)
+//    }
+    
+//    private func filterBookAuthors() {
+//        let filteredBookAuthors = books.filter { ($0.author ?? "").lowercased().contains(searchBarText.lowercased()) }
+//        guard !filteredBookAuthors.isEmpty else { return showSearchNotFoundError() }
+//        goToBookResults(filteredBookAuthors)
+//    }
     
     private func showSearchNotFoundError() {
         showAlert(title: "", message: "Book not found.", okTitle: "OK", cancelTitle: nil, okAction: nil, cancelAction: nil)
