@@ -84,19 +84,19 @@ extension MainVC {
     private func filterBooks() {
         showLoadingAnimation()
         if segmentedControl.selectedSegmentIndex == 0 {
-            filterBookNames(filterType: .name) { filteredBookNames in
+            filterBooksFromDatabase(filterType: .name) { filteredBookNames in
                 self.hideLoadingAnimaton()
                 self.goToBookResults(filteredBookNames)
             }
         } else {
-            filterBookNames(filterType: .author) { filteredBookAuthors in
+            filterBooksFromDatabase(filterType: .author) { filteredBookAuthors in
                 self.hideLoadingAnimaton()
                 self.goToBookResults(filteredBookAuthors)
             }
         }
     }
     
-    private func filterBookNames(filterType: FilterType, _ completion: @escaping ([BookModel]) -> Void) {
+    private func filterBooksFromDatabase(filterType: FilterType, _ completion: @escaping ([BookModel]) -> Void) {
         realtimeDatabase.child("Books").queryOrdered(byChild: filterType.rawValue).queryStarting(atValue: searchBarText).queryEnding(atValue: searchBarText + "\u{f8ff}").observeSingleEvent(of: .value, with: { snapshot in
             
             guard snapshot.exists() != false else {
@@ -104,7 +104,7 @@ extension MainVC {
                 return completion([])
             }
             
-            guard let filteredBooks = snapshot.value as? [String: Any] else {
+            guard let filteredBooks = snapshot.value as? [String: Any], !filteredBooks.values.isEmpty else {
                 return completion([])
             }
             
@@ -189,6 +189,7 @@ extension MainVC: BookDataFromSite {
 // MARK: - Navigation Functions
 extension MainVC {
     private func goToBookResults(_ books: [BookModel]) {
+        guard !books.isEmpty else { return showSearchNotFoundError() }
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookResultsVC") as! BookResultsVC
         vc.searchText = searchBarText
         vc.searchType = segmentedControl.selectedSegmentIndex == 0 ? .title : .author

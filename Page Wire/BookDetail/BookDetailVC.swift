@@ -153,7 +153,7 @@ extension BookDetailVC {
     
     @objc func removeBookFromFavorites(_ notification: Notification) {
         if let removedBook = notification.userInfo!["book"] as? BookModel {
-            if removedBook == book {
+            if removedBook.isbn == book?.isbn {
                 book?.isFavorited = false
                 setFavoriteButtonStatus(false)
             }
