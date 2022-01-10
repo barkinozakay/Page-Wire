@@ -286,24 +286,6 @@ extension BookDataViewModel {
         return ""
     }
     
-//    private func getBkmBookLink(_ html: String) -> String? {
-//        do {
-//            let doc: Document = try SwiftSoup.parse(html)
-//            let a: Elements = try doc.select("a")
-//            let classes = try a.map { try $0.attr("class") }
-//            let links = try a.map { try $0.attr("href") }
-//            guard let index = classes.firstIndex(of: "fl col-12 text-description detailLink") else { return nil }
-//            let link = httpsPrefix + "bkmkitap.com" + links[index]
-//            return link
-//        } catch Exception.Error(let type, let message) {
-//            print("Error Type: \(type)")
-//            print("Error Message: \(message)")
-//        } catch {
-//            print("Error")
-//        }
-//        return ""
-//    }
-    
     private func getDrBookLink(_ html: String) -> String? {
         do {
             let doc: Document = try SwiftSoup.parse(html)
@@ -442,32 +424,6 @@ extension BookDataViewModel {
         }
         return nil
     }
-    
-//    private func getBkmData(_ html: String) -> [String: Any]? {
-//        do {
-//            let doc: Document = try SwiftSoup.parse(html)
-//            let spanList: Elements = try doc.select("span")
-//
-//            let spanClasses = try spanList.map { try $0.attr("class") }
-//            let spanTexts = try spanList.map { try $0.text() }
-//
-//            guard let currentPriceIndex = spanClasses.firstIndex(of: "product-price"),
-//                  let discountIndex = spanClasses.firstIndex(of: "col d-flex productDiscount") else { return nil }
-//
-//            guard let price = spanTexts[currentPriceIndex].toDouble()?.rounded(toPlaces: 2) else { return nil }
-//            let discount = spanTexts[discountIndex].components(separatedBy: " ").first ?? ""
-//
-//            let priceDic: [String : Any] = ["price": price,
-//                                            "discount": discount]
-//            return priceDic
-//        } catch Exception.Error(let type, let message) {
-//            print("Error Type: \(type)")
-//            print("Error Message: \(message)")
-//        } catch {
-//            print("Error")
-//        }
-//        return nil
-//    }
     
     private func getDrData(_ html: String) -> [String: Any]? {
         do {
