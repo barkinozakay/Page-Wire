@@ -140,22 +140,24 @@ class BookDataViewModel {
         do {
             let doc: Document = try SwiftSoup.parse(html)
             let divList: Elements = try doc.select("div")
-            let divClasses = try divList.map { try $0.attr("class") }
+            // let divClasses = try divList.map { try $0.attr("class") }
             let divTexts = try divList.map { try $0.text() }
             
             let spanList: Elements = try doc.select("span")
             let spanClasses = try spanList.map { try $0.attr("class") }
             let spanTexts = try spanList.map { try $0.text() }
             
-            if let nameIndex = divClasses.firstIndex(of: "a-section a-spacing-small") {
-                book?.name = divTexts[nameIndex]
+            if let nameIndex = spanClasses.firstIndex(of: "a-size-extra-large") {
+                let name = spanTexts[nameIndex].split(separator: "(").first ?? ""
+                book?.name = String(name)
             }
             
-            if let authorIndex = divClasses.firstIndex(of: "a-row a-spacing-none") {
-                book?.author = divTexts[authorIndex].components(separatedBy: " ve").first
+            if let authorIndex = spanClasses.firstIndex(of: "author notFaded") {
+                let author = spanTexts[authorIndex].components(separatedBy: " (").first
+                book?.author = author
             }
             
-            if let pageText = divTexts.filter { $0.contains("sayfa") }.filter({ $0.components(separatedBy: " ").count == 2 }).first?.components(separatedBy: " ").first, let pages = Int(pageText) {
+            if let pageText = divTexts.filter({ $0.contains("sayfa") }).filter({ $0.components(separatedBy: " ").count == 2 }).first?.components(separatedBy: " ").first, let pages = Int(pageText) {
                 book?.pages = pages
             }
             
@@ -176,7 +178,7 @@ class BookDataViewModel {
             let a: Elements = try doc.select("div")
             let classes = try a.map { try $0.attr("class") }
             let texts = try a.map { try $0.text() }
-            guard let index = classes.firstIndex(of: "a-section a-spacing-large text-direction-override") else { return "" }
+            guard let index = classes.firstIndex(of: "a-expander-content a-expander-partial-collapse-content") else { return "" }
             let info = texts[index]
             return info
         } catch Exception.Error(let type, let message) {
@@ -274,7 +276,7 @@ extension BookDataViewModel {
             let a: Elements = try doc.select("a")
             let classes = try a.map { try $0.attr("class") }
             let links = try a.map { try $0.attr("href") }
-            guard let index = classes.firstIndex(of: "a-link-normal s-faceout-link a-text-normal") else { return nil }
+            guard let index = classes.firstIndex(of: "a-link-normal s-no-outline") else { return nil }
             let link = httpsPrefix + "amazon.com.tr" + links[index]
             return link
         } catch Exception.Error(let type, let message) {
@@ -292,16 +294,16 @@ extension BookDataViewModel {
             let a: Elements = try doc.select("a")
             let links = try a.map { try $0.attr("href") }
 
-            guard !links.filter({ $0.contains("/Yazar") }).isEmpty else { return nil }
-            var index: Int = 0
-            let linksList = links.compactMap ({ $0.components(separatedBy: "/") })
-            for i in 0..<linksList.count {
-                if linksList[i].contains("Yazar") {
-                    index = i - 1
-                    break
-                }
-            }
-            let link = httpsPrefix + "dr.com.tr" + links[index]
+            guard let bookLink = links.filter({ $0.contains("/kitap") }).last, !bookLink.isEmpty else { return nil }
+//            var index: Int = 0
+//            let linksList = links.compactMap ({ $0.components(separatedBy: "/") })
+//            for i in 0..<linksList.count {
+//                if linksList[i].contains("kitap") {
+//                    index = i - 1
+//                    break
+//                }
+//            }
+            let link = httpsPrefix + "dr.com.tr" + bookLink
             return link
         } catch Exception.Error(let type, let message) {
             print("Error Type: \(type)")

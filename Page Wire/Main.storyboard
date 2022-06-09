@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qgf-9V-AWd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qgf-9V-AWd">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -217,8 +217,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hRe-9y-Nqo">
-                                <rect key="frame" x="24" y="76" width="342" height="60.666666666666657"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hRe-9y-Nqo">
+                                <rect key="frame" x="24" y="76" width="342" height="56.666666666666657"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaC-gS-MVu">
                                         <rect key="frame" x="148.66666666666666" y="0.0" width="45" height="26.333333333333332"/>
@@ -226,7 +226,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3f-dk-dnf">
-                                        <rect key="frame" x="141.66666666666666" y="34.333333333333329" width="58.666666666666657" height="26.333333333333329"/>
+                                        <rect key="frame" x="141.66666666666666" y="30.333333333333329" width="58.666666666666657" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                         <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -234,7 +234,7 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lj6-yy-wdD">
-                                <rect key="frame" x="16" y="152.66666666666669" width="358" height="657.33333333333326"/>
+                                <rect key="frame" x="16" y="140.66666666666669" width="358" height="669.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -255,7 +255,7 @@
                         <viewLayoutGuide key="safeArea" id="SG8-Gp-Rtd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="lj6-yy-wdD" firstAttribute="top" secondItem="hRe-9y-Nqo" secondAttribute="bottom" constant="16" id="Aym-4C-x5J"/>
+                            <constraint firstItem="lj6-yy-wdD" firstAttribute="top" secondItem="hRe-9y-Nqo" secondAttribute="bottom" constant="8" id="Aym-4C-x5J"/>
                             <constraint firstItem="lj6-yy-wdD" firstAttribute="leading" secondItem="SG8-Gp-Rtd" secondAttribute="leading" constant="16" id="DMi-iW-KQD"/>
                             <constraint firstItem="hRe-9y-Nqo" firstAttribute="top" secondItem="SG8-Gp-Rtd" secondAttribute="top" constant="32" id="LGp-4F-lDa"/>
                             <constraint firstItem="hRe-9y-Nqo" firstAttribute="leading" secondItem="SG8-Gp-Rtd" secondAttribute="leading" constant="24" id="UIR-an-VTx"/>
