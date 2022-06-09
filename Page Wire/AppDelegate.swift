@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     final var splashVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Splash") as? SplashVC
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        NFX.sharedInstance().start()
+        startNetworkDebugger()
         FirebaseApp.configure()
         GIDSignIn.sharedInstance.restorePreviousSignIn { [weak self] user, error in
             guard let self = self else { return }
@@ -39,6 +39,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return GIDSignIn.sharedInstance.handle(url)
+    }
+    
+    private func startNetworkDebugger() {
+        #if DEBUG
+        NFX.sharedInstance().start()
+        #endif
     }
 }
 
